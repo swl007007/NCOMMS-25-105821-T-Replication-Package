@@ -47,6 +47,9 @@ DEFAULT_CONTEMPORANEOUS_INPUT_CSV = (
 DEFAULT_CONTEMPORANEOUS_CONFIGURATION = (
     CONTEMPORANEOUS_RESCUE_DIR / f"{CONTEMPORANEOUS_PREFIX}configuration.json"
 )
+DEFAULT_CONTEMPORANEOUS_PREDICTIONS_CSV = (
+    CONTEMPORANEOUS_RESCUE_DIR / f"{CONTEMPORANEOUS_PREFIX}oof_predictions.csv"
+)
 DEFAULT_OUTPUT_DIR = (
     PRODUCED_GRAPH_DIR / "direct_phase3_vs_phase45_rescue_five_class_confusion"
 )
@@ -65,17 +68,21 @@ TEMPORAL_SOURCE_METHOD_ORDER = (
     "direct_phase45_sqrt_balance",
     "direct_phase45_full_balance",
 )
+BASE_METHOD = "frozen_base"
 METHOD_ORDER = (
     "direct_phase45_unweighted",
     "direct_phase45_sqrt_balance",
     "direct_phase45_full_balance",
 )
+DISPLAY_SOURCE_METHOD_ORDER = (BASE_METHOD, *METHOD_ORDER)
 METHOD_DISPLAY_NAMES = {
+    BASE_METHOD: "Frozen base",
     "direct_phase45_unweighted": "P4/5 unweighted",
     "direct_phase45_sqrt_balance": "P4/5 sqrt-balance",
     "direct_phase45_full_balance": "P4/5 full-balance",
 }
 METHOD_COLORS = {
+    BASE_METHOD: "#667085",
     "direct_phase45_unweighted": "#61DDAA",
     "direct_phase45_sqrt_balance": "#D89C00",
     "direct_phase45_full_balance": "#E8684A",
@@ -95,9 +102,9 @@ TASK_POPULATIONS = {
     "Nowcasting": (1170, "fixed 2022 temporal holdout"),
     "Contemporaneous": (5575, "seed-0 random five-fold row-CV full OOF"),
 }
-FIGURE_SIZE = (6.5, 10.5)
+FIGURE_SIZE = (9.0, 9.6)
 PNG_DPI = 600
-PNG_SIZE = (3900, 6300)
+PNG_SIZE = (5400, 5760)
 
 FIGURE_RC = {
     "font.family": "sans-serif",
@@ -122,6 +129,41 @@ def file_sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
+def build_confusion_cells_from_predictions(
+    predictions: pd.DataFrame,
+    *,
+    task: str,
+    method: str,
+    actual_column: str,
+    predicted_column: str,
+) -> pd.DataFrame:
+    pairs = predictions[[actual_column, predicted_column]].copy()
+    pairs.columns = ["actual_phase", "predicted_phase"]
+    for column in ("actual_phase", "predicted_phase"):
+        pairs[column] = pd.to_numeric(pairs[column], errors="raise").astype(int)
+        if not pairs[column].isin(PHASES).all():
+            raise ValueError(f"{task}/{method} contains an unsupported {column}.")
+
+    complete_index = pd.MultiIndex.from_product(
+        [PHASES, PHASES], names=["actual_phase", "predicted_phase"]
+    )
+    counts = (
+        pairs.value_counts(sort=False)
+        .reindex(complete_index, fill_value=0)
+        .rename("count")
+        .reset_index()
+    )
+    counts["actual_row_total"] = counts.groupby("actual_phase")["count"].transform(
+        "sum"
+    )
+    if (counts["actual_row_total"] <= 0).any():
+        raise ValueError(f"{task}/{method} has an unsupported empty actual-phase row.")
+    counts["actual_row_share"] = counts["count"] / counts["actual_row_total"]
+    counts.insert(0, "method", method)
+    counts.insert(0, "task", task)
+    return counts[list(SOURCE_COLUMNS)]
+
+
 def validate_generation_target(output_dir: Path) -> None:
     output_dir = Path(output_dir)
     if output_dir.exists() and any(output_dir.iterdir()):
@@ -137,6 +179,9 @@ def load_and_validate_source(
     contemporaneous_configuration_path: Path = (
         DEFAULT_CONTEMPORANEOUS_CONFIGURATION
     ),
+    contemporaneous_predictions_csv: Path = (
+        DEFAULT_CONTEMPORANEOUS_PREDICTIONS_CSV
+    ),
 ) -> tuple[pd.DataFrame, dict[str, str]]:
     input_csv = Path(input_csv)
     configuration_path = Path(configuration_path)
@@ -144,6 +189,7 @@ def load_and_validate_source(
     contemporaneous_configuration_path = Path(
         contemporaneous_configuration_path
     )
+    contemporaneous_predictions_csv = Path(contemporaneous_predictions_csv)
     configuration = json.loads(configuration_path.read_text(encoding="utf-8"))
     expected_hash = configuration.get("artifact_hashes", {}).get(input_csv.name)
     if expected_hash is None or file_sha256(input_csv) != expected_hash:
@@ -211,22 +257,96 @@ def load_and_validate_source(
     ):
         raise ValueError("Contemporaneous source violates the 75-cell contract.")
 
+    primary_methods: dict[str, str] = {}
+    for task, source_configuration in (
+        ("Forecasting", configuration),
+        ("Nowcasting", configuration),
+        ("Contemporaneous", contemporaneous_configuration),
+    ):
+        records = source_configuration.get("candidates", {}).get(
+            "selected_policies", []
+        )
+        selected = [
+            str(record["method"])
+            for record in records
+            if str(record.get("task")) == task
+            and bool(record.get("primary_selected"))
+            and str(record.get("method")) in METHOD_ORDER
+        ]
+        if len(selected) != 1:
+            raise ValueError(f"{task} requires exactly one primary rescue policy.")
+        primary_methods[task] = selected[0]
+
+    predictions_expected_hash = contemporaneous_configuration.get(
+        "artifact_hashes", {}
+    ).get(contemporaneous_predictions_csv.name)
+    if (
+        predictions_expected_hash is None
+        or file_sha256(contemporaneous_predictions_csv)
+        != predictions_expected_hash
+    ):
+        raise ValueError(
+            "Contemporaneous OOF predictions are not bound to their manifest."
+        )
+    contemporaneous_predictions = pd.read_csv(
+        contemporaneous_predictions_csv,
+        na_values=["<NA>"],
+        keep_default_na=True,
+        float_precision="round_trip",
+    )
+    expected_predictions_schema = contemporaneous_configuration.get(
+        "csv_schemas", {}
+    ).get(contemporaneous_predictions_csv.name)
+    if expected_predictions_schema is None or tuple(
+        contemporaneous_predictions.columns
+    ) != tuple(expected_predictions_schema):
+        raise ValueError("Unexpected Contemporaneous OOF prediction schema.")
+
+    primary_prediction_rows = contemporaneous_predictions.loc[
+        contemporaneous_predictions["task"].eq("Contemporaneous")
+        & contemporaneous_predictions["method"].eq(
+            primary_methods["Contemporaneous"]
+        )
+        & contemporaneous_predictions["primary_selected"].eq(True)
+    ].copy()
+    if (
+        len(primary_prediction_rows) != TASK_POPULATIONS["Contemporaneous"][0]
+        or primary_prediction_rows["source_row_index"].duplicated().any()
+        or set(primary_prediction_rows["evaluation_protocol"])
+        != {"random_5fold_row_cv"}
+        or set(primary_prediction_rows["evaluation_population"])
+        != {"random_5fold_full_oof_5575"}
+        or set(primary_prediction_rows["action_contract"])
+        != {"base_phase3_only_to_phase4"}
+    ):
+        raise ValueError(
+            "Contemporaneous primary OOF rows violate the paired baseline contract."
+        )
+    contemporaneous_base = build_confusion_cells_from_predictions(
+        primary_prediction_rows,
+        task="Contemporaneous",
+        method=BASE_METHOD,
+        actual_column="reconstructed_overall_phase",
+        predicted_column="base_overall_phase_pred",
+    )
+
     frame = pd.concat(
         [
             temporal.loc[
                 temporal["task"].isin(TEMPORAL_TASK_ORDER)
-                & temporal["method"].isin(METHOD_ORDER)
+                & temporal["method"].isin(DISPLAY_SOURCE_METHOD_ORDER)
             ],
             contemporaneous,
+            contemporaneous_base,
         ],
         ignore_index=True,
     )
-    if len(frame) != 225 or frame.duplicated(
+    if len(frame) != 300 or frame.duplicated(
         ["task", "method", "actual_phase", "predicted_phase"]
     ).any():
-        raise ValueError("Combined source violates the 225-cell display contract.")
+        raise ValueError("Combined source violates the 300-cell display contract.")
     if set(frame["task"]) != set(TASK_ORDER) or set(frame["method"]) != set(
-        METHOD_ORDER
+        DISPLAY_SOURCE_METHOD_ORDER
     ):
         raise ValueError("Combined task or method set drifted.")
     if set(frame["actual_phase"]) != set(PHASES) or set(
@@ -264,25 +384,32 @@ def load_and_validate_source(
                     f"{task}/{method}/P{actual_phase} row shares do not reconstruct."
                 )
 
-    primary_methods: dict[str, str] = {}
-    for task, source_configuration in (
-        ("Forecasting", configuration),
-        ("Nowcasting", configuration),
-        ("Contemporaneous", contemporaneous_configuration),
-    ):
-        records = source_configuration.get("candidates", {}).get(
-            "selected_policies", []
-        )
-        selected = [
-            str(record["method"])
-            for record in records
-            if str(record.get("task")) == task
-            and bool(record.get("primary_selected"))
-            and str(record.get("method")) in METHOD_ORDER
-        ]
-        if len(selected) != 1:
-            raise ValueError(f"{task} requires exactly one primary rescue policy.")
-        primary_methods[task] = selected[0]
+    for task in TASK_ORDER:
+        paired_matrices = {}
+        for method in (BASE_METHOD, primary_methods[task]):
+            paired_matrices[method] = (
+                frame.loc[frame["task"].eq(task) & frame["method"].eq(method)]
+                .pivot(
+                    index="actual_phase",
+                    columns="predicted_phase",
+                    values="count",
+                )
+                .reindex(index=PHASES, columns=PHASES, fill_value=0)
+                .astype(int)
+            )
+        base_matrix = paired_matrices[BASE_METHOD]
+        rescue_matrix = paired_matrices[primary_methods[task]]
+        if not base_matrix[[1, 2, 5]].equals(rescue_matrix[[1, 2, 5]]):
+            raise ValueError(f"{task} rescue altered a class outside the 3-to-4 gate.")
+        moved_from_phase3 = base_matrix[3] - rescue_matrix[3]
+        moved_to_phase4 = rescue_matrix[4] - base_matrix[4]
+        if (
+            (moved_from_phase3 < 0).any()
+            or (moved_to_phase4 < 0).any()
+            or not moved_from_phase3.equals(moved_to_phase4)
+        ):
+            raise ValueError(f"{task} rescue does not conserve paired 3-to-4 moves.")
+
     return frame, primary_methods
 
 
@@ -299,120 +426,152 @@ def render_figure(
         figure = plt.figure(figsize=FIGURE_SIZE)
         grid = figure.add_gridspec(
             3,
-            2,
-            left=0.20,
-            right=0.88,
-            bottom=0.18,
-            top=0.89,
-            wspace=0.12,
-            hspace=0.38,
-            width_ratios=(1.0, 0.045),
+            3,
+            left=0.17,
+            right=0.92,
+            bottom=0.20,
+            top=0.86,
+            wspace=0.15,
+            hspace=0.34,
+            width_ratios=(1.0, 1.0, 0.045),
         )
-        colorbar_axis = figure.add_subplot(grid[:, 1])
+        colorbar_axis = figure.add_subplot(grid[:, 2])
 
         normalization = mpl_colors.Normalize(vmin=0.0, vmax=1.0)
         colormap = mpl.colormaps["cividis"]
         row_protocol_labels = {
-            "Forecasting": "fixed 2022 temporal holdout",
-            "Nowcasting": "fixed 2022 temporal holdout",
-            "Contemporaneous": "seed-0 random five-fold full OOF",
+            "Forecasting": "2022 temporal\nholdout",
+            "Nowcasting": "2022 temporal\nholdout",
+            "Contemporaneous": "Random 5-fold\nfull OOF",
         }
+        axes: dict[tuple[int, int], mpl.axes.Axes] = {}
         for row_index, task in enumerate(TASK_ORDER):
-            method = primary_methods[task]
-            axis = figure.add_subplot(grid[row_index, 0])
-            matrix = source.loc[
-                source["task"].eq(task) & source["method"].eq(method)
-            ].set_index(["actual_phase", "predicted_phase"])
-            if len(matrix) != 25:
-                raise ValueError(f"{task}/{method} matrix is incomplete.")
+            for column_index, method in enumerate(
+                (BASE_METHOD, primary_methods[task])
+            ):
+                axis = figure.add_subplot(grid[row_index, column_index])
+                axes[(row_index, column_index)] = axis
+                matrix = source.loc[
+                    source["task"].eq(task) & source["method"].eq(method)
+                ].set_index(["actual_phase", "predicted_phase"])
+                if len(matrix) != 25:
+                    raise ValueError(f"{task}/{method} matrix is incomplete.")
 
-            for actual_phase in PHASES:
-                for predicted_phase in PHASES:
-                    cell = matrix.loc[(actual_phase, predicted_phase)]
-                    share = float(cell["actual_row_share"])
-                    facecolor = colormap(normalization(share))
-                    axis.add_patch(
-                        mpl_patches.Rectangle(
-                            (predicted_phase - 1, actual_phase - 1),
-                            1,
-                            1,
-                            facecolor=facecolor,
-                            edgecolor="white",
-                            linewidth=0.75,
+                for actual_phase in PHASES:
+                    for predicted_phase in PHASES:
+                        cell = matrix.loc[(actual_phase, predicted_phase)]
+                        share = float(cell["actual_row_share"])
+                        facecolor = colormap(normalization(share))
+                        axis.add_patch(
+                            mpl_patches.Rectangle(
+                                (predicted_phase - 1, actual_phase - 1),
+                                1,
+                                1,
+                                facecolor=facecolor,
+                                edgecolor="white",
+                                linewidth=0.75,
+                            )
                         )
-                    )
-                    axis.text(
-                        predicted_phase - 0.5,
-                        actual_phase - 0.5,
-                        f"{int(cell['count'])}\n{share:.1%}",
-                        ha="center",
-                        va="center",
-                        fontsize=5.2,
-                        color=_text_color(facecolor),
-                    )
+                        axis.text(
+                            predicted_phase - 0.5,
+                            actual_phase - 0.5,
+                            f"{int(cell['count'])}\n{share:.1%}",
+                            ha="center",
+                            va="center",
+                            fontsize=5.0,
+                            color=_text_color(facecolor),
+                        )
 
-            axis.set_xlim(0, 5)
-            axis.set_ylim(5, 0)
-            axis.set_aspect("equal")
-            axis.set_xticks(
-                np.arange(0.5, 5.0, 1.0), [f"P{phase}" for phase in PHASES]
-            )
-            axis.set_yticks(
-                np.arange(0.5, 5.0, 1.0),
-                [f"P{phase}" for phase in PHASES],
-            )
-            axis.tick_params(length=0, pad=1.8)
+                axis.set_xlim(0, 5)
+                axis.set_ylim(5, 0)
+                axis.set_aspect("equal")
+                axis.set_xticks(
+                    np.arange(0.5, 5.0, 1.0),
+                    [f"P{phase}" for phase in PHASES],
+                )
+                axis.set_yticks(
+                    np.arange(0.5, 5.0, 1.0),
+                    [f"P{phase}" for phase in PHASES],
+                )
+                axis.tick_params(length=0, pad=1.8)
 
-            for spine in axis.spines.values():
-                spine.set_visible(True)
-                spine.set_color(METHOD_COLORS[method])
-                spine.set_linewidth(1.35)
+                for spine in axis.spines.values():
+                    spine.set_visible(True)
+                    spine.set_color(METHOD_COLORS[method])
+                    spine.set_linewidth(1.25)
 
-            support, _ = TASK_POPULATIONS[task]
-            axis.text(
-                -0.14,
-                1.14,
-                chr(ord("a") + row_index),
-                transform=axis.transAxes,
-                ha="left",
-                va="bottom",
-                fontsize=8,
-                fontweight="bold",
-            )
-            axis.text(
-                0.5,
-                1.14,
-                task,
-                transform=axis.transAxes,
+                panel_index = row_index * 2 + column_index
+                axis.text(
+                    -0.12,
+                    1.04,
+                    chr(ord("a") + panel_index),
+                    transform=axis.transAxes,
+                    ha="left",
+                    va="bottom",
+                    fontsize=8,
+                    fontweight="bold",
+                )
+                panel_title = METHOD_DISPLAY_NAMES[method]
+                if method != BASE_METHOD:
+                    panel_title = f"{panel_title} (primary)"
+                axis.set_title(
+                    panel_title,
+                    fontsize=7.2,
+                    fontweight="bold",
+                    color=METHOD_COLORS[method],
+                    pad=4,
+                )
+
+        for column_index, column_title in enumerate(
+            ("Before rescue\n(frozen base)", "After rescue\n(selected policy)")
+        ):
+            bounds = axes[(0, column_index)].get_position()
+            figure.text(
+                (bounds.x0 + bounds.x1) / 2,
+                0.905,
+                column_title,
                 ha="center",
-                va="bottom",
+                va="center",
+                fontsize=8.5,
+                fontweight="bold",
+                linespacing=1.15,
+            )
+
+        for row_index, task in enumerate(TASK_ORDER):
+            bounds = axes[(row_index, 0)].get_position()
+            row_center = (bounds.y0 + bounds.y1) / 2
+            support, _ = TASK_POPULATIONS[task]
+            figure.text(
+                0.018,
+                row_center + 0.022,
+                task,
+                ha="left",
+                va="center",
                 fontsize=8.2,
                 fontweight="bold",
             )
-            axis.text(
-                0.5,
-                1.085,
-                f"{METHOD_DISPLAY_NAMES[method]} (primary)",
-                transform=axis.transAxes,
-                ha="center",
-                va="bottom",
-                fontsize=7.2,
-                fontweight="bold",
-                color=METHOD_COLORS[method],
+            figure.text(
+                0.018,
+                row_center - 0.004,
+                f"n = {support:,}",
+                ha="left",
+                va="center",
+                fontsize=6.8,
+                color="#333333",
             )
-            axis.text(
-                0.5,
-                1.035,
-                f"{row_protocol_labels[task]}; n = {support:,}",
-                transform=axis.transAxes,
-                ha="center",
-                va="bottom",
-                fontsize=6.4,
-                color="#444444",
+            figure.text(
+                0.018,
+                row_center - 0.034,
+                row_protocol_labels[task],
+                ha="left",
+                va="center",
+                fontsize=6.2,
+                color="#555555",
+                linespacing=1.15,
             )
 
-        figure.supxlabel("Predicted IPC phase", x=0.505, y=0.125, fontsize=8)
-        figure.supylabel("Actual IPC phase", x=0.10, y=0.535, fontsize=8)
+        figure.supxlabel("Predicted IPC phase", x=0.54, y=0.145, fontsize=8)
+        figure.supylabel("Actual IPC phase", x=0.145, y=0.53, fontsize=8)
 
         colorbar = figure.colorbar(
             mpl.cm.ScalarMappable(norm=normalization, cmap=colormap),
@@ -423,18 +582,17 @@ def render_figure(
         colorbar.ax.tick_params(labelsize=6, length=2)
 
         figure.text(
-            0.12,
-            0.045,
+            0.17,
+            0.055,
             (
-                "Each panel shows the task-specific OOF-selected primary rescue policy.\n"
-                "Cells show count and percentage within each actual phase; rows are "
-                "actual phases and columns are predicted phases.\n"
-                "Forecasting and Nowcasting: fixed 2022 temporal holdout "
-                "(n = 1,170 each).\n"
-                "Contemporaneous: seed-0 random row-level five-fold full OOF "
-                "(n = 5,575).\n"
-                "Its threshold uses pooled OOF selection (not nested/independent).\n"
-                "Protocols and populations differ; results are not directly comparable."
+                "Within each row, both panels use the same evaluation rows and actual "
+                "labels; only the permitted Phase 3 to Phase 4 rescue changes.\n"
+                "Cells show count and percentage within each actual phase. Forecasting "
+                "and Nowcasting use the fixed 2022 temporal holdout (n = 1,170 each).\n"
+                "Contemporaneous uses seed-0 random row-level five-fold full OOF "
+                "(n = 5,575); its threshold is pooled-OOF selected (not nested/independent).\n"
+                "Protocols and populations differ across rows; cross-row performance is "
+                "not directly comparable."
             ),
             ha="left",
             va="center",
@@ -442,7 +600,7 @@ def render_figure(
             color="#444444",
         )
         figure.suptitle(
-            "Five-class errors for the selected primary Phase-4/5 rescue policies",
+            "Five-class confusion matrices before and after Phase-4/5 rescue",
             fontsize=11,
             fontweight="bold",
             y=0.975,
@@ -452,11 +610,11 @@ def render_figure(
 
 def save_figure(figure: mpl.figure.Figure, output_dir: Path) -> None:
     pdf_metadata = {
-        "Title": "Direct Phase-3 versus Phase-4/5 five-class confusion atlas",
+        "Title": "Five-class confusion matrices before and after Phase-4/5 rescue",
         "Author": "",
         "Subject": (
-            "Five-class confusion matrices for the task-specific primary rescue "
-            "policies across three validation protocols"
+            "Paired frozen-base and task-specific primary-rescue confusion matrices "
+            "across three validation protocols"
         ),
         "Keywords": "",
         "Creator": "NCOMMS five-class confusion generator",
@@ -562,6 +720,9 @@ def run_generation(
     contemporaneous_configuration_path: Path = (
         DEFAULT_CONTEMPORANEOUS_CONFIGURATION
     ),
+    contemporaneous_predictions_csv: Path = (
+        DEFAULT_CONTEMPORANEOUS_PREDICTIONS_CSV
+    ),
 ) -> dict[str, object]:
     output_dir = Path(output_dir)
     validate_generation_target(output_dir)
@@ -570,6 +731,7 @@ def run_generation(
         configuration_path,
         contemporaneous_input_csv,
         contemporaneous_configuration_path,
+        contemporaneous_predictions_csv,
     )
     output_dir.parent.mkdir(parents=True, exist_ok=True)
     staging_dir = Path(
@@ -592,6 +754,12 @@ def run_generation(
             "contemporaneous_source_sha256": file_sha256(
                 Path(contemporaneous_input_csv)
             ),
+            "contemporaneous_predictions_csv": Path(
+                contemporaneous_predictions_csv
+            ),
+            "contemporaneous_predictions_sha256": file_sha256(
+                Path(contemporaneous_predictions_csv)
+            ),
             "primary_methods": primary_methods,
             "output_sha256": hashes,
         }
@@ -606,8 +774,8 @@ def run_generation(
 def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
-            "Render the five-class confusion atlas for the isolated Direct "
-            "Phase-3 versus Phase-4/5 rescue experiment."
+            "Render paired before/after five-class confusion matrices for the "
+            "isolated Direct Phase-3 versus Phase-4/5 rescue experiment."
         )
     )
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
@@ -625,6 +793,11 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
         type=Path,
         default=DEFAULT_CONTEMPORANEOUS_CONFIGURATION,
     )
+    parser.add_argument(
+        "--contemporaneous-predictions-csv",
+        type=Path,
+        default=DEFAULT_CONTEMPORANEOUS_PREDICTIONS_CSV,
+    )
     return parser.parse_args(argv)
 
 
@@ -638,6 +811,9 @@ def main(argv: Sequence[str] | None = None) -> None:
         contemporaneous_configuration_path=(
             arguments.contemporaneous_configuration
         ),
+        contemporaneous_predictions_csv=(
+            arguments.contemporaneous_predictions_csv
+        ),
     )
     print(
         json.dumps(
@@ -650,6 +826,12 @@ def main(argv: Sequence[str] | None = None) -> None:
                 ),
                 "contemporaneous_source_sha256": result[
                     "contemporaneous_source_sha256"
+                ],
+                "contemporaneous_predictions_csv": str(
+                    result["contemporaneous_predictions_csv"]
+                ),
+                "contemporaneous_predictions_sha256": result[
+                    "contemporaneous_predictions_sha256"
                 ],
                 "primary_methods": result["primary_methods"],
                 "output_sha256": result["output_sha256"],

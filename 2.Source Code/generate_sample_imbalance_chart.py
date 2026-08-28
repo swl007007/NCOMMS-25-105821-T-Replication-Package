@@ -100,7 +100,7 @@ def _build_area_summary(data: pd.DataFrame) -> pd.DataFrame:
 def create_sample_imbalance_figure(
     data: pd.DataFrame,
 ) -> tuple[plt.Figure, pd.DataFrame]:
-    """Create the stacked discrete-frequency histogram and return its audit data."""
+    """Create the solid discrete-frequency bar chart and return its audit data."""
     apply_figure_style()
     distribution = build_area_frequency_distribution(data)
     area_summary = _build_area_summary(data)
@@ -108,37 +108,21 @@ def create_sample_imbalance_figure(
     min_frequency = int(area_summary["observation_frequency"].min())
     max_frequency = int(area_summary["observation_frequency"].max())
     frequencies = np.arange(min_frequency, max_frequency + 1)
-    phase_counts = sorted(distribution["distinct_phase_count"].unique())
-    plotted = (
-        distribution.pivot(
-            index="observation_frequency",
-            columns="distinct_phase_count",
-            values="area_count",
-        )
-        .reindex(index=frequencies, columns=phase_counts, fill_value=0)
-        .fillna(0)
+    heights = (
+        distribution.groupby("observation_frequency", observed=True)["area_count"]
+        .sum()
+        .reindex(frequencies, fill_value=0)
+        .to_numpy(dtype=float)
     )
 
-    # Sequential blues encode increasing phase diversity without reusing the
-    # manuscript's categorical IPC phase colours for a different quantity.
-    palette = plt.get_cmap("Blues")(np.linspace(0.35, 0.88, len(phase_counts)))
-
     fig, ax = plt.subplots(figsize=(7.2, 4.3), constrained_layout=True)
-    bottoms = np.zeros(len(frequencies))
-    for phase_count, color in zip(phase_counts, palette):
-        heights = plotted[phase_count].to_numpy(dtype=float)
-        label = f"{phase_count} observed phase" + ("" if phase_count == 1 else "s")
-        ax.bar(
-            frequencies,
-            heights,
-            bottom=bottoms,
-            width=0.82,
-            color=color,
-            edgecolor="white",
-            linewidth=0.35,
-            label=label,
-        )
-        bottoms += heights
+    ax.bar(
+        frequencies,
+        heights,
+        width=0.82,
+        color="#4C78A8",
+        edgecolor="none",
+    )
 
     total_areas = len(area_summary)
     total_observations = len(data)
@@ -165,7 +149,7 @@ def create_sample_imbalance_figure(
     ax.set_ylabel("Number of analysis areas")
     ax.set_xticks(frequencies)
     ax.set_xlim(min_frequency - 0.65, max_frequency + 0.65)
-    ax.set_ylim(0, max(bottoms) * 1.08)
+    ax.set_ylim(0, max(heights) * 1.08)
     ax.grid(axis="y", color="#D9D9D9", linewidth=0.55, alpha=0.8)
     ax.set_axisbelow(True)
     ax.spines["top"].set_visible(False)
@@ -185,14 +169,6 @@ def create_sample_imbalance_figure(
         fontsize=7,
         color="#333333",
         bbox={"boxstyle": "round,pad=0.35", "facecolor": "white", "edgecolor": "#BDBDBD"},
-    )
-    ax.legend(
-        title="Distinct overall_phase values per area",
-        loc="upper right",
-        bbox_to_anchor=(0.995, 0.995),
-        title_fontsize=7,
-        handlelength=1.2,
-        labelspacing=0.35,
     )
     ax.margins(y=0.04)
     return fig, distribution

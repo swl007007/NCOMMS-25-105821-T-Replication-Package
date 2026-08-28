@@ -1,4 +1,4 @@
-"""Generate a replicated 2x3 panel of 2022 food-crisis alert maps.
+"""Generate replicated panels of 2022 food-crisis alert maps.
 
 The aggregation intentionally preserves the original supplementary notebook:
 one record per area is selected by maximum ``phase3_pred``. The Phase 3+
@@ -242,7 +242,7 @@ def plot_panel(
     severity_aligned_first_row: bool = False,
     annual_minimum_severity: bool = False,
 ) -> None:
-    """Render the requested forecasting/nowcasting/actual 2x3 panel."""
+    """Render the requested forecasting/nowcasting/observed alert panels."""
     import matplotlib
 
     matplotlib.use("Agg")
@@ -269,12 +269,9 @@ def plot_panel(
         ]
     else:
         panels = [
-            ("crisis_forecast", "Forecasting Alert in 2022", "alert"),
-            ("crisis_nowcast", "Nowcasting Alert in 2022", "alert"),
-            ("crisis_actual", "Actual Alert in 2022", "alert"),
             ("top30_forecast", "Forecasting Alert Top 30% in 2022", "top30"),
             ("top30_nowcast", "Nowcasting Alert Top 30% in 2022", "top30"),
-            ("top30_actual", "Actual Alert Top 30% in 2022", "top30"),
+            ("top30_actual", "Observed Alert Top 30% in 2022", "top30"),
         ]
     legends = {
         "alert": (
@@ -312,7 +309,8 @@ def plot_panel(
         ),
     }
 
-    fig, axes = plt.subplots(2, 3, figsize=(18, 7.2))
+    nrows = (len(panels) + 2) // 3
+    fig, axes = plt.subplots(nrows, 3, figsize=(18, 3.6 * nrows))
     minx, miny, maxx, maxy = gdf.total_bounds
     basemap_warning = None
 
@@ -332,7 +330,7 @@ def plot_panel(
                 ctx.add_basemap(
                     ax,
                     crs=gdf.crs.to_string(),
-                    source=ctx.providers.CartoDB.Positron,
+                    source=ctx.providers.Esri.WorldGrayCanvas,
                     attribution=False,
                 )
             except Exception as exc:  # Basemap is cosmetic; retain data map offline.
@@ -352,7 +350,7 @@ def plot_panel(
     fig.text(
         0.005,
         0.005,
-        "(C) OpenStreetMap contributors (C) CARTO" if add_basemap else "",
+        "Tiles (C) Esri -- Esri, DeLorme, NAVTEQ" if add_basemap else "",
         fontsize=7,
     )
     fig.tight_layout(rect=(0, 0.025, 1, 0.94), pad=0.5, w_pad=0.35, h_pad=0.7)
