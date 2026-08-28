@@ -1,0 +1,16 @@
+task,display_label,evaluation_protocol,evaluation_population,n_observations,phase,actual_support,predicted_support,precision_defined,precision_class_specific,precision_used_for_macro,recall
+Forecasting,Forecasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,1,22,0,False,,0.000000,0.000000
+Forecasting,Forecasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,2,269,166,True,0.518072,0.518072,0.319703
+Forecasting,Forecasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,3,764,1004,True,0.691235,0.691235,0.908377
+Forecasting,Forecasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,4,113,0,False,,0.000000,0.000000
+Forecasting,Forecasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,5,2,0,False,,0.000000,0.000000
+Nowcasting,Nowcasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,1,22,0,False,,0.000000,0.000000
+Nowcasting,Nowcasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,2,269,167,True,0.520958,0.520958,0.323420
+Nowcasting,Nowcasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,3,764,1003,True,0.690927,0.690927,0.907068
+Nowcasting,Nowcasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,4,113,0,False,,0.000000,0.000000
+Nowcasting,Nowcasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,5,2,0,False,,0.000000,0.000000
+Contemporaneous,Contemporaneous (random CV),random_5fold_row_cv,random_5fold_full_oof_5575,5575,1,197,1,True,1.000000,1.000000,0.005076
+Contemporaneous,Contemporaneous (random CV),random_5fold_row_cv,random_5fold_full_oof_5575,5575,2,1969,1707,True,0.719977,0.719977,0.624175
+Contemporaneous,Contemporaneous (random CV),random_5fold_row_cv,random_5fold_full_oof_5575,5575,3,2913,3788,True,0.679514,0.679514,0.883625
+Contemporaneous,Contemporaneous (random CV),random_5fold_row_cv,random_5fold_full_oof_5575,5575,4,482,79,True,0.784810,0.784810,0.128631
+Contemporaneous,Contemporaneous (random CV),random_5fold_row_cv,random_5fold_full_oof_5575,5575,5,14,0,False,,0.000000,0.000000

@@ -1,0 +1,4 @@
+modality,areas,severity_field,top30_cutoff_q70,phase3plus_alert_areas,top30_alert_areas,first_row_cutoff,selection_record
+forecasting,646,phase3_pred,0.35,602,207,0.2,area row with maximum phase3_pred
+nowcasting,646,phase3_nowcast,0.3549999999999994,602,194,0.2,area row with maximum phase3_pred
+actual,646,phase3_actual,0.5,545,195,0.2,area row with maximum phase3_pred

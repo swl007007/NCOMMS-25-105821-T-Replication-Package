@@ -1,0 +1,10 @@
+model,phase,phase_label,evaluation_protocol,evaluation_population,n_test,n_areas,n_folds,r2,intercept,slope,fit_estimable,actual_min,actual_max,predicted_min,predicted_max
+Forecasting,2,Phase 2+,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,646,0,0.2844532235,0.1191603367,0.8913145345,True,0.15,1,0.2300000042,0.8799999952
+Nowcasting,2,Phase 2+,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,646,0,0.28532154,0.11852882,0.8923549677,True,0.15,1,0.2300000042,0.8799999952
+Contemporaneous,2,Phase 2+,random_5fold_row_cv,random_5fold_full_oof_5575,5575,1198,5,0.6978914791,-0.07960963382,1.127867871,True,0,1,0.17,0.97
+Forecasting,3,Phase 3+,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,646,0,0.2489985705,0.005092691977,1.112951674,True,0.03,0.95,0.1199999973,0.6100000143
+Nowcasting,3,Phase 3+,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,646,0,0.2527847012,0.004427110665,1.109483965,True,0.03,0.95,0.1199999973,0.6100000143
+Contemporaneous,3,Phase 3+,random_5fold_row_cv,random_5fold_full_oof_5575,5575,1198,5,0.6416189991,-0.04722681144,1.162331523,True,0,0.95,0.03,0.72
+Forecasting,4,Phase 4+,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,646,0,0.1993560221,-0.04428079146,1.734018636,True,0,0.6,0.03999999911,0.200000003
+Nowcasting,4,Phase 4+,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,646,0,0.1984708861,-0.03888319069,1.676945326,True,0,0.6,0.03999999911,0.200000003
+Contemporaneous,4,Phase 4+,random_5fold_row_cv,random_5fold_full_oof_5575,5575,1198,5,0.4427662505,-0.0208950414,1.295013104,True,0,0.6,0.01,0.31

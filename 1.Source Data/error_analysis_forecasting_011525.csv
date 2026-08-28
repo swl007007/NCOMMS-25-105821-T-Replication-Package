@@ -1,0 +1,31 @@
+variable,mean_diff,correct_group_mean,wrong_group_mean,t_value,p_value,overall_phase_diff
+distance_to_river,-0.555,0.568,0.013,-12.697,0.0,Other misclassified
+lat,-10.488,9.47,-1.018,-7.037,0.0,Other misclassified
+cfvo_5-15cm_mean,-50.434,139.283,88.849,-6.876,0.0,Other misclassified
+fews_ipc_ha,-0.042,0.042,0.0,-5.497,0.0,Other misclassified
+fatalities_violence_w10_l12,-2.029,4.125,2.096,-5.275,0.0,Other misclassified
+event_count_violence_w10_l12,-2.274,4.863,2.589,-5.266,0.0,Other misclassified
+fatalities_violence_w5_l12,-1.982,3.974,1.991,-5.187,0.0,Other misclassified
+event_count_violence_w5_l12,-2.22,4.709,2.488,-5.136,0.0,Other misclassified
+phase2_worse,-0.184,0.729,0.544,-5.242,0.0,Other misclassified
+estimated_population,-888147.718,1350736.978,462589.26,-4.11,0.0,Other misclassified
+area,42633.502,32786.691,75420.192,4.685,0.0,phase2 misclassified as phase3
+fatalities_battles_l12,-1.442,1.729,0.286,-4.187,0.0,phase2 misclassified as phase3
+event_count_violence_w5_l12,2.135,1.959,4.094,3.825,0.0,phase2 misclassified as phase3
+phase2_worse,0.08,0.438,0.518,3.886,0.0,phase2 misclassified as phase3
+event_count_violence_w10_l12,2.081,2.11,4.19,3.718,0.0,phase2 misclassified as phase3
+fatalities_violence_w5_l12,1.982,1.643,3.625,3.696,0.0,phase2 misclassified as phase3
+fatalities_violence_w10_l12,1.985,1.756,3.741,3.666,0.0,phase2 misclassified as phase3
+phase3_worse,0.019,0.116,0.135,3.648,0.0,phase2 misclassified as phase3
+distance_to_river,0.172,0.019,0.191,3.571,0.0,phase2 misclassified as phase3
+cec_5-15cm_mean,-27.528,207.643,180.115,-3.105,0.002,phase2 misclassified as phase3
+cfvo_5-15cm_mean,87.45,45.5,132.95,8.321,0.0,phase4 misclassified as phase3
+elevation,529.375,398.7,928.075,6.346,0.0,phase4 misclassified as phase3
+distance_to_river,0.717,0.019,0.736,6.244,0.0,phase4 misclassified as phase3
+phase3_worse,-0.142,0.77,0.628,-7.082,0.0,phase4 misclassified as phase3
+phase2_worse,-0.054,0.92,0.866,-5.324,0.0,phase4 misclassified as phase3
+phase4_worse,-0.17,0.43,0.26,-6.56,0.0,phase4 misclassified as phase3
+estimated_population,127592.983,118779.8,246372.783,3.993,0.0,phase4 misclassified as phase3
+phh2o_5-15cm_mean,4.133,64.4,68.533,3.962,0.0,phase4 misclassified as phase3
+lon,5.919,31.164,37.083,3.696,0.0,phase4 misclassified as phase3
+fatalities_violence_l12,1.033,0.4,1.433,3.532,0.001,phase4 misclassified as phase3

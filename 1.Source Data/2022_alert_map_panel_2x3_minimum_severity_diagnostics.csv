@@ -1,0 +1,4 @@
+modality,areas,severity_field,top30_cutoff_q70,phase3plus_alert_areas,top30_alert_areas,first_row_cutoff,selection_record
+forecasting,646,phase3_pred,0.32,551,212,0.2,independent annual minimum severity per modality
+nowcasting,646,phase3_nowcast,0.32,553,220,0.2,independent annual minimum severity per modality
+actual,646,phase3_actual,0.39999999999999997,424,196,0.2,independent annual minimum severity per modality

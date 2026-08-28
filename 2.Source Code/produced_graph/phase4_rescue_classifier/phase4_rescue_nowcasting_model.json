@@ -1,0 +1,7 @@
+{
+  "candidate_id": "C019",
+  "freeze_id": "main-result-figure1-v1",
+  "model_type": "no_rescue_sentinel",
+  "selected_threshold": 0.9586492776870729,
+  "task": "Nowcasting"
+}

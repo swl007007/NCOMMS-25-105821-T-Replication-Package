@@ -1,0 +1,842 @@
+task,method,layer,feature,source_order,training_observed_count,training_missing_count,training_missing_rate,training_median,scaling_center,scaling_scale,retained,retained_order,exclusion_reason,duplicate_of_feature,rank_policy
+Forecasting,Persistence,historical_source_rule,(not applicable),0,,,,,,,False,,not_feature_based,,not_applicable_authoritative_adapter
+Nowcasting,Persistence,historical_source_rule,(not applicable),0,,,,,,,False,,not_feature_based,,not_applicable_authoritative_adapter
+Forecasting,Multinomial,direct,elevation,0,4405,0,0,686,878.17185017026111,692.50389245773056,True,0,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,infra_index_m12,1,2461,1944,0.441316685584563,9.4342897630000007,11.206658111544153,7.0308963693327691,True,1,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,infra_index_s12,2,2461,1944,0.441316685584563,0.24857821299999999,0.40113483395891036,0.58505803858415961,True,2,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,market_access,3,4405,0,0,231,338.66628830874009,336.07329258588084,True,3,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,nitrogen_5-15cm_mean,4,4405,0,0,1552,1829.1788876276958,1075.1945348926433,True,4,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,phh2o_5-15cm_mean,5,4405,0,0,65,67.39818388195232,10.303692575828091,True,5,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,cec_5-15cm_mean,6,4405,0,0,189,192.21203178206582,64.646946464974675,True,6,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,cfvo_5-15cm_mean,7,4405,0,0,116,128.36163450624289,71.147527687754604,True,7,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,soc_5-15cm_mean,8,4405,0,0,161,205.21906923950056,136.4382749083762,True,8,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,aez_groupid_4000,9,4405,0,0,0,0.002724177071509648,0.052122508868939814,True,9,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,aez_groupid_7000,10,4405,0,0,0,0.0065834279228149826,0.080870800661302242,True,10,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,aez_groupid_9000,11,4405,0,0,0,0.018615209988649264,0.13516169555657309,True,11,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,aez_groupid_10000,12,4405,0,0,0,0.0065834279228149826,0.080870800661302242,True,12,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,aez_groupid_12000,13,4405,0,0,0,0.16345062429057888,0.36977630766396985,True,13,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,aez_groupid_17000,14,4405,0,0,0,0.10805902383654938,0.31045494230893061,True,14,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,aez_groupid_19000,15,4405,0,0,0,0.061975028376844495,0.24111019106320206,True,15,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,aez_groupid_25000,16,4405,0,0,0,0.012258796821793417,0.11003871465205055,True,16,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,aez_groupid_30000,17,4405,0,0,0,0.0056753688989784334,0.07512096303189239,True,17,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,aez_groupid_31000,18,4405,0,0,0,0.29580022701475595,0.4564016353090497,True,18,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,aez_groupid_32000,19,4405,0,0,0,0.086265607264472188,0.28075585883070014,True,19,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,aez_groupid_33000,20,4405,0,0,0,0.079909194097616348,0.27115256737911564,True,20,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,aez_groupid_34000,21,4405,0,0,0,0.0095346197502837685,0.097178756817018735,True,21,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,aez_groupid_36000,22,4405,0,0,0,0.1185017026106697,0.32320125168235669,True,22,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,aez_groupid_40000,23,4405,0,0,0,0.0011350737797956867,0.033671729793850913,True,23,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,aez_groupid_43000,24,4405,0,0,0,0.02292849035187287,0.14967556474607652,True,24,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,slope,25,4405,0,0,1.26734003424644,1.4823619066208995,2.0391883043783237,True,25,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,estimated_population,26,4405,0,0,238951,533004.97956867202,810072.30684026016,True,26,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,lat,27,4405,0,0,6.9140074108156302,9.4623936511999105,13.364491359027866,True,27,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,lon,28,4405,0,0,33.569841536019112,23.056812297300301,47.595863518623879,True,28,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,cropland,29,4405,0,0,0,6.9434733257661749,19.16422203806362,True,29,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,rangeland,30,4405,0,0,28,32.646538024971626,30.997457549085389,True,30,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,area,31,4405,0,0,26343.998460499999,48773.458295484168,83099.153184179959,True,31,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,es_urban_pop,32,4405,0,0,0,79064.499886492616,492467.68579371745,True,32,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,urban_area,33,4405,0,0,0,56.844961153824947,319.16714294974815,True,33,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,distance_to_river,34,4405,0,0,0.015052533414577299,0.26490722669763472,0.79959600194477243,True,34,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,ruggedness_index,35,4405,0,0,0.0426350112483471,0.14026277176481847,0.22598532515419009,True,35,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,fews_ipc_ha,36,4405,0,0,0,0.01021566401816118,0.10055498111396187,True,36,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,WFP_Price_Change_l12,37,2915,1490,0.33825198637911463,1.2823,4.1093239287402623,13.508331420613615,True,37,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,WFP_Price_Volatility_l12,38,2837,1568,0.35595913734392737,68.528390685088596,1859.5113085035466,12261.523710612049,True,38,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,fatalities_battles_l12,39,4405,0,0,0,1.0183881952326901,2.6071372637359418,True,39,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,fatalities_explosions_l12,40,4405,0,0,0,0.13711691259931896,0.79800850088781605,True,40,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,fatalities_violence_l12,41,4405,0,0,0,1.3866061293984109,3.1843334490218638,True,41,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,event_count_battles_l12,42,4405,0,0,0,0.38660612939841088,0.52337197152252068,True,42,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,event_count_explosions_l12,43,4405,0,0,0,0.069920544835414308,0.3007612257468647,True,43,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,event_count_violence_l12,44,4405,0,0,1,0.62292849035187292,0.52856738305328721,True,44,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,precipitation_sum_l12,45,3484,921,0.2090805902383655,0.0062197189508075004,0.026540264390071545,0.044485869775315844,True,45,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,soil_moisture_mean_l12,46,3484,921,0.2090805902383655,0.17127805640568591,0.16547181260947336,0.1387417421227993,True,46,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,shortwave_radiation_sum_l12,47,3697,708,0.16072644721906923,301790974,313848805.06729329,189874241.34560063,True,47,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,temperature_2m_mean_l12,48,3484,921,0.2090805902383655,288.2880620476202,283.37186827907783,22.34036613416357,True,48,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,price_index_l12,49,4213,192,0.043586833144154367,93.572601309999996,117.12836797969806,95.152759786501306,True,49,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,rainfall_chirps_l12,50,2581,1824,0.41407491486946651,7.3273607518165376,18.177785795688308,30.819111908271509,True,50,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,nightlight_mean_l12,51,3780,625,0.14188422247446084,0.27754898002655348,0.71015331367879897,2.8173959237001434,True,51,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,EVI_l12,52,2356,2049,0.46515323496027244,1275.1138066323888,1732.1297741087465,1189.5951016257941,True,52,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,fatalities_battles_w5_l12,53,4405,0,0,0,1.8417720161592528,4.7227943464415487,True,53,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,fatalities_explosions_w5_l12,54,4405,0,0,0,0.35818603867934951,2.448380062783388,True,54,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,fatalities_violence_w5_l12,55,4405,0,0,0,3.050124316553851,5.8649945347989174,True,55,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,event_count_battles_w5_l12,56,4405,0,0,0,2.2586831877175131,4.9092595299602264,True,56,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,event_count_explosions_w5_l12,57,4405,0,0,0,0.37660445121669545,2.3596388764667262,True,57,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,event_count_violence_w5_l12,58,4405,0,0,2.53460760387282,4.4822739994466367,7.2684655555257622,True,58,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,fatalities_battles_w10_l12,59,4405,0,0,0,1.9405391659823756,4.7447251328897098,True,59,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,fatalities_explosions_w10_l12,60,4405,0,0,0,0.37655504827373798,2.4632374266050747,True,60,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,fatalities_violence_w10_l12,61,4405,0,0,0,3.1778469200092316,5.8617569509960772,True,61,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,event_count_battles_w10_l12,62,4405,0,0,0,2.3850080810308922,4.9066084872918392,True,62,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,event_count_explosions_w10_l12,63,4405,0,0,0,0.39900606784426701,2.377271170641063,True,63,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,event_count_violence_w10_l12,64,4405,0,0,2.9046503404278483,4.6199089344115976,7.2293793546263254,True,64,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,rainfall_chirps_z_l12,65,2581,1824,0.41407491486946651,-0.50209145881719575,-0.35919259831456707,0.70003511018208642,True,65,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,temperature_2m_mean_z_l12,66,3484,921,0.2090805902383655,0.72906823403458743,0.37378937585331162,1.0293248221652802,True,66,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,GOSIF_GPP_l12,67,4405,0,0,7965,11662.232463110102,10318.720745774415,True,67,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,WFP_Price_Change_s12_l12,68,1777,2628,0.59659477866061295,5.8427742887739447,6.198387362631288,3.7721986285655329,True,68,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,WFP_Price_Volatility_s12_l12,69,1631,2774,0.62973893303064699,83.463402616195808,272.01441051125761,794.39320546338149,True,69,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,fatalities_battles_s12_l12,70,3119,1286,0.29194097616345061,2.1320071635561044,3.3845922280978691,4.5937592133333371,True,70,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,fatalities_explosions_s12_l12,71,3119,1286,0.29194097616345061,0,0.43267553519121216,0.86273549605320687,True,71,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,fatalities_violence_s12_l12,72,3119,1286,0.29194097616345061,1.2060453783110543,1.7437795630974577,1.6693870024548934,True,72,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,event_count_battles_s12_l12,73,3119,1286,0.29194097616345061,0.51492865054443726,0.51416356836070509,0.08889425713122262,True,73,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,event_count_explosions_s12_l12,74,3119,1286,0.29194097616345061,0.28867513459481281,0.25008465402611485,0.16988837997880252,True,74,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,event_count_violence_s12_l12,75,3119,1286,0.29194097616345061,0.4923659639173309,0.49820861333408195,0.12034868443763831,True,75,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,precipitation_sum_s12_l12,76,2398,2007,0.45561861520998864,0.0075593467484984999,0.015068883003767393,0.018473613498969789,True,76,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,soil_moisture_mean_s12_l12,77,2398,2007,0.45561861520998864,0.0159336550172904,0.021182894409055648,0.019609563064455146,True,77,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,shortwave_radiation_sum_s12_l12,78,2398,2007,0.45561861520998864,112947118.07172993,120903495.88900608,37932413.365451194,True,78,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,temperature_2m_mean_s12_l12,79,2398,2007,0.45561861520998864,8.5358166365693933,8.4123310990720679,1.0120742050022944,True,79,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,price_index_s12_l12,80,2929,1476,0.3350737797956867,9.0893725660765519,11.979408715597479,11.683710359749208,True,80,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,rainfall_chirps_s12_l12,81,1695,2710,0.61520998864926224,17.411243638080968,18.491606697459837,10.706356565127063,True,81,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,nightlight_mean_s12_l12,82,2587,1818,0.4127128263337117,0.091000941431826105,0.17831587521789224,0.35161774821488673,True,82,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,EVI_s12_l12,83,1144,3261,0.74029511918274693,131.9464785881346,235.37133085117992,354.41442598512731,True,83,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,fatalities_battles_w5_s12_l12,84,3119,1286,0.29194097616345061,2.1737054559870583,2.8149263219765013,2.5068793481797562,True,84,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,fatalities_explosions_w5_s12_l12,85,3119,1286,0.29194097616345061,0,0.63082304361596708,1.412534163015053,True,85,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,fatalities_violence_w5_s12_l12,86,3119,1286,0.29194097616345061,2.0406447584184679,2.7351399922395032,2.6841209886606796,True,86,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,event_count_battles_w5_s12_l12,87,3119,1286,0.29194097616345061,1.7241824167295794,2.6403102757176917,2.9295417230967677,True,87,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,event_count_explosions_w5_s12_l12,88,3119,1286,0.29194097616345061,0.8473156973421252,1.1039276272300569,1.5330399176445531,True,88,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,event_count_violence_w5_s12_l12,89,3119,1286,0.29194097616345061,1.6628584965830586,2.558029082991911,2.954136493371665,True,89,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,fatalities_battles_w10_s12_l12,90,3119,1286,0.29194097616345061,2.2832570766954343,2.9193789085696982,2.4583129644304544,True,90,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,fatalities_explosions_w10_s12_l12,91,3119,1286,0.29194097616345061,0,0.66779301580084516,1.4268808426403421,True,91,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,fatalities_violence_w10_s12_l12,92,3119,1286,0.29194097616345061,2.1407147501493258,2.8192324388184211,2.64160396628716,True,92,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,event_count_battles_w10_s12_l12,93,3119,1286,0.29194097616345061,1.8414797036503707,2.7341033957134551,2.8742314802342275,True,93,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,event_count_explosions_w10_s12_l12,94,3119,1286,0.29194097616345061,0.98204319658477424,1.1932004837622718,1.5220199679083917,True,94,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,event_count_violence_w10_s12_l12,95,3119,1286,0.29194097616345061,1.768077108043737,2.6312127205896534,2.9067246311119845,True,95,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,rainfall_chirps_z_s12_l12,96,1695,2710,0.61520998864926224,0.95807160775209377,0.97815243360716519,0.18660420560825169,True,96,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,temperature_2m_mean_z_s12_l12,97,2398,2007,0.45561861520998864,1.0493525075509487,1.0487894100455877,0.045246609144717974,True,97,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,GOSIF_GPP_s12_l12,98,3119,1286,0.29194097616345061,3546.6297788011075,3767.1510287035435,2399.9270093333544,True,98,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,NY.GDP.PCAP.KD_l12,99,42,4363,0.9904653802497162,477.84789121823758,489.71184019630357,206.94240572598974,True,99,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,cpi_l12,100,38,4367,0.99137343927355281,1.0488990132060001,1.049946958055215,0.034784928218228719,True,100,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,GDP_l12,101,42,4363,0.9904653802497162,477.84789121823758,489.71184019630357,206.94240572598974,True,101,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,CPI_l12,102,38,4367,0.99137343927355281,1.0488990132060001,1.049946958055215,0.034784928218228719,True,102,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,infra_index_l12,103,32,4373,0.99273552780930763,6.9863094780000008,7.0099661073248596,0.72570046464094007,True,103,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,CC.PER.RNK_l12,104,44,4361,0.990011350737798,8.5714282989502006,8.6274252723754525,1.2523838392507429,True,104,,,not_applied_authoritative_adapter
+Forecasting,Multinomial,direct,gini_l12,105,38,4367,0.99137343927355281,0.44057787526100001,0.44044325453008365,0.0034466701699151342,True,105,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,elevation,0,4405,0,0,686,878.17185017026111,692.50389245773056,True,0,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,CPI,1,2396,2009,0.45607264472190695,4.365871598,16.938980644340067,40.184756615825691,True,1,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,GDP,2,3621,784,0.17797956867196368,18904490263,36353154304.119637,60993951829.314461,True,2,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,infra_index,3,2722,1683,0.38206583427922813,9.4342897630000007,11.351783474819525,7.4739681250178105,True,3,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,WFP_Price_Change,4,2884,1521,0.34528944381384791,0.8972,2.0867862287872865,7.0662941977282108,True,4,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,WFP_Price_Volatility,5,2861,1544,0.35051078320090806,87.934199129999996,468.97308419521175,1889.9755080570656,True,5,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,GOSIF_GPP_m12,6,4405,0,0,11451.416670000001,11993.586568249142,9146.4468370451541,True,6,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,infra_index_m12,7,2461,1944,0.441316685584563,9.4342897630000007,11.206658111544153,7.0308963693327691,True,7,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,WFP_Price_Change_m12,8,2407,1998,0.45357548240635642,2.7231073989999999,3.4903818250365499,3.7269050367576679,True,8,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,WFP_Price_Volatility_m12,9,2199,2206,0.50079455164585696,156.14186580000001,667.70741439230358,1926.225166213452,True,9,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,infra_index_s12,10,2461,1944,0.441316685584563,0.24857821299999999,0.40113483395891036,0.58505803858415961,True,10,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,WFP_Price_Change_s12,11,2407,1998,0.45357548240635642,7.3296817369999996,7.7485113386862663,4.7663222232935976,True,11,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,WFP_Price_Volatility_s12,12,2199,2206,0.50079455164585696,215.65494169999999,1331.485092351099,4963.3129409703324,True,12,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,market_access,13,4405,0,0,231,338.66628830874009,336.07329258588084,True,13,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,fatalities_battles,14,4405,0,0,0,1.1798737895706064,6.7556116064185643,True,14,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,fatalities_explosions,15,4405,0,0,0,0.054786466047989896,0.82518582396933193,True,15,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,fatalities_violence,16,4405,0,0,0,0.7777009558685184,2.1638416267735097,True,16,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,event_count_battles,17,4405,0,0,0,0.32219995838862436,1.1516055159418619,True,17,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,event_count_explosions,18,4405,0,0,0,0.054443947475283319,0.6113070128101743,True,18,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,event_count_violence,19,4405,0,0,0.1112334679258295,0.48474931541783478,1.0689657034241216,True,19,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,fatalities_battles_w5,20,4405,0,0,0,1.9002889543692467,8.8858923027917225,True,20,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,fatalities_explosions_w5,21,4405,0,0,0,0.13572331674147847,1.3284920533048223,True,21,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,fatalities_violence_w5,22,4405,0,0,0,2.2343884638330116,6.7780725831090143,True,22,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,event_count_battles_w5,23,4405,0,0,0,2.0405476871507173,8.3931643354276186,True,23,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,event_count_explosions_w5,24,4405,0,0,0,0.20899428623743463,1.6015420107258753,True,24,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,event_count_violence_w5,25,4405,0,0,0.48555513915032877,3.1613848988060584,8.8852893560111514,True,25,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,fatalities_battles_w10,26,4405,0,0,0,2.0294567318691841,9.1776524084023645,True,26,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,fatalities_explosions_w10,27,4405,0,0,0,0.14854728063499809,1.392093904787453,True,27,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,fatalities_violence_w10,28,4405,0,0,0,2.3443902665667862,6.8690495345988705,True,28,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,event_count_battles_w10,29,4405,0,0,0,2.1667170381440308,8.5904606411749533,True,29,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,event_count_explosions_w10,30,4405,0,0,0,0.24113233528671532,1.738545506040565,True,30,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,event_count_violence_w10,31,4405,0,0,0.58402783759639421,3.2881138896894093,8.9750656627171566,True,31,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,fatalities_battles_m12,32,4405,0,0,0,1.2981666253422441,6.5705101435793516,True,32,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,fatalities_explosions_m12,33,4405,0,0,0,0.059108128045790118,0.84240377525589982,True,33,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,fatalities_violence_m12,34,4405,0,0,0.1000924854565618,0.92868995802242038,2.2102524058567545,True,34,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,event_count_battles_m12,35,4405,0,0,0.067766792780667995,0.35344537756340633,1.1808509414171215,True,35,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,event_count_explosions_m12,36,4405,0,0,0,0.052272506896591353,0.57542795436294925,True,36,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,event_count_violence_m12,37,4405,0,0,0.2261107710840192,0.49285242994474104,0.85374428215732467,True,37,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,fatalities_battles_w5_m12,38,4405,0,0,0,2.0423077168982244,8.7477276988675694,True,38,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,fatalities_explosions_w5_m12,39,4405,0,0,0,0.13741182771987145,1.2224365410197393,True,39,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,fatalities_violence_w5_m12,40,4405,0,0,0.38548376659329159,2.489787328175364,5.3062729660546042,True,40,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,event_count_battles_w5_m12,41,4405,0,0,0.2848212005354705,2.1711432298925342,8.1709946029566094,True,41,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,event_count_explosions_w5_m12,42,4405,0,0,0,0.19828806759926276,1.39750726840566,True,42,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,event_count_violence_w5_m12,43,4405,0,0,0.97910225438466436,3.199482936061385,6.2673876704314395,True,43,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,fatalities_battles_w10_m12,44,4405,0,0,0,2.1801889301426374,9.0640935110996868,True,44,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,fatalities_explosions_w10_m12,45,4405,0,0,0,0.15347149830981913,1.2970028290247464,True,45,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,fatalities_violence_w10_m12,46,4405,0,0,0.4961406421466642,2.6165739665131964,5.3816724414089148,True,46,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,event_count_battles_w10_m12,47,4405,0,0,0.33524656517210399,2.3066316336217967,8.3876696744637673,True,47,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,event_count_explosions_w10_m12,48,4405,0,0,0,0.22697581370564024,1.5194808800353317,True,48,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,event_count_violence_w10_m12,49,4405,0,0,1.0660295588773887,3.3248789882799912,6.3497064878806482,True,49,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,chirps_z_score,50,4405,0,0,0.18297570507075209,0.25863615051265804,1.1052252737281452,True,50,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,temperature_z_score,51,4405,0,0,0.72854595742554429,0.61506091315215117,0.92532027991696664,True,51,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,nitrogen_5-15cm_mean,52,4405,0,0,1552,1829.1788876276958,1075.1945348926433,True,52,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,phh2o_5-15cm_mean,53,4405,0,0,65,67.39818388195232,10.303692575828091,True,53,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,cec_5-15cm_mean,54,4405,0,0,189,192.21203178206582,64.646946464974675,True,54,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,cfvo_5-15cm_mean,55,4405,0,0,116,128.36163450624289,71.147527687754604,True,55,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,soc_5-15cm_mean,56,4405,0,0,161,205.21906923950056,136.4382749083762,True,56,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,aez_groupid_4000,57,4405,0,0,0,0.002724177071509648,0.052122508868939814,True,57,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,aez_groupid_7000,58,4405,0,0,0,0.0065834279228149826,0.080870800661302242,True,58,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,aez_groupid_9000,59,4405,0,0,0,0.018615209988649264,0.13516169555657309,True,59,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,aez_groupid_10000,60,4405,0,0,0,0.0065834279228149826,0.080870800661302242,True,60,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,aez_groupid_12000,61,4405,0,0,0,0.16345062429057888,0.36977630766396985,True,61,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,aez_groupid_17000,62,4405,0,0,0,0.10805902383654938,0.31045494230893061,True,62,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,aez_groupid_19000,63,4405,0,0,0,0.061975028376844495,0.24111019106320206,True,63,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,aez_groupid_25000,64,4405,0,0,0,0.012258796821793417,0.11003871465205055,True,64,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,aez_groupid_30000,65,4405,0,0,0,0.0056753688989784334,0.07512096303189239,True,65,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,aez_groupid_31000,66,4405,0,0,0,0.29580022701475595,0.4564016353090497,True,66,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,aez_groupid_32000,67,4405,0,0,0,0.086265607264472188,0.28075585883070014,True,67,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,aez_groupid_33000,68,4405,0,0,0,0.079909194097616348,0.27115256737911564,True,68,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,aez_groupid_34000,69,4405,0,0,0,0.0095346197502837685,0.097178756817018735,True,69,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,aez_groupid_36000,70,4405,0,0,0,0.1185017026106697,0.32320125168235669,True,70,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,aez_groupid_40000,71,4405,0,0,0,0.0011350737797956867,0.033671729793850913,True,71,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,aez_groupid_43000,72,4405,0,0,0,0.02292849035187287,0.14967556474607652,True,72,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,slope,73,4405,0,0,1.26734003424644,1.4823619066208995,2.0391883043783237,True,73,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,estimated_population,74,4405,0,0,238951,533004.97956867202,810072.30684026016,True,74,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,lat,75,4405,0,0,6.9140074108156302,9.4623936511999105,13.364491359027866,True,75,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,lon,76,4405,0,0,33.569841536019112,23.056812297300301,47.595863518623879,True,76,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,cropland,77,4405,0,0,0,6.9434733257661749,19.16422203806362,True,77,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,rangeland,78,4405,0,0,28,32.646538024971626,30.997457549085389,True,78,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,precipitation_sum_m12,79,4405,0,0,0.0232968644159234,0.038682040778876617,0.040203823407817904,True,79,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,soil_moisture_mean_m12,80,4405,0,0,0.19753019255254539,0.19344492437792102,0.15225901964672864,True,80,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,shortwave_radiation_sum_m12,81,4405,0,0,338409235.95255536,249239710.05225322,180874676.76775995,True,81,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,temperature_2m_mean_m12,82,4405,0,0,287.08747807310897,280.34948426800941,22.244190149944508,True,82,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,price_index_m12,83,4405,0,0,94.282407082500001,123.51410091860784,103.79778402445996,True,83,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,rainfall_chirps_m12,84,4405,0,0,33.1747833164114,33.896741189688349,26.62507922401371,True,84,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,nightlight_mean_m12,85,4405,0,0,0.29097268554554279,0.695681727265415,2.7610067800337652,True,85,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,precipitation_sum_s12,86,4405,0,0,0.0232968644159234,0.038682040778876617,0.040203823407817904,True,86,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,soil_moisture_mean_s12,87,4405,0,0,0.19753019255254539,0.19344492437792102,0.15225901964672864,True,87,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,shortwave_radiation_sum_s12,88,4405,0,0,338409235.95255536,249239710.05225322,180874676.76775995,True,88,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,temperature_2m_mean_s12,89,4405,0,0,287.08747807310897,280.34948426800941,22.244190149944508,True,89,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,price_index_s12,90,4405,0,0,94.282407082500001,123.51410091860784,103.79778402445996,True,90,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,rainfall_chirps_s12,91,4405,0,0,33.1747833164114,33.896741189688349,26.62507922401371,True,91,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,nightlight_mean_s12,92,4405,0,0,0.29097268554554279,0.695681727265415,2.7610067800337652,True,92,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,EVI_m12,93,4405,0,0,1479.6231175012288,1921.6153509990963,1266.772792393313,True,93,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,area,94,4405,0,0,26343.998460499999,48773.458295484168,83099.153184179959,True,94,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,es_urban_pop,95,4405,0,0,0,79064.499886492616,492467.68579371745,True,95,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,urban_area,96,4405,0,0,0,56.844961153824947,319.16714294974815,True,96,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,distance_to_river,97,4405,0,0,0.015052533414577299,0.26490722669763472,0.79959600194477243,True,97,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,ruggedness_index,98,4405,0,0,0.0426350112483471,0.14026277176481847,0.22598532515419009,True,98,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,fews_ipc_ha,99,4405,0,0,0,0.01021566401816118,0.10055498111396187,True,99,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,CC.PER.RNK,100,4405,0,0,3.8095238208770801,8.288849269619865,10.124601288985744,True,100,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,gini,101,2190,2215,0.50283768444948918,0.44057787526100001,0.43813173538749595,0.03228210099348363,True,101,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,cpi,102,2190,2215,0.50283768444948918,1.0488990132060001,0.95853070976117971,0.3941919090681445,True,102,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,NY.GDP.PCAP.KD,103,3720,685,0.15550510783200908,543.61261700180194,1089.8411618564742,1208.1500321100586,True,103,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,WFP_Price_Change_l12,104,2915,1490,0.33825198637911463,1.2823,4.1093239287402623,13.508331420613615,True,104,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,WFP_Price_Volatility_l12,105,2837,1568,0.35595913734392737,68.528390685088596,1859.5113085035466,12261.523710612049,True,105,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,fatalities_battles_l12,106,4405,0,0,0,1.0183881952326901,2.6071372637359418,True,106,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,fatalities_explosions_l12,107,4405,0,0,0,0.13711691259931896,0.79800850088781605,True,107,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,fatalities_violence_l12,108,4405,0,0,0,1.3866061293984109,3.1843334490218638,True,108,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,event_count_battles_l12,109,4405,0,0,0,0.38660612939841088,0.52337197152252068,True,109,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,event_count_explosions_l12,110,4405,0,0,0,0.069920544835414308,0.3007612257468647,True,110,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,event_count_violence_l12,111,4405,0,0,1,0.62292849035187292,0.52856738305328721,True,111,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,precipitation_sum_l12,112,3484,921,0.2090805902383655,0.0062197189508075004,0.026540264390071545,0.044485869775315844,True,112,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,soil_moisture_mean_l12,113,3484,921,0.2090805902383655,0.17127805640568591,0.16547181260947336,0.1387417421227993,True,113,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,shortwave_radiation_sum_l12,114,3697,708,0.16072644721906923,301790974,313848805.06729329,189874241.34560063,True,114,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,temperature_2m_mean_l12,115,3484,921,0.2090805902383655,288.2880620476202,283.37186827907783,22.34036613416357,True,115,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,price_index_l12,116,4213,192,0.043586833144154367,93.572601309999996,117.12836797969806,95.152759786501306,True,116,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,rainfall_chirps_l12,117,2581,1824,0.41407491486946651,7.3273607518165376,18.177785795688308,30.819111908271509,True,117,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,nightlight_mean_l12,118,3780,625,0.14188422247446084,0.27754898002655348,0.71015331367879897,2.8173959237001434,True,118,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,EVI_l12,119,2356,2049,0.46515323496027244,1275.1138066323888,1732.1297741087465,1189.5951016257941,True,119,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,fatalities_battles_w5_l12,120,4405,0,0,0,1.8417720161592528,4.7227943464415487,True,120,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,fatalities_explosions_w5_l12,121,4405,0,0,0,0.35818603867934951,2.448380062783388,True,121,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,fatalities_violence_w5_l12,122,4405,0,0,0,3.050124316553851,5.8649945347989174,True,122,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,event_count_battles_w5_l12,123,4405,0,0,0,2.2586831877175131,4.9092595299602264,True,123,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,event_count_explosions_w5_l12,124,4405,0,0,0,0.37660445121669545,2.3596388764667262,True,124,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,event_count_violence_w5_l12,125,4405,0,0,2.53460760387282,4.4822739994466367,7.2684655555257622,True,125,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,fatalities_battles_w10_l12,126,4405,0,0,0,1.9405391659823756,4.7447251328897098,True,126,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,fatalities_explosions_w10_l12,127,4405,0,0,0,0.37655504827373798,2.4632374266050747,True,127,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,fatalities_violence_w10_l12,128,4405,0,0,0,3.1778469200092316,5.8617569509960772,True,128,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,event_count_battles_w10_l12,129,4405,0,0,0,2.3850080810308922,4.9066084872918392,True,129,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,event_count_explosions_w10_l12,130,4405,0,0,0,0.39900606784426701,2.377271170641063,True,130,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,event_count_violence_w10_l12,131,4405,0,0,2.9046503404278483,4.6199089344115976,7.2293793546263254,True,131,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,rainfall_chirps_z_l12,132,2581,1824,0.41407491486946651,-0.50209145881719575,-0.35919259831456707,0.70003511018208642,True,132,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,temperature_2m_mean_z_l12,133,3484,921,0.2090805902383655,0.72906823403458743,0.37378937585331162,1.0293248221652802,True,133,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,GOSIF_GPP_l12,134,4405,0,0,7965,11662.232463110102,10318.720745774415,True,134,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,WFP_Price_Change_s12_l12,135,1777,2628,0.59659477866061295,5.8427742887739447,6.198387362631288,3.7721986285655329,True,135,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,WFP_Price_Volatility_s12_l12,136,1631,2774,0.62973893303064699,83.463402616195808,272.01441051125761,794.39320546338149,True,136,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,fatalities_battles_s12_l12,137,3119,1286,0.29194097616345061,2.1320071635561044,3.3845922280978691,4.5937592133333371,True,137,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,fatalities_explosions_s12_l12,138,3119,1286,0.29194097616345061,0,0.43267553519121216,0.86273549605320687,True,138,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,fatalities_violence_s12_l12,139,3119,1286,0.29194097616345061,1.2060453783110543,1.7437795630974577,1.6693870024548934,True,139,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,event_count_battles_s12_l12,140,3119,1286,0.29194097616345061,0.51492865054443726,0.51416356836070509,0.08889425713122262,True,140,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,event_count_explosions_s12_l12,141,3119,1286,0.29194097616345061,0.28867513459481281,0.25008465402611485,0.16988837997880252,True,141,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,event_count_violence_s12_l12,142,3119,1286,0.29194097616345061,0.4923659639173309,0.49820861333408195,0.12034868443763831,True,142,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,precipitation_sum_s12_l12,143,2398,2007,0.45561861520998864,0.0075593467484984999,0.015068883003767393,0.018473613498969789,True,143,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,soil_moisture_mean_s12_l12,144,2398,2007,0.45561861520998864,0.0159336550172904,0.021182894409055648,0.019609563064455146,True,144,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,shortwave_radiation_sum_s12_l12,145,2398,2007,0.45561861520998864,112947118.07172993,120903495.88900608,37932413.365451194,True,145,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,temperature_2m_mean_s12_l12,146,2398,2007,0.45561861520998864,8.5358166365693933,8.4123310990720679,1.0120742050022944,True,146,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,price_index_s12_l12,147,2929,1476,0.3350737797956867,9.0893725660765519,11.979408715597479,11.683710359749208,True,147,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,rainfall_chirps_s12_l12,148,1695,2710,0.61520998864926224,17.411243638080968,18.491606697459837,10.706356565127063,True,148,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,nightlight_mean_s12_l12,149,2587,1818,0.4127128263337117,0.091000941431826105,0.17831587521789224,0.35161774821488673,True,149,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,EVI_s12_l12,150,1144,3261,0.74029511918274693,131.9464785881346,235.37133085117992,354.41442598512731,True,150,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,fatalities_battles_w5_s12_l12,151,3119,1286,0.29194097616345061,2.1737054559870583,2.8149263219765013,2.5068793481797562,True,151,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,fatalities_explosions_w5_s12_l12,152,3119,1286,0.29194097616345061,0,0.63082304361596708,1.412534163015053,True,152,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,fatalities_violence_w5_s12_l12,153,3119,1286,0.29194097616345061,2.0406447584184679,2.7351399922395032,2.6841209886606796,True,153,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,event_count_battles_w5_s12_l12,154,3119,1286,0.29194097616345061,1.7241824167295794,2.6403102757176917,2.9295417230967677,True,154,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,event_count_explosions_w5_s12_l12,155,3119,1286,0.29194097616345061,0.8473156973421252,1.1039276272300569,1.5330399176445531,True,155,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,event_count_violence_w5_s12_l12,156,3119,1286,0.29194097616345061,1.6628584965830586,2.558029082991911,2.954136493371665,True,156,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,fatalities_battles_w10_s12_l12,157,3119,1286,0.29194097616345061,2.2832570766954343,2.9193789085696982,2.4583129644304544,True,157,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,fatalities_explosions_w10_s12_l12,158,3119,1286,0.29194097616345061,0,0.66779301580084516,1.4268808426403421,True,158,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,fatalities_violence_w10_s12_l12,159,3119,1286,0.29194097616345061,2.1407147501493258,2.8192324388184211,2.64160396628716,True,159,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,event_count_battles_w10_s12_l12,160,3119,1286,0.29194097616345061,1.8414797036503707,2.7341033957134551,2.8742314802342275,True,160,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,event_count_explosions_w10_s12_l12,161,3119,1286,0.29194097616345061,0.98204319658477424,1.1932004837622718,1.5220199679083917,True,161,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,event_count_violence_w10_s12_l12,162,3119,1286,0.29194097616345061,1.768077108043737,2.6312127205896534,2.9067246311119845,True,162,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,rainfall_chirps_z_s12_l12,163,1695,2710,0.61520998864926224,0.95807160775209377,0.97815243360716519,0.18660420560825169,True,163,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,temperature_2m_mean_z_s12_l12,164,2398,2007,0.45561861520998864,1.0493525075509487,1.0487894100455877,0.045246609144717974,True,164,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,GOSIF_GPP_s12_l12,165,3119,1286,0.29194097616345061,3546.6297788011075,3767.1510287035435,2399.9270093333544,True,165,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,NY.GDP.PCAP.KD_l12,166,42,4363,0.9904653802497162,477.84789121823758,489.71184019630357,206.94240572598974,True,166,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,cpi_l12,167,38,4367,0.99137343927355281,1.0488990132060001,1.049946958055215,0.034784928218228719,True,167,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,GDP_l12,168,42,4363,0.9904653802497162,477.84789121823758,489.71184019630357,206.94240572598974,True,168,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,CPI_l12,169,38,4367,0.99137343927355281,1.0488990132060001,1.049946958055215,0.034784928218228719,True,169,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,infra_index_l12,170,32,4373,0.99273552780930763,6.9863094780000008,7.0099661073248596,0.72570046464094007,True,170,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,CC.PER.RNK_l12,171,44,4361,0.990011350737798,8.5714282989502006,8.6274252723754525,1.2523838392507429,True,171,,,not_applied_authoritative_adapter
+Nowcasting,Multinomial,direct,gini_l12,172,38,4367,0.99137343927355281,0.44057787526100001,0.44044325453008365,0.0034466701699151342,True,172,,,not_applied_authoritative_adapter
+Forecasting,Ordered Probit,direct,elevation,0,4405,0,0,686,878.17185017026111,692.50389245773056,True,0,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,infra_index_m12,1,2461,1944,0.441316685584563,9.4342897630000007,11.206658111544153,7.0308963693327691,True,1,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,infra_index_s12,2,2461,1944,0.441316685584563,0.24857821299999999,0.40113483395891036,0.58505803858415961,True,2,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,market_access,3,4405,0,0,231,338.66628830874009,336.07329258588084,True,3,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,nitrogen_5-15cm_mean,4,4405,0,0,1552,1829.1788876276958,1075.1945348926433,True,4,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,phh2o_5-15cm_mean,5,4405,0,0,65,67.39818388195232,10.303692575828091,True,5,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,cec_5-15cm_mean,6,4405,0,0,189,192.21203178206582,64.646946464974675,True,6,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,cfvo_5-15cm_mean,7,4405,0,0,116,128.36163450624289,71.147527687754604,True,7,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,soc_5-15cm_mean,8,4405,0,0,161,205.21906923950056,136.4382749083762,True,8,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,aez_groupid_4000,9,4405,0,0,0,0.002724177071509648,0.052122508868939814,True,9,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,aez_groupid_7000,10,4405,0,0,0,0.0065834279228149826,0.080870800661302242,True,10,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,aez_groupid_9000,11,4405,0,0,0,0.018615209988649264,0.13516169555657309,True,11,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,aez_groupid_10000,12,4405,0,0,0,0.0065834279228149826,0.080870800661302242,True,12,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,aez_groupid_12000,13,4405,0,0,0,0.16345062429057888,0.36977630766396985,True,13,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,aez_groupid_17000,14,4405,0,0,0,0.10805902383654938,0.31045494230893061,True,14,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,aez_groupid_19000,15,4405,0,0,0,0.061975028376844495,0.24111019106320206,True,15,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,aez_groupid_25000,16,4405,0,0,0,0.012258796821793417,0.11003871465205055,True,16,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,aez_groupid_30000,17,4405,0,0,0,0.0056753688989784334,0.07512096303189239,True,17,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,aez_groupid_31000,18,4405,0,0,0,0.29580022701475595,0.4564016353090497,False,,pivoted_qr_rank_dependent,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,aez_groupid_32000,19,4405,0,0,0,0.086265607264472188,0.28075585883070014,True,18,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,aez_groupid_33000,20,4405,0,0,0,0.079909194097616348,0.27115256737911564,True,19,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,aez_groupid_34000,21,4405,0,0,0,0.0095346197502837685,0.097178756817018735,True,20,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,aez_groupid_36000,22,4405,0,0,0,0.1185017026106697,0.32320125168235669,True,21,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,aez_groupid_40000,23,4405,0,0,0,0.0011350737797956867,0.033671729793850913,True,22,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,aez_groupid_43000,24,4405,0,0,0,0.02292849035187287,0.14967556474607652,True,23,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,slope,25,4405,0,0,1.26734003424644,1.4823619066208995,2.0391883043783237,True,24,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,estimated_population,26,4405,0,0,238951,533004.97956867202,810072.30684026016,True,25,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,lat,27,4405,0,0,6.9140074108156302,9.4623936511999105,13.364491359027866,True,26,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,lon,28,4405,0,0,33.569841536019112,23.056812297300301,47.595863518623879,True,27,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,cropland,29,4405,0,0,0,6.9434733257661749,19.16422203806362,True,28,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,rangeland,30,4405,0,0,28,32.646538024971626,30.997457549085389,True,29,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,area,31,4405,0,0,26343.998460499999,48773.458295484168,83099.153184179959,True,30,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,es_urban_pop,32,4405,0,0,0,79064.499886492616,492467.68579371745,True,31,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,urban_area,33,4405,0,0,0,56.844961153824947,319.16714294974815,True,32,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,distance_to_river,34,4405,0,0,0.015052533414577299,0.26490722669763472,0.79959600194477243,True,33,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,ruggedness_index,35,4405,0,0,0.0426350112483471,0.14026277176481847,0.22598532515419009,True,34,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,fews_ipc_ha,36,4405,0,0,0,0.01021566401816118,0.10055498111396187,True,35,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,WFP_Price_Change_l12,37,2915,1490,0.33825198637911463,1.2823,4.1093239287402623,13.508331420613615,True,36,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,WFP_Price_Volatility_l12,38,2837,1568,0.35595913734392737,68.528390685088596,1859.5113085035466,12261.523710612049,True,37,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,fatalities_battles_l12,39,4405,0,0,0,1.0183881952326901,2.6071372637359418,True,38,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,fatalities_explosions_l12,40,4405,0,0,0,0.13711691259931896,0.79800850088781605,True,39,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,fatalities_violence_l12,41,4405,0,0,0,1.3866061293984109,3.1843334490218638,True,40,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,event_count_battles_l12,42,4405,0,0,0,0.38660612939841088,0.52337197152252068,True,41,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,event_count_explosions_l12,43,4405,0,0,0,0.069920544835414308,0.3007612257468647,True,42,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,event_count_violence_l12,44,4405,0,0,1,0.62292849035187292,0.52856738305328721,True,43,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,precipitation_sum_l12,45,3484,921,0.2090805902383655,0.0062197189508075004,0.026540264390071545,0.044485869775315844,True,44,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,soil_moisture_mean_l12,46,3484,921,0.2090805902383655,0.17127805640568591,0.16547181260947336,0.1387417421227993,True,45,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,shortwave_radiation_sum_l12,47,3697,708,0.16072644721906923,301790974,313848805.06729329,189874241.34560063,True,46,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,temperature_2m_mean_l12,48,3484,921,0.2090805902383655,288.2880620476202,283.37186827907783,22.34036613416357,True,47,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,price_index_l12,49,4213,192,0.043586833144154367,93.572601309999996,117.12836797969806,95.152759786501306,True,48,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,rainfall_chirps_l12,50,2581,1824,0.41407491486946651,7.3273607518165376,18.177785795688308,30.819111908271509,True,49,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,nightlight_mean_l12,51,3780,625,0.14188422247446084,0.27754898002655348,0.71015331367879897,2.8173959237001434,True,50,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,EVI_l12,52,2356,2049,0.46515323496027244,1275.1138066323888,1732.1297741087465,1189.5951016257941,True,51,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,fatalities_battles_w5_l12,53,4405,0,0,0,1.8417720161592528,4.7227943464415487,True,52,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,fatalities_explosions_w5_l12,54,4405,0,0,0,0.35818603867934951,2.448380062783388,True,53,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,fatalities_violence_w5_l12,55,4405,0,0,0,3.050124316553851,5.8649945347989174,True,54,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,event_count_battles_w5_l12,56,4405,0,0,0,2.2586831877175131,4.9092595299602264,True,55,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,event_count_explosions_w5_l12,57,4405,0,0,0,0.37660445121669545,2.3596388764667262,True,56,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,event_count_violence_w5_l12,58,4405,0,0,2.53460760387282,4.4822739994466367,7.2684655555257622,True,57,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,fatalities_battles_w10_l12,59,4405,0,0,0,1.9405391659823756,4.7447251328897098,True,58,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,fatalities_explosions_w10_l12,60,4405,0,0,0,0.37655504827373798,2.4632374266050747,True,59,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,fatalities_violence_w10_l12,61,4405,0,0,0,3.1778469200092316,5.8617569509960772,True,60,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,event_count_battles_w10_l12,62,4405,0,0,0,2.3850080810308922,4.9066084872918392,True,61,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,event_count_explosions_w10_l12,63,4405,0,0,0,0.39900606784426701,2.377271170641063,True,62,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,event_count_violence_w10_l12,64,4405,0,0,2.9046503404278483,4.6199089344115976,7.2293793546263254,True,63,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,rainfall_chirps_z_l12,65,2581,1824,0.41407491486946651,-0.50209145881719575,-0.35919259831456707,0.70003511018208642,True,64,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,temperature_2m_mean_z_l12,66,3484,921,0.2090805902383655,0.72906823403458743,0.37378937585331162,1.0293248221652802,True,65,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,GOSIF_GPP_l12,67,4405,0,0,7965,11662.232463110102,10318.720745774415,True,66,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,WFP_Price_Change_s12_l12,68,1777,2628,0.59659477866061295,5.8427742887739447,6.198387362631288,3.7721986285655329,True,67,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,WFP_Price_Volatility_s12_l12,69,1631,2774,0.62973893303064699,83.463402616195808,272.01441051125761,794.39320546338149,True,68,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,fatalities_battles_s12_l12,70,3119,1286,0.29194097616345061,2.1320071635561044,3.3845922280978691,4.5937592133333371,True,69,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,fatalities_explosions_s12_l12,71,3119,1286,0.29194097616345061,0,0.43267553519121216,0.86273549605320687,True,70,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,fatalities_violence_s12_l12,72,3119,1286,0.29194097616345061,1.2060453783110543,1.7437795630974577,1.6693870024548934,True,71,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,event_count_battles_s12_l12,73,3119,1286,0.29194097616345061,0.51492865054443726,0.51416356836070509,0.08889425713122262,True,72,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,event_count_explosions_s12_l12,74,3119,1286,0.29194097616345061,0.28867513459481281,0.25008465402611485,0.16988837997880252,True,73,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,event_count_violence_s12_l12,75,3119,1286,0.29194097616345061,0.4923659639173309,0.49820861333408195,0.12034868443763831,True,74,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,precipitation_sum_s12_l12,76,2398,2007,0.45561861520998864,0.0075593467484984999,0.015068883003767393,0.018473613498969789,True,75,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,soil_moisture_mean_s12_l12,77,2398,2007,0.45561861520998864,0.0159336550172904,0.021182894409055648,0.019609563064455146,True,76,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,shortwave_radiation_sum_s12_l12,78,2398,2007,0.45561861520998864,112947118.07172993,120903495.88900608,37932413.365451194,True,77,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,temperature_2m_mean_s12_l12,79,2398,2007,0.45561861520998864,8.5358166365693933,8.4123310990720679,1.0120742050022944,True,78,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,price_index_s12_l12,80,2929,1476,0.3350737797956867,9.0893725660765519,11.979408715597479,11.683710359749208,True,79,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,rainfall_chirps_s12_l12,81,1695,2710,0.61520998864926224,17.411243638080968,18.491606697459837,10.706356565127063,True,80,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,nightlight_mean_s12_l12,82,2587,1818,0.4127128263337117,0.091000941431826105,0.17831587521789224,0.35161774821488673,True,81,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,EVI_s12_l12,83,1144,3261,0.74029511918274693,131.9464785881346,235.37133085117992,354.41442598512731,True,82,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,fatalities_battles_w5_s12_l12,84,3119,1286,0.29194097616345061,2.1737054559870583,2.8149263219765013,2.5068793481797562,True,83,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,fatalities_explosions_w5_s12_l12,85,3119,1286,0.29194097616345061,0,0.63082304361596708,1.412534163015053,True,84,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,fatalities_violence_w5_s12_l12,86,3119,1286,0.29194097616345061,2.0406447584184679,2.7351399922395032,2.6841209886606796,True,85,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,event_count_battles_w5_s12_l12,87,3119,1286,0.29194097616345061,1.7241824167295794,2.6403102757176917,2.9295417230967677,True,86,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,event_count_explosions_w5_s12_l12,88,3119,1286,0.29194097616345061,0.8473156973421252,1.1039276272300569,1.5330399176445531,True,87,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,event_count_violence_w5_s12_l12,89,3119,1286,0.29194097616345061,1.6628584965830586,2.558029082991911,2.954136493371665,True,88,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,fatalities_battles_w10_s12_l12,90,3119,1286,0.29194097616345061,2.2832570766954343,2.9193789085696982,2.4583129644304544,True,89,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,fatalities_explosions_w10_s12_l12,91,3119,1286,0.29194097616345061,0,0.66779301580084516,1.4268808426403421,True,90,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,fatalities_violence_w10_s12_l12,92,3119,1286,0.29194097616345061,2.1407147501493258,2.8192324388184211,2.64160396628716,True,91,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,event_count_battles_w10_s12_l12,93,3119,1286,0.29194097616345061,1.8414797036503707,2.7341033957134551,2.8742314802342275,True,92,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,event_count_explosions_w10_s12_l12,94,3119,1286,0.29194097616345061,0.98204319658477424,1.1932004837622718,1.5220199679083917,True,93,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,event_count_violence_w10_s12_l12,95,3119,1286,0.29194097616345061,1.768077108043737,2.6312127205896534,2.9067246311119845,True,94,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,rainfall_chirps_z_s12_l12,96,1695,2710,0.61520998864926224,0.95807160775209377,0.97815243360716519,0.18660420560825169,True,95,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,temperature_2m_mean_z_s12_l12,97,2398,2007,0.45561861520998864,1.0493525075509487,1.0487894100455877,0.045246609144717974,True,96,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,GOSIF_GPP_s12_l12,98,3119,1286,0.29194097616345061,3546.6297788011075,3767.1510287035435,2399.9270093333544,True,97,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,NY.GDP.PCAP.KD_l12,99,42,4363,0.9904653802497162,477.84789121823758,489.71184019630357,206.94240572598974,True,98,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,cpi_l12,100,38,4367,0.99137343927355281,1.0488990132060001,1.049946958055215,0.034784928218228719,True,99,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,GDP_l12,101,42,4363,0.9904653802497162,477.84789121823758,489.71184019630357,206.94240572598974,False,,exact_duplicate_after_scaling,NY.GDP.PCAP.KD_l12,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,CPI_l12,102,38,4367,0.99137343927355281,1.0488990132060001,1.049946958055215,0.034784928218228719,False,,exact_duplicate_after_scaling,cpi_l12,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,infra_index_l12,103,32,4373,0.99273552780930763,6.9863094780000008,7.0099661073248596,0.72570046464094007,True,100,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,CC.PER.RNK_l12,104,44,4361,0.990011350737798,8.5714282989502006,8.6274252723754525,1.2523838392507429,True,101,,,training_only_pivoted_qr
+Forecasting,Ordered Probit,direct,gini_l12,105,38,4367,0.99137343927355281,0.44057787526100001,0.44044325453008365,0.0034466701699151342,True,102,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,elevation,0,4405,0,0,686,878.17185017026111,692.50389245773056,True,0,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,CPI,1,2396,2009,0.45607264472190695,4.365871598,16.938980644340067,40.184756615825691,True,1,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,GDP,2,3621,784,0.17797956867196368,18904490263,36353154304.119637,60993951829.314461,True,2,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,infra_index,3,2722,1683,0.38206583427922813,9.4342897630000007,11.351783474819525,7.4739681250178105,True,3,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,WFP_Price_Change,4,2884,1521,0.34528944381384791,0.8972,2.0867862287872865,7.0662941977282108,True,4,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,WFP_Price_Volatility,5,2861,1544,0.35051078320090806,87.934199129999996,468.97308419521175,1889.9755080570656,True,5,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,GOSIF_GPP_m12,6,4405,0,0,11451.416670000001,11993.586568249142,9146.4468370451541,True,6,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,infra_index_m12,7,2461,1944,0.441316685584563,9.4342897630000007,11.206658111544153,7.0308963693327691,True,7,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,WFP_Price_Change_m12,8,2407,1998,0.45357548240635642,2.7231073989999999,3.4903818250365499,3.7269050367576679,True,8,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,WFP_Price_Volatility_m12,9,2199,2206,0.50079455164585696,156.14186580000001,667.70741439230358,1926.225166213452,True,9,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,infra_index_s12,10,2461,1944,0.441316685584563,0.24857821299999999,0.40113483395891036,0.58505803858415961,True,10,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,WFP_Price_Change_s12,11,2407,1998,0.45357548240635642,7.3296817369999996,7.7485113386862663,4.7663222232935976,True,11,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,WFP_Price_Volatility_s12,12,2199,2206,0.50079455164585696,215.65494169999999,1331.485092351099,4963.3129409703324,True,12,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,market_access,13,4405,0,0,231,338.66628830874009,336.07329258588084,True,13,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,fatalities_battles,14,4405,0,0,0,1.1798737895706064,6.7556116064185643,True,14,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,fatalities_explosions,15,4405,0,0,0,0.054786466047989896,0.82518582396933193,True,15,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,fatalities_violence,16,4405,0,0,0,0.7777009558685184,2.1638416267735097,True,16,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,event_count_battles,17,4405,0,0,0,0.32219995838862436,1.1516055159418619,True,17,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,event_count_explosions,18,4405,0,0,0,0.054443947475283319,0.6113070128101743,True,18,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,event_count_violence,19,4405,0,0,0.1112334679258295,0.48474931541783478,1.0689657034241216,True,19,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,fatalities_battles_w5,20,4405,0,0,0,1.9002889543692467,8.8858923027917225,True,20,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,fatalities_explosions_w5,21,4405,0,0,0,0.13572331674147847,1.3284920533048223,True,21,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,fatalities_violence_w5,22,4405,0,0,0,2.2343884638330116,6.7780725831090143,True,22,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,event_count_battles_w5,23,4405,0,0,0,2.0405476871507173,8.3931643354276186,True,23,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,event_count_explosions_w5,24,4405,0,0,0,0.20899428623743463,1.6015420107258753,True,24,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,event_count_violence_w5,25,4405,0,0,0.48555513915032877,3.1613848988060584,8.8852893560111514,True,25,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,fatalities_battles_w10,26,4405,0,0,0,2.0294567318691841,9.1776524084023645,True,26,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,fatalities_explosions_w10,27,4405,0,0,0,0.14854728063499809,1.392093904787453,True,27,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,fatalities_violence_w10,28,4405,0,0,0,2.3443902665667862,6.8690495345988705,True,28,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,event_count_battles_w10,29,4405,0,0,0,2.1667170381440308,8.5904606411749533,True,29,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,event_count_explosions_w10,30,4405,0,0,0,0.24113233528671532,1.738545506040565,True,30,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,event_count_violence_w10,31,4405,0,0,0.58402783759639421,3.2881138896894093,8.9750656627171566,True,31,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,fatalities_battles_m12,32,4405,0,0,0,1.2981666253422441,6.5705101435793516,True,32,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,fatalities_explosions_m12,33,4405,0,0,0,0.059108128045790118,0.84240377525589982,True,33,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,fatalities_violence_m12,34,4405,0,0,0.1000924854565618,0.92868995802242038,2.2102524058567545,True,34,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,event_count_battles_m12,35,4405,0,0,0.067766792780667995,0.35344537756340633,1.1808509414171215,True,35,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,event_count_explosions_m12,36,4405,0,0,0,0.052272506896591353,0.57542795436294925,True,36,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,event_count_violence_m12,37,4405,0,0,0.2261107710840192,0.49285242994474104,0.85374428215732467,True,37,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,fatalities_battles_w5_m12,38,4405,0,0,0,2.0423077168982244,8.7477276988675694,True,38,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,fatalities_explosions_w5_m12,39,4405,0,0,0,0.13741182771987145,1.2224365410197393,True,39,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,fatalities_violence_w5_m12,40,4405,0,0,0.38548376659329159,2.489787328175364,5.3062729660546042,True,40,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,event_count_battles_w5_m12,41,4405,0,0,0.2848212005354705,2.1711432298925342,8.1709946029566094,True,41,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,event_count_explosions_w5_m12,42,4405,0,0,0,0.19828806759926276,1.39750726840566,True,42,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,event_count_violence_w5_m12,43,4405,0,0,0.97910225438466436,3.199482936061385,6.2673876704314395,True,43,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,fatalities_battles_w10_m12,44,4405,0,0,0,2.1801889301426374,9.0640935110996868,True,44,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,fatalities_explosions_w10_m12,45,4405,0,0,0,0.15347149830981913,1.2970028290247464,True,45,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,fatalities_violence_w10_m12,46,4405,0,0,0.4961406421466642,2.6165739665131964,5.3816724414089148,True,46,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,event_count_battles_w10_m12,47,4405,0,0,0.33524656517210399,2.3066316336217967,8.3876696744637673,True,47,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,event_count_explosions_w10_m12,48,4405,0,0,0,0.22697581370564024,1.5194808800353317,True,48,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,event_count_violence_w10_m12,49,4405,0,0,1.0660295588773887,3.3248789882799912,6.3497064878806482,True,49,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,chirps_z_score,50,4405,0,0,0.18297570507075209,0.25863615051265804,1.1052252737281452,True,50,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,temperature_z_score,51,4405,0,0,0.72854595742554429,0.61506091315215117,0.92532027991696664,True,51,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,nitrogen_5-15cm_mean,52,4405,0,0,1552,1829.1788876276958,1075.1945348926433,True,52,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,phh2o_5-15cm_mean,53,4405,0,0,65,67.39818388195232,10.303692575828091,True,53,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,cec_5-15cm_mean,54,4405,0,0,189,192.21203178206582,64.646946464974675,True,54,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,cfvo_5-15cm_mean,55,4405,0,0,116,128.36163450624289,71.147527687754604,True,55,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,soc_5-15cm_mean,56,4405,0,0,161,205.21906923950056,136.4382749083762,True,56,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,aez_groupid_4000,57,4405,0,0,0,0.002724177071509648,0.052122508868939814,True,57,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,aez_groupid_7000,58,4405,0,0,0,0.0065834279228149826,0.080870800661302242,True,58,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,aez_groupid_9000,59,4405,0,0,0,0.018615209988649264,0.13516169555657309,True,59,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,aez_groupid_10000,60,4405,0,0,0,0.0065834279228149826,0.080870800661302242,True,60,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,aez_groupid_12000,61,4405,0,0,0,0.16345062429057888,0.36977630766396985,True,61,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,aez_groupid_17000,62,4405,0,0,0,0.10805902383654938,0.31045494230893061,True,62,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,aez_groupid_19000,63,4405,0,0,0,0.061975028376844495,0.24111019106320206,True,63,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,aez_groupid_25000,64,4405,0,0,0,0.012258796821793417,0.11003871465205055,True,64,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,aez_groupid_30000,65,4405,0,0,0,0.0056753688989784334,0.07512096303189239,True,65,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,aez_groupid_31000,66,4405,0,0,0,0.29580022701475595,0.4564016353090497,False,,pivoted_qr_rank_dependent,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,aez_groupid_32000,67,4405,0,0,0,0.086265607264472188,0.28075585883070014,True,66,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,aez_groupid_33000,68,4405,0,0,0,0.079909194097616348,0.27115256737911564,True,67,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,aez_groupid_34000,69,4405,0,0,0,0.0095346197502837685,0.097178756817018735,True,68,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,aez_groupid_36000,70,4405,0,0,0,0.1185017026106697,0.32320125168235669,True,69,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,aez_groupid_40000,71,4405,0,0,0,0.0011350737797956867,0.033671729793850913,True,70,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,aez_groupid_43000,72,4405,0,0,0,0.02292849035187287,0.14967556474607652,True,71,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,slope,73,4405,0,0,1.26734003424644,1.4823619066208995,2.0391883043783237,True,72,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,estimated_population,74,4405,0,0,238951,533004.97956867202,810072.30684026016,True,73,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,lat,75,4405,0,0,6.9140074108156302,9.4623936511999105,13.364491359027866,True,74,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,lon,76,4405,0,0,33.569841536019112,23.056812297300301,47.595863518623879,True,75,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,cropland,77,4405,0,0,0,6.9434733257661749,19.16422203806362,True,76,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,rangeland,78,4405,0,0,28,32.646538024971626,30.997457549085389,True,77,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,precipitation_sum_m12,79,4405,0,0,0.0232968644159234,0.038682040778876617,0.040203823407817904,True,78,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,soil_moisture_mean_m12,80,4405,0,0,0.19753019255254539,0.19344492437792102,0.15225901964672864,True,79,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,shortwave_radiation_sum_m12,81,4405,0,0,338409235.95255536,249239710.05225322,180874676.76775995,True,80,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,temperature_2m_mean_m12,82,4405,0,0,287.08747807310897,280.34948426800941,22.244190149944508,True,81,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,price_index_m12,83,4405,0,0,94.282407082500001,123.51410091860784,103.79778402445996,True,82,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,rainfall_chirps_m12,84,4405,0,0,33.1747833164114,33.896741189688349,26.62507922401371,True,83,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,nightlight_mean_m12,85,4405,0,0,0.29097268554554279,0.695681727265415,2.7610067800337652,True,84,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,precipitation_sum_s12,86,4405,0,0,0.0232968644159234,0.038682040778876617,0.040203823407817904,False,,exact_duplicate_after_scaling,precipitation_sum_m12,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,soil_moisture_mean_s12,87,4405,0,0,0.19753019255254539,0.19344492437792102,0.15225901964672864,False,,exact_duplicate_after_scaling,soil_moisture_mean_m12,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,shortwave_radiation_sum_s12,88,4405,0,0,338409235.95255536,249239710.05225322,180874676.76775995,False,,exact_duplicate_after_scaling,shortwave_radiation_sum_m12,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,temperature_2m_mean_s12,89,4405,0,0,287.08747807310897,280.34948426800941,22.244190149944508,False,,exact_duplicate_after_scaling,temperature_2m_mean_m12,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,price_index_s12,90,4405,0,0,94.282407082500001,123.51410091860784,103.79778402445996,False,,exact_duplicate_after_scaling,price_index_m12,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,rainfall_chirps_s12,91,4405,0,0,33.1747833164114,33.896741189688349,26.62507922401371,False,,exact_duplicate_after_scaling,rainfall_chirps_m12,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,nightlight_mean_s12,92,4405,0,0,0.29097268554554279,0.695681727265415,2.7610067800337652,False,,exact_duplicate_after_scaling,nightlight_mean_m12,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,EVI_m12,93,4405,0,0,1479.6231175012288,1921.6153509990963,1266.772792393313,True,85,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,area,94,4405,0,0,26343.998460499999,48773.458295484168,83099.153184179959,True,86,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,es_urban_pop,95,4405,0,0,0,79064.499886492616,492467.68579371745,True,87,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,urban_area,96,4405,0,0,0,56.844961153824947,319.16714294974815,True,88,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,distance_to_river,97,4405,0,0,0.015052533414577299,0.26490722669763472,0.79959600194477243,True,89,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,ruggedness_index,98,4405,0,0,0.0426350112483471,0.14026277176481847,0.22598532515419009,True,90,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,fews_ipc_ha,99,4405,0,0,0,0.01021566401816118,0.10055498111396187,True,91,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,CC.PER.RNK,100,4405,0,0,3.8095238208770801,8.288849269619865,10.124601288985744,True,92,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,gini,101,2190,2215,0.50283768444948918,0.44057787526100001,0.43813173538749595,0.03228210099348363,True,93,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,cpi,102,2190,2215,0.50283768444948918,1.0488990132060001,0.95853070976117971,0.3941919090681445,True,94,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,NY.GDP.PCAP.KD,103,3720,685,0.15550510783200908,543.61261700180194,1089.8411618564742,1208.1500321100586,True,95,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,WFP_Price_Change_l12,104,2915,1490,0.33825198637911463,1.2823,4.1093239287402623,13.508331420613615,True,96,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,WFP_Price_Volatility_l12,105,2837,1568,0.35595913734392737,68.528390685088596,1859.5113085035466,12261.523710612049,True,97,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,fatalities_battles_l12,106,4405,0,0,0,1.0183881952326901,2.6071372637359418,True,98,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,fatalities_explosions_l12,107,4405,0,0,0,0.13711691259931896,0.79800850088781605,True,99,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,fatalities_violence_l12,108,4405,0,0,0,1.3866061293984109,3.1843334490218638,True,100,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,event_count_battles_l12,109,4405,0,0,0,0.38660612939841088,0.52337197152252068,True,101,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,event_count_explosions_l12,110,4405,0,0,0,0.069920544835414308,0.3007612257468647,True,102,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,event_count_violence_l12,111,4405,0,0,1,0.62292849035187292,0.52856738305328721,True,103,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,precipitation_sum_l12,112,3484,921,0.2090805902383655,0.0062197189508075004,0.026540264390071545,0.044485869775315844,True,104,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,soil_moisture_mean_l12,113,3484,921,0.2090805902383655,0.17127805640568591,0.16547181260947336,0.1387417421227993,True,105,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,shortwave_radiation_sum_l12,114,3697,708,0.16072644721906923,301790974,313848805.06729329,189874241.34560063,True,106,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,temperature_2m_mean_l12,115,3484,921,0.2090805902383655,288.2880620476202,283.37186827907783,22.34036613416357,True,107,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,price_index_l12,116,4213,192,0.043586833144154367,93.572601309999996,117.12836797969806,95.152759786501306,True,108,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,rainfall_chirps_l12,117,2581,1824,0.41407491486946651,7.3273607518165376,18.177785795688308,30.819111908271509,True,109,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,nightlight_mean_l12,118,3780,625,0.14188422247446084,0.27754898002655348,0.71015331367879897,2.8173959237001434,True,110,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,EVI_l12,119,2356,2049,0.46515323496027244,1275.1138066323888,1732.1297741087465,1189.5951016257941,True,111,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,fatalities_battles_w5_l12,120,4405,0,0,0,1.8417720161592528,4.7227943464415487,True,112,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,fatalities_explosions_w5_l12,121,4405,0,0,0,0.35818603867934951,2.448380062783388,True,113,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,fatalities_violence_w5_l12,122,4405,0,0,0,3.050124316553851,5.8649945347989174,True,114,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,event_count_battles_w5_l12,123,4405,0,0,0,2.2586831877175131,4.9092595299602264,True,115,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,event_count_explosions_w5_l12,124,4405,0,0,0,0.37660445121669545,2.3596388764667262,True,116,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,event_count_violence_w5_l12,125,4405,0,0,2.53460760387282,4.4822739994466367,7.2684655555257622,True,117,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,fatalities_battles_w10_l12,126,4405,0,0,0,1.9405391659823756,4.7447251328897098,True,118,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,fatalities_explosions_w10_l12,127,4405,0,0,0,0.37655504827373798,2.4632374266050747,True,119,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,fatalities_violence_w10_l12,128,4405,0,0,0,3.1778469200092316,5.8617569509960772,True,120,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,event_count_battles_w10_l12,129,4405,0,0,0,2.3850080810308922,4.9066084872918392,True,121,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,event_count_explosions_w10_l12,130,4405,0,0,0,0.39900606784426701,2.377271170641063,True,122,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,event_count_violence_w10_l12,131,4405,0,0,2.9046503404278483,4.6199089344115976,7.2293793546263254,True,123,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,rainfall_chirps_z_l12,132,2581,1824,0.41407491486946651,-0.50209145881719575,-0.35919259831456707,0.70003511018208642,True,124,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,temperature_2m_mean_z_l12,133,3484,921,0.2090805902383655,0.72906823403458743,0.37378937585331162,1.0293248221652802,True,125,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,GOSIF_GPP_l12,134,4405,0,0,7965,11662.232463110102,10318.720745774415,True,126,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,WFP_Price_Change_s12_l12,135,1777,2628,0.59659477866061295,5.8427742887739447,6.198387362631288,3.7721986285655329,True,127,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,WFP_Price_Volatility_s12_l12,136,1631,2774,0.62973893303064699,83.463402616195808,272.01441051125761,794.39320546338149,True,128,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,fatalities_battles_s12_l12,137,3119,1286,0.29194097616345061,2.1320071635561044,3.3845922280978691,4.5937592133333371,True,129,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,fatalities_explosions_s12_l12,138,3119,1286,0.29194097616345061,0,0.43267553519121216,0.86273549605320687,True,130,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,fatalities_violence_s12_l12,139,3119,1286,0.29194097616345061,1.2060453783110543,1.7437795630974577,1.6693870024548934,True,131,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,event_count_battles_s12_l12,140,3119,1286,0.29194097616345061,0.51492865054443726,0.51416356836070509,0.08889425713122262,True,132,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,event_count_explosions_s12_l12,141,3119,1286,0.29194097616345061,0.28867513459481281,0.25008465402611485,0.16988837997880252,True,133,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,event_count_violence_s12_l12,142,3119,1286,0.29194097616345061,0.4923659639173309,0.49820861333408195,0.12034868443763831,True,134,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,precipitation_sum_s12_l12,143,2398,2007,0.45561861520998864,0.0075593467484984999,0.015068883003767393,0.018473613498969789,True,135,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,soil_moisture_mean_s12_l12,144,2398,2007,0.45561861520998864,0.0159336550172904,0.021182894409055648,0.019609563064455146,True,136,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,shortwave_radiation_sum_s12_l12,145,2398,2007,0.45561861520998864,112947118.07172993,120903495.88900608,37932413.365451194,True,137,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,temperature_2m_mean_s12_l12,146,2398,2007,0.45561861520998864,8.5358166365693933,8.4123310990720679,1.0120742050022944,True,138,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,price_index_s12_l12,147,2929,1476,0.3350737797956867,9.0893725660765519,11.979408715597479,11.683710359749208,True,139,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,rainfall_chirps_s12_l12,148,1695,2710,0.61520998864926224,17.411243638080968,18.491606697459837,10.706356565127063,True,140,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,nightlight_mean_s12_l12,149,2587,1818,0.4127128263337117,0.091000941431826105,0.17831587521789224,0.35161774821488673,True,141,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,EVI_s12_l12,150,1144,3261,0.74029511918274693,131.9464785881346,235.37133085117992,354.41442598512731,True,142,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,fatalities_battles_w5_s12_l12,151,3119,1286,0.29194097616345061,2.1737054559870583,2.8149263219765013,2.5068793481797562,True,143,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,fatalities_explosions_w5_s12_l12,152,3119,1286,0.29194097616345061,0,0.63082304361596708,1.412534163015053,True,144,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,fatalities_violence_w5_s12_l12,153,3119,1286,0.29194097616345061,2.0406447584184679,2.7351399922395032,2.6841209886606796,True,145,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,event_count_battles_w5_s12_l12,154,3119,1286,0.29194097616345061,1.7241824167295794,2.6403102757176917,2.9295417230967677,True,146,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,event_count_explosions_w5_s12_l12,155,3119,1286,0.29194097616345061,0.8473156973421252,1.1039276272300569,1.5330399176445531,True,147,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,event_count_violence_w5_s12_l12,156,3119,1286,0.29194097616345061,1.6628584965830586,2.558029082991911,2.954136493371665,True,148,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,fatalities_battles_w10_s12_l12,157,3119,1286,0.29194097616345061,2.2832570766954343,2.9193789085696982,2.4583129644304544,True,149,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,fatalities_explosions_w10_s12_l12,158,3119,1286,0.29194097616345061,0,0.66779301580084516,1.4268808426403421,True,150,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,fatalities_violence_w10_s12_l12,159,3119,1286,0.29194097616345061,2.1407147501493258,2.8192324388184211,2.64160396628716,True,151,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,event_count_battles_w10_s12_l12,160,3119,1286,0.29194097616345061,1.8414797036503707,2.7341033957134551,2.8742314802342275,True,152,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,event_count_explosions_w10_s12_l12,161,3119,1286,0.29194097616345061,0.98204319658477424,1.1932004837622718,1.5220199679083917,True,153,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,event_count_violence_w10_s12_l12,162,3119,1286,0.29194097616345061,1.768077108043737,2.6312127205896534,2.9067246311119845,True,154,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,rainfall_chirps_z_s12_l12,163,1695,2710,0.61520998864926224,0.95807160775209377,0.97815243360716519,0.18660420560825169,True,155,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,temperature_2m_mean_z_s12_l12,164,2398,2007,0.45561861520998864,1.0493525075509487,1.0487894100455877,0.045246609144717974,True,156,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,GOSIF_GPP_s12_l12,165,3119,1286,0.29194097616345061,3546.6297788011075,3767.1510287035435,2399.9270093333544,True,157,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,NY.GDP.PCAP.KD_l12,166,42,4363,0.9904653802497162,477.84789121823758,489.71184019630357,206.94240572598974,True,158,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,cpi_l12,167,38,4367,0.99137343927355281,1.0488990132060001,1.049946958055215,0.034784928218228719,True,159,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,GDP_l12,168,42,4363,0.9904653802497162,477.84789121823758,489.71184019630357,206.94240572598974,False,,exact_duplicate_after_scaling,NY.GDP.PCAP.KD_l12,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,CPI_l12,169,38,4367,0.99137343927355281,1.0488990132060001,1.049946958055215,0.034784928218228719,False,,exact_duplicate_after_scaling,cpi_l12,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,infra_index_l12,170,32,4373,0.99273552780930763,6.9863094780000008,7.0099661073248596,0.72570046464094007,True,160,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,CC.PER.RNK_l12,171,44,4361,0.990011350737798,8.5714282989502006,8.6274252723754525,1.2523838392507429,True,161,,,training_only_pivoted_qr
+Nowcasting,Ordered Probit,direct,gini_l12,172,38,4367,0.99137343927355281,0.44057787526100001,0.44044325453008365,0.0034466701699151342,True,162,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,elevation,0,4405,0,0,686,878.17185017026111,692.50389245773056,True,0,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,infra_index_m12_l12,1,2461,1944,0.441316685584563,9.4342897630000007,11.206658111544153,7.0308963693327691,True,1,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,infra_index_s12_l12,2,2461,1944,0.441316685584563,0.24857821299999999,0.40113483395891036,0.58505803858415961,True,2,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,market_access,3,4405,0,0,231,338.66628830874009,336.07329258588084,True,3,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,nitrogen_5-15cm_mean,4,4405,0,0,1552,1829.1788876276958,1075.1945348926433,True,4,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,phh2o_5-15cm_mean,5,4405,0,0,65,67.39818388195232,10.303692575828091,True,5,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,cec_5-15cm_mean,6,4405,0,0,189,192.21203178206582,64.646946464974675,True,6,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,cfvo_5-15cm_mean,7,4405,0,0,116,128.36163450624289,71.147527687754604,True,7,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,soc_5-15cm_mean,8,4405,0,0,161,205.21906923950056,136.4382749083762,True,8,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,aez_groupid_4000,9,4405,0,0,0,0.002724177071509648,0.052122508868939814,True,9,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,aez_groupid_7000,10,4405,0,0,0,0.0065834279228149826,0.080870800661302242,True,10,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,aez_groupid_9000,11,4405,0,0,0,0.018615209988649264,0.13516169555657309,True,11,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,aez_groupid_10000,12,4405,0,0,0,0.0065834279228149826,0.080870800661302242,True,12,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,aez_groupid_12000,13,4405,0,0,0,0.16345062429057888,0.36977630766396985,True,13,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,aez_groupid_17000,14,4405,0,0,0,0.10805902383654938,0.31045494230893061,True,14,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,aez_groupid_19000,15,4405,0,0,0,0.061975028376844495,0.24111019106320206,True,15,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,aez_groupid_25000,16,4405,0,0,0,0.012258796821793417,0.11003871465205055,True,16,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,aez_groupid_30000,17,4405,0,0,0,0.0056753688989784334,0.07512096303189239,True,17,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,aez_groupid_31000,18,4405,0,0,0,0.29580022701475595,0.4564016353090497,False,,pivoted_qr_rank_dependent,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,aez_groupid_32000,19,4405,0,0,0,0.086265607264472188,0.28075585883070014,True,18,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,aez_groupid_33000,20,4405,0,0,0,0.079909194097616348,0.27115256737911564,True,19,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,aez_groupid_34000,21,4405,0,0,0,0.0095346197502837685,0.097178756817018735,True,20,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,aez_groupid_36000,22,4405,0,0,0,0.1185017026106697,0.32320125168235669,True,21,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,aez_groupid_40000,23,4405,0,0,0,0.0011350737797956867,0.033671729793850913,True,22,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,aez_groupid_43000,24,4405,0,0,0,0.02292849035187287,0.14967556474607652,True,23,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,slope,25,4405,0,0,1.26734003424644,1.4823619066208995,2.0391883043783237,True,24,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,estimated_population,26,4405,0,0,238951,533004.97956867202,810072.30684026016,True,25,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,lat,27,4405,0,0,6.9140074108156302,9.4623936511999105,13.364491359027866,True,26,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,lon,28,4405,0,0,33.569841536019112,23.056812297300301,47.595863518623879,True,27,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,cropland,29,4405,0,0,0,6.9434733257661749,19.16422203806362,True,28,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,rangeland,30,4405,0,0,28,32.646538024971626,30.997457549085389,True,29,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,area,31,4405,0,0,26343.998460499999,48773.458295484168,83099.153184179959,True,30,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,es_urban_pop,32,4405,0,0,0,79064.499886492616,492467.68579371745,True,31,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,urban_area,33,4405,0,0,0,56.844961153824947,319.16714294974815,True,32,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,distance_to_river,34,4405,0,0,0.015052533414577299,0.26490722669763472,0.79959600194477243,True,33,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,ruggedness_index,35,4405,0,0,0.0426350112483471,0.14026277176481847,0.22598532515419009,True,34,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,fews_ipc_ha,36,4405,0,0,0,0.01021566401816118,0.10055498111396187,True,35,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,WFP_Price_Change_l12,37,2915,1490,0.33825198637911463,1.2823,4.1093239287402623,13.508331420613615,True,36,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,WFP_Price_Volatility_l12,38,2837,1568,0.35595913734392737,68.528390685088596,1859.5113085035466,12261.523710612049,True,37,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,fatalities_battles_l12,39,4405,0,0,0,1.0183881952326901,2.6071372637359418,True,38,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,fatalities_explosions_l12,40,4405,0,0,0,0.13711691259931896,0.79800850088781605,True,39,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,fatalities_violence_l12,41,4405,0,0,0,1.3866061293984109,3.1843334490218638,True,40,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,event_count_battles_l12,42,4405,0,0,0,0.38660612939841088,0.52337197152252068,True,41,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,event_count_explosions_l12,43,4405,0,0,0,0.069920544835414308,0.3007612257468647,True,42,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,event_count_violence_l12,44,4405,0,0,1,0.62292849035187292,0.52856738305328721,True,43,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,precipitation_sum_l12,45,3484,921,0.2090805902383655,0.0062197189508075004,0.026540264390071545,0.044485869775315844,True,44,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,soil_moisture_mean_l12,46,3484,921,0.2090805902383655,0.17127805640568591,0.16547181260947336,0.1387417421227993,True,45,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,shortwave_radiation_sum_l12,47,3697,708,0.16072644721906923,301790974,313848805.06729329,189874241.34560063,True,46,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,temperature_2m_mean_l12,48,3484,921,0.2090805902383655,288.2880620476202,283.37186827907783,22.34036613416357,True,47,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,price_index_l12,49,4213,192,0.043586833144154367,93.572601309999996,117.12836797969806,95.152759786501306,True,48,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,rainfall_chirps_l12,50,2581,1824,0.41407491486946651,7.3273607518165376,18.177785795688308,30.819111908271509,True,49,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,nightlight_mean_l12,51,3780,625,0.14188422247446084,0.27754898002655348,0.71015331367879897,2.8173959237001434,True,50,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,EVI_l12,52,2356,2049,0.46515323496027244,1275.1138066323888,1732.1297741087465,1189.5951016257941,True,51,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,fatalities_battles_w5_l12,53,4405,0,0,0,1.8417720161592528,4.7227943464415487,True,52,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,fatalities_explosions_w5_l12,54,4405,0,0,0,0.35818603867934951,2.448380062783388,True,53,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,fatalities_violence_w5_l12,55,4405,0,0,0,3.050124316553851,5.8649945347989174,True,54,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,event_count_battles_w5_l12,56,4405,0,0,0,2.2586831877175131,4.9092595299602264,True,55,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,event_count_explosions_w5_l12,57,4405,0,0,0,0.37660445121669545,2.3596388764667262,True,56,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,event_count_violence_w5_l12,58,4405,0,0,2.53460760387282,4.4822739994466367,7.2684655555257622,True,57,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,fatalities_battles_w10_l12,59,4405,0,0,0,1.9405391659823756,4.7447251328897098,True,58,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,fatalities_explosions_w10_l12,60,4405,0,0,0,0.37655504827373798,2.4632374266050747,True,59,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,fatalities_violence_w10_l12,61,4405,0,0,0,3.1778469200092316,5.8617569509960772,True,60,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,event_count_battles_w10_l12,62,4405,0,0,0,2.3850080810308922,4.9066084872918392,True,61,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,event_count_explosions_w10_l12,63,4405,0,0,0,0.39900606784426701,2.377271170641063,True,62,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,event_count_violence_w10_l12,64,4405,0,0,2.9046503404278483,4.6199089344115976,7.2293793546263254,True,63,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,rainfall_chirps_z_l12,65,2581,1824,0.41407491486946651,-0.50209145881719575,-0.35919259831456707,0.70003511018208642,True,64,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,temperature_2m_mean_z_l12,66,3484,921,0.2090805902383655,0.72906823403458743,0.37378937585331162,1.0293248221652802,True,65,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,GOSIF_GPP_l12,67,4405,0,0,7965,11662.232463110102,10318.720745774415,True,66,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,WFP_Price_Change_s12_l12,68,1777,2628,0.59659477866061295,5.8427742887739447,6.198387362631288,3.7721986285655329,True,67,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,WFP_Price_Volatility_s12_l12,69,1631,2774,0.62973893303064699,83.463402616195808,272.01441051125761,794.39320546338149,True,68,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,fatalities_battles_s12_l12,70,3119,1286,0.29194097616345061,2.1320071635561044,3.3845922280978691,4.5937592133333371,True,69,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,fatalities_explosions_s12_l12,71,3119,1286,0.29194097616345061,0,0.43267553519121216,0.86273549605320687,True,70,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,fatalities_violence_s12_l12,72,3119,1286,0.29194097616345061,1.2060453783110543,1.7437795630974577,1.6693870024548934,True,71,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,event_count_battles_s12_l12,73,3119,1286,0.29194097616345061,0.51492865054443726,0.51416356836070509,0.08889425713122262,True,72,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,event_count_explosions_s12_l12,74,3119,1286,0.29194097616345061,0.28867513459481281,0.25008465402611485,0.16988837997880252,True,73,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,event_count_violence_s12_l12,75,3119,1286,0.29194097616345061,0.4923659639173309,0.49820861333408195,0.12034868443763831,True,74,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,precipitation_sum_s12_l12,76,2398,2007,0.45561861520998864,0.0075593467484984999,0.015068883003767393,0.018473613498969789,True,75,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,soil_moisture_mean_s12_l12,77,2398,2007,0.45561861520998864,0.0159336550172904,0.021182894409055648,0.019609563064455146,True,76,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,shortwave_radiation_sum_s12_l12,78,2398,2007,0.45561861520998864,112947118.07172993,120903495.88900608,37932413.365451194,True,77,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,temperature_2m_mean_s12_l12,79,2398,2007,0.45561861520998864,8.5358166365693933,8.4123310990720679,1.0120742050022944,True,78,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,price_index_s12_l12,80,2929,1476,0.3350737797956867,9.0893725660765519,11.979408715597479,11.683710359749208,True,79,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,rainfall_chirps_s12_l12,81,1695,2710,0.61520998864926224,17.411243638080968,18.491606697459837,10.706356565127063,True,80,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,nightlight_mean_s12_l12,82,2587,1818,0.4127128263337117,0.091000941431826105,0.17831587521789224,0.35161774821488673,True,81,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,EVI_s12_l12,83,1144,3261,0.74029511918274693,131.9464785881346,235.37133085117992,354.41442598512731,True,82,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,fatalities_battles_w5_s12_l12,84,3119,1286,0.29194097616345061,2.1737054559870583,2.8149263219765013,2.5068793481797562,True,83,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,fatalities_explosions_w5_s12_l12,85,3119,1286,0.29194097616345061,0,0.63082304361596708,1.412534163015053,True,84,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,fatalities_violence_w5_s12_l12,86,3119,1286,0.29194097616345061,2.0406447584184679,2.7351399922395032,2.6841209886606796,True,85,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,event_count_battles_w5_s12_l12,87,3119,1286,0.29194097616345061,1.7241824167295794,2.6403102757176917,2.9295417230967677,True,86,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,event_count_explosions_w5_s12_l12,88,3119,1286,0.29194097616345061,0.8473156973421252,1.1039276272300569,1.5330399176445531,True,87,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,event_count_violence_w5_s12_l12,89,3119,1286,0.29194097616345061,1.6628584965830586,2.558029082991911,2.954136493371665,True,88,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,fatalities_battles_w10_s12_l12,90,3119,1286,0.29194097616345061,2.2832570766954343,2.9193789085696982,2.4583129644304544,True,89,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,fatalities_explosions_w10_s12_l12,91,3119,1286,0.29194097616345061,0,0.66779301580084516,1.4268808426403421,True,90,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,fatalities_violence_w10_s12_l12,92,3119,1286,0.29194097616345061,2.1407147501493258,2.8192324388184211,2.64160396628716,True,91,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,event_count_battles_w10_s12_l12,93,3119,1286,0.29194097616345061,1.8414797036503707,2.7341033957134551,2.8742314802342275,True,92,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,event_count_explosions_w10_s12_l12,94,3119,1286,0.29194097616345061,0.98204319658477424,1.1932004837622718,1.5220199679083917,True,93,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,event_count_violence_w10_s12_l12,95,3119,1286,0.29194097616345061,1.768077108043737,2.6312127205896534,2.9067246311119845,True,94,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,rainfall_chirps_z_s12_l12,96,1695,2710,0.61520998864926224,0.95807160775209377,0.97815243360716519,0.18660420560825169,True,95,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,temperature_2m_mean_z_s12_l12,97,2398,2007,0.45561861520998864,1.0493525075509487,1.0487894100455877,0.045246609144717974,True,96,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,GOSIF_GPP_s12_l12,98,3119,1286,0.29194097616345061,3546.6297788011075,3767.1510287035435,2399.9270093333544,True,97,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,NY.GDP.PCAP.KD_l12,99,42,4363,0.9904653802497162,477.84789121823758,489.71184019630357,206.94240572598974,True,98,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,cpi_l12,100,38,4367,0.99137343927355281,1.0488990132060001,1.049946958055215,0.034784928218228719,True,99,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,GDP_l12,101,42,4363,0.9904653802497162,477.84789121823758,489.71184019630357,206.94240572598974,False,,exact_duplicate_after_scaling,NY.GDP.PCAP.KD_l12,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,CPI_l12,102,38,4367,0.99137343927355281,1.0488990132060001,1.049946958055215,0.034784928218228719,False,,exact_duplicate_after_scaling,cpi_l12,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,infra_index_l12,103,32,4373,0.99273552780930763,6.9863094780000008,7.0099661073248596,0.72570046464094007,True,100,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,CC.PER.RNK_l12,104,44,4361,0.990011350737798,8.5714282989502006,8.6274252723754525,1.2523838392507429,True,101,,,training_only_pivoted_qr
+Forecasting,Ensemble OLS,layer1_shared,gini_l12,105,38,4367,0.99137343927355281,0.44057787526100001,0.44044325453008365,0.0034466701699151342,True,102,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,elevation,0,4405,0,0,686,878.17185017026111,692.50389245773056,True,0,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,infra_index_m12_l12,1,2461,1944,0.441316685584563,9.4342897630000007,11.206658111544153,7.0308963693327691,True,1,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,infra_index_s12_l12,2,2461,1944,0.441316685584563,0.24857821299999999,0.40113483395891036,0.58505803858415961,True,2,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,market_access,3,4405,0,0,231,338.66628830874009,336.07329258588084,True,3,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,nitrogen_5-15cm_mean,4,4405,0,0,1552,1829.1788876276958,1075.1945348926433,True,4,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,phh2o_5-15cm_mean,5,4405,0,0,65,67.39818388195232,10.303692575828091,True,5,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,cec_5-15cm_mean,6,4405,0,0,189,192.21203178206582,64.646946464974675,True,6,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,cfvo_5-15cm_mean,7,4405,0,0,116,128.36163450624289,71.147527687754604,True,7,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,soc_5-15cm_mean,8,4405,0,0,161,205.21906923950056,136.4382749083762,True,8,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,aez_groupid_4000,9,4405,0,0,0,0.002724177071509648,0.052122508868939814,True,9,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,aez_groupid_7000,10,4405,0,0,0,0.0065834279228149826,0.080870800661302242,True,10,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,aez_groupid_9000,11,4405,0,0,0,0.018615209988649264,0.13516169555657309,True,11,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,aez_groupid_10000,12,4405,0,0,0,0.0065834279228149826,0.080870800661302242,True,12,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,aez_groupid_12000,13,4405,0,0,0,0.16345062429057888,0.36977630766396985,True,13,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,aez_groupid_17000,14,4405,0,0,0,0.10805902383654938,0.31045494230893061,True,14,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,aez_groupid_19000,15,4405,0,0,0,0.061975028376844495,0.24111019106320206,True,15,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,aez_groupid_25000,16,4405,0,0,0,0.012258796821793417,0.11003871465205055,True,16,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,aez_groupid_30000,17,4405,0,0,0,0.0056753688989784334,0.07512096303189239,True,17,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,aez_groupid_31000,18,4405,0,0,0,0.29580022701475595,0.4564016353090497,False,,pivoted_qr_rank_dependent,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,aez_groupid_32000,19,4405,0,0,0,0.086265607264472188,0.28075585883070014,True,18,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,aez_groupid_33000,20,4405,0,0,0,0.079909194097616348,0.27115256737911564,True,19,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,aez_groupid_34000,21,4405,0,0,0,0.0095346197502837685,0.097178756817018735,True,20,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,aez_groupid_36000,22,4405,0,0,0,0.1185017026106697,0.32320125168235669,True,21,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,aez_groupid_40000,23,4405,0,0,0,0.0011350737797956867,0.033671729793850913,True,22,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,aez_groupid_43000,24,4405,0,0,0,0.02292849035187287,0.14967556474607652,True,23,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,slope,25,4405,0,0,1.26734003424644,1.4823619066208995,2.0391883043783237,True,24,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,estimated_population,26,4405,0,0,238951,533004.97956867202,810072.30684026016,True,25,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,lat,27,4405,0,0,6.9140074108156302,9.4623936511999105,13.364491359027866,True,26,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,lon,28,4405,0,0,33.569841536019112,23.056812297300301,47.595863518623879,True,27,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,cropland,29,4405,0,0,0,6.9434733257661749,19.16422203806362,True,28,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,rangeland,30,4405,0,0,28,32.646538024971626,30.997457549085389,True,29,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,area,31,4405,0,0,26343.998460499999,48773.458295484168,83099.153184179959,True,30,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,es_urban_pop,32,4405,0,0,0,79064.499886492616,492467.68579371745,True,31,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,urban_area,33,4405,0,0,0,56.844961153824947,319.16714294974815,True,32,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,distance_to_river,34,4405,0,0,0.015052533414577299,0.26490722669763472,0.79959600194477243,True,33,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,ruggedness_index,35,4405,0,0,0.0426350112483471,0.14026277176481847,0.22598532515419009,True,34,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,fews_ipc_ha,36,4405,0,0,0,0.01021566401816118,0.10055498111396187,True,35,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,WFP_Price_Change_l12,37,2915,1490,0.33825198637911463,1.2823,4.1093239287402623,13.508331420613615,True,36,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,WFP_Price_Volatility_l12,38,2837,1568,0.35595913734392737,68.528390685088596,1859.5113085035466,12261.523710612049,True,37,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,fatalities_battles_l12,39,4405,0,0,0,1.0183881952326901,2.6071372637359418,True,38,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,fatalities_explosions_l12,40,4405,0,0,0,0.13711691259931896,0.79800850088781605,True,39,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,fatalities_violence_l12,41,4405,0,0,0,1.3866061293984109,3.1843334490218638,True,40,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,event_count_battles_l12,42,4405,0,0,0,0.38660612939841088,0.52337197152252068,True,41,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,event_count_explosions_l12,43,4405,0,0,0,0.069920544835414308,0.3007612257468647,True,42,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,event_count_violence_l12,44,4405,0,0,1,0.62292849035187292,0.52856738305328721,True,43,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,precipitation_sum_l12,45,3484,921,0.2090805902383655,0.0062197189508075004,0.026540264390071545,0.044485869775315844,True,44,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,soil_moisture_mean_l12,46,3484,921,0.2090805902383655,0.17127805640568591,0.16547181260947336,0.1387417421227993,True,45,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,shortwave_radiation_sum_l12,47,3697,708,0.16072644721906923,301790974,313848805.06729329,189874241.34560063,True,46,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,temperature_2m_mean_l12,48,3484,921,0.2090805902383655,288.2880620476202,283.37186827907783,22.34036613416357,True,47,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,price_index_l12,49,4213,192,0.043586833144154367,93.572601309999996,117.12836797969806,95.152759786501306,True,48,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,rainfall_chirps_l12,50,2581,1824,0.41407491486946651,7.3273607518165376,18.177785795688308,30.819111908271509,True,49,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,nightlight_mean_l12,51,3780,625,0.14188422247446084,0.27754898002655348,0.71015331367879897,2.8173959237001434,True,50,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,EVI_l12,52,2356,2049,0.46515323496027244,1275.1138066323888,1732.1297741087465,1189.5951016257941,True,51,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,fatalities_battles_w5_l12,53,4405,0,0,0,1.8417720161592528,4.7227943464415487,True,52,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,fatalities_explosions_w5_l12,54,4405,0,0,0,0.35818603867934951,2.448380062783388,True,53,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,fatalities_violence_w5_l12,55,4405,0,0,0,3.050124316553851,5.8649945347989174,True,54,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,event_count_battles_w5_l12,56,4405,0,0,0,2.2586831877175131,4.9092595299602264,True,55,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,event_count_explosions_w5_l12,57,4405,0,0,0,0.37660445121669545,2.3596388764667262,True,56,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,event_count_violence_w5_l12,58,4405,0,0,2.53460760387282,4.4822739994466367,7.2684655555257622,True,57,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,fatalities_battles_w10_l12,59,4405,0,0,0,1.9405391659823756,4.7447251328897098,True,58,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,fatalities_explosions_w10_l12,60,4405,0,0,0,0.37655504827373798,2.4632374266050747,True,59,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,fatalities_violence_w10_l12,61,4405,0,0,0,3.1778469200092316,5.8617569509960772,True,60,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,event_count_battles_w10_l12,62,4405,0,0,0,2.3850080810308922,4.9066084872918392,True,61,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,event_count_explosions_w10_l12,63,4405,0,0,0,0.39900606784426701,2.377271170641063,True,62,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,event_count_violence_w10_l12,64,4405,0,0,2.9046503404278483,4.6199089344115976,7.2293793546263254,True,63,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,rainfall_chirps_z_l12,65,2581,1824,0.41407491486946651,-0.50209145881719575,-0.35919259831456707,0.70003511018208642,True,64,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,temperature_2m_mean_z_l12,66,3484,921,0.2090805902383655,0.72906823403458743,0.37378937585331162,1.0293248221652802,True,65,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,GOSIF_GPP_l12,67,4405,0,0,7965,11662.232463110102,10318.720745774415,True,66,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,WFP_Price_Change_s12_l12,68,1777,2628,0.59659477866061295,5.8427742887739447,6.198387362631288,3.7721986285655329,True,67,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,WFP_Price_Volatility_s12_l12,69,1631,2774,0.62973893303064699,83.463402616195808,272.01441051125761,794.39320546338149,True,68,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,fatalities_battles_s12_l12,70,3119,1286,0.29194097616345061,2.1320071635561044,3.3845922280978691,4.5937592133333371,True,69,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,fatalities_explosions_s12_l12,71,3119,1286,0.29194097616345061,0,0.43267553519121216,0.86273549605320687,True,70,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,fatalities_violence_s12_l12,72,3119,1286,0.29194097616345061,1.2060453783110543,1.7437795630974577,1.6693870024548934,True,71,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,event_count_battles_s12_l12,73,3119,1286,0.29194097616345061,0.51492865054443726,0.51416356836070509,0.08889425713122262,True,72,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,event_count_explosions_s12_l12,74,3119,1286,0.29194097616345061,0.28867513459481281,0.25008465402611485,0.16988837997880252,True,73,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,event_count_violence_s12_l12,75,3119,1286,0.29194097616345061,0.4923659639173309,0.49820861333408195,0.12034868443763831,True,74,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,precipitation_sum_s12_l12,76,2398,2007,0.45561861520998864,0.0075593467484984999,0.015068883003767393,0.018473613498969789,True,75,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,soil_moisture_mean_s12_l12,77,2398,2007,0.45561861520998864,0.0159336550172904,0.021182894409055648,0.019609563064455146,True,76,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,shortwave_radiation_sum_s12_l12,78,2398,2007,0.45561861520998864,112947118.07172993,120903495.88900608,37932413.365451194,True,77,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,temperature_2m_mean_s12_l12,79,2398,2007,0.45561861520998864,8.5358166365693933,8.4123310990720679,1.0120742050022944,True,78,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,price_index_s12_l12,80,2929,1476,0.3350737797956867,9.0893725660765519,11.979408715597479,11.683710359749208,True,79,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,rainfall_chirps_s12_l12,81,1695,2710,0.61520998864926224,17.411243638080968,18.491606697459837,10.706356565127063,True,80,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,nightlight_mean_s12_l12,82,2587,1818,0.4127128263337117,0.091000941431826105,0.17831587521789224,0.35161774821488673,True,81,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,EVI_s12_l12,83,1144,3261,0.74029511918274693,131.9464785881346,235.37133085117992,354.41442598512731,True,82,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,fatalities_battles_w5_s12_l12,84,3119,1286,0.29194097616345061,2.1737054559870583,2.8149263219765013,2.5068793481797562,True,83,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,fatalities_explosions_w5_s12_l12,85,3119,1286,0.29194097616345061,0,0.63082304361596708,1.412534163015053,True,84,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,fatalities_violence_w5_s12_l12,86,3119,1286,0.29194097616345061,2.0406447584184679,2.7351399922395032,2.6841209886606796,True,85,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,event_count_battles_w5_s12_l12,87,3119,1286,0.29194097616345061,1.7241824167295794,2.6403102757176917,2.9295417230967677,True,86,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,event_count_explosions_w5_s12_l12,88,3119,1286,0.29194097616345061,0.8473156973421252,1.1039276272300569,1.5330399176445531,True,87,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,event_count_violence_w5_s12_l12,89,3119,1286,0.29194097616345061,1.6628584965830586,2.558029082991911,2.954136493371665,True,88,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,fatalities_battles_w10_s12_l12,90,3119,1286,0.29194097616345061,2.2832570766954343,2.9193789085696982,2.4583129644304544,True,89,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,fatalities_explosions_w10_s12_l12,91,3119,1286,0.29194097616345061,0,0.66779301580084516,1.4268808426403421,True,90,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,fatalities_violence_w10_s12_l12,92,3119,1286,0.29194097616345061,2.1407147501493258,2.8192324388184211,2.64160396628716,True,91,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,event_count_battles_w10_s12_l12,93,3119,1286,0.29194097616345061,1.8414797036503707,2.7341033957134551,2.8742314802342275,True,92,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,event_count_explosions_w10_s12_l12,94,3119,1286,0.29194097616345061,0.98204319658477424,1.1932004837622718,1.5220199679083917,True,93,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,event_count_violence_w10_s12_l12,95,3119,1286,0.29194097616345061,1.768077108043737,2.6312127205896534,2.9067246311119845,True,94,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,rainfall_chirps_z_s12_l12,96,1695,2710,0.61520998864926224,0.95807160775209377,0.97815243360716519,0.18660420560825169,True,95,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,temperature_2m_mean_z_s12_l12,97,2398,2007,0.45561861520998864,1.0493525075509487,1.0487894100455877,0.045246609144717974,True,96,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,GOSIF_GPP_s12_l12,98,3119,1286,0.29194097616345061,3546.6297788011075,3767.1510287035435,2399.9270093333544,True,97,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,NY.GDP.PCAP.KD_l12,99,42,4363,0.9904653802497162,477.84789121823758,489.71184019630357,206.94240572598974,True,98,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,cpi_l12,100,38,4367,0.99137343927355281,1.0488990132060001,1.049946958055215,0.034784928218228719,True,99,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,GDP_l12,101,42,4363,0.9904653802497162,477.84789121823758,489.71184019630357,206.94240572598974,False,,exact_duplicate_after_scaling,NY.GDP.PCAP.KD_l12,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,CPI_l12,102,38,4367,0.99137343927355281,1.0488990132060001,1.049946958055215,0.034784928218228719,False,,exact_duplicate_after_scaling,cpi_l12,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,infra_index_l12,103,32,4373,0.99273552780930763,6.9863094780000008,7.0099661073248596,0.72570046464094007,True,100,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,CC.PER.RNK_l12,104,44,4361,0.990011350737798,8.5714282989502006,8.6274252723754525,1.2523838392507429,True,101,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer1_shared,gini_l12,105,38,4367,0.99137343927355281,0.44057787526100001,0.44044325453008365,0.0034466701699151342,True,102,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,CPI,0,2396,2009,0.45607264472190695,4.365871598,16.938980644340067,40.184756615825691,True,0,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,fatalities_explosions_w5_m12,1,4405,0,0,0,0.13741182771987145,1.2224365410197393,True,1,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,GDP,2,3621,784,0.17797956867196368,18904490263,36353154304.119637,60993951829.314461,True,2,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,soil_moisture_mean_m12,3,4405,0,0,0.19753019255254539,0.19344492437792102,0.15225901964672864,True,3,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,fatalities_explosions,4,4405,0,0,0,0.054786466047989896,0.82518582396933193,True,4,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,chirps_z_score,5,4405,0,0,0.18297570507075209,0.25863615051265804,1.1052252737281452,True,5,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,EVI_m12,6,4405,0,0,1479.6231175012288,1921.6153509990963,1266.772792393313,True,6,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,event_count_battles_w10_m12,7,4405,0,0,0.33524656517210399,2.3066316336217967,8.3876696744637673,True,7,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,event_count_battles_w5_m12,8,4405,0,0,0.2848212005354705,2.1711432298925342,8.1709946029566094,True,8,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,price_index_s12,9,4405,0,0,94.282407082500001,123.51410091860784,103.79778402445996,True,9,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,event_count_explosions,10,4405,0,0,0,0.054443947475283319,0.6113070128101743,True,10,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,rainfall_chirps_s12,11,4405,0,0,33.1747833164114,33.896741189688349,26.62507922401371,True,11,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,event_count_violence_w10_m12,12,4405,0,0,1.0660295588773887,3.3248789882799912,6.3497064878806482,True,12,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,WFP_Price_Change_s12,13,2407,1998,0.45357548240635642,7.3296817369999996,7.7485113386862663,4.7663222232935976,True,13,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,WFP_Price_Volatility_m12,14,2199,2206,0.50079455164585696,156.14186580000001,667.70741439230358,1926.225166213452,True,14,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,WFP_Price_Change_m12,15,2407,1998,0.45357548240635642,2.7231073989999999,3.4903818250365499,3.7269050367576679,True,15,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,infra_index_m12,16,2461,1944,0.441316685584563,9.4342897630000007,11.206658111544153,7.0308963693327691,True,16,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,temperature_2m_mean_s12,17,4405,0,0,287.08747807310897,280.34948426800941,22.244190149944508,True,17,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,event_count_battles_m12,18,4405,0,0,0.067766792780667995,0.35344537756340633,1.1808509414171215,True,18,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,fatalities_battles,19,4405,0,0,0,1.1798737895706064,6.7556116064185643,True,19,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,event_count_violence_m12,20,4405,0,0,0.2261107710840192,0.49285242994474104,0.85374428215732467,True,20,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,event_count_explosions_m12,21,4405,0,0,0,0.052272506896591353,0.57542795436294925,True,21,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,fatalities_battles_w5_m12,22,4405,0,0,0,2.0423077168982244,8.7477276988675694,True,22,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,event_count_violence_w5_m12,23,4405,0,0,0.97910225438466436,3.199482936061385,6.2673876704314395,True,23,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,soil_moisture_mean_s12,24,4405,0,0,0.19753019255254539,0.19344492437792102,0.15225901964672864,False,,exact_duplicate_after_scaling,soil_moisture_mean_m12,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,event_count_explosions_w5_m12,25,4405,0,0,0,0.19828806759926276,1.39750726840566,True,24,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,WFP_Price_Volatility_s12,26,2199,2206,0.50079455164585696,215.65494169999999,1331.485092351099,4963.3129409703324,True,25,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,event_count_violence,27,4405,0,0,0.1112334679258295,0.48474931541783478,1.0689657034241216,True,26,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,precipitation_sum_m12,28,4405,0,0,0.0232968644159234,0.038682040778876617,0.040203823407817904,True,27,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,event_count_violence_w10,29,4405,0,0,0.58402783759639421,3.2881138896894093,8.9750656627171566,True,28,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,fatalities_violence_w10_m12,30,4405,0,0,0.4961406421466642,2.6165739665131964,5.3816724414089148,True,29,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,event_count_battles,31,4405,0,0,0,0.32219995838862436,1.1516055159418619,True,30,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,event_count_explosions_w5,32,4405,0,0,0,0.20899428623743463,1.6015420107258753,True,31,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,fatalities_explosions_w10_m12,33,4405,0,0,0,0.15347149830981913,1.2970028290247464,True,32,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,event_count_battles_w10,34,4405,0,0,0,2.1667170381440308,8.5904606411749533,True,33,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,temperature_2m_mean_m12,35,4405,0,0,287.08747807310897,280.34948426800941,22.244190149944508,False,,exact_duplicate_after_scaling,temperature_2m_mean_s12,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,rainfall_chirps_m12,36,4405,0,0,33.1747833164114,33.896741189688349,26.62507922401371,False,,exact_duplicate_after_scaling,rainfall_chirps_s12,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,fatalities_violence_m12,37,4405,0,0,0.1000924854565618,0.92868995802242038,2.2102524058567545,True,34,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,WFP_Price_Change,38,2884,1521,0.34528944381384791,0.8972,2.0867862287872865,7.0662941977282108,True,35,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,event_count_explosions_w10,39,4405,0,0,0,0.24113233528671532,1.738545506040565,True,36,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,gini,40,2190,2215,0.50283768444948918,0.44057787526100001,0.43813173538749595,0.03228210099348363,True,37,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,cpi,41,2190,2215,0.50283768444948918,1.0488990132060001,0.95853070976117971,0.3941919090681445,True,38,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,fatalities_violence_w5_m12,42,4405,0,0,0.38548376659329159,2.489787328175364,5.3062729660546042,True,39,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,infra_index_s12,43,2461,1944,0.441316685584563,0.24857821299999999,0.40113483395891036,0.58505803858415961,True,40,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,shortwave_radiation_sum_m12,44,4405,0,0,338409235.95255536,249239710.05225322,180874676.76775995,True,41,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,price_index_m12,45,4405,0,0,94.282407082500001,123.51410091860784,103.79778402445996,False,,exact_duplicate_after_scaling,price_index_s12,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,fatalities_battles_w10_m12,46,4405,0,0,0,2.1801889301426374,9.0640935110996868,True,42,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,event_count_violence_w5,47,4405,0,0,0.48555513915032877,3.1613848988060584,8.8852893560111514,True,43,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,fatalities_explosions_w10,48,4405,0,0,0,0.14854728063499809,1.392093904787453,True,44,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,CC.PER.RNK,49,4405,0,0,3.8095238208770801,8.288849269619865,10.124601288985744,True,45,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,fatalities_violence_w5,50,4405,0,0,0,2.2343884638330116,6.7780725831090143,True,46,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,shortwave_radiation_sum_s12,51,4405,0,0,338409235.95255536,249239710.05225322,180874676.76775995,False,,exact_duplicate_after_scaling,shortwave_radiation_sum_m12,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,fatalities_battles_w10,52,4405,0,0,0,2.0294567318691841,9.1776524084023645,True,47,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,fatalities_battles_m12,53,4405,0,0,0,1.2981666253422441,6.5705101435793516,True,48,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,nightlight_mean_m12,54,4405,0,0,0.29097268554554279,0.695681727265415,2.7610067800337652,True,49,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,fatalities_battles_w5,55,4405,0,0,0,1.9002889543692467,8.8858923027917225,True,50,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,event_count_battles_w5,56,4405,0,0,0,2.0405476871507173,8.3931643354276186,True,51,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,fatalities_violence_w10,57,4405,0,0,0,2.3443902665667862,6.8690495345988705,True,52,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,fatalities_violence,58,4405,0,0,0,0.7777009558685184,2.1638416267735097,True,53,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,infra_index,59,2722,1683,0.38206583427922813,9.4342897630000007,11.351783474819525,7.4739681250178105,True,54,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,fatalities_explosions_m12,60,4405,0,0,0,0.059108128045790118,0.84240377525589982,True,55,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,temperature_z_score,61,4405,0,0,0.72854595742554429,0.61506091315215117,0.92532027991696664,True,56,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,event_count_explosions_w10_m12,62,4405,0,0,0,0.22697581370564024,1.5194808800353317,True,57,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,NY.GDP.PCAP.KD,63,3720,685,0.15550510783200908,543.61261700180194,1089.8411618564742,1208.1500321100586,True,58,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,fatalities_explosions_w5,64,4405,0,0,0,0.13572331674147847,1.3284920533048223,True,59,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,precipitation_sum_s12,65,4405,0,0,0.0232968644159234,0.038682040778876617,0.040203823407817904,False,,exact_duplicate_after_scaling,precipitation_sum_m12,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,WFP_Price_Volatility,66,2861,1544,0.35051078320090806,87.934199129999996,468.97308419521175,1889.9755080570656,True,60,,,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,nightlight_mean_s12,67,4405,0,0,0.29097268554554279,0.695681727265415,2.7610067800337652,False,,exact_duplicate_after_scaling,nightlight_mean_m12,training_only_pivoted_qr
+Nowcasting,Ensemble OLS,layer2_residual,GOSIF_GPP_m12,68,4405,0,0,11451.416670000001,11993.586568249142,9146.4468370451541,True,61,,,training_only_pivoted_qr

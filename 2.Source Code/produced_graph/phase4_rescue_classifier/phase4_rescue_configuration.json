@@ -1,0 +1,462 @@
+{
+  "acceptance_gate": {
+    "bootstrap_is_hard_gate": false,
+    "manuscript_adoption_authorized": false,
+    "task_results": {
+      "Forecasting": false,
+      "Nowcasting": false
+    }
+  },
+  "artifact_hashes": {
+    "phase4_rescue_benchmark_predictions.csv": "27a51295b1512503c71f60eb0313925d5cc1b01b93f048c34909cd0e1a3be132",
+    "phase4_rescue_bootstrap_draws.csv": "72d117c1c911aad52d8ca1989088229091c86a456720fbd09a3f2f981cd046d3",
+    "phase4_rescue_bootstrap_summary.csv": "a6e7f6043162cdafb6fdfd26e0efba9bfe36df80fd36df347a32701be79b373f",
+    "phase4_rescue_confusion_matrices.csv": "396457b3428e3f8d0b5aa8593008ab9f33fe39ece1b92a917b2737fab864d3f9",
+    "phase4_rescue_direct_forecasting_model.json": "7304372088eb0ce82f0773614994019f5bfd4ac9d9150e1ccc13cf7139ae3a1b",
+    "phase4_rescue_direct_nowcasting_layer1_model.json": "7304372088eb0ce82f0773614994019f5bfd4ac9d9150e1ccc13cf7139ae3a1b",
+    "phase4_rescue_direct_nowcasting_layer2_model.json": "208ae6fbb7277b4ff7734c1613da8e2b696394a73c97167200889ac9122fbb48",
+    "phase4_rescue_feature_manifest.csv": "f4ac0df59cba8becbccbc080fb632a0e54015e2acc135db9eb6cfca92d81794a",
+    "phase4_rescue_forecasting_model.json": "cdf9b6014a3b5ca549474e7e771c6d74c2f0c9eec58eb45cc60711ff7d3f22d8",
+    "phase4_rescue_main_comparison.pdf": "c33604de88bcaf0b821ac1a3d7965267c15165761ce5e7978cf0ecf3c2cfe198",
+    "phase4_rescue_main_comparison.png": "f7cd0de52f70650ebbd4e2b7af77933bff2df8fb4b673bbff8d1e0388b8839bd",
+    "phase4_rescue_main_comparison_metrics.csv": "c99fd55df9b48a96908a2fd7527c25b06475564ab621d2d8f1b8d895220594cd",
+    "phase4_rescue_metrics.csv": "3053a0b5a133ec23328bcfb8bb85a61989c4eaa86c0a4f2d8ba4bd04837e588b",
+    "phase4_rescue_model_audit.csv": "bd4ddd92a3eaa965fc991265652e8ed18f95eca998faafaab059c1c969e82a42",
+    "phase4_rescue_model_selection.csv": "7fa7dc986ee80e197c944006da9731465b6ebc4373939f434f4a0bdcf34917d1",
+    "phase4_rescue_nowcasting_model.json": "9cbe8da9471bbee117666faf3ad2c8a80968f5bb7b7e0787e5dc9b0df9ccbf3d",
+    "phase4_rescue_oof_predictions.csv": "dea864ab8a1e3c5785748b3b8ebec8eb3151585f21d664e1169fd116de1b7cd9",
+    "phase4_rescue_threshold_search.csv": "dca69cbaeaee11c4b6cd86fbd5f9d76aed760045d68b6ba7ff0eae66e8156650"
+  },
+  "bootstrap": {
+    "ci_level": 0.95,
+    "cluster_unit": "country_code_3",
+    "interval_method": "percentile",
+    "random_state": 0,
+    "repetitions": 2000
+  },
+  "decisions": {
+    "allowed_action": "phase3_to_phase4_only",
+    "benchmark_role": "fixed_reused_2022_benchmark",
+    "direct_baseline_role": "retrospective_reporting_only_diagnostic_comparator",
+    "positive_class": "exact_phase4",
+    "truth": "reconstructed_fixed_0.20_phase"
+  },
+  "direct_baseline": {
+    "classifier_objective": "binary:logistic",
+    "n_jobs": 1,
+    "native_nan_preserved": true,
+    "parameters_sha256": "cdc0e55aa15bdda932465088568b9ee717d226208ffb32076f438fb274e6317b",
+    "random_state": 0,
+    "residual_objective": "reg:squarederror",
+    "threshold": 0.5
+  },
+  "environment": {
+    "environment_id": "windows_py3113_xgb203_defaultthreads_no_explicit_seed",
+    "matplotlib_version": "3.10.1",
+    "numpy_version": "1.26.4",
+    "pandas_version": "2.2.3",
+    "platform_family": "Windows",
+    "python_version": "3.11.3",
+    "scikit_learn_version": "1.5.2",
+    "scipy_version": "1.17.1",
+    "xgboost_dll_sha256": "ca6f7a13af14d3ed08da0a12164ca042302151999191bb81062768cffbc95ce1",
+    "xgboost_version": "2.0.3"
+  },
+  "features": {
+    "Forecasting": [
+      "phase2_pred_raw",
+      "phase3_pred_raw",
+      "phase4_pred_raw",
+      "phase5_pred_raw",
+      "phase3_margin_020",
+      "phase4_margin_020",
+      "phase3_minus_phase4"
+    ],
+    "Nowcasting": [
+      "phase2_pred_raw",
+      "phase3_pred_raw",
+      "phase4_pred_raw",
+      "phase5_pred_raw",
+      "phase2_layer1_pred",
+      "phase3_layer1_pred",
+      "phase4_layer1_pred",
+      "phase5_layer1_pred",
+      "phase3_residual_pred",
+      "phase4_residual_pred",
+      "phase3_margin_020",
+      "phase4_margin_020",
+      "phase3_minus_phase4",
+      "layer1_phase3_minus_phase4",
+      "residual_phase3_minus_phase4"
+    ],
+    "direct_forecasting_count": 106,
+    "direct_nowcasting_layer1_count": 106,
+    "direct_nowcasting_layer2": [
+      "CPI",
+      "fatalities_explosions_w5_m12",
+      "GDP",
+      "soil_moisture_mean_m12",
+      "fatalities_explosions",
+      "chirps_z_score",
+      "EVI_m12",
+      "event_count_battles_w10_m12",
+      "event_count_battles_w5_m12",
+      "price_index_s12",
+      "event_count_explosions",
+      "rainfall_chirps_s12",
+      "event_count_violence_w10_m12",
+      "WFP_Price_Change_s12",
+      "WFP_Price_Volatility_m12",
+      "WFP_Price_Change_m12",
+      "infra_index_m12",
+      "temperature_2m_mean_s12",
+      "event_count_battles_m12",
+      "fatalities_battles",
+      "event_count_violence_m12",
+      "event_count_explosions_m12",
+      "fatalities_battles_w5_m12",
+      "event_count_violence_w5_m12",
+      "soil_moisture_mean_s12",
+      "event_count_explosions_w5_m12",
+      "WFP_Price_Volatility_s12",
+      "event_count_violence",
+      "precipitation_sum_m12",
+      "event_count_violence_w10",
+      "fatalities_violence_w10_m12",
+      "event_count_battles",
+      "event_count_explosions_w5",
+      "fatalities_explosions_w10_m12",
+      "event_count_battles_w10",
+      "temperature_2m_mean_m12",
+      "rainfall_chirps_m12",
+      "fatalities_violence_m12",
+      "WFP_Price_Change",
+      "event_count_explosions_w10",
+      "gini",
+      "cpi",
+      "fatalities_violence_w5_m12",
+      "infra_index_s12",
+      "shortwave_radiation_sum_m12",
+      "price_index_m12",
+      "fatalities_battles_w10_m12",
+      "event_count_violence_w5",
+      "fatalities_explosions_w10",
+      "CC.PER.RNK",
+      "fatalities_violence_w5",
+      "shortwave_radiation_sum_s12",
+      "fatalities_battles_w10",
+      "fatalities_battles_m12",
+      "nightlight_mean_m12",
+      "fatalities_battles_w5",
+      "event_count_battles_w5",
+      "fatalities_violence_w10",
+      "fatalities_violence",
+      "infra_index",
+      "fatalities_explosions_m12",
+      "temperature_z_score",
+      "event_count_explosions_w10_m12",
+      "NY.GDP.PCAP.KD",
+      "fatalities_explosions_w5",
+      "precipitation_sum_s12",
+      "WFP_Price_Volatility",
+      "nightlight_mean_s12",
+      "GOSIF_GPP_m12"
+    ]
+  },
+  "figure_exports": {
+    "backend": "Agg",
+    "font": "DejaVu Sans",
+    "height_inches": 6.5,
+    "pdf": "phase4_rescue_main_comparison.pdf",
+    "png": "phase4_rescue_main_comparison.png",
+    "png_dpi": 600,
+    "width_inches": 12.0
+  },
+  "folds": {
+    "auxiliary": [
+      {
+        "fold_id": "A1",
+        "training_years": [
+          2018
+        ],
+        "validation_year": 2019
+      },
+      {
+        "fold_id": "A2",
+        "training_years": [
+          2018,
+          2019
+        ],
+        "validation_year": 2020
+      },
+      {
+        "fold_id": "A3",
+        "training_years": [
+          2018,
+          2019,
+          2020
+        ],
+        "validation_year": 2021
+      }
+    ],
+    "base": [
+      {
+        "fold_id": "B1",
+        "training_years": [
+          2017
+        ],
+        "validation_year": 2018
+      },
+      {
+        "fold_id": "B2",
+        "training_years": [
+          2017,
+          2018
+        ],
+        "validation_year": 2019
+      },
+      {
+        "fold_id": "B3",
+        "training_years": [
+          2017,
+          2018,
+          2019
+        ],
+        "validation_year": 2020
+      },
+      {
+        "fold_id": "B4",
+        "training_years": [
+          2017,
+          2018,
+          2019,
+          2020
+        ],
+        "validation_year": 2021
+      }
+    ]
+  },
+  "freeze_id": "main-result-figure1-v1",
+  "main_comparison": {
+    "methods": [
+      "frozen_base",
+      "direct_phase34_xgboost",
+      "xgboost"
+    ],
+    "metrics": [
+      "phase3plus_precision",
+      "phase3plus_recall",
+      "phase3plus_r2",
+      "accuracy"
+    ],
+    "tasks": [
+      "Forecasting",
+      "Nowcasting"
+    ]
+  },
+  "parameter_grid": {
+    "candidates": [
+      {
+        "learning_rate": 0.03,
+        "max_depth": 1,
+        "min_child_weight": 5,
+        "reg_lambda": 1
+      },
+      {
+        "learning_rate": 0.03,
+        "max_depth": 1,
+        "min_child_weight": 5,
+        "reg_lambda": 10
+      },
+      {
+        "learning_rate": 0.1,
+        "max_depth": 1,
+        "min_child_weight": 5,
+        "reg_lambda": 1
+      },
+      {
+        "learning_rate": 0.1,
+        "max_depth": 1,
+        "min_child_weight": 5,
+        "reg_lambda": 10
+      },
+      {
+        "learning_rate": 0.03,
+        "max_depth": 1,
+        "min_child_weight": 20,
+        "reg_lambda": 1
+      },
+      {
+        "learning_rate": 0.03,
+        "max_depth": 1,
+        "min_child_weight": 20,
+        "reg_lambda": 10
+      },
+      {
+        "learning_rate": 0.1,
+        "max_depth": 1,
+        "min_child_weight": 20,
+        "reg_lambda": 1
+      },
+      {
+        "learning_rate": 0.1,
+        "max_depth": 1,
+        "min_child_weight": 20,
+        "reg_lambda": 10
+      },
+      {
+        "learning_rate": 0.03,
+        "max_depth": 2,
+        "min_child_weight": 5,
+        "reg_lambda": 1
+      },
+      {
+        "learning_rate": 0.03,
+        "max_depth": 2,
+        "min_child_weight": 5,
+        "reg_lambda": 10
+      },
+      {
+        "learning_rate": 0.1,
+        "max_depth": 2,
+        "min_child_weight": 5,
+        "reg_lambda": 1
+      },
+      {
+        "learning_rate": 0.1,
+        "max_depth": 2,
+        "min_child_weight": 5,
+        "reg_lambda": 10
+      },
+      {
+        "learning_rate": 0.03,
+        "max_depth": 2,
+        "min_child_weight": 20,
+        "reg_lambda": 1
+      },
+      {
+        "learning_rate": 0.03,
+        "max_depth": 2,
+        "min_child_weight": 20,
+        "reg_lambda": 10
+      },
+      {
+        "learning_rate": 0.1,
+        "max_depth": 2,
+        "min_child_weight": 20,
+        "reg_lambda": 1
+      },
+      {
+        "learning_rate": 0.1,
+        "max_depth": 2,
+        "min_child_weight": 20,
+        "reg_lambda": 10
+      },
+      {
+        "learning_rate": 0.03,
+        "max_depth": 3,
+        "min_child_weight": 5,
+        "reg_lambda": 1
+      },
+      {
+        "learning_rate": 0.03,
+        "max_depth": 3,
+        "min_child_weight": 5,
+        "reg_lambda": 10
+      },
+      {
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "min_child_weight": 5,
+        "reg_lambda": 1
+      },
+      {
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "min_child_weight": 5,
+        "reg_lambda": 10
+      },
+      {
+        "learning_rate": 0.03,
+        "max_depth": 3,
+        "min_child_weight": 20,
+        "reg_lambda": 1
+      },
+      {
+        "learning_rate": 0.03,
+        "max_depth": 3,
+        "min_child_weight": 20,
+        "reg_lambda": 10
+      },
+      {
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "min_child_weight": 20,
+        "reg_lambda": 1
+      },
+      {
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "min_child_weight": 20,
+        "reg_lambda": 10
+      }
+    ],
+    "fixed": {
+      "colsample_bytree": 1.0,
+      "gamma": 0,
+      "n_estimators": 200,
+      "n_jobs": 1,
+      "objective": "binary:logistic",
+      "random_state": 0,
+      "reg_alpha": 0,
+      "subsample": 0.8
+    }
+  },
+  "schema_version": 1,
+  "selected_models": {
+    "Forecasting": {
+      "candidate": {
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "min_child_weight": 20,
+        "reg_lambda": 1
+      },
+      "candidate_id": "C023",
+      "model_file": "phase4_rescue_forecasting_model.json",
+      "no_rescue": false
+    },
+    "Nowcasting": {
+      "candidate": {
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "min_child_weight": 5,
+        "reg_lambda": 1
+      },
+      "candidate_id": "C019",
+      "model_file": "phase4_rescue_nowcasting_model.json",
+      "no_rescue": true
+    }
+  },
+  "thresholds": {
+    "Forecasting": {
+      "single_score": {
+        "no_rescue_sentinel": true,
+        "threshold": 0.1926001310348511
+      },
+      "xgboost": {
+        "no_rescue_sentinel": false,
+        "threshold": 0.9535135626792908
+      }
+    },
+    "Nowcasting": {
+      "single_score": {
+        "no_rescue_sentinel": false,
+        "threshold": 0.19442330300807953
+      },
+      "xgboost": {
+        "no_rescue_sentinel": true,
+        "threshold": 0.9586492776870729
+      }
+    }
+  }
+}

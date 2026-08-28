@@ -1,0 +1,3 @@
+model,area_count_total,accuracy_area_count_defined,precision_area_count_defined,recall_area_count_defined,r2_area_count_defined
+Nowcasting,646,646,615,545,287
+Forecasting,646,646,612,545,287

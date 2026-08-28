@@ -1,0 +1,97 @@
+{
+  "environment": {
+    "environment_id": "windows_py3113_xgb203_defaultthreads_no_explicit_seed",
+    "numpy_version": "1.26.4",
+    "outer_model_workers": 1,
+    "pandas_version": "2.2.3",
+    "platform_family": "Windows",
+    "python_installer_sha256": "63649443c026d4c88c63fd9ea9931b9ecde3e671092439b6f55b3be3dcca6da3",
+    "python_version": "3.11.3",
+    "scikit_learn_version": "1.5.2",
+    "scipy_version": "1.17.1",
+    "xgboost_dll_sha256": "ca6f7a13af14d3ed08da0a12164ca042302151999191bb81062768cffbc95ce1",
+    "xgboost_n_jobs_override": null,
+    "xgboost_random_state_override": null,
+    "xgboost_version": "2.0.3"
+  },
+  "environment_lock_path": "2.Source Code\\main_result_figure1_v1_environment_lock.txt",
+  "environment_lock_sha256": "87f44da4067c07f388a7d55398c0bb813dcf6d01a397e1fd4e01c9309e592668",
+  "evaluation": {
+    "actual_phase_counts": {
+      "1": 22,
+      "2": 269,
+      "3": 764,
+      "4": 113,
+      "5": 2
+    },
+    "cutoff_date": "2022-01-01",
+    "overall_accuracy_definition": "five_class_exact_match_pooled_over_1170_rows",
+    "phase3plus_precision_definition": "pooled_binary_tp_over_tp_plus_fp",
+    "phase3plus_r2_definition": "sklearn r2_score on two-decimal Phase 3+ predictions and unrounded actual shares",
+    "phase3plus_recall_definition": "pooled_binary_tp_over_tp_plus_fn",
+    "source_rows": 5575,
+    "target_definition": "highest cumulative IPC phase with population share >= 0.20",
+    "test_areas": 646,
+    "test_rows": 1170,
+    "train_rows": 4405
+  },
+  "freeze_id": "main-result-figure1-v1",
+  "freeze_source_path": "2.Source Code\\main_result_figure1_v1.py",
+  "freeze_source_sha256": "a33b9b2a8ef72569efe017049fdd831ada9411e44d3e59cf4d840a7a7fc01fe2",
+  "generator_environment_extensions": {
+    "matplotlib": "3.10.1",
+    "patsy": "1.0.1",
+    "statsmodels": "0.14.6"
+  },
+  "nonselected_table1_nowcasting_alternative": {
+    "overall_accuracy": 0.6666666666666666,
+    "phase3plus_precision": 0.8035892323030908,
+    "phase3plus_r2": 0.27554513043222684,
+    "phase3plus_recall": 0.9169510807736063,
+    "selection_status": "nonselected_alternative_lineage",
+    "source": "2.Source Code/Table1_Nowcasting_two_layer.ipynb stored output"
+  },
+  "results": {
+    "Forecasting": {
+      "aggregate_notebook_cell_index": 1,
+      "aggregate_notebook_path": "2.Source Code/Table1_Forecasting_main.ipynb",
+      "converted_predictions_sha256": "65233dfbd6e164c956d5342dd45f546b8cef25bed881c0942e08a890fc4eaaa8",
+      "correct_rows": 760,
+      "false_negative": 52,
+      "false_positive": 240,
+      "metric_source": "main-result-figure1-v1; Table1_Forecasting_main.ipynb stored output; Figure 1 anchor",
+      "overall_accuracy": 0.6495726495726496,
+      "phase3plus_precision": 0.7750702905342081,
+      "phase3plus_r2": 0.2489985704986828,
+      "phase3plus_recall": 0.9408418657565415,
+      "phase_long_sha256": "d0c6cefd6bc6962b710cf21fe27246924bd8d8ca9ebfbb3afa8f2e52fb4eb2b1",
+      "row_anchor_generator_path": "2.Source Code/Figure2_Feature_Importance_Forecasting.ipynb",
+      "row_anchor_path": "1.Source Data/r2_frame_forecasting.csv",
+      "row_anchor_sha256": "1f165b8755b729751d177599837d021148766f472d81bb97e9f0af18eb2013fb",
+      "serialized_anchor_recomputed_r2": 0.24899856935748543,
+      "true_negative": 51,
+      "true_positive": 827
+    },
+    "Nowcasting": {
+      "aggregate_notebook_cell_index": 1,
+      "aggregate_notebook_path": "2.Source Code/Figure2_Nowcasting_two_layer_feature_importance.ipynb",
+      "converted_predictions_sha256": "cc0b45cd48d0748504428abe43955fb99346e4ddab674b523c26d1a629c22532",
+      "correct_rows": 765,
+      "false_negative": 51,
+      "false_positive": 237,
+      "metric_source": "main-result-figure1-v1; Figure2_Nowcasting_two_layer_feature_importance.ipynb stored output; Figure 1 anchor",
+      "overall_accuracy": 0.6538461538461539,
+      "phase3plus_precision": 0.7774647887323943,
+      "phase3plus_r2": 0.252784701177865,
+      "phase3plus_recall": 0.9419795221843004,
+      "phase_long_sha256": "042220e9573a0317db67160fc362087aa90306b5b6da2e3423338081095f3cab",
+      "row_anchor_generator_path": "2.Source Code/Figure2_Nowcasting_two_layer_feature_importance.ipynb",
+      "row_anchor_path": "1.Source Data/r2_frame_nowcasting.csv",
+      "row_anchor_sha256": "981deb2afb05c1864655e8ef23e8ca2337af21a01025bf7a9a3bd12d18633dd8",
+      "serialized_anchor_recomputed_r2": 0.25278470025242084,
+      "true_negative": 54,
+      "true_positive": 828
+    }
+  },
+  "schema_version": 1
+}

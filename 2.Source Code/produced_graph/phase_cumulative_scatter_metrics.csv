@@ -1,0 +1,7 @@
+model,phase,phase_label,n_test,n_areas,r2,actual_min,actual_max,predicted_min,predicted_max
+Forecasting,2,Phase 2+,1170,646,0.2844532235,0.15,1,0.2300000042,0.8799999952
+Nowcasting,2,Phase 2+,1170,646,0.28532154,0.15,1,0.2300000042,0.8799999952
+Forecasting,4,Phase 4+,1170,646,0.1993560221,0,0.6,0.03999999911,0.200000003
+Nowcasting,4,Phase 4+,1170,646,0.1984708861,0,0.6,0.03999999911,0.200000003
+Forecasting,5,Phase 5,1170,646,-0.03095627228,0,0.3,0,0
+Nowcasting,5,Phase 5,1170,646,-0.03095627228,0,0.3,0,0

@@ -1,0 +1,7 @@
+task,method,repetitions,ci_level,interval_method,accuracy_delta_lower,accuracy_delta_upper,balanced_accuracy_delta_lower,balanced_accuracy_delta_upper,macro_f1_delta_lower,macro_f1_delta_upper,ordinal_mae_delta_lower,ordinal_mae_delta_upper,phase4_precision_delta_lower,phase4_precision_delta_upper,phase4_recall_delta_lower,phase4_recall_delta_upper
+Forecasting,direct_phase34_xgboost,2000,0.94999999999999996,paired_country_cluster_percentile,-0.0079645051194538602,0.016492683410360864,0.0033995509758846833,0.088664755012586013,0.0074849907025648565,0.092083402217049054,-0.016492683410360951,0.0079645051194539643,-0.65384615384615385,-0.25,0.021420972644376899,0.35303605313092973
+Forecasting,single_score,2000,0.94999999999999996,paired_country_cluster_percentile,0,0,0,0,0,0,0,0,0,0,0,0
+Forecasting,xgboost,2000,0.94999999999999996,paired_country_cluster_percentile,0,0,0,0,0,0,0,0,0,0,0,0
+Nowcasting,direct_phase34_xgboost,2000,0.94999999999999996,paired_country_cluster_percentile,-0.0079645051194538602,0.016492683410360972,0.0033995509758846833,0.088664755012586013,0.0074861029406572289,0.092088260920432943,-0.016492683410360951,0.0079645051194539643,-0.65384615384615385,-0.25,0.021420972644376899,0.35303605313092973
+Nowcasting,single_score,2000,0.94999999999999996,paired_country_cluster_percentile,0,0,0,0,0,0,0,0,0,0,0,0
+Nowcasting,xgboost,2000,0.94999999999999996,paired_country_cluster_percentile,0,0,0,0,0,0,0,0,0,0,0,0

@@ -1,0 +1,6 @@
+test_index,overall_phase,overall_phase_pred,phase3_pred,area_id,date,lat,lon,nowcast_predict,phase3_nowcast,source_row_index,source_overall_phase,truth_disagreement,phase1_percent,phase2_percent,phase3_percent,phase4_percent,phase5_percent,phase2plus_share,phase3plus_share,phase4plus_share,phase5_share,country_code_3
+3374,3,3,0.33,1276,2022-07-01,3.894615607411108,43.36922505458163,3,0.34,3374,4,True,0.45,0.2,0.25,0.1,0.0,0.55,0.35,0.1,0.0,SOM
+3517,4,3,0.3,1357,2022-07-01,4.245137175281488,43.87904296499402,3,0.31,3517,3,True,0.15,0.2,0.3,0.25,0.1,0.85,0.65,0.35,0.1,SOM
+3534,4,3,0.34,1361,2022-07-01,4.188905626243047,43.90621648220997,3,0.34,3534,3,True,0.15,0.2,0.3,0.25,0.1,0.85,0.65,0.35,0.1,SOM
+3553,4,3,0.32,1367,2022-07-01,4.2099683614405485,43.9522159586179,3,0.32,3553,3,True,0.15,0.2,0.3,0.25,0.1,0.85,0.65,0.35,0.1,SOM
+3567,4,3,0.32,1368,2022-07-01,4.209966477885672,43.95222171627631,3,0.32,3567,3,True,0.15,0.2,0.3,0.25,0.1,0.85,0.65,0.35,0.1,SOM

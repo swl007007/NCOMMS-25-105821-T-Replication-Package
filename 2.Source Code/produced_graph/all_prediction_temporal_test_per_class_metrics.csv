@@ -1,0 +1,16 @@
+task,display_label,evaluation_protocol,evaluation_population,n_observations,phase,precision,recall,f1,support
+Forecasting,Forecasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,1,0.000000,0.000000,0.000000,22
+Forecasting,Forecasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,2,0.518072,0.319703,0.395402,269
+Forecasting,Forecasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,3,0.691235,0.908377,0.785068,764
+Forecasting,Forecasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,4,0.000000,0.000000,0.000000,113
+Forecasting,Forecasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,5,0.000000,0.000000,0.000000,2
+Nowcasting,Nowcasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,1,0.000000,0.000000,0.000000,22
+Nowcasting,Nowcasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,2,0.520958,0.323420,0.399083,269
+Nowcasting,Nowcasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,3,0.690927,0.907068,0.784380,764
+Nowcasting,Nowcasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,4,0.000000,0.000000,0.000000,113
+Nowcasting,Nowcasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,5,0.000000,0.000000,0.000000,2
+Contemporaneous,Contemporaneous (random CV),random_5fold_row_cv,random_5fold_full_oof_5575,5575,1,1.000000,0.005076,0.010101,197
+Contemporaneous,Contemporaneous (random CV),random_5fold_row_cv,random_5fold_full_oof_5575,5575,2,0.719977,0.624175,0.668662,1969
+Contemporaneous,Contemporaneous (random CV),random_5fold_row_cv,random_5fold_full_oof_5575,5575,3,0.679514,0.883625,0.768244,2913
+Contemporaneous,Contemporaneous (random CV),random_5fold_row_cv,random_5fold_full_oof_5575,5575,4,0.784810,0.128631,0.221034,482
+Contemporaneous,Contemporaneous (random CV),random_5fold_row_cv,random_5fold_full_oof_5575,5575,5,0.000000,0.000000,0.000000,14

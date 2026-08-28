@@ -1,0 +1,4 @@
+task,n_observations,macro_label_set,macro_precision,macro_recall,macro_f1,zero_division,phase_1_support,phase_2_support,phase_3_support,phase_4_support,phase_5_support
+Forecasting,1170,IPC Phases 1–5,0.241861,0.245616,0.236094,0,22,269,764,113,2
+Nowcasting,1170,IPC Phases 1–5,0.242377,0.246098,0.236693,0,22,269,764,113,2
+Contemporaneous,1170,IPC Phases 1–5,0.248851,0.230285,0.216575,0,22,269,764,113,2

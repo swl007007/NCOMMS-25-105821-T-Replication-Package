@@ -1,0 +1,55 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0" version="27.1.6">
+  <diagram name="Page-1" id="pTv4IwVxnQ4QR7xV9Haf">
+    <mxGraphModel dx="1210" dy="634" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="nZP3Ob1NfeysHtMHWKzx-1" value="Training Set&lt;div&gt;(2017)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="40" y="70" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nZP3Ob1NfeysHtMHWKzx-2" value="Validation&lt;div&gt;(2018)&lt;/div&gt;" style="whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="240" y="70" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nZP3Ob1NfeysHtMHWKzx-4" value="Training Set&lt;div&gt;(2017-2018)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="40" y="160" width="320" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nZP3Ob1NfeysHtMHWKzx-5" value="Validation&lt;div&gt;(2019)&lt;/div&gt;" style="whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="360" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nZP3Ob1NfeysHtMHWKzx-6" value="Training Set&lt;div&gt;(2017-2019)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="40" y="250" width="440" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nZP3Ob1NfeysHtMHWKzx-7" value="Validation&lt;div&gt;(2020)&lt;/div&gt;" style="whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="480" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nZP3Ob1NfeysHtMHWKzx-8" value="Training Set&lt;div&gt;(2017-2020)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="40" y="340" width="560" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nZP3Ob1NfeysHtMHWKzx-9" value="Validation&lt;div&gt;(2021)&lt;/div&gt;" style="whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="600" y="340" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nZP3Ob1NfeysHtMHWKzx-10" value="Training Set&lt;div&gt;(2017-2021)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="40" y="490" width="680" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nZP3Ob1NfeysHtMHWKzx-11" value="Validation&lt;div&gt;(2021)&lt;/div&gt;" style="whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="730" y="490" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nZP3Ob1NfeysHtMHWKzx-12" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.annotation_2;align=left;labelPosition=right;pointerEvents=1;rotation=-180;" vertex="1" parent="1">
+          <mxGeometry x="745" y="90" width="30" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="nZP3Ob1NfeysHtMHWKzx-15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=3;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="837" y="273" as="sourcePoint" />
+            <mxPoint x="837" y="458" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nZP3Ob1NfeysHtMHWKzx-13" value="Hyperparameter Tuning" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="810" y="205" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nZP3Ob1NfeysHtMHWKzx-16" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.annotation_1;align=left;pointerEvents=1;rotation=-90;" vertex="1" parent="1">
+          <mxGeometry x="447.5" y="167.5" width="10" height="825" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,4 @@
+task,candidate_id,method,selection_status,threshold_rank,threshold,is_above_max_reference,phase45_precision,phase45_recall,phase45_f1,phase45_f2,false_promotion_actual_phase12,total_promotions,primary_selected,final_training_negative_count,final_training_positive_count,final_class_ratio,final_positive_row_weight
+Contemporaneous,full_balance,direct_phase45_full_balance,selected,879,0.52809333801269531,False,0.32358870967741937,0.74651162790697678,0.45147679324894513,0.5918141592920354,157,992,True,<NA>,<NA>,<NA>,<NA>
+Contemporaneous,sqrt_balance,direct_phase45_sqrt_balance,selected,1167,0.29055842757225037,False,0.27272727272727271,0.82325581395348835,0.40972222222222221,0.58648111332007957,226,1298,False,<NA>,<NA>,<NA>,<NA>
+Contemporaneous,unweighted,direct_phase45_unweighted,selected,1034,0.1702372282743454,False,0.29495128432240919,0.77441860465116275,0.42719692110327134,0.58441558441558439,195,1129,False,<NA>,<NA>,<NA>,<NA>

@@ -1,0 +1,3 @@
+model,n_test,actual_phase3plus_count,predicted_phase3plus_count,true_positive,false_positive,false_negative,true_negative,phase3plus_precision,phase3plus_recall,overall_accuracy,phase3plus_r2,n_test_areas,n_train,n_train_areas
+Forecasting,508,296,330,274,56,22,156,0.830303,0.925676,0.748031,0.727879,120,5067,1078
+Nowcasting,508,296,327,273,54,23,158,0.834862,0.922297,0.753937,0.736254,120,5067,1078

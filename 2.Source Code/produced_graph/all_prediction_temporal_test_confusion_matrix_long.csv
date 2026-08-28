@@ -1,0 +1,76 @@
+task,display_label,evaluation_protocol,evaluation_population,n_observations,actual_phase,predicted_phase,count,actual_phase_support,row_percentage
+Forecasting,Forecasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,1,1,0,22,0.000000
+Forecasting,Forecasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,1,2,8,22,0.363636
+Forecasting,Forecasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,1,3,14,22,0.636364
+Forecasting,Forecasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,1,4,0,22,0.000000
+Forecasting,Forecasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,1,5,0,22,0.000000
+Forecasting,Forecasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,2,1,0,269,0.000000
+Forecasting,Forecasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,2,2,86,269,0.319703
+Forecasting,Forecasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,2,3,183,269,0.680297
+Forecasting,Forecasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,2,4,0,269,0.000000
+Forecasting,Forecasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,2,5,0,269,0.000000
+Forecasting,Forecasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,3,1,0,764,0.000000
+Forecasting,Forecasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,3,2,70,764,0.091623
+Forecasting,Forecasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,3,3,694,764,0.908377
+Forecasting,Forecasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,3,4,0,764,0.000000
+Forecasting,Forecasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,3,5,0,764,0.000000
+Forecasting,Forecasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,4,1,0,113,0.000000
+Forecasting,Forecasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,4,2,2,113,0.017699
+Forecasting,Forecasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,4,3,111,113,0.982301
+Forecasting,Forecasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,4,4,0,113,0.000000
+Forecasting,Forecasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,4,5,0,113,0.000000
+Forecasting,Forecasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,5,1,0,2,0.000000
+Forecasting,Forecasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,5,2,0,2,0.000000
+Forecasting,Forecasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,5,3,2,2,1.000000
+Forecasting,Forecasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,5,4,0,2,0.000000
+Forecasting,Forecasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,5,5,0,2,0.000000
+Nowcasting,Nowcasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,1,1,0,22,0.000000
+Nowcasting,Nowcasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,1,2,7,22,0.318182
+Nowcasting,Nowcasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,1,3,15,22,0.681818
+Nowcasting,Nowcasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,1,4,0,22,0.000000
+Nowcasting,Nowcasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,1,5,0,22,0.000000
+Nowcasting,Nowcasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,2,1,0,269,0.000000
+Nowcasting,Nowcasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,2,2,87,269,0.323420
+Nowcasting,Nowcasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,2,3,182,269,0.676580
+Nowcasting,Nowcasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,2,4,0,269,0.000000
+Nowcasting,Nowcasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,2,5,0,269,0.000000
+Nowcasting,Nowcasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,3,1,0,764,0.000000
+Nowcasting,Nowcasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,3,2,71,764,0.092932
+Nowcasting,Nowcasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,3,3,693,764,0.907068
+Nowcasting,Nowcasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,3,4,0,764,0.000000
+Nowcasting,Nowcasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,3,5,0,764,0.000000
+Nowcasting,Nowcasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,4,1,0,113,0.000000
+Nowcasting,Nowcasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,4,2,2,113,0.017699
+Nowcasting,Nowcasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,4,3,111,113,0.982301
+Nowcasting,Nowcasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,4,4,0,113,0.000000
+Nowcasting,Nowcasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,4,5,0,113,0.000000
+Nowcasting,Nowcasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,5,1,0,2,0.000000
+Nowcasting,Nowcasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,5,2,0,2,0.000000
+Nowcasting,Nowcasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,5,3,2,2,1.000000
+Nowcasting,Nowcasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,5,4,0,2,0.000000
+Nowcasting,Nowcasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,5,5,0,2,0.000000
+Contemporaneous,Contemporaneous (random CV),random_5fold_row_cv,random_5fold_full_oof_5575,5575,1,1,1,197,0.005076
+Contemporaneous,Contemporaneous (random CV),random_5fold_row_cv,random_5fold_full_oof_5575,5575,1,2,152,197,0.771574
+Contemporaneous,Contemporaneous (random CV),random_5fold_row_cv,random_5fold_full_oof_5575,5575,1,3,44,197,0.223350
+Contemporaneous,Contemporaneous (random CV),random_5fold_row_cv,random_5fold_full_oof_5575,5575,1,4,0,197,0.000000
+Contemporaneous,Contemporaneous (random CV),random_5fold_row_cv,random_5fold_full_oof_5575,5575,1,5,0,197,0.000000
+Contemporaneous,Contemporaneous (random CV),random_5fold_row_cv,random_5fold_full_oof_5575,5575,2,1,0,1969,0.000000
+Contemporaneous,Contemporaneous (random CV),random_5fold_row_cv,random_5fold_full_oof_5575,5575,2,2,1229,1969,0.624175
+Contemporaneous,Contemporaneous (random CV),random_5fold_row_cv,random_5fold_full_oof_5575,5575,2,3,740,1969,0.375825
+Contemporaneous,Contemporaneous (random CV),random_5fold_row_cv,random_5fold_full_oof_5575,5575,2,4,0,1969,0.000000
+Contemporaneous,Contemporaneous (random CV),random_5fold_row_cv,random_5fold_full_oof_5575,5575,2,5,0,1969,0.000000
+Contemporaneous,Contemporaneous (random CV),random_5fold_row_cv,random_5fold_full_oof_5575,5575,3,1,0,2913,0.000000
+Contemporaneous,Contemporaneous (random CV),random_5fold_row_cv,random_5fold_full_oof_5575,5575,3,2,324,2913,0.111226
+Contemporaneous,Contemporaneous (random CV),random_5fold_row_cv,random_5fold_full_oof_5575,5575,3,3,2574,2913,0.883625
+Contemporaneous,Contemporaneous (random CV),random_5fold_row_cv,random_5fold_full_oof_5575,5575,3,4,15,2913,0.005149
+Contemporaneous,Contemporaneous (random CV),random_5fold_row_cv,random_5fold_full_oof_5575,5575,3,5,0,2913,0.000000
+Contemporaneous,Contemporaneous (random CV),random_5fold_row_cv,random_5fold_full_oof_5575,5575,4,1,0,482,0.000000
+Contemporaneous,Contemporaneous (random CV),random_5fold_row_cv,random_5fold_full_oof_5575,5575,4,2,2,482,0.004149
+Contemporaneous,Contemporaneous (random CV),random_5fold_row_cv,random_5fold_full_oof_5575,5575,4,3,418,482,0.867220
+Contemporaneous,Contemporaneous (random CV),random_5fold_row_cv,random_5fold_full_oof_5575,5575,4,4,62,482,0.128631
+Contemporaneous,Contemporaneous (random CV),random_5fold_row_cv,random_5fold_full_oof_5575,5575,4,5,0,482,0.000000
+Contemporaneous,Contemporaneous (random CV),random_5fold_row_cv,random_5fold_full_oof_5575,5575,5,1,0,14,0.000000
+Contemporaneous,Contemporaneous (random CV),random_5fold_row_cv,random_5fold_full_oof_5575,5575,5,2,0,14,0.000000
+Contemporaneous,Contemporaneous (random CV),random_5fold_row_cv,random_5fold_full_oof_5575,5575,5,3,12,14,0.857143
+Contemporaneous,Contemporaneous (random CV),random_5fold_row_cv,random_5fold_full_oof_5575,5575,5,4,2,14,0.142857
+Contemporaneous,Contemporaneous (random CV),random_5fold_row_cv,random_5fold_full_oof_5575,5575,5,5,0,14,0.000000

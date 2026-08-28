@@ -1,0 +1,4 @@
+task,display_label,evaluation_protocol,evaluation_population,n_observations,macro_label_set,macro_precision,macro_recall,macro_f1,zero_division,phase_1_support,phase_2_support,phase_3_support,phase_4_support,phase_5_support
+Forecasting,Forecasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,IPC Phases 1–5,0.241861,0.245616,0.236094,0,22,269,764,113,2
+Nowcasting,Nowcasting,fixed_2022_temporal_holdout,canonical_1170_temporal_test,1170,IPC Phases 1–5,0.242377,0.246098,0.236693,0,22,269,764,113,2
+Contemporaneous,Contemporaneous (random CV),random_5fold_row_cv,random_5fold_full_oof_5575,5575,IPC Phases 1–5,0.636860,0.328301,0.333608,0,197,1969,2913,482,14
