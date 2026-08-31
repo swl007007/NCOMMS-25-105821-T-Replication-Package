@@ -270,7 +270,6 @@ def plot_panel(
     else:
         panels = [
             ("top30_forecast", "Forecasting Alert Top 30% in 2022", "top30"),
-            ("top30_nowcast", "Nowcasting Alert Top 30% in 2022", "top30"),
             ("top30_actual", "Observed Alert Top 30% in 2022", "top30"),
         ]
     legends = {
@@ -309,8 +308,13 @@ def plot_panel(
         ),
     }
 
-    nrows = (len(panels) + 2) // 3
-    fig, axes = plt.subplots(nrows, 3, figsize=(18, 3.6 * nrows))
+    if severity_aligned_first_row or annual_minimum_severity:
+        nrows, ncols = 2, 3
+        figsize = (18, 7.2)
+    else:
+        nrows, ncols = 2, 1
+        figsize = (7.2, 7.2)
+    fig, axes = plt.subplots(nrows, ncols, figsize=figsize, squeeze=False)
     minx, miny, maxx, maxy = gdf.total_bounds
     basemap_warning = None
 
@@ -345,7 +349,7 @@ def plot_panel(
     elif severity_aligned_first_row:
         figure_title = "2022 Phase 3+ Severity Alerts: Fixed 20% vs Q70 Cutoffs"
     else:
-        figure_title = "2022 Food-Crisis Alert Maps: Forecasting, Nowcasting, and Actual"
+        figure_title = "2022 Food-Crisis Alert Maps: Forecasting and Observed"
     fig.suptitle(figure_title, fontsize=16)
     fig.text(
         0.005,
