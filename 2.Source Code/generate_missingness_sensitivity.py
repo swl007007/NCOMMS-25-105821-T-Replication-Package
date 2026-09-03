@@ -1155,7 +1155,7 @@ def create_sensitivity_figure(metrics: pd.DataFrame) -> plt.Figure:
 
     figure.legend(
         handles=axes[0, 0].lines,
-        labels=MODELS,
+        labels=("Main model", *MODELS[1:]),
         loc="lower center",
         bbox_to_anchor=(0.5, 0.008),
         ncol=3,

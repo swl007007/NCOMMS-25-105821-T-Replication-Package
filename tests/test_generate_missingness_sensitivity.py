@@ -887,7 +887,7 @@ class FigureAndOutputTests(unittest.TestCase):
             np.testing.assert_array_equal(axis.lines[3].get_ydata(), [0.0, 0.0])
         self.assertEqual(
             [text.get_text() for text in figure.legends[0].get_texts()],
-            list(sensitivity.MODELS),
+            ["Main model", "Ensemble OLS", "Ordered Probit"],
         )
         self.assertEqual(
             figure.axes[3].get_title(loc="left"), "Phase 3+ R²"
