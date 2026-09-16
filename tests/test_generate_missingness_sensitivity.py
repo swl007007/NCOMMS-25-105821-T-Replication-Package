@@ -1,9 +1,9 @@
 from __future__ import annotations
 
 import math
-import re
 import sys
 import tempfile
+import types
 import unittest
 from pathlib import Path
 from unittest import mock
@@ -13,6 +13,14 @@ import matplotlib
 matplotlib.use("Agg")
 import numpy as np
 import pandas as pd
+
+try:
+    import xgboost  # noqa: F401
+except ImportError:
+    xgboost_stub = types.ModuleType("xgboost")
+    xgboost_stub.XGBRegressor = object
+    xgboost_stub.core = types.SimpleNamespace(XGBoostError=RuntimeError)
+    sys.modules["xgboost"] = xgboost_stub
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -25,7 +33,7 @@ import generate_missingness_sensitivity as sensitivity
 
 def synthetic_complete_metrics() -> pd.DataFrame:
     rows = []
-    country_counts = {0: 0, 5: 2, 10: 3, 30: 9, 50: 15}
+    country_counts = {0: 0, 5: 2, 10: 3}
     for experiment in ("feature_removal", "country_removal"):
         for threshold in sensitivity.THRESHOLDS:
             for task in sensitivity.TASKS:
@@ -43,7 +51,11 @@ def synthetic_complete_metrics() -> pd.DataFrame:
                             "task": task,
                             "model": model,
                             "removed_feature_count": (
-                                int(math.ceil(threshold / 100 * 106))
+                                {
+                                    "Forecasting": {0: 0, 5: 6, 10: 11},
+                                    "Nowcasting": {0: 0, 5: 9, 10: 18},
+                                    "Contemporaneous": {0: 0, 5: 9, 10: 18},
+                                }[task][threshold]
                                 if experiment == "feature_removal"
                                 else 0
                             ),
@@ -54,9 +66,11 @@ def synthetic_complete_metrics() -> pd.DataFrame:
                             "overall_accuracy": 0.6,
                             "phase3plus_precision": 0.7,
                             "phase3plus_recall": 0.8,
-                            "phase3above_r2": 0.1,
-                            "n_train": 4405,
-                            "n_test": 1170,
+                            "phase3plus_population_share_r2": (
+                                np.nan if model == "Ordered Probit" else 0.1
+                            ),
+                            "n_train": 4460 if task == "Contemporaneous" else 4405,
+                            "n_test": 5575 if task == "Contemporaneous" else 1170,
                             "status": "generated",
                             "reason": "",
                         }
@@ -77,26 +91,28 @@ def synthetic_complete_metrics() -> pd.DataFrame:
                     "overall_accuracy": 0.6,
                     "phase3plus_precision": 0.7,
                     "phase3plus_recall": 0.8,
-                    "phase3above_r2": 0.1,
-                    "n_train": 4405,
-                    "n_test": 1170,
+                    "phase3plus_population_share_r2": (
+                        np.nan if model == "Ordered Probit" else 0.1
+                    ),
+                    "n_train": 4460 if task == "Contemporaneous" else 4405,
+                    "n_test": 5575 if task == "Contemporaneous" else 1170,
                     "status": (
-                        "frozen_reference" if model == "XGBoost" else "generated"
+                        "frozen_reference" if model == "Main model" else "generated"
                     ),
                     "reason": "",
                 }
             )
             rows.append(row)
-    return sensitivity.add_xgboost_deltas(
+    return sensitivity.add_main_model_deltas(
         pd.DataFrame(rows, columns=sensitivity.METRIC_COLUMNS)
     )
 
 
 def synthetic_removal_metrics() -> pd.DataFrame:
     rows = []
-    removed_countries = {0: 0, 5: 2, 10: 3, 30: 9, 50: 15}
+    removed_countries = {0: 0, 5: 2, 10: 3}
     for experiment in ("feature_removal", "country_removal"):
-        for task in sensitivity.TASKS:
+        for task in sensitivity.TEMPORAL_TASKS:
             for threshold in sensitivity.THRESHOLDS:
                 for model_index, model in enumerate(sensitivity.MODELS):
                     value = 0.80 - threshold / 500 - model_index * 0.03
@@ -126,7 +142,11 @@ def synthetic_removal_metrics() -> pd.DataFrame:
                             "overall_accuracy": value,
                             "phase3plus_precision": value - 0.02,
                             "phase3plus_recall": value + 0.02,
-                            "phase3above_r2": value - 0.30,
+                            "phase3plus_population_share_r2": (
+                                np.nan
+                                if model == "Ordered Probit"
+                                else value - 0.30
+                            ),
                             "n_train": 4405 - removed_countries[threshold] * 10,
                             "n_test": 1170 - removed_countries[threshold] * 5,
                             "status": "generated",
@@ -155,8 +175,6 @@ class SelectionTests(unittest.TestCase):
     def test_selection_count_uses_ceiling(self):
         self.assertEqual(sensitivity.selection_count(5, 29), 2)
         self.assertEqual(sensitivity.selection_count(10, 29), 3)
-        self.assertEqual(sensitivity.selection_count(30, 29), 9)
-        self.assertEqual(sensitivity.selection_count(50, 29), 15)
         self.assertEqual(sensitivity.selection_count(0, 29), 0)
 
 
@@ -244,7 +262,12 @@ class FitRoutingTests(unittest.TestCase):
         train = pd.Series([True, False, False])
         test = ~train
         returned = pd.DataFrame(
-            {"overall_phase": [2, 4], "overall_phase_pred": [3, 4]}
+            {
+                "overall_phase": [2, 4],
+                "overall_phase_pred": [3, 4],
+                "phase3_test": [0.1, 0.6],
+                "phase3_pred": [0.2, 0.5],
+            }
         )
         with mock.patch.object(
             sensitivity.loco, "fit_forecasting_split", return_value=returned
@@ -264,6 +287,7 @@ class FitRoutingTests(unittest.TestCase):
         self.assertNotIn("evaluation_phase", fitted.call_args.args[0].columns)
         self.assertEqual((n_train, n_test), (1, 2))
         self.assertEqual(result["predicted_phase"].tolist(), [3, 4])
+        self.assertEqual(result["phase3_pred_rounded"].tolist(), [0.2, 0.5])
 
     def test_ordered_probit_uses_supplied_direct_features(self):
         phases = np.array([1, 2, 3, 4, 5] * 2 + [2, 4])
@@ -417,7 +441,7 @@ class ExperimentGridTests(unittest.TestCase):
     def successful_fit():
         return sensitivity.prediction_frame([1, 3], [1, 3]), 4405, 1170
 
-    def test_feature_and_country_grids_have_thirty_conditions_each(self):
+    def test_temporal_feature_and_country_grids_have_eighteen_conditions_each(self):
         success = self.successful_fit()
         with mock.patch.object(
             sensitivity, "fit_xgboost_task", return_value=success
@@ -428,13 +452,13 @@ class ExperimentGridTests(unittest.TestCase):
         ):
             feature = sensitivity.run_feature_removal(self.bundle, {}, {})
             country = sensitivity.run_country_removal(self.bundle, {}, {})
-        self.assertEqual(len(feature), 30)
-        self.assertEqual(len(country), 30)
+        self.assertEqual(len(feature), 18)
+        self.assertEqual(len(country), 18)
         zero_feature = [row for row in feature if row["threshold_percent"] == 0]
         self.assertTrue(
             all(row["removed_feature_count"] == 0 for row in zero_feature)
         )
-        expected_counts = {0: 0, 5: 2, 10: 3, 30: 9, 50: 15}
+        expected_counts = {0: 0, 5: 2, 10: 3}
         for threshold, expected in expected_counts.items():
             rows = [
                 row for row in country if row["threshold_percent"] == threshold
@@ -508,7 +532,10 @@ class LiveRegressionTests(unittest.TestCase):
             estimator_n_jobs=None,
         )
         frozen = pd.read_csv(
-            sensitivity.DEFAULT_BASE_METRICS, float_precision="round_trip"
+            SOURCE_CODE
+            / "produced_graph"
+            / "selected_figure1_repeated_area_refit_metrics.csv",
+            float_precision="round_trip",
         )
 
         with mock.patch.object(
@@ -560,7 +587,7 @@ class LiveRegressionTests(unittest.TestCase):
             assert_prepared_inputs(kwargs)
             self.assertEqual(kwargs["general_params"], general_params)
             self.assertEqual(kwargs["phase3_params"], phase3_params)
-            return cache[(kwargs["task"], "XGBoost")]
+            return cache[(kwargs["task"], "Main model")]
 
         def cached_ols(**kwargs):
             assert_prepared_inputs(kwargs)
@@ -634,7 +661,7 @@ class LiveRegressionTests(unittest.TestCase):
         )
 
         baseline_method = {
-            "XGBoost": "Main result",
+            "Main model": "Main result",
             "Ensemble OLS": "Ensemble OLS",
             "Ordered Probit": "Ordered Probit",
         }
@@ -650,9 +677,13 @@ class LiveRegressionTests(unittest.TestCase):
                 (int(expected_row["n_train"]), int(expected_row["n_test"])),
                 (4405, 1170),
             )
+            expected_values = expected_row[
+                ["overall_accuracy", "phase3plus_precision", "phase3plus_recall"]
+            ].tolist()
+            expected_values.append(expected_row["phase3plus_continuous_r2"])
             np.testing.assert_allclose(
                 row[list(sensitivity.METRIC_NAMES)].to_numpy(dtype=float),
-                expected_row[list(sensitivity.METRIC_NAMES)].to_numpy(dtype=float),
+                np.asarray(expected_values, dtype=float),
                 rtol=0.0,
                 atol=1e-12,
                 equal_nan=True,
@@ -661,6 +692,9 @@ class LiveRegressionTests(unittest.TestCase):
 
 class MetricTableTests(unittest.TestCase):
     def test_generated_record_uses_existing_pooled_metric_definitions(self):
+        predictions = sensitivity.prediction_frame([1, 3, 4], [1, 2, 4])
+        predictions["phase3_actual_cumulative"] = [0.0, 0.5, 1.0]
+        predictions["phase3_pred_rounded"] = [0.0, 0.4, 0.8]
         raw = {
             "experiment": "feature_removal",
             "threshold_percent": 10,
@@ -673,12 +707,13 @@ class MetricTableTests(unittest.TestCase):
             "n_test": 1170,
             "status": "generated",
             "reason": "",
-            "predictions": sensitivity.prediction_frame([1, 3, 4], [1, 2, 4]),
+            "predictions": predictions,
         }
         row = sensitivity.record_metrics(raw)
         self.assertAlmostEqual(row["overall_accuracy"], 2 / 3)
         self.assertAlmostEqual(row["phase3plus_precision"], 1.0)
         self.assertAlmostEqual(row["phase3plus_recall"], 0.5)
+        self.assertAlmostEqual(row["phase3plus_population_share_r2"], 0.9)
 
     def test_not_estimable_record_has_nan_metrics_and_keeps_counts(self):
         raw = {
@@ -700,61 +735,21 @@ class MetricTableTests(unittest.TestCase):
         self.assertEqual(row["n_test"], 20)
         self.assertEqual(row["reason"], "missing Ordered Probit class")
 
-    def test_frozen_xgboost_references_select_only_main_result_rows(self):
+    def test_frozen_main_references_cover_all_three_tasks(self):
         source = pd.DataFrame(
-            [
-                {
-                    "task": task,
-                    "method": method,
-                    "overall_accuracy": value,
-                    "phase3plus_precision": value,
-                    "phase3plus_recall": value,
-                    "phase3above_r2": value,
-                    "n_train": 4405,
-                    "n_test": 1170,
-                }
-                for task, method, value in (
-                    ("Forecasting", "Main result", 0.6),
-                    ("Nowcasting", "Main result", 0.7),
-                    ("Forecasting", "Ensemble OLS", 0.4),
-                )
-            ]
+            {
+                "overall_phase": [1, 2, 3, 4, 5],
+                "contemporaneous_predict": [1, 2, 3, 4, 5],
+                "phase3_actual": [0.0, 0.0, 0.3, 0.5, 0.8],
+                "phase3_contemporaneous": [0.0, 0.0, 0.3, 0.5, 0.8],
+                "fold": [0, 1, 2, 3, 4],
+            }
         )
-        with tempfile.TemporaryDirectory() as directory:
-            path = Path(directory) / "base.csv"
-            source.to_csv(path, index=False)
-            references = sensitivity.load_frozen_xgboost_references(path)
-        self.assertEqual(len(references), 2)
-        self.assertEqual(
-            {row["task"] for row in references}, set(sensitivity.TASKS)
-        )
-        self.assertTrue(all(row["model"] == "XGBoost" for row in references))
-        self.assertTrue(
-            all(row["status"] == "frozen_reference" for row in references)
-        )
-
-    def test_frozen_xgboost_references_preserve_round_trip_floats(self):
-        with tempfile.TemporaryDirectory() as directory:
-            path = Path(directory) / "base.csv"
-            path.write_text(
-                "task,method,overall_accuracy,phase3plus_precision,"
-                "phase3plus_recall,phase3above_r2,n_train,n_test\n"
-                "Forecasting,Main result,0.6495726495726496,"
-                "0.77507029053420806,0.9408418657565415,"
-                "-0.3356321030224132,4405,1170\n"
-                "Nowcasting,Main result,0.65384615384615385,"
-                "0.77746478873239433,0.94197952218430037,"
-                "-0.31733577284402403,4405,1170\n",
-                encoding="utf-8",
-            )
-            expected = pd.read_csv(path, float_precision="round_trip").set_index(
-                "task"
-            )
-            references = sensitivity.load_frozen_xgboost_references(path)
-        observed = pd.DataFrame(references).set_index("task")
-        for task in sensitivity.TASKS:
-            for metric in sensitivity.METRIC_NAMES:
-                self.assertEqual(observed.loc[task, metric], expected.loc[task, metric])
+        references = sensitivity.load_frozen_main_references(source)
+        self.assertEqual(len(references), 3)
+        self.assertEqual({row["task"] for row in references}, set(sensitivity.TASKS))
+        self.assertTrue(all(row["model"] == "Main model" for row in references))
+        self.assertTrue(all(row["status"] == "frozen_reference" for row in references))
 
     def test_deltas_use_same_experiment_task_and_threshold_xgboost(self):
         rows = []
@@ -764,7 +759,7 @@ class MetricTableTests(unittest.TestCase):
             ("missing_indicators", np.nan, 0.75, 0.65),
         ):
             for model, value in (
-                ("XGBoost", xgb_value),
+                ("Main model", xgb_value),
                 ("Ensemble OLS", baseline_value),
             ):
                 row = {column: np.nan for column in sensitivity.METRIC_COLUMNS}
@@ -782,7 +777,7 @@ class MetricTableTests(unittest.TestCase):
                         "status": (
                             "frozen_reference"
                             if experiment == "missing_indicators"
-                            and model == "XGBoost"
+                            and model == "Main model"
                             else "generated"
                         ),
                         "reason": "",
@@ -791,36 +786,36 @@ class MetricTableTests(unittest.TestCase):
                 for metric in sensitivity.METRIC_NAMES:
                     row[metric] = value
                 rows.append(row)
-        result = sensitivity.add_xgboost_deltas(pd.DataFrame(rows))
+        result = sensitivity.add_main_model_deltas(pd.DataFrame(rows))
         observed = result.loc[result["model"].eq("Ensemble OLS")].set_index(
             "experiment"
         )
         self.assertAlmostEqual(
             observed.loc[
-                "feature_removal", "delta_overall_accuracy_vs_xgboost"
+                "feature_removal", "delta_overall_accuracy_vs_main_model"
             ],
             -0.1,
         )
         self.assertAlmostEqual(
             observed.loc[
-                "country_removal", "delta_overall_accuracy_vs_xgboost"
+                "country_removal", "delta_overall_accuracy_vs_main_model"
             ],
             -0.05,
         )
         self.assertAlmostEqual(
             observed.loc[
-                "missing_indicators", "delta_overall_accuracy_vs_xgboost"
+                "missing_indicators", "delta_overall_accuracy_vs_main_model"
             ],
             -0.1,
         )
-        xgboost = result.loc[result["model"].eq("XGBoost")]
+        xgboost = result.loc[result["model"].eq("Main model")]
         self.assertTrue(
-            xgboost["delta_overall_accuracy_vs_xgboost"].eq(0.0).all()
+            xgboost["delta_overall_accuracy_vs_main_model"].eq(0.0).all()
         )
 
     def test_delta_is_nan_when_reference_metric_is_undefined(self):
         rows = []
-        for model, value in (("XGBoost", np.nan), ("Ordered Probit", 0.4)):
+        for model, value in (("Main model", np.nan), ("Ordered Probit", 0.4)):
             row = {column: np.nan for column in sensitivity.METRIC_COLUMNS}
             row.update(
                 {
@@ -839,14 +834,14 @@ class MetricTableTests(unittest.TestCase):
                 }
             )
             rows.append(row)
-        result = sensitivity.add_xgboost_deltas(pd.DataFrame(rows))
+        result = sensitivity.add_main_model_deltas(pd.DataFrame(rows))
         delta = result.loc[
             result["model"].eq("Ordered Probit"),
-            "delta_overall_accuracy_vs_xgboost",
+            "delta_overall_accuracy_vs_main_model",
         ].iloc[0]
         self.assertTrue(math.isnan(delta))
 
-    def test_validate_metrics_accepts_the_exact_sixty_six_row_grid(self):
+    def test_validate_metrics_accepts_the_exact_sixty_three_row_grid(self):
         sensitivity.validate_metrics(synthetic_complete_metrics())
 
     def test_validate_metrics_rejects_misplaced_frozen_reference(self):
@@ -857,7 +852,7 @@ class MetricTableTests(unittest.TestCase):
 
     def test_validate_metrics_rejects_infinite_metric(self):
         metrics = synthetic_complete_metrics()
-        metrics.loc[0, "phase3above_r2"] = np.inf
+        metrics.loc[0, "phase3plus_population_share_r2"] = np.inf
         with self.assertRaisesRegex(ValueError, "infinite"):
             sensitivity.validate_metrics(metrics)
 
@@ -890,11 +885,13 @@ class FigureAndOutputTests(unittest.TestCase):
             ["Main model", "Ensemble OLS", "Ordered Probit"],
         )
         self.assertEqual(
-            figure.axes[3].get_title(loc="left"), "Phase 3+ R²"
+            figure.axes[3].get_title(loc="left"),
+            "Phase 3+ population-share R²",
         )
         country_axis = figure.axes[8]
-        self.assertTrue(
-            all("n=" in label.get_text() for label in country_axis.get_xticklabels())
+        self.assertEqual(
+            [label.get_text() for label in country_axis.get_xticklabels()],
+            ["0", "2", "3"],
         )
         sensitivity.plt.close(figure)
 
@@ -904,12 +901,12 @@ class FigureAndOutputTests(unittest.TestCase):
             metrics["experiment"].eq("feature_removal")
             & metrics["task"].eq("Forecasting")
             & metrics["model"].eq("Ordered Probit")
-            & metrics["threshold_percent"].eq(30)
+            & metrics["threshold_percent"].eq(10)
         )
         metrics.loc[selector, "overall_accuracy"] = np.nan
         figure = sensitivity.create_sensitivity_figure(metrics)
         line = figure.axes[0].lines[2]
-        self.assertTrue(np.isnan(line.get_ydata()[3]))
+        self.assertTrue(np.isnan(line.get_ydata()[2]))
         sensitivity.plt.close(figure)
 
     def test_tick_labels_and_bottom_legend_do_not_overlap(self):
@@ -932,25 +929,19 @@ class FigureAndOutputTests(unittest.TestCase):
             )
         sensitivity.plt.close(figure)
 
-    def test_write_outputs_creates_only_csv_pdf_and_png(self):
+    def test_write_outputs_creates_only_the_two_metric_csvs(self):
         complete = synthetic_complete_metrics()
-        metrics = complete.loc[
-            complete["experiment"].isin(["feature_removal", "country_removal"])
-        ]
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             sentinel = root / "sentinel.txt"
             sentinel.write_bytes(b"frozen")
             output_dir = root / "sensitivity"
-            figure = sensitivity.create_sensitivity_figure(metrics)
-            paths = sensitivity.write_outputs(complete, figure, output_dir)
-            sensitivity.plt.close(figure)
+            paths = sensitivity.write_outputs(complete, output_dir)
             self.assertEqual(
                 {path.name for path in output_dir.iterdir()},
                 {
                     sensitivity.METRICS_FILENAME,
-                    sensitivity.FIGURE_FILENAME,
-                    sensitivity.FIGURE_PNG_FILENAME,
+                    sensitivity.INDICATOR_METRICS_FILENAME,
                 },
             )
             self.assertEqual(sentinel.read_bytes(), b"frozen")
@@ -958,12 +949,9 @@ class FigureAndOutputTests(unittest.TestCase):
                 pd.read_csv(paths["metrics_csv"]).columns.tolist(),
                 list(sensitivity.METRIC_COLUMNS),
             )
-            pdf = paths["figure_pdf"].read_bytes()
-            self.assertEqual(pdf[:4], b"%PDF")
-            self.assertEqual(len(re.findall(rb"/Type\s*/Page\b", pdf)), 1)
-            self.assertNotIn(b"/Subtype /Image", pdf)
             self.assertEqual(
-                paths["figure_png"].read_bytes()[:8], b"\x89PNG\r\n\x1a\n"
+                pd.read_csv(paths["indicator_metrics_csv"]).columns.tolist(),
+                list(sensitivity.INDICATOR_COLUMNS),
             )
 
     def test_cli_has_paths_but_no_model_or_threshold_controls(self):
