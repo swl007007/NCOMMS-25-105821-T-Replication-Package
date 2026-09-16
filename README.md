@@ -70,15 +70,73 @@ working directory. The notebooks use paths relative to that directory and have
 been cleared of saved execution output. `Figure3_Flowchart.ipynb` additionally
 requires the system Graphviz executable (`dot -V`).
 
-There are 12 analysis notebooks. See `INSTALL.md` for their recommended order
+There are 11 active analysis notebooks. See `INSTALL.md` for their recommended order
 and `REPLICATION_PACKAGE.md` for the detailed evaluation and artifact contracts.
 
 ## Evaluation boundary
 
+### Current manuscript and Response Table R1
+
+The authoritative Response letter is `writing/Response_2_v4_090826.docx`.
+Edit that DOCX first, then regenerate its PDF and `writing/response_numbered.txt`.
+The PDF and numbered text are derived reading aids, not independent authorities;
+they must not overwrite newer DOCX content.
+
+The manuscript's Forecasting/Nowcasting main results use the frozen
+`main-result-figure1-v1` predictions, also used by the base panels of
+Supplementary Fig. 4. Table R1 is generated without model fitting by
+`2.Source Code/generate_response_table_r1_metrics.py`; its three-row output is
+`2.Source Code/produced_graph/response_table_r1_macro_metrics.csv`, with explicit
+prediction paths, hashes, label columns and averaging rules. Contemporaneous
+in the existing R1 generator still uses the earlier saved seed-0 row-level
+full-OOF predictions. The selected contemporaneous result was updated on
+15 September 2026 as documented below; that generator and existing figures
+have not yet been migrated to the newly selected source.
+
+### Selected contemporaneous main result — random area CV (15 September 2026)
+
+The `Nowcasting` row in
+[`leave_area_out_20pct_random_cv_metrics.csv`](2.Source%20Code/produced_graph/leave_area_out_20pct_random_cv_metrics.csv)
+is selected as **Contemporaneous (using nowcasting dataset; random area
+five-fold CV)**. Its complete six-CSV family has been restored to
+`2.Source Code/produced_graph/`. The original generator is
+[`generate_leave_area_out_20pct_random_cv.py`](2.Source%20Code/generate_leave_area_out_20pct_random_cv.py).
+See the [result provenance and metric definitions](2.Source%20Code/produced_graph/leave_area_out_20pct_random_cv_README.md).
+
+This uses all dates, 5,575 observations and 1,198 areas, with areas randomly
+assigned to five folds (seed 0). Results are fold means and sample SDs,
+not pooled metrics or a temporal holdout. The cascading model uses Forecasting
+inputs in layer 1 and the Nowcasting dataset in layer 2. Original CSV model
+labels and audit hashes are preserved; `Nowcasting` is the selected row's
+source label, while `Contemporaneous` is its manuscript reporting label.
+
+`1.Source Data/All_prediction.csv` is an alternative Forecasting/Nowcasting
+prediction lineage, **not the source for the current manuscript main results
+or Table R1**. It remains in place for map/population and core-workflow inputs.
+The two old `all_prediction*_macro_metrics` presentation families and uncited
+calibration outputs are now archived. Running the core workflow can recreate
+those alternative outputs; it does not reproduce the frozen manuscript
+lineage, and its metrics must not be substituted.
+
+### Archived presentation outputs (8 September 2026)
+
+The current TeX manuscript and Response letter were inventoried before moving
+obsolete or unselected figures/tables to
+[`0.Archived/2026-09-08_obsolete_presentation/`](0.Archived/2026-09-08_obsolete_presentation/README.md).
+The archive contains original relative paths, reasons, SHA-256 hashes and
+restoration instructions. Historical output paths elsewhere in the package
+may now resolve there; retained generators can recreate unselected outputs.
+`Conflit_Simulation.ipynb` is archived, not an active replication step.
+The corrected `generate_conflict_perturbation.py` and
+`produced_graph/conflict_perturbation_10pct/` remain exploratory, at the
+author's request, and are not manuscript evidence. Current writing files,
+table sources and complete hash-bound dependency families remain in place.
+
 Forecasting and cascading two-layer Nowcasting use the complete 1,170-row 2022
-temporal holdout. Contemporaneous results use reproducible seed-0 random
+temporal holdout. The earlier contemporaneous artifacts use reproducible seed-0 random
 five-fold row-level cross-validation over 5,575 observations. These protocols
-and populations are intentionally labeled and are not directly comparable.
+and populations differ from the selected random-area-CV result above and
+must not be silently interchanged.
 
 ## Release asset
 
@@ -100,6 +158,13 @@ The checksum manifest records the required restoration path. The other formal
 spatial-comparison outputs remain in the repository.
 
 ## Repository layout
+
+Result-to-generator coverage, including notebook SHAP export locations and
+the author-confirmed retirement of historical outputs, is documented in
+[RESULT_SCRIPT_AUDIT.md](RESULT_SCRIPT_AUDIT.md), with the per-file inventory
+in [result_script_inventory.csv](result_script_inventory.csv). Thirteen obsolete
+files without active readers were archived on 15 September 2026; the two
+legacy R-squared anchor tables still consumed by current scripts remain in place.
 
 - `1.Source Data/`: released model-ready inputs and supporting tables.
 - `2.Source Code/`: notebooks, generators, shared functions, parameters, and

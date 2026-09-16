@@ -1,0 +1,564 @@
+{
+  "scope": {
+    "code_file_count": 66,
+    "files_scanned": [
+      "run_replication.py",
+      "1.Source Data/all_predictions_severity.ipynb",
+      "2.Source Code/Figure1_multiple_figures.ipynb",
+      "2.Source Code/Figure2_Feature_Importance_Forecasting.ipynb",
+      "2.Source Code/Figure2_Nowcasting_two_layer_feature_importance.ipynb",
+      "2.Source Code/Figure3_Flowchart.ipynb",
+      "2.Source Code/Figure4_Descriptives.ipynb",
+      "2.Source Code/figuresS1_hyperparameter.ipynb",
+      "2.Source Code/food_crisis_functions.py",
+      "2.Source Code/generate_2022_alert_map_panel.py",
+      "2.Source Code/generate_all_prediction_1165_evaluation.py",
+      "2.Source Code/generate_all_prediction_evaluation.py",
+      "2.Source Code/generate_all_prediction_temporal_test.py",
+      "2.Source Code/generate_all_prediction_temporal_test_evaluation.py",
+      "2.Source Code/generate_conflict_missingness_balance.py",
+      "2.Source Code/generate_conflict_perturbation.py",
+      "2.Source Code/generate_country_phase3plus_population.py",
+      "2.Source Code/generate_direct_phase3_vs_phase45_rescue.py",
+      "2.Source Code/generate_direct_phase3_vs_phase45_rescue_contemporaneous.py",
+      "2.Source Code/generate_direct_phase3_vs_phase45_rescue_five_class_confusion.py",
+      "2.Source Code/generate_filtered_main_result_metrics.py",
+      "2.Source Code/generate_leave_area_out_10pct_robustness.py",
+      "2.Source Code/generate_leave_area_out_20pct_fivefold_robustness.py",
+      "2.Source Code/generate_leave_area_out_20pct_random_cv.py",
+      "2.Source Code/generate_leave_one_country_out_robustness.py",
+      "2.Source Code/generate_missingness_sensitivity.py",
+      "2.Source Code/generate_multinomial_baseline_comparison.py",
+      "2.Source Code/generate_nowcasting_calibration.py",
+      "2.Source Code/generate_persistence_baseline_comparison.py",
+      "2.Source Code/generate_phase4_rescue_classifier.py",
+      "2.Source Code/generate_phase_cumulative_scatter_comparison.py",
+      "2.Source Code/generate_response_table_r1_metrics.py",
+      "2.Source Code/generate_sample_imbalance_chart.py",
+      "2.Source Code/generate_simple_baseline_comparison.py",
+      "2.Source Code/generate_spatial_feature_comparison.py",
+      "2.Source Code/generate_strict_temporal_leave_one_country_out_robustness.py",
+      "2.Source Code/generate_variable_missingness_balance.py",
+      "2.Source Code/main_result_figure1_v1.py",
+      "2.Source Code/Table1_Contemporaneous_main.ipynb",
+      "2.Source Code/Table1_Forecasting_main.ipynb",
+      "2.Source Code/Table1_Forecast_phasechange.ipynb",
+      "2.Source Code/Table1_Nowcasting_two_layer.ipynb",
+      "2.Source Code/Table1_Nowcast_phasechange.ipynb",
+      "tests/test_generate_2022_alert_map_panel.py",
+      "tests/test_generate_all_prediction_temporal_test.py",
+      "tests/test_generate_all_prediction_temporal_test_evaluation.py",
+      "tests/test_generate_country_phase3plus_population.py",
+      "tests/test_generate_direct_phase3_vs_phase45_rescue.py",
+      "tests/test_generate_leave_area_out_10pct_robustness.py",
+      "tests/test_generate_leave_area_out_20pct_fivefold_robustness.py",
+      "tests/test_generate_leave_area_out_20pct_random_cv.py",
+      "tests/test_generate_leave_one_country_out_robustness.py",
+      "tests/test_generate_missingness_sensitivity.py",
+      "tests/test_generate_multinomial_baseline_comparison.py",
+      "tests/test_generate_nowcasting_calibration.py",
+      "tests/test_generate_persistence_baseline_comparison.py",
+      "tests/test_generate_phase4_rescue_classifier.py",
+      "tests/test_generate_phase_cumulative_scatter_comparison.py",
+      "tests/test_generate_sample_imbalance_chart.py",
+      "tests/test_generate_simple_baseline_comparison.py",
+      "tests/test_generate_spatial_feature_comparison.py",
+      "tests/test_generate_strict_temporal_leave_one_country_out_robustness.py",
+      "tests/test_generate_variable_missingness_balance.py",
+      "tests/test_missingness_sensitivity_revision.py",
+      "tests/test_rescue_confusion_display.py",
+      "tests/test_run_replication.py"
+    ],
+    "exclusions": [
+      ".git",
+      ".ipynb_checkpoints",
+      ".pytest_cache",
+      ".tmp",
+      ".venv",
+      ".worktrees",
+      "0.Archived",
+      "__pycache__",
+      "node_modules",
+      "venv"
+    ],
+    "unreadable": [
+      {
+        "path": "1.Source Data/all_predictions_severity.ipynb",
+        "bytes": 0,
+        "error": "Expecting value: line 1 column 1 (char 0)"
+      }
+    ],
+    "notebook_locations": "1-based physical cell including markdown cells, 1-based source line",
+    "method": "All active Python and notebook code cells and executable script extensions searched; full filenames, stems, family fragments, glob/listdir patterns and aliases inspected. Static audit only; generic user-provided CLI paths cannot prove actual historical use."
+  },
+  "artifacts": [
+    {
+      "artifact": "1.Source Data/All_prediction_cleaned.csv",
+      "decision": "archive",
+      "evidence": [
+        {
+          "location": "2.Source Code/generate_all_prediction_evaluation.py:41",
+          "text": "DEFAULT_SHEET = \"All_prediction_cleaned\""
+        }
+      ],
+      "reader_paths": [],
+      "finding": "No filename-specific active reader found. DEFAULT_SHEET All_prediction_cleaned and generic user-supplied Excel support do not select these artifacts."
+    },
+    {
+      "artifact": "1.Source Data/All_prediction_updated.xlsx",
+      "decision": "archive",
+      "evidence": [],
+      "reader_paths": [],
+      "finding": "No filename-specific active reader found. DEFAULT_SHEET All_prediction_cleaned and generic user-supplied Excel support do not select these artifacts."
+    },
+    {
+      "artifact": "1.Source Data/error_analysis_forecasting_011525.csv",
+      "decision": "archive",
+      "evidence": [],
+      "reader_paths": [],
+      "finding": "No active reader found by exact name, stem, partial construction tokens, or directory/glob reader inspection."
+    },
+    {
+      "artifact": "1.Source Data/forecasting_df_with_folds.csv",
+      "decision": "archive",
+      "evidence": [],
+      "reader_paths": [],
+      "finding": "No active reader found by exact name, stem, partial construction tokens, or directory/glob reader inspection."
+    },
+    {
+      "artifact": "1.Source Data/forecasting_df_with_folds_5.csv",
+      "decision": "archive",
+      "evidence": [],
+      "reader_paths": [],
+      "finding": "No active reader found by exact name, stem, partial construction tokens, or directory/glob reader inspection."
+    },
+    {
+      "artifact": "1.Source Data/metric_frame.csv",
+      "decision": "archive",
+      "evidence": [],
+      "reader_paths": [],
+      "finding": "No active reader found by exact name, stem, partial construction tokens, or directory/glob reader inspection."
+    },
+    {
+      "artifact": "1.Source Data/nowcasting_df_with_folds.csv",
+      "decision": "archive",
+      "evidence": [],
+      "reader_paths": [],
+      "finding": "No active reader found by exact name, stem, partial construction tokens, or directory/glob reader inspection."
+    },
+    {
+      "artifact": "1.Source Data/nowcasting_df_with_folds_5.csv",
+      "decision": "archive",
+      "evidence": [],
+      "reader_paths": [],
+      "finding": "No active reader found by exact name, stem, partial construction tokens, or directory/glob reader inspection."
+    },
+    {
+      "artifact": "1.Source Data/old_graph/2022_actual_alert_top20_percent.png",
+      "decision": "archive",
+      "evidence": [],
+      "reader_paths": [],
+      "finding": "No active reader found by exact name, stem, partial construction tokens, or directory/glob reader inspection."
+    },
+    {
+      "artifact": "1.Source Data/old_graph/2022_actual_alert_top30_percent.png",
+      "decision": "archive",
+      "evidence": [],
+      "reader_paths": [],
+      "finding": "No active reader found by exact name, stem, partial construction tokens, or directory/glob reader inspection."
+    },
+    {
+      "artifact": "1.Source Data/old_graph/2022_forecast_alert_top20_percent.png",
+      "decision": "archive",
+      "evidence": [],
+      "reader_paths": [],
+      "finding": "No active reader found by exact name, stem, partial construction tokens, or directory/glob reader inspection."
+    },
+    {
+      "artifact": "1.Source Data/old_graph/2022_forecast_alert_top30_percent.png",
+      "decision": "archive",
+      "evidence": [],
+      "reader_paths": [],
+      "finding": "No active reader found by exact name, stem, partial construction tokens, or directory/glob reader inspection."
+    },
+    {
+      "artifact": "1.Source Data/r2_frame_cv.csv",
+      "decision": "archive",
+      "evidence": [
+        {
+          "location": "2.Source Code/Table1_Contemporaneous_main.ipynb:cell 3 line 1",
+          "text": "r2_frame_cv = y_pred_test[['phase3_pred','phase3_test']]"
+        },
+        {
+          "location": "2.Source Code/Table1_Contemporaneous_main.ipynb:cell 3 line 4",
+          "text": "r2_frame_cv = r2_frame_cv.rename(columns={'phase3_pred': 'phase3_pred_cv', 'phase3_test': 'phase3_test_cv'})"
+        },
+        {
+          "location": "2.Source Code/Table1_Contemporaneous_main.ipynb:cell 3 line 6",
+          "text": "r2_frame_cv.to_csv(r'produced_graph/r2_frame_cv.csv', index=False)"
+        }
+      ],
+      "reader_paths": [],
+      "finding": "No active reader of 1.Source Data/r2_frame_cv.csv found. Table1 notebook only writes produced_graph/r2_frame_cv.csv; Figure1 contemporaneous values now read sidecar, not this CSV."
+    },
+    {
+      "artifact": "1.Source Data/r2_frame_forecasting.csv",
+      "decision": "retain",
+      "evidence": [
+        {
+          "location": "run_replication.py:34",
+          "text": "    REPO_ROOT / \"1.Source Data\" / \"r2_frame_forecasting.csv\","
+        },
+        {
+          "location": "2.Source Code/Figure1_multiple_figures.ipynb:cell 2 line 16",
+          "text": "r2_forecasting = pd.read_csv('../1.Source Data/r2_frame_forecasting.csv')"
+        },
+        {
+          "location": "2.Source Code/Figure2_Feature_Importance_Forecasting.ipynb:cell 4 line 1",
+          "text": "r2_frame_forecasting = y_pred_test[['phase3_pred','phase3_test']]"
+        },
+        {
+          "location": "2.Source Code/Figure2_Feature_Importance_Forecasting.ipynb:cell 4 line 3",
+          "text": "r2_frame_forecasting = r2_frame_forecasting.rename(columns={'phase3_pred': 'phase3_pred_fc', 'phase3_test': 'phase3_test_fc'})"
+        },
+        {
+          "location": "2.Source Code/Figure2_Feature_Importance_Forecasting.ipynb:cell 4 line 5",
+          "text": "r2_frame_forecasting.to_csv(r'produced_graph/r2_frame_forecasting.csv', index=False)"
+        },
+        {
+          "location": "2.Source Code/generate_nowcasting_calibration.py:205",
+          "text": "    Path(\"1.Source Data/r2_frame_forecasting.csv\"),"
+        },
+        {
+          "location": "2.Source Code/generate_phase_cumulative_scatter_comparison.py:43",
+          "text": "DEFAULT_FORECASTING_ANCHOR = SOURCE_DATA_DIR / \"r2_frame_forecasting.csv\""
+        },
+        {
+          "location": "2.Source Code/main_result_figure1_v1.py:92",
+          "text": "        \"row_anchor_path\": \"1.Source Data/r2_frame_forecasting.csv\","
+        },
+        {
+          "location": "2.Source Code/generate_phase_cumulative_scatter_comparison.py:35",
+          "text": "REPO_ROOT = Path(__file__).resolve().parents[1]"
+        },
+        {
+          "location": "2.Source Code/generate_phase_cumulative_scatter_comparison.py:36",
+          "text": "SOURCE_DATA_DIR = REPO_ROOT / \"1.Source Data\""
+        },
+        {
+          "location": "2.Source Code/generate_phase_cumulative_scatter_comparison.py:1299",
+          "text": "            Path(forecasting_anchor_path),"
+        },
+        {
+          "location": "2.Source Code/generate_phase_cumulative_scatter_comparison.py:1304",
+          "text": "            Path(nowcasting_anchor_path),"
+        },
+        {
+          "location": "2.Source Code/generate_phase_cumulative_scatter_comparison.py:1346",
+          "text": "        anchor_path, anchor_predicted, anchor_actual = anchor_specs[model_name]"
+        },
+        {
+          "location": "2.Source Code/generate_phase_cumulative_scatter_comparison.py:1347",
+          "text": "        anchor = pd.read_csv(anchor_path)"
+        },
+        {
+          "location": "2.Source Code/generate_phase_cumulative_scatter_comparison.py:1484",
+          "text": "    forecasting_anchor_path: Path = DEFAULT_FORECASTING_ANCHOR,"
+        },
+        {
+          "location": "2.Source Code/generate_phase_cumulative_scatter_comparison.py:1485",
+          "text": "    nowcasting_anchor_path: Path = DEFAULT_NOWCASTING_ANCHOR,"
+        },
+        {
+          "location": "2.Source Code/generate_nowcasting_calibration.py:793",
+          "text": "    paths = [REPO_ROOT / relative for relative in PROTECTED_RELATIVE_PATHS]"
+        },
+        {
+          "location": "2.Source Code/generate_nowcasting_calibration.py:800",
+          "text": "    missing = [path for path in paths if not path.is_file()]"
+        },
+        {
+          "location": "2.Source Code/generate_nowcasting_calibration.py:802",
+          "text": "        raise FileNotFoundError(f\"Protected baseline artifacts are missing: {missing}\")"
+        },
+        {
+          "location": "2.Source Code/generate_nowcasting_calibration.py:809",
+          "text": "        f\"{path.relative_to(REPO_ROOT).as_posix()}\\t{file_sha256(path)}\\n\""
+        },
+        {
+          "location": "2.Source Code/generate_nowcasting_calibration.py:810",
+          "text": "        for path in protected_artifact_paths()"
+        },
+        {
+          "location": "run_replication.py:95",
+          "text": "    for path in (*REQUIRED_PATHS, *(step[1] for step in WORKFLOW)):"
+        },
+        {
+          "location": "run_replication.py:96",
+          "text": "        if not path.is_file():"
+        },
+        {
+          "location": "run_replication.py:97",
+          "text": "            errors.append(f\"missing required file: {_display(path)}\")"
+        }
+      ],
+      "reader_paths": [
+        "2.Source Code/Figure1_multiple_figures.ipynb",
+        "2.Source Code/generate_phase_cumulative_scatter_comparison.py",
+        "2.Source Code/generate_nowcasting_calibration.py",
+        "run_replication.py"
+      ],
+      "finding": "Active data reader plus default anchor read, protected hash read and readiness requirement. produced_graph writer is a different path."
+    },
+    {
+      "artifact": "1.Source Data/r2_frame_nowcasting.csv",
+      "decision": "retain",
+      "evidence": [
+        {
+          "location": "run_replication.py:35",
+          "text": "    REPO_ROOT / \"1.Source Data\" / \"r2_frame_nowcasting.csv\","
+        },
+        {
+          "location": "2.Source Code/Figure1_multiple_figures.ipynb:cell 2 line 15",
+          "text": "r2_nowcasting = pd.read_csv('../1.Source Data/r2_frame_nowcasting.csv')"
+        },
+        {
+          "location": "2.Source Code/Figure2_Nowcasting_two_layer_feature_importance.ipynb:cell 3 line 1",
+          "text": "r2_frame_nowcasting = y_pred_test[['phase3_pred','phase3_test']]"
+        },
+        {
+          "location": "2.Source Code/Figure2_Nowcasting_two_layer_feature_importance.ipynb:cell 4 line 2",
+          "text": "r2_frame_nowcasting = r2_frame_nowcasting.rename(columns={'phase3_pred': 'phase3_pred_nc', 'phase3_test': 'phase3_test_nc'})"
+        },
+        {
+          "location": "2.Source Code/Figure2_Nowcasting_two_layer_feature_importance.ipynb:cell 4 line 4",
+          "text": "r2_frame_nowcasting.to_csv(r'produced_graph/r2_frame_nowcasting.csv', index=False)"
+        },
+        {
+          "location": "2.Source Code/generate_nowcasting_calibration.py:206",
+          "text": "    Path(\"1.Source Data/r2_frame_nowcasting.csv\"),"
+        },
+        {
+          "location": "2.Source Code/generate_phase_cumulative_scatter_comparison.py:44",
+          "text": "DEFAULT_NOWCASTING_ANCHOR = SOURCE_DATA_DIR / \"r2_frame_nowcasting.csv\""
+        },
+        {
+          "location": "2.Source Code/main_result_figure1_v1.py:125",
+          "text": "        \"row_anchor_path\": \"1.Source Data/r2_frame_nowcasting.csv\","
+        },
+        {
+          "location": "2.Source Code/generate_phase_cumulative_scatter_comparison.py:35",
+          "text": "REPO_ROOT = Path(__file__).resolve().parents[1]"
+        },
+        {
+          "location": "2.Source Code/generate_phase_cumulative_scatter_comparison.py:36",
+          "text": "SOURCE_DATA_DIR = REPO_ROOT / \"1.Source Data\""
+        },
+        {
+          "location": "2.Source Code/generate_phase_cumulative_scatter_comparison.py:1299",
+          "text": "            Path(forecasting_anchor_path),"
+        },
+        {
+          "location": "2.Source Code/generate_phase_cumulative_scatter_comparison.py:1304",
+          "text": "            Path(nowcasting_anchor_path),"
+        },
+        {
+          "location": "2.Source Code/generate_phase_cumulative_scatter_comparison.py:1346",
+          "text": "        anchor_path, anchor_predicted, anchor_actual = anchor_specs[model_name]"
+        },
+        {
+          "location": "2.Source Code/generate_phase_cumulative_scatter_comparison.py:1347",
+          "text": "        anchor = pd.read_csv(anchor_path)"
+        },
+        {
+          "location": "2.Source Code/generate_phase_cumulative_scatter_comparison.py:1484",
+          "text": "    forecasting_anchor_path: Path = DEFAULT_FORECASTING_ANCHOR,"
+        },
+        {
+          "location": "2.Source Code/generate_phase_cumulative_scatter_comparison.py:1485",
+          "text": "    nowcasting_anchor_path: Path = DEFAULT_NOWCASTING_ANCHOR,"
+        },
+        {
+          "location": "2.Source Code/generate_nowcasting_calibration.py:793",
+          "text": "    paths = [REPO_ROOT / relative for relative in PROTECTED_RELATIVE_PATHS]"
+        },
+        {
+          "location": "2.Source Code/generate_nowcasting_calibration.py:800",
+          "text": "    missing = [path for path in paths if not path.is_file()]"
+        },
+        {
+          "location": "2.Source Code/generate_nowcasting_calibration.py:802",
+          "text": "        raise FileNotFoundError(f\"Protected baseline artifacts are missing: {missing}\")"
+        },
+        {
+          "location": "2.Source Code/generate_nowcasting_calibration.py:809",
+          "text": "        f\"{path.relative_to(REPO_ROOT).as_posix()}\\t{file_sha256(path)}\\n\""
+        },
+        {
+          "location": "2.Source Code/generate_nowcasting_calibration.py:810",
+          "text": "        for path in protected_artifact_paths()"
+        },
+        {
+          "location": "run_replication.py:95",
+          "text": "    for path in (*REQUIRED_PATHS, *(step[1] for step in WORKFLOW)):"
+        },
+        {
+          "location": "run_replication.py:96",
+          "text": "        if not path.is_file():"
+        },
+        {
+          "location": "run_replication.py:97",
+          "text": "            errors.append(f\"missing required file: {_display(path)}\")"
+        }
+      ],
+      "reader_paths": [
+        "2.Source Code/Figure1_multiple_figures.ipynb",
+        "2.Source Code/generate_phase_cumulative_scatter_comparison.py",
+        "2.Source Code/generate_nowcasting_calibration.py",
+        "run_replication.py"
+      ],
+      "finding": "Active data reader plus default anchor read, protected hash read and readiness requirement. produced_graph writer is a different path."
+    }
+  ],
+  "documentation_references": [
+    {
+      "location": "REPLICATION_PACKAGE.md:89",
+      "text": "- `forecasting_df_with_folds.csv` - 10-fold CV assignments for forecasting"
+    },
+    {
+      "location": "REPLICATION_PACKAGE.md:90",
+      "text": "- `forecasting_df_with_folds_5.csv` - 5-fold CV assignments for forecasting"
+    },
+    {
+      "location": "REPLICATION_PACKAGE.md:91",
+      "text": "- `nowcasting_df_with_folds.csv` - 10-fold CV assignments for nowcasting"
+    },
+    {
+      "location": "REPLICATION_PACKAGE.md:92",
+      "text": "- `nowcasting_df_with_folds_5.csv` - 5-fold CV assignments for nowcasting"
+    },
+    {
+      "location": "RESULT_SCRIPT_AUDIT.md:41",
+      "text": "| `All_prediction_cleaned.csv` | 清理后的预测表；未找到清理和导出入口 |"
+    },
+    {
+      "location": "RESULT_SCRIPT_AUDIT.md:42",
+      "text": "| `All_prediction_updated.xlsx` | 派生预测工作簿；未找到导出入口 |"
+    },
+    {
+      "location": "RESULT_SCRIPT_AUDIT.md:43",
+      "text": "| `error_analysis_forecasting_011525.csv` | 30 行误差分组统计；未找到统计与导出入口 |"
+    },
+    {
+      "location": "RESULT_SCRIPT_AUDIT.md:44",
+      "text": "| `metric_frame.csv` | 6 行阈值 precision/recall；未找到计算与导出入口 |"
+    },
+    {
+      "location": "RESULT_SCRIPT_AUDIT.md:45",
+      "text": "| `forecasting_df_with_folds.csv` | 已分配 CV fold 的派生表；未找到该文件的分折导出入口 |"
+    },
+    {
+      "location": "RESULT_SCRIPT_AUDIT.md:46",
+      "text": "| `forecasting_df_with_folds_5.csv` | 同上，五折版本 |"
+    },
+    {
+      "location": "RESULT_SCRIPT_AUDIT.md:47",
+      "text": "| `nowcasting_df_with_folds.csv` | 已分配 CV fold 的派生表；未找到该文件的分折导出入口 |"
+    },
+    {
+      "location": "RESULT_SCRIPT_AUDIT.md:48",
+      "text": "| `nowcasting_df_with_folds_5.csv` | 同上，五折版本 |"
+    },
+    {
+      "location": "RESULT_SCRIPT_AUDIT.md:49",
+      "text": "| `old_graph/2022_actual_alert_top20_percent.png` | 历史统计地图；未找到单图 writer |"
+    },
+    {
+      "location": "RESULT_SCRIPT_AUDIT.md:50",
+      "text": "| `old_graph/2022_actual_alert_top30_percent.png` | 同上 |"
+    },
+    {
+      "location": "RESULT_SCRIPT_AUDIT.md:51",
+      "text": "| `old_graph/2022_forecast_alert_top20_percent.png` | 同上 |"
+    },
+    {
+      "location": "RESULT_SCRIPT_AUDIT.md:52",
+      "text": "| `old_graph/2022_forecast_alert_top30_percent.png` | 同上 |"
+    },
+    {
+      "location": "RESULT_SCRIPT_AUDIT.md:77",
+      "text": "- `1.Source Data/r2_frame_forecasting.csv`：对应"
+    },
+    {
+      "location": "RESULT_SCRIPT_AUDIT.md:79",
+      "text": "- `1.Source Data/r2_frame_nowcasting.csv`：对应"
+    },
+    {
+      "location": "RESULT_SCRIPT_AUDIT.md:81",
+      "text": "- `1.Source Data/r2_frame_cv.csv`：对应"
+    },
+    {
+      "location": "RESULT_SCRIPT_AUDIT.md:85",
+      "text": "中的旧文件。没有验证旧文件与当前代码的数值一致性。特别是 `r2_frame_cv.csv`"
+    },
+    {
+      "location": "docs/2026-09-01-strict-temporal-new-area-fivefold-design.md:24",
+      "text": "- Do not reuse the optional `*_df_with_folds_5.csv` files: their universe is"
+    },
+    {
+      "location": "docs/superpowers/plans/2026-08-09-all-prediction-1170-contract-normalization.md:1049",
+      "text": "Confirm `df_vis_nowacast.csv`, Table 1 notebooks, `r2_frame_*`, 497-family outputs, and every other protected artifact retain pre-run hashes. Any failure triggers the journal rollback and blocks Task 13."
+    },
+    {
+      "location": "docs/superpowers/plans/2026-08-09-all-prediction-1170-contract-normalization.md:1122",
+      "text": "Generate the post-run manifest and compare every protected entry to the corrected pre-run manifest. Any mismatch blocks completion, including `df_vis_nowacast.csv`, Table 1 notebooks, `r2_frame_*`, 497, 1,115, 508, LOCO, and independent 1,170 outputs."
+    },
+    {
+      "location": "docs/superpowers/plans/2026-08-10-cascading-nowcasting-calibration.md:1000",
+      "text": "- `1.Source Data/r2_frame_forecasting.csv`;"
+    },
+    {
+      "location": "docs/superpowers/plans/2026-08-10-cascading-nowcasting-calibration.md:1001",
+      "text": "- `1.Source Data/r2_frame_nowcasting.csv`; and"
+    },
+    {
+      "location": "docs/superpowers/specs/2026-08-09-all-prediction-1170-contract-normalization-design.md:315",
+      "text": "- `All_prediction_updated.xlsx` and its 497-row cleaned/evaluation artifacts;"
+    },
+    {
+      "location": "docs/superpowers/specs/2026-08-09-all-prediction-1170-contract-normalization-design.md:316",
+      "text": "- `All_prediction_cleaned.csv`;"
+    },
+    {
+      "location": "docs/superpowers/specs/2026-08-09-all-prediction-1170-contract-normalization-design.md:317",
+      "text": "- `r2_frame_cv.csv` and the 1,115-row contemporaneous contract;"
+    },
+    {
+      "location": "docs/superpowers/specs/2026-08-09-all-prediction-1170-contract-normalization-design.md:320",
+      "text": "- `r2_frame_forecasting.csv` and `r2_frame_nowcasting.csv`;"
+    },
+    {
+      "location": "docs/superpowers/specs/2026-08-09-all-prediction-1170-contract-normalization-design.md:406",
+      "text": "5. preserve Forecasting Table 1 and its `r2_frame_forecasting.csv` lineage independently and record, rather than block on, its metric delta;"
+    },
+    {
+      "location": "docs/superpowers/specs/2026-08-10-cascading-nowcasting-calibration-design.md:42",
+      "text": "- `1.Source Data/All_prediction.csv`, `1.Source Data/df_vis_nowacast.csv`, `1.Source Data/All_prediction_truth_disagreements.csv`, `1.Source Data/r2_frame_forecasting.csv`, and `1.Source Data/r2_frame_nowcasting.csv`; and"
+    },
+    {
+      "location": "docs/superpowers/specs/2026-08-14-phase4-rescue-classifier-design.md:418",
+      "text": "The R2 gate uses `phase3_test` and `phase3_pred_rounded` from the selected spatial baseline rows and the saved benchmark predictions. These arrays must remain element-identical before and after rescue. Independent `sklearn.metrics.r2_score` recomputation must match `main_result_figure1_v1.RESULTS[task][\"phase3plus_r2\"]` at `rtol=0`, `atol=1e-12`. The older `serialized_anchor_recomputed_r2` fields from `r2_frame_*.csv` are audit-only and are never used as an acceptance target."
+    }
+  ],
+  "docs_requiring_current_location_update": [
+    "REPLICATION_PACKAGE.md:89-92",
+    "RESULT_SCRIPT_AUDIT.md:41-52",
+    "RESULT_SCRIPT_AUDIT.md:77-85",
+    "result_script_inventory.csv corresponding 15 artifact rows"
+  ],
+  "historical_docs_note": "Historical design/spec protected lists are historical context; record relocation separately.",
+  "summary": {
+    "archive": 13,
+    "retain": 2
+  }
+}

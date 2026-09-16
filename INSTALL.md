@@ -120,7 +120,7 @@ From the repository root:
 python run_replication.py --check-only
 ```
 
-The check validates required inputs and generators, parses all 12 notebooks,
+The check validates required inputs and generators, parses all 11 active notebooks,
 rejects executable absolute paths, confirms that notebook outputs are cleared,
 and verifies the release asset checksum when the asset is present.
 
@@ -185,8 +185,11 @@ Recommended order:
    - `Figure3_Flowchart.ipynb`
    - `Figure4_Descriptives.ipynb`
    - `figuresS1_hyperparameter.ipynb`
-5. Conflict simulation:
-   - `Conflit_Simulation.ipynb`
+
+The withdrawn `Conflit_Simulation.ipynb` is no longer an active step. It and
+unselected presentation outputs are retained in
+`0.Archived/2026-09-08_obsolete_presentation/`; consult its `README.md` before
+restoring legacy outputs or running historical saved-artifact checks.
 
 `Figure4_Descriptives.ipynb` uses only released files:
 `Nowcasting_Analysis_010825.csv` and `area_country_lookup.csv`.

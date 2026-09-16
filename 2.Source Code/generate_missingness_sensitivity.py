@@ -19,11 +19,13 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import xgboost as xgb
+from sklearn.metrics import r2_score
 
 import generate_filtered_main_result_metrics as selected_main
 import generate_leave_one_country_out_robustness as loco
 import generate_multinomial_baseline_comparison as multinomial
 import generate_simple_baseline_comparison as simple
+import generate_spatial_feature_comparison as spatial
 import main_result_figure1_v1 as frozen_main_result
 
 
@@ -36,17 +38,20 @@ DEFAULT_BASE_METRICS = (
 DEFAULT_GENERAL_PARAMS = SOURCE_CODE_DIR / "forecasting_hyperparameters.json"
 DEFAULT_PHASE3_PARAMS = SOURCE_CODE_DIR / "forecasting_hyperparameters_p3.json"
 METRICS_FILENAME = "missingness_sensitivity_metrics.csv"
+INDICATOR_METRICS_FILENAME = "missing_indicator_baseline_comparison_metrics.csv"
 FIGURE_FILENAME = "missingness_sensitivity_curves.pdf"
 FIGURE_PNG_FILENAME = "missingness_sensitivity_curves.png"
-THRESHOLDS = (0, 5, 10, 30, 50)
-TASKS = ("Forecasting", "Nowcasting")
-MODELS = ("XGBoost", "Ensemble OLS", "Ordered Probit")
+THRESHOLDS = (0, 5, 10)
+TEMPORAL_TASKS = ("Forecasting", "Nowcasting")
+TASKS = (*TEMPORAL_TASKS, "Contemporaneous")
+MODELS = ("Main model", "Ensemble OLS", "Ordered Probit")
 METRIC_NAMES = (
     "overall_accuracy",
     "phase3plus_precision",
     "phase3plus_recall",
-    "phase3above_r2",
+    "phase3plus_population_share_r2",
 )
+DELTA_COLUMNS = tuple(f"delta_{metric}_vs_main_model" for metric in METRIC_NAMES)
 METRIC_COLUMNS = (
     "experiment",
     "threshold_percent",
@@ -60,10 +65,17 @@ METRIC_COLUMNS = (
     "n_test",
     "status",
     "reason",
-    "delta_overall_accuracy_vs_xgboost",
-    "delta_phase3plus_precision_vs_xgboost",
-    "delta_phase3plus_recall_vs_xgboost",
-    "delta_phase3above_r2_vs_xgboost",
+    *DELTA_COLUMNS,
+)
+INDICATOR_COLUMNS = (
+    "task",
+    "model",
+    *METRIC_NAMES,
+    *DELTA_COLUMNS,
+    "n_train",
+    "n_test",
+    "status",
+    "reason",
 )
 
 
@@ -236,8 +248,13 @@ def fit_xgboost_task(
         )
     else:
         raise ValueError(f"Unknown task: {task}")
+    predictions = prediction_frame(wide["overall_phase"], wide["overall_phase_pred"])
+    predictions["phase3_actual_cumulative"] = wide["phase3_test"].to_numpy(
+        dtype=float
+    )
+    predictions["phase3_pred_rounded"] = wide["phase3_pred"].to_numpy(dtype=float)
     return (
-        prediction_frame(wide["overall_phase"], wide["overall_phase_pred"]),
+        predictions,
         int(forecasting_train_mask.sum()),
         int(forecasting_test_mask.sum()),
     )
@@ -355,11 +372,140 @@ def fit_ensemble_ols_task(
 
     predicted = simple._phase_from_rounded_predictions(test_predictions)
     actual = forecasting.loc[forecasting_test_mask, "evaluation_phase"]
+    predictions = prediction_frame(actual, predicted)
+    predictions["phase3_actual_cumulative"] = forecasting.loc[
+        forecasting_test_mask, loco.CUMULATIVE_TARGETS[3]
+    ].to_numpy(dtype=float)
+    predictions["phase3_pred_rounded"] = test_predictions[
+        "phase3_pred_rounded"
+    ].to_numpy(dtype=float)
     return (
-        prediction_frame(actual, predicted),
+        predictions,
         int(forecasting_train_mask.sum()),
         int(forecasting_test_mask.sum()),
     )
+
+
+def fit_contemporaneous_task(
+    *,
+    model: str,
+    design: pd.DataFrame,
+    feature_columns: Sequence[str],
+    params: Mapping[str, object],
+    feature_removal_percent: int | None = None,
+    removed_countries: Sequence[str] = (),
+    missing_indicators: bool = False,
+) -> tuple[pd.DataFrame, int, int]:
+    """Fit one full-OOF Contemporaneous sensitivity condition."""
+    if model not in MODELS:
+        raise ValueError(f"Unknown model: {model}")
+    if model == "Main model" and missing_indicators:
+        raise ValueError("Main model missing indicators use the frozen reference.")
+    if feature_removal_percent is not None and removed_countries:
+        raise ValueError("Feature and country removal cannot be combined.")
+
+    features = tuple(feature_columns)
+    if not features or features[-1] != "kfolds" or len(set(features)) != len(features):
+        raise ValueError("Contemporaneous features must be unique and end in kfolds.")
+    real_features = features[:-1]
+    working = design.copy()
+    model_features = features
+    if missing_indicators:
+        working, indicators = add_missing_indicators(working, real_features)
+        model_features = (*features, *indicators)
+
+    folds = tuple(sorted(pd.to_numeric(working["fold"], errors="raise").unique()))
+    if folds != tuple(range(5)):
+        raise ValueError(f"Contemporaneous folds differ from zero through four: {folds}")
+    removed = set(removed_countries)
+    unknown_countries = removed.difference(working["country_code_3"].astype(str))
+    if unknown_countries:
+        raise ValueError(f"Unknown removed countries: {sorted(unknown_countries)}")
+
+    actual_phase_frame = pd.DataFrame(
+        {
+            f"phase{phase}_pred_rounded": working[target]
+            for phase, target in loco.CUMULATIVE_TARGETS.items()
+        }
+    )
+    actual_phases = simple._phase_from_rounded_predictions(actual_phase_frame)
+    fold_predictions: list[pd.DataFrame] = []
+    train_counts: list[int] = []
+
+    for fold in folds:
+        retained_country = ~working["country_code_3"].astype(str).isin(removed)
+        train_mask = working["fold"].ne(fold) & retained_country
+        validation_mask = working["fold"].eq(fold) & retained_country
+        if not train_mask.any() or not validation_mask.any():
+            raise ValueError(f"Contemporaneous fold {fold} has an empty split.")
+        train_counts.append(int(train_mask.sum()))
+
+        fold_data = working
+        if feature_removal_percent is not None:
+            count = selection_count(feature_removal_percent, len(real_features))
+            selected = rank_features(working, real_features, train_mask)[:count]
+            fold_data = suppress_features(working, selected)
+
+        actual = actual_phases[np.asarray(validation_mask)]
+        if model == "Ordered Probit":
+            preprocessor = simple.fit_numeric_preprocessor(
+                fold_data.loc[train_mask],
+                model_features,
+                task="Contemporaneous",
+                method=model,
+                layer=f"random5fold_fold_{fold}",
+            )
+            predicted, _, _ = simple.fit_ordered_probit_arrays(
+                preprocessor.transform(fold_data.loc[train_mask]),
+                actual_phases[np.asarray(train_mask)],
+                preprocessor.transform(fold_data.loc[validation_mask]),
+                optimizer="bfgs",
+                maxiter=1000,
+            )
+            fold_predictions.append(prediction_frame(actual, predicted))
+            continue
+
+        preprocessor = None
+        if model == "Ensemble OLS":
+            preprocessor = simple.fit_numeric_preprocessor(
+                fold_data.loc[train_mask],
+                model_features,
+                task="Contemporaneous",
+                method=model,
+                layer=f"random5fold_fold_{fold}",
+            )
+            x_train = preprocessor.transform(fold_data.loc[train_mask])
+            x_validation = preprocessor.transform(fold_data.loc[validation_mask])
+
+        cumulative = pd.DataFrame(index=fold_data.index[validation_mask])
+        for phase, target in loco.CUMULATIVE_TARGETS.items():
+            y_train = fold_data.loc[train_mask, target].to_numpy(dtype=float)
+            if model == "Main model":
+                fitted = xgb.XGBRegressor(**dict(params))
+                fitted.fit(fold_data.loc[train_mask, model_features], y_train)
+                predicted_share = np.asarray(
+                    fitted.predict(fold_data.loc[validation_mask, model_features]),
+                    dtype=float,
+                )
+            else:
+                assert preprocessor is not None
+                predicted_share, _ = simple.fit_ols_arrays(
+                    x_train, y_train, x_validation
+                )
+            cumulative[f"phase{phase}_pred_rounded"] = np.round(predicted_share, 2)
+
+        predicted = simple._phase_from_rounded_predictions(cumulative)
+        predictions = prediction_frame(actual, predicted)
+        predictions["phase3_actual_cumulative"] = fold_data.loc[
+            validation_mask, loco.CUMULATIVE_TARGETS[3]
+        ].to_numpy(dtype=float)
+        predictions["phase3_pred_rounded"] = cumulative[
+            "phase3_pred_rounded"
+        ].to_numpy(dtype=float)
+        fold_predictions.append(predictions)
+
+    predictions = pd.concat(fold_predictions, ignore_index=True)
+    return predictions, min(train_counts), len(predictions)
 
 
 def source_feature_contract(bundle: simple.PreparedInputs) -> dict[str, object]:
@@ -384,6 +530,9 @@ def source_feature_contract(bundle: simple.PreparedInputs) -> dict[str, object]:
     )
     if len(countries) != 29:
         raise ValueError(f"Expected 29 source countries, found {len(countries)}.")
+    available_nowcast_features = set(layer1).union(layer2)
+    if set(nowcast_direct).difference(available_nowcast_features):
+        raise ValueError("Nowcasting source predictors are not assigned to model layers.")
     return {
         "forecast_direct": forecast_direct,
         "nowcast_direct": nowcast_direct,
@@ -462,10 +611,24 @@ def _condition_record(
     n_train: int,
     n_test: int,
     fit: Callable[[], tuple[pd.DataFrame, int, int]],
+    fit_cache: dict[tuple[str, str], tuple[object, ...]] | None = None,
+    fit_cache_key: tuple[str, str] | None = None,
 ) -> dict[str, object]:
-    predictions, fitted_train, fitted_test, status, reason = run_fit_safely(
-        fit, n_train=n_train, n_test=n_test
-    )
+    if fit_cache is not None and fit_cache_key is not None and fit_cache_key in fit_cache:
+        cached = fit_cache[fit_cache_key]
+        predictions, fitted_train, fitted_test, status, reason = cached
+    else:
+        predictions, fitted_train, fitted_test, status, reason = run_fit_safely(
+            fit, n_train=n_train, n_test=n_test
+        )
+        if fit_cache is not None and fit_cache_key is not None:
+            fit_cache[fit_cache_key] = (
+                predictions,
+                fitted_train,
+                fitted_test,
+                status,
+                reason,
+            )
     return {
         "experiment": experiment,
         "threshold_percent": threshold_percent,
@@ -486,15 +649,13 @@ def run_feature_removal(
     bundle: simple.PreparedInputs,
     general_params: Mapping[str, object],
     phase3_params: Mapping[str, object],
+    fit_cache: dict[tuple[str, str], tuple[object, ...]] | None = None,
 ) -> list[dict[str, object]]:
     contract = source_feature_contract(bundle)
     raw_f_train, raw_f_test = simple.temporal_masks(bundle.raw_forecasting["date"])
     raw_n_train, raw_n_test = simple.temporal_masks(bundle.raw_nowcasting["date"])
     forecast_ranking = rank_features(
         bundle.raw_forecasting, contract["forecast_direct"], raw_f_train
-    )
-    layer2_ranking = rank_features(
-        bundle.nowcasting, contract["layer2"], bundle.nowcasting_train_mask
     )
     nowcast_direct_ranking = rank_features(
         bundle.raw_nowcasting, contract["nowcast_direct"], raw_n_train
@@ -503,39 +664,44 @@ def run_feature_removal(
 
     for threshold in THRESHOLDS:
         forecast_count = selection_count(threshold, len(forecast_ranking))
-        layer2_count = selection_count(threshold, len(layer2_ranking))
-        direct_nowcast_count = selection_count(
-            threshold, len(nowcast_direct_ranking)
-        )
+        nowcast_count = selection_count(threshold, len(nowcast_direct_ranking))
         selected_forecast = forecast_ranking[:forecast_count]
-        selected_layer1 = tuple(
+        selected_forecast_layer1 = tuple(
             contract["forecast_source_to_layer1"][feature]
             for feature in selected_forecast
         )
-        selected_layer2 = layer2_ranking[:layer2_count]
-        selected_direct_nowcast = nowcast_direct_ranking[:direct_nowcast_count]
-
-        forecasting = suppress_features(bundle.forecasting, selected_layer1)
-        nowcasting = suppress_features(bundle.nowcasting, selected_layer2)
-        raw_forecasting = suppress_features(
-            bundle.raw_forecasting, selected_forecast
+        selected_nowcast = nowcast_direct_ranking[:nowcast_count]
+        selected_nowcast_layer1 = tuple(
+            feature for feature in selected_nowcast if feature in contract["layer1"]
         )
-        raw_nowcasting = suppress_features(
-            bundle.raw_nowcasting, selected_direct_nowcast
+        selected_nowcast_layer2 = tuple(
+            feature for feature in selected_nowcast if feature in contract["layer2"]
         )
+        if len(selected_nowcast_layer1) + len(selected_nowcast_layer2) != nowcast_count:
+            raise ValueError("Nowcasting feature suppression lost source predictors.")
 
-        for task in TASKS:
+        task_data = {
+            "Forecasting": (
+                suppress_features(bundle.forecasting, selected_forecast_layer1),
+                bundle.nowcasting,
+                suppress_features(bundle.raw_forecasting, selected_forecast),
+                raw_f_train,
+                raw_f_test,
+            ),
+            "Nowcasting": (
+                suppress_features(bundle.forecasting, selected_nowcast_layer1),
+                suppress_features(bundle.nowcasting, selected_nowcast_layer2),
+                suppress_features(bundle.raw_nowcasting, selected_nowcast),
+                raw_n_train,
+                raw_n_test,
+            ),
+        }
+
+        for task in TEMPORAL_TASKS:
+            forecasting, nowcasting, raw_data, raw_train, raw_test = task_data[task]
             for model in MODELS:
-                removed_count = (
-                    forecast_count
-                    if task == "Forecasting"
-                    else (
-                        direct_nowcast_count
-                        if model == "Ordered Probit"
-                        else forecast_count + layer2_count
-                    )
-                )
-                if model == "XGBoost":
+                removed_count = forecast_count if task == "Forecasting" else nowcast_count
+                if model == "Main model":
                     fit = lambda task=task: fit_xgboost_task(
                         task=task,
                         forecasting=forecasting,
@@ -564,23 +730,20 @@ def run_feature_removal(
                     n_train = int(bundle.forecasting_train_mask.sum())
                     n_test = int(bundle.forecasting_test_mask.sum())
                 else:
-                    data = raw_forecasting if task == "Forecasting" else raw_nowcasting
                     features = (
                         contract["forecast_direct"]
                         if task == "Forecasting"
                         else contract["nowcast_direct"]
                     )
-                    train_mask = raw_f_train if task == "Forecasting" else raw_n_train
-                    test_mask = raw_f_test if task == "Forecasting" else raw_n_test
-                    fit = lambda data=data, features=features, train_mask=train_mask, test_mask=test_mask, task=task: fit_ordered_probit_task(
-                        data=data,
+                    fit = lambda raw_data=raw_data, features=features, raw_train=raw_train, raw_test=raw_test, task=task: fit_ordered_probit_task(
+                        data=raw_data,
                         features=features,
-                        train_mask=train_mask,
-                        test_mask=test_mask,
+                        train_mask=raw_train,
+                        test_mask=raw_test,
                         task=task,
                     )
-                    n_train = int(train_mask.sum())
-                    n_test = int(test_mask.sum())
+                    n_train = int(raw_train.sum())
+                    n_test = int(raw_test.sum())
                 records.append(
                     _condition_record(
                         experiment="feature_removal",
@@ -593,6 +756,8 @@ def run_feature_removal(
                         n_train=n_train,
                         n_test=n_test,
                         fit=fit,
+                        fit_cache=fit_cache if threshold == 0 else None,
+                        fit_cache_key=(task, model) if threshold == 0 else None,
                     )
                 )
     return records
@@ -602,24 +767,23 @@ def run_country_removal(
     bundle: simple.PreparedInputs,
     general_params: Mapping[str, object],
     phase3_params: Mapping[str, object],
+    fit_cache: dict[tuple[str, str], tuple[object, ...]] | None = None,
 ) -> list[dict[str, object]]:
     contract = source_feature_contract(bundle)
     forecast_country_ranking = rank_countries(
         [(bundle.forecasting, contract["layer1"], bundle.forecasting_train_mask)]
     )
     nowcast_country_ranking = rank_countries(
-        [
-            (bundle.forecasting, contract["layer1"], bundle.forecasting_train_mask),
-            (bundle.nowcasting, contract["layer2"], bundle.nowcasting_train_mask),
-        ]
+        [(bundle.nowcasting, contract["nowcast_direct"], bundle.nowcasting_train_mask)]
     )
     records: list[dict[str, object]] = []
 
     for threshold in THRESHOLDS:
         removed_count = selection_count(threshold, len(contract["countries"]))
-        for task, ranking in (
-            ("Forecasting", forecast_country_ranking),
-            ("Nowcasting", nowcast_country_ranking),
+        for task, ranking in zip(
+            TEMPORAL_TASKS,
+            (forecast_country_ranking, nowcast_country_ranking),
+            strict=True,
         ):
             removed = ranking[:removed_count]
             filtered = country_filtered_bundle(bundle, removed)
@@ -630,7 +794,7 @@ def run_country_removal(
             )
             raw_train, raw_test = simple.temporal_masks(raw_data["date"])
             for model in MODELS:
-                if model == "XGBoost":
+                if model == "Main model":
                     fit = lambda task=task, filtered=filtered: fit_xgboost_task(
                         task=task,
                         forecasting=filtered.forecasting,
@@ -685,6 +849,8 @@ def run_country_removal(
                         n_train=n_train,
                         n_test=n_test,
                         fit=fit,
+                        fit_cache=fit_cache if threshold == 0 else None,
+                        fit_cache_key=(task, model) if threshold == 0 else None,
                     )
                 )
     return records
@@ -712,7 +878,7 @@ def run_missing_indicators(
     layer2_features = (*contract["layer2"], *layer2_indicators)
     records: list[dict[str, object]] = []
 
-    for task in TASKS:
+    for task in TEMPORAL_TASKS:
         for model in ("Ensemble OLS", "Ordered Probit"):
             if model == "Ensemble OLS":
                 fit = lambda task=task: fit_ensemble_ols_task(
@@ -769,6 +935,119 @@ def run_missing_indicators(
     return records
 
 
+def run_contemporaneous_feature_removal(
+    design: pd.DataFrame,
+    feature_columns: Sequence[str],
+    params: Mapping[str, object],
+    fit_cache: dict[tuple[str, str], tuple[object, ...]] | None = None,
+) -> list[dict[str, object]]:
+    real_feature_count = len(tuple(feature_columns)) - 1
+    records: list[dict[str, object]] = []
+    for threshold in THRESHOLDS:
+        removed_count = selection_count(threshold, real_feature_count)
+        for model in MODELS:
+            fit = lambda model=model, threshold=threshold: fit_contemporaneous_task(
+                model=model,
+                design=design,
+                feature_columns=feature_columns,
+                params=params,
+                feature_removal_percent=threshold,
+            )
+            records.append(
+                _condition_record(
+                    experiment="feature_removal",
+                    threshold_percent=threshold,
+                    task="Contemporaneous",
+                    model=model,
+                    removed_feature_count=removed_count,
+                    removed_country_count=0,
+                    removed_country_iso3="",
+                    n_train=int(design["fold"].ne(0).sum()),
+                    n_test=len(design),
+                    fit=fit,
+                    fit_cache=fit_cache if threshold == 0 else None,
+                    fit_cache_key=("Contemporaneous", model) if threshold == 0 else None,
+                )
+            )
+    return records
+
+
+def run_contemporaneous_country_removal(
+    design: pd.DataFrame,
+    feature_columns: Sequence[str],
+    params: Mapping[str, object],
+    fit_cache: dict[tuple[str, str], tuple[object, ...]] | None = None,
+) -> list[dict[str, object]]:
+    real_features = tuple(feature_columns)[:-1]
+    all_rows = pd.Series(True, index=design.index)
+    ranking = rank_countries([(design, real_features, all_rows)])
+    records: list[dict[str, object]] = []
+    for threshold in THRESHOLDS:
+        removed_count = selection_count(threshold, len(ranking))
+        removed = ranking[:removed_count]
+        retained = ~design["country_code_3"].astype(str).isin(removed)
+        train_count = min(
+            int((design["fold"].ne(fold) & retained).sum()) for fold in range(5)
+        )
+        test_count = int(retained.sum())
+        for model in MODELS:
+            fit = lambda model=model, removed=removed: fit_contemporaneous_task(
+                model=model,
+                design=design,
+                feature_columns=feature_columns,
+                params=params,
+                removed_countries=removed,
+            )
+            records.append(
+                _condition_record(
+                    experiment="country_removal",
+                    threshold_percent=threshold,
+                    task="Contemporaneous",
+                    model=model,
+                    removed_feature_count=0,
+                    removed_country_count=removed_count,
+                    removed_country_iso3=";".join(removed),
+                    n_train=train_count,
+                    n_test=test_count,
+                    fit=fit,
+                    fit_cache=fit_cache if threshold == 0 else None,
+                    fit_cache_key=("Contemporaneous", model) if threshold == 0 else None,
+                )
+            )
+    return records
+
+
+def run_contemporaneous_missing_indicators(
+    design: pd.DataFrame,
+    feature_columns: Sequence[str],
+    params: Mapping[str, object],
+) -> list[dict[str, object]]:
+    records: list[dict[str, object]] = []
+    for model in ("Ensemble OLS", "Ordered Probit"):
+        fit = lambda model=model: fit_contemporaneous_task(
+            model=model,
+            design=design,
+            feature_columns=feature_columns,
+            params=params,
+            missing_indicators=True,
+        )
+        records.append(
+            _condition_record(
+                experiment="missing_indicators",
+                threshold_percent=np.nan,
+                task="Contemporaneous",
+                model=model,
+                removed_feature_count=0,
+                removed_country_count=0,
+                removed_country_iso3="",
+                n_train=int(design["fold"].ne(0).sum()),
+                n_test=len(design),
+                fit=fit,
+            )
+        )
+    return records
+
+
 def record_metrics(record: Mapping[str, object]) -> dict[str, object]:
     status = str(record["status"])
     if status == "generated":
@@ -776,7 +1055,26 @@ def record_metrics(record: Mapping[str, object]) -> dict[str, object]:
         if not isinstance(predictions, pd.DataFrame):
             raise ValueError("Generated conditions require a prediction frame.")
         calculated = simple.calculate_pooled_metrics(predictions)
-        metrics = {name: float(calculated[name]) for name in METRIC_NAMES}
+        metrics = {
+            name: float(calculated[name])
+            for name in METRIC_NAMES
+            if name != "phase3plus_population_share_r2"
+        }
+        if record["model"] == "Ordered Probit":
+            metrics["phase3plus_population_share_r2"] = np.nan
+        else:
+            required = {"phase3_actual_cumulative", "phase3_pred_rounded"}
+            missing = required.difference(predictions.columns)
+            if missing:
+                raise ValueError(
+                    f"Population-share R2 predictions lack columns: {sorted(missing)}"
+                )
+            metrics["phase3plus_population_share_r2"] = float(
+                r2_score(
+                    predictions["phase3_actual_cumulative"].to_numpy(dtype=float),
+                    predictions["phase3_pred_rounded"].to_numpy(dtype=float),
+                )
+            )
     elif status == "not_estimable":
         metrics = {name: np.nan for name in METRIC_NAMES}
     else:
@@ -796,49 +1094,76 @@ def record_metrics(record: Mapping[str, object]) -> dict[str, object]:
         "reason": record["reason"],
     }
     for metric in METRIC_NAMES:
-        row[f"delta_{metric}_vs_xgboost"] = np.nan
+        row[f"delta_{metric}_vs_main_model"] = np.nan
     return {column: row[column] for column in METRIC_COLUMNS}
 
 
-def load_frozen_xgboost_references(path: Path) -> list[dict[str, object]]:
-    source = pd.read_csv(path, float_precision="round_trip")
-    required = {
-        "task",
-        "method",
-        *METRIC_NAMES,
-        "n_train",
-        "n_test",
-    }
-    missing = required.difference(source.columns)
-    if missing:
-        raise ValueError(f"Frozen base metrics lack columns: {sorted(missing)}")
-    selected = source.loc[source["method"].eq("Main result")]
+def load_frozen_main_references(
+    contemporaneous_predictions: pd.DataFrame,
+) -> list[dict[str, object]]:
     records: list[dict[str, object]] = []
-    for task in TASKS:
-        task_rows = selected.loc[selected["task"].eq(task)]
-        if len(task_rows) != 1:
-            raise ValueError(f"Expected one frozen XGBoost reference for {task}.")
-        source_row = task_rows.iloc[0]
+    for task in TEMPORAL_TASKS:
+        source = frozen_main_result.RESULTS[task]
         row = {
             "experiment": "missing_indicators",
             "threshold_percent": np.nan,
             "task": task,
-            "model": "XGBoost",
+            "model": "Main model",
             "removed_feature_count": 0,
             "removed_country_count": 0,
             "removed_country_iso3": "",
-            **{name: float(source_row[name]) for name in METRIC_NAMES},
-            "n_train": int(source_row["n_train"]),
-            "n_test": int(source_row["n_test"]),
+            "overall_accuracy": float(source["overall_accuracy"]),
+            "phase3plus_precision": float(source["phase3plus_precision"]),
+            "phase3plus_recall": float(source["phase3plus_recall"]),
+            "phase3plus_population_share_r2": float(source["phase3plus_r2"]),
+            "n_train": 4405,
+            "n_test": 1170,
             "status": "frozen_reference",
             "reason": "",
         }
         for metric in METRIC_NAMES:
-            row[f"delta_{metric}_vs_xgboost"] = np.nan
+            row[f"delta_{metric}_vs_main_model"] = np.nan
         records.append({column: row[column] for column in METRIC_COLUMNS})
-    if len(selected) != len(TASKS):
-        unexpected = sorted(set(selected["task"].astype(str)).difference(TASKS))
-        raise ValueError(f"Unexpected frozen XGBoost reference rows: {unexpected}")
+
+    required = {
+        "overall_phase",
+        "contemporaneous_predict",
+        "phase3_actual",
+        "phase3_contemporaneous",
+        "fold",
+    }
+    missing = required.difference(contemporaneous_predictions.columns)
+    if missing:
+        raise ValueError(
+            f"Frozen Contemporaneous predictions lack columns: {sorted(missing)}"
+        )
+    predictions = prediction_frame(
+        contemporaneous_predictions["overall_phase"],
+        contemporaneous_predictions["contemporaneous_predict"],
+    )
+    predictions["phase3_actual_cumulative"] = contemporaneous_predictions[
+        "phase3_actual"
+    ].to_numpy(dtype=float)
+    predictions["phase3_pred_rounded"] = contemporaneous_predictions[
+        "phase3_contemporaneous"
+    ].to_numpy(dtype=float)
+    raw = {
+        "experiment": "missing_indicators",
+        "threshold_percent": np.nan,
+        "task": "Contemporaneous",
+        "model": "Main model",
+        "removed_feature_count": 0,
+        "removed_country_count": 0,
+        "removed_country_iso3": "",
+        "n_train": int(contemporaneous_predictions["fold"].ne(0).sum()),
+        "n_test": len(contemporaneous_predictions),
+        "status": "generated",
+        "reason": "",
+        "predictions": predictions,
+    }
+    row = record_metrics(raw)
+    row["status"] = "frozen_reference"
+    records.append(row)
     return records
 
 
@@ -849,23 +1174,23 @@ def _reference_key(row: pd.Series) -> tuple[object, ...]:
     return experiment, int(row["threshold_percent"]), str(row["task"])
 
 
-def add_xgboost_deltas(metrics: pd.DataFrame) -> pd.DataFrame:
+def add_main_model_deltas(metrics: pd.DataFrame) -> pd.DataFrame:
     result = metrics.copy()
     references: dict[tuple[object, ...], pd.Series] = {}
-    for _, row in result.loc[result["model"].eq("XGBoost")].iterrows():
+    for _, row in result.loc[result["model"].eq("Main model")].iterrows():
         key = _reference_key(row)
         if key in references:
-            raise ValueError(f"Duplicate XGBoost reference for {key}.")
+            raise ValueError(f"Duplicate Main model reference for {key}.")
         references[key] = row
     for index, row in result.iterrows():
         key = _reference_key(row)
         if key not in references:
-            raise ValueError(f"Missing XGBoost reference for {key}.")
+            raise ValueError(f"Missing Main model reference for {key}.")
         reference = references[key]
         for metric in METRIC_NAMES:
             value = float(row[metric])
             reference_value = float(reference[metric])
-            delta_column = f"delta_{metric}_vs_xgboost"
+            delta_column = f"delta_{metric}_vs_main_model"
             result.at[index, delta_column] = (
                 value - reference_value
                 if np.isfinite(value) and np.isfinite(reference_value)
@@ -882,9 +1207,9 @@ def validate_metrics(metrics: pd.DataFrame) -> None:
     if tuple(metrics.columns) != METRIC_COLUMNS:
         raise ValueError("Missingness sensitivity metrics have an unexpected schema.")
     expected_counts = {
-        "feature_removal": 30,
-        "country_removal": 30,
-        "missing_indicators": 6,
+        "feature_removal": 27,
+        "country_removal": 27,
+        "missing_indicators": 9,
     }
     observed_counts = metrics["experiment"].value_counts().to_dict()
     if observed_counts != expected_counts:
@@ -922,8 +1247,21 @@ def validate_metrics(metrics: pd.DataFrame) -> None:
     if not indicator_thresholds.isna().all():
         raise ValueError("Missing-indicator threshold values must be missing.")
 
+    feature = metrics.loc[metrics["experiment"].eq("feature_removal")]
+    required_feature_counts = {
+        "Forecasting": {0: 0, 5: 6, 10: 11},
+        "Nowcasting": {0: 0, 5: 9, 10: 18},
+        "Contemporaneous": {0: 0, 5: 9, 10: 18},
+    }
+    for (task, threshold), group in feature.groupby(
+        ["task", "threshold_percent"], observed=True
+    ):
+        expected = required_feature_counts[str(task)][int(threshold)]
+        if not group["removed_feature_count"].eq(expected).all():
+            raise ValueError(f"Feature-removal count differs for {task} {threshold}.")
+
     country = metrics.loc[metrics["experiment"].eq("country_removal")]
-    required_country_counts = {0: 0, 5: 2, 10: 3, 30: 9, 50: 15}
+    required_country_counts = {0: 0, 5: 2, 10: 3}
     for (task, threshold), group in country.groupby(
         ["task", "threshold_percent"], observed=True
     ):
@@ -946,7 +1284,7 @@ def validate_metrics(metrics: pd.DataFrame) -> None:
         raise ValueError("Metrics contain an unknown status.")
     expected_frozen = metrics["experiment"].eq("missing_indicators") & metrics[
         "model"
-    ].eq("XGBoost")
+    ].eq("Main model")
     if not metrics.loc[expected_frozen, "status"].eq("frozen_reference").all() or metrics.loc[
         ~expected_frozen, "status"
     ].eq("frozen_reference").any():
@@ -966,12 +1304,16 @@ def validate_metrics(metrics: pd.DataFrame) -> None:
             for value in values[1:3]:
                 if np.isfinite(value) and not 0.0 <= value <= 1.0:
                     raise ValueError("Precision or recall lies outside zero and one.")
+            population_r2 = values[3]
+            if row.model == "Ordered Probit" and not np.isnan(population_r2):
+                raise ValueError("Ordered Probit population-share R2 must be missing.")
+            if row.model != "Ordered Probit" and not np.isfinite(population_r2):
+                raise ValueError("Main model and Ensemble OLS require population-share R2.")
             if int(row.n_train) < 1 or int(row.n_test) < 1:
                 raise ValueError("Generated/reference rows require positive sample counts.")
 
-    recalculated = add_xgboost_deltas(metrics)
-    delta_columns = [f"delta_{metric}_vs_xgboost" for metric in METRIC_NAMES]
-    for column in delta_columns:
+    recalculated = add_main_model_deltas(metrics)
+    for column in DELTA_COLUMNS:
         if not np.allclose(
             pd.to_numeric(metrics[column], errors="coerce"),
             pd.to_numeric(recalculated[column], errors="coerce"),
@@ -979,7 +1321,7 @@ def validate_metrics(metrics: pd.DataFrame) -> None:
             atol=1e-15,
             equal_nan=True,
         ):
-            raise ValueError(f"Incorrect XGBoost delta column: {column}")
+            raise ValueError(f"Incorrect Main model delta column: {column}")
 
 
 FIGURE_ROWS = (
@@ -992,10 +1334,10 @@ FIGURE_METRICS = (
     ("overall_accuracy", "Five-class accuracy"),
     ("phase3plus_precision", "Phase 3+ precision"),
     ("phase3plus_recall", "Phase 3+ recall"),
-    ("phase3above_r2", "Phase 3+ R²"),
+    ("phase3plus_population_share_r2", "Phase 3+ population-share R²"),
 )
 MODEL_COLORS = {
-    "XGBoost": "#4C78A8",
+    "Main model": "#4C78A8",
     "Ensemble OLS": "#B279A2",
     "Ordered Probit": "#F28E2B",
 }
@@ -1033,6 +1375,9 @@ def create_sensitivity_figure(metrics: pd.DataFrame) -> plt.Figure:
         raise ValueError(f"Figure metrics lack columns: {sorted(missing)}")
     plotting = metrics.loc[
         metrics["experiment"].isin(["feature_removal", "country_removal"])
+        & metrics.apply(
+            lambda row: (row["experiment"], row["task"]) in FIGURE_ROWS, axis=1
+        )
     ].copy()
     expected = {
         (experiment, task, threshold, model)
@@ -1050,9 +1395,9 @@ def create_sensitivity_figure(metrics: pd.DataFrame) -> plt.Figure:
         )
     )
     if observed != expected or len(plotting) != len(expected):
-        raise ValueError("Figure requires the complete 60-row removal grid.")
+        raise ValueError("Figure requires the complete temporal removal grid.")
 
-    finite_r2 = plotting["phase3above_r2"].to_numpy(dtype=float)
+    finite_r2 = plotting["phase3plus_population_share_r2"].to_numpy(dtype=float)
     finite_r2 = finite_r2[np.isfinite(finite_r2)]
     if finite_r2.size:
         r2_low = min(0.0, float(finite_r2.min()))
@@ -1087,7 +1432,7 @@ def create_sensitivity_figure(metrics: pd.DataFrame) -> plt.Figure:
                     )
                 )
             x_values = np.arange(len(THRESHOLDS), dtype=float)
-            tick_labels = [f"{removed}\nn={n_test}" for removed, n_test in tick_rows]
+            tick_labels = [str(removed) for removed, _ in tick_rows]
             x_label = "Countries removed"
         else:
             x_values = np.arange(len(THRESHOLDS), dtype=float)
@@ -1109,7 +1454,7 @@ def create_sensitivity_figure(metrics: pd.DataFrame) -> plt.Figure:
                     color=MODEL_COLORS[model],
                     label=model,
                 )
-            if metric == "phase3above_r2":
+            if metric == "phase3plus_population_share_r2":
                 axis.set_ylim(*r2_limits)
                 axis.axhline(
                     0.0,
@@ -1195,51 +1540,55 @@ def replace_with_retry(source: Path, destination: Path) -> None:
 
 def write_outputs(
     metrics: pd.DataFrame,
-    figure: plt.Figure,
     output_dir: Path,
 ) -> dict[str, Path]:
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
+    validate_metrics(metrics)
+    removal = metrics.loc[
+        metrics["experiment"].isin(["feature_removal", "country_removal"]),
+        METRIC_COLUMNS,
+    ]
+    indicators = metrics.loc[
+        metrics["experiment"].eq("missing_indicators"), INDICATOR_COLUMNS
+    ]
     with tempfile.TemporaryDirectory(
         prefix=".missingness_sensitivity_staging_", dir=output_dir
     ) as staging_name:
         staging = Path(staging_name)
         staged_metrics = staging / METRICS_FILENAME
-        staged_figure = staging / FIGURE_FILENAME
-        staged_png = staging / FIGURE_PNG_FILENAME
-        metrics.loc[:, METRIC_COLUMNS].to_csv(
+        staged_indicators = staging / INDICATOR_METRICS_FILENAME
+        removal.to_csv(
             staged_metrics,
             index=False,
             float_format="%.17g",
             lineterminator="\n",
             na_rep="",
         )
-        reloaded = pd.read_csv(staged_metrics, float_precision="round_trip")
-        validate_metrics(reloaded)
-        figure.savefig(
-            staged_figure,
-            bbox_inches="tight",
-            facecolor="white",
-            metadata={"CreationDate": None, "ModDate": None},
+        indicators.to_csv(
+            staged_indicators,
+            index=False,
+            float_format="%.17g",
+            lineterminator="\n",
+            na_rep="",
         )
-        if staged_figure.read_bytes()[:4] != b"%PDF":
-            raise ValueError("Staged sensitivity figure is not a PDF.")
-        figure.savefig(
-            staged_png,
-            dpi=300,
-            bbox_inches="tight",
-            facecolor="white",
+        reloaded_metrics = pd.read_csv(staged_metrics, float_precision="round_trip")
+        reloaded_indicators = pd.read_csv(
+            staged_indicators, float_precision="round_trip"
         )
-        if staged_png.read_bytes()[:8] != b"\x89PNG\r\n\x1a\n":
-            raise ValueError("Staged sensitivity figure is not a PNG.")
+        if tuple(reloaded_metrics.columns) != METRIC_COLUMNS or len(reloaded_metrics) != 54:
+            raise ValueError("Staged removal metrics do not match the 54-row contract.")
+        if (
+            tuple(reloaded_indicators.columns) != INDICATOR_COLUMNS
+            or len(reloaded_indicators) != 9
+        ):
+            raise ValueError("Staged indicator metrics do not match the 9-row contract.")
         paths = {
             "metrics_csv": output_dir / METRICS_FILENAME,
-            "figure_pdf": output_dir / FIGURE_FILENAME,
-            "figure_png": output_dir / FIGURE_PNG_FILENAME,
+            "indicator_metrics_csv": output_dir / INDICATOR_METRICS_FILENAME,
         }
         replace_with_retry(staged_metrics, paths["metrics_csv"])
-        replace_with_retry(staged_figure, paths["figure_pdf"])
-        replace_with_retry(staged_png, paths["figure_png"])
+        replace_with_retry(staged_indicators, paths["indicator_metrics_csv"])
     return paths
 
 
@@ -1250,7 +1599,9 @@ def run_analysis(
     country_lookup_path: Path,
     general_params_path: Path,
     phase3_params_path: Path,
-    base_metrics_path: Path,
+    contemporaneous_params_path: Path,
+    contemporaneous_predictions_path: Path,
+    contemporaneous_audit_path: Path,
     output_dir: Path,
 ) -> dict[str, Path]:
     formal_run = Path(output_dir).resolve() == DEFAULT_OUTPUT_DIR.resolve()
@@ -1266,7 +1617,6 @@ def run_analysis(
                 Path(country_lookup_path): expected[selected_main.DEFAULT_COUNTRY_LOOKUP],
                 Path(general_params_path): expected[selected_main.DEFAULT_GENERAL_PARAMS],
                 Path(phase3_params_path): expected[selected_main.DEFAULT_PHASE3_PARAMS],
-                Path(base_metrics_path): expected[selected_main.DEFAULT_BASE_METRICS],
             }
         )
     bundle = simple.load_prepared_inputs(
@@ -1281,25 +1631,80 @@ def run_analysis(
         random_state=None,
         estimator_n_jobs=None,
     )
+    source_contract = source_feature_contract(bundle)
+    contemporaneous_fold_contract = spatial.load_contemporaneous_fold_contract(
+        nowcasting_path,
+        contemporaneous_predictions_path,
+        contemporaneous_audit_path,
+    )
+    contemporaneous_features = spatial.build_contemporaneous_feature_lists(
+        nowcasting_path,
+        source_contract["layer1"],
+        source_contract["layer2"],
+    )["baseline_with_lat_lon"]
+    if len(contemporaneous_features) != 174:
+        raise ValueError("Expected 173 real Contemporaneous predictors plus kfolds.")
+    contemporaneous_design = spatial.build_contemporaneous_design_matrix(
+        bundle.forecasting,
+        bundle.nowcasting,
+        contemporaneous_fold_contract.fold_table,
+        contemporaneous_features,
+        source_contract["layer1"],
+        source_contract["layer2"],
+    )
+    contemporaneous_params = spatial.load_contemporaneous_hyperparameters(
+        contemporaneous_params_path,
+        estimator_n_jobs=None,
+    )
+    expected_params_hash = contemporaneous_fold_contract.reference_audit.iloc[0][
+        "params_sha256"
+    ]
+    if spatial.sha256_file(contemporaneous_params_path) != expected_params_hash:
+        raise ValueError("Contemporaneous hyperparameters differ from the frozen audit.")
+
+    zero_fit_cache: dict[tuple[str, str], tuple[object, ...]] = {}
     print("Running feature-removal conditions...", flush=True)
-    raw_records = run_feature_removal(bundle, general_params, phase3_params)
+    raw_records = run_feature_removal(
+        bundle, general_params, phase3_params, zero_fit_cache
+    )
+    raw_records.extend(
+        run_contemporaneous_feature_removal(
+            contemporaneous_design,
+            contemporaneous_features,
+            contemporaneous_params,
+            zero_fit_cache,
+        )
+    )
     print("Running country-removal conditions...", flush=True)
-    raw_records.extend(run_country_removal(bundle, general_params, phase3_params))
+    raw_records.extend(
+        run_country_removal(bundle, general_params, phase3_params, zero_fit_cache)
+    )
+    raw_records.extend(
+        run_contemporaneous_country_removal(
+            contemporaneous_design,
+            contemporaneous_features,
+            contemporaneous_params,
+            zero_fit_cache,
+        )
+    )
     print("Running missing-indicator baseline conditions...", flush=True)
     raw_records.extend(run_missing_indicators(bundle))
-    rows = [record_metrics(record) for record in raw_records]
-    rows.extend(load_frozen_xgboost_references(base_metrics_path))
-    metrics = add_xgboost_deltas(pd.DataFrame(rows, columns=METRIC_COLUMNS))
-    validate_metrics(metrics)
-    figure = create_sensitivity_figure(
-        metrics.loc[
-            metrics["experiment"].isin(["feature_removal", "country_removal"])
-        ]
+    raw_records.extend(
+        run_contemporaneous_missing_indicators(
+            contemporaneous_design,
+            contemporaneous_features,
+            contemporaneous_params,
+        )
     )
-    try:
-        return write_outputs(metrics, figure, output_dir)
-    finally:
-        plt.close(figure)
+    rows = [record_metrics(record) for record in raw_records]
+    rows.extend(
+        load_frozen_main_references(
+            contemporaneous_fold_contract.reference_predictions
+        )
+    )
+    metrics = add_main_model_deltas(pd.DataFrame(rows, columns=METRIC_COLUMNS))
+    validate_metrics(metrics)
+    return write_outputs(metrics, output_dir)
 
 
 def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
@@ -1315,7 +1720,21 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     )
     parser.add_argument("--general-params", type=Path, default=DEFAULT_GENERAL_PARAMS)
     parser.add_argument("--phase3-params", type=Path, default=DEFAULT_PHASE3_PARAMS)
-    parser.add_argument("--base-metrics", type=Path, default=DEFAULT_BASE_METRICS)
+    parser.add_argument(
+        "--contemporaneous-params",
+        type=Path,
+        default=spatial.DEFAULT_CONTEMPORANEOUS_PARAMS,
+    )
+    parser.add_argument(
+        "--contemporaneous-predictions",
+        type=Path,
+        default=spatial.DEFAULT_CONTEMPORANEOUS_REFERENCE_PREDICTIONS,
+    )
+    parser.add_argument(
+        "--contemporaneous-audit",
+        type=Path,
+        default=spatial.DEFAULT_CONTEMPORANEOUS_REFERENCE_AUDIT,
+    )
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
     return parser.parse_args(argv)
 
@@ -1328,7 +1747,9 @@ def main(argv: Sequence[str] | None = None) -> None:
         country_lookup_path=arguments.country_lookup,
         general_params_path=arguments.general_params,
         phase3_params_path=arguments.phase3_params,
-        base_metrics_path=arguments.base_metrics,
+        contemporaneous_params_path=arguments.contemporaneous_params,
+        contemporaneous_predictions_path=arguments.contemporaneous_predictions,
+        contemporaneous_audit_path=arguments.contemporaneous_audit,
         output_dir=arguments.output_dir,
     )
     for name, path in paths.items():

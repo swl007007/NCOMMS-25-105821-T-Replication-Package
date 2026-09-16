@@ -1,0 +1,475 @@
+===== R PAGE 1 =====
+R p.01 L01 | Response to Referee 2:
+R p.01 L02 | Thank you for your kind words and constructive comments, which helped us improve the paper.
+R p.01 L03 | We address each point in turn below. Your comments are shown in italics, followed by our
+R p.01 L04 | responses.
+R p.01 L05 |    1. This manuscript aims to tackle an important and timely problem by asking whether
+R p.01 L06 |       passively collected data can help predict acute food insecurity at scale, and it does so using
+R p.01 L07 |       IPC based outcomes that are directly relevant to humanitarian decision making. I also
+R p.01 L08 |       appreciate that the authors do not limit the analysis to a simple binary outcome, but attempt
+R p.01 L09 |       to predict the full IPC phase structure and consider forecasting, nowcasting, and
+R p.01 L10 |       contemporaneous estimation. This is a meaningful contribution, and the practical
+R p.01 L11 |       motivation of the paper is clear. However, I have some serious concerns as detailed below.
+R p.01 L12 | Thank you for recognizing the manuscript’s contributions and practical relevance. We appreciate
+R p.01 L13 | your careful reading and substantive concerns. We address each point below and have revised the
+R p.01 L14 | manuscript accordingly.
+R p.01 L15 |    2. I think the current version makes stronger claims than the evidence fully supports. The
+R p.01 L16 |       reported recall for food crisis prediction is impressive, especially for the 12 month
+R p.01 L17 |       forecasting setting. However, the overall phase classification accuracy is still moderate,
+R p.01 L18 |       and the out of sample R squared for the share of population in Phase 3 or above remains
+R p.01 L19 |       fairly limited (the forecasing and nowcasting R squared are only around 0.25). For that
+R p.01 L20 |       reason, the paper should present a more balanced interpretation of what the model can and
+R p.01 L21 |       cannot do. In its current form, the manuscript sometimes reads as if the method is close to
+R p.01 L22 |       operational deployment, while the results only suggest a promising complement to IPC
+R p.01 L23 |       rather than a substitute.
+R p.01 L24 | Thank you for this important comment. We agree that the previous version did not sufficiently
+R p.01 L25 | balance the model’s high recall in identifying food-crisis cases against its more moderate overall
+R p.01 L26 | phase-classification accuracy and relatively limited performance in predicting the share of the
+R p.01 L27 | population in IPC Phase 3 or above. We have therefore revised the Results and Discussion to
+R p.01 L28 | provide a more measured interpretation of what the model can and cannot do.
+R p.01 L29 | In the Discussion section, we added a sentence in the third paragraph:
+R p.01 L30 |        Given the model’s more limited performance in predicting population shares, however,
+R p.01 L31 |        these estimates are better suited for screening and prioritization than for precisely
+R p.01 L32 |        estimating the number of people in need of assistance.
+R p.01 L33 |                                                 1
+===== R PAGE 2 =====
+R p.02 L01 | We agree that the out-of-sample R²for the share of the population in Phase 3 or above is moderate.
+R p.02 L02 | At the same time, 12-month-ahead prediction of continuous, noisy socioeconomic outcomes is
+R p.02 L03 | challenging, and similarly modest out-of-sample R² values have been reported in related
+R p.02 L04 | applications. For example, Constenla-Villoslada et al. (2025) report an average out-of-sample R²
+R p.02 L05 | of 0.12 for 12-month-ahead forecasts of global acute malnutrition prevalence at the ward level
+R p.02 L06 | using machine-learning models based only on secondary data and without lagged outcomes, as in
+R p.02 L07 | our setting. We add this comparison in Footnote 2 in the Results section to provide context for the
+R p.02 L08 | magnitude of our forecasting performance, while avoiding characterizing an R²of approximately
+R p.02 L09 | 0.25 as high:
+R p.02 L10 |        Similarly moderate OOS R2 values have been reported in related applications. For example,
+R p.02 L11 |        Constenla-Villoslada et al. [13] report an average OOS R2 of 0.12 for 12-month-ahead
+R p.02 L12 |        forecasts of global acute malnutrition prevalence at the ward level using machine-learning
+R p.02 L13 |        models based only on secondary data and without lagged outcomes, as in our setting.
+R p.02 L14 | To illustrate how the continuous predictions could nevertheless be useful for prioritization, we use
+R p.02 L15 | the predicted share of the population in IPC Phase 3 or above to identify higher-risk locations.
+R p.02 L16 | Specifically, we added a map highlighting areas in the top 30% of the predicted population share
+R p.02 L17 | in SI Fig. 2. The resulting geographic patterns broadly align with the observed distribution of acute
+R p.02 L18 | food insecurity. This exercise illustrates how the model could potentially be used as a screening
+R p.02 L19 | and prioritization tool to identify locations warranting further monitoring and assessment, rather
+R p.02 L20 | than as a precise estimator of the affected population or a substitute for IPC assessments.
+R p.02 L21 | We further clarify in the Discussion section that operational use would require additional
+R p.02 L22 | validation and methodological improvement:
+R p.02 L23 |        Several additional steps would be needed before the model could be used operationally.
+R p.02 L24 |        Although forecasting hyperparameters were selected using forward-looking temporal
+R p.02 L25 |        validation, the final temporal holdout evaluation for forecasting and nowcasting covers
+R p.02 L26 |        only 2022. Evaluating the model over additional years and across a wider range of crisis
+R p.02 L27 |        conditions would provide stronger evidence of temporal generalizability. Further
+R p.02 L28 |        improvements in predictive performance, model updating, data timeliness, and integration
+R p.02 L29 |        with existing early-warning workflows would also be necessary before operational
+R p.02 L30 |        deployment.
+R p.02 L31 | We have added further analysis and interpretation to explain the model’s limitations in correctly
+R p.02 L32 | identifying more severe IPC phases, which contribute to the moderate overall phase-
+R p.02 L33 | classification accuracy. We also introduce a “rescue” model designed to improve detection of
+R p.02 L34 | these severe cases. These revisions are described in detail in our response to Comment 4.
+R p.02 L35 |                                                  2
+===== R PAGE 3 =====
+R p.03 L01 | Reference:
+R p.03 L02 | S. Constenla-Villoslada, Y. Liu, L. McBride, C. Ouma, N. Mutanda, & C.B. Barrett, High-
+R p.03 L03 | frequency monitoring enables machine learning–based forecasting of acute child malnutrition for
+R p.03 L04 | early     warning,    Proc.    Natl. Acad.      Sci. U.S.A.     122     (23)    e2416161122,
+R p.03 L05 | https://doi.org/10.1073/pnas.2416161122 (2025).
+R p.03 L06 |    3. The feature importance results indicate that geographic location plays a large role in
+R p.03 L07 |       prediction. That raises the possibility that the model is learning persistent spatial patterns
+R p.03 L08 |       rather than signals that would generalize well to new places or changing contexts. This
+R p.03 L09 |       issue is especially important because the contemporaneous model relies on random cross
+R p.03 L10 |       sectional folds, which may inflate performance when nearby or related observations
+R p.03 L11 |       appear in both training and test data. The paper would be much stronger if the authors
+R p.03 L12 |       added stricter validation exercises, such as leave one country out, leave one region out, or
+R p.03 L13 |       grouped spatial validation.
+R p.03 L14 | Thank you for this important comment. We agree that the role of geographic location raises an
+R p.03 L15 | important question about spatial generalizability. We would first like to clarify the intended
+R p.03 L16 | prediction settings of our three analyses. The forecasting and nowcasting models are designed to
+R p.03 L17 | generalize to current and future periods for locations represented in the IPC data, rather than to
+R p.03 L18 | entirely new geographic areas. Similarly, the contemporaneous model is intended to fill gaps in
+R p.03 L19 | historical IPC assessments for areas that have been assessed by IPC at other points in time. Thus,
+R p.03 L20 | geographic extrapolation to previously unseen areas is not the primary objective of the current
+R p.03 L21 | analysis.
+R p.03 L22 | We apologize that this distinction was not sufficiently clear in the previous version. We have
+R p.03 L23 | replaced the potentially misleading sentence in the final paragraph of the Introduction,
+R p.03 L24 | “Contemporaneous estimates are essential for targeting in areas not currently covered by IPC,”
+R p.03 L25 | with: “Contemporaneous estimates can help fill gaps in historical IPC assessments for areas
+R p.03 L26 | covered by IPC at other points in time.”
+R p.03 L27 | We have also added the following clarification to the newly added subsection, “Exploratory
+R p.03 L28 | Analysis of Generalization to New Geographic Areas,” in the Results section:
+R p.03 L29 |        “Our forecasting and nowcasting analyses are designed to predict acute food insecurity in
+R p.03 L30 |        current and future periods for locations represented in the IPC data, rather than to
+R p.03 L31 |        extrapolate to entirely new geographic areas. Similarly, the contemporaneous analysis is
+R p.03 L32 |        intended to fill gaps in historical IPC assessments for areas that have been assessed by
+R p.03 L33 |        IPC at other points in time.”
+R p.03 L34 | That said, we agree that the model would be more useful if it could generalize to new geographic
+R p.03 L35 | locations. We therefore conduct two additional spatial validation exercises for forecasting and
+R p.03 L36 |                                                 3
+===== R PAGE 4 =====
+R p.04 L01 | nowcasting. In leave-one-country-out validation, each country's 2022 observations are evaluated
+R p.04 L02 | using models trained only on pre-2022 observations from other countries. In five-fold area-level
+R p.04 L03 | validation, the 646 areas represented in the 2022 test sample are randomly partitioned into five
+R p.04 L04 | folds (seed 0). Each fold is evaluated using models trained only on pre-2022 observations from
+R p.04 L05 | areas outside that fold. Both exercises exclude the held-out geographic units from training.
+R p.04 L06 | Metrics are pooled over the same 1,170 test observations, including 879 crisis observations
+R p.04 L07 | (75.1%), rather than averaged across countries or folds. Accuracy is five-class exact-match
+R p.04 L08 | accuracy; sensitivity and precision treat IPC Phase 3 or above as the positive class. These
+R p.04 L09 | exercises do not evaluate the contemporaneous main model.
+R p.04 L10 | SI Table 3 shows that the comparison between area-level and leave-one-country-out validation is
+R p.04 L11 | metric-specific, rather than demonstrating an overall area-level advantage. Relative to leave-one-
+R p.04 L12 | country-out validation, area-level accuracy is slightly lower for forecasting (0.649 versus 0.652)
+R p.04 L13 | but slightly higher for nowcasting (0.656 versus 0.653). Both area-level models have lower crisis
+R p.04 L14 | sensitivity but higher precision and Phase 3+ population-share R². These results do not indicate
+R p.04 L15 | uniformly better performance under area-level validation. Under leave-one-country-out
+R p.04 L16 | validation, population-share R² is negative for forecasting (−0.014) and nowcasting (−0.007).
+R p.04 L17 | Their squared prediction errors exceed those of constant predictions at the respective evaluation-
+R p.04 L18 | sample mean population share. The table notes now state the evaluation populations, pooling rule
+R p.04 L19 | and population-share R²calculation conventions.
+R p.04 L20 | We have added a new subsection, “Exploratory Analysis of Generalization to New Geographic
+R p.04 L21 | Areas,” to the Results section and included SI Table 3 in this subsection.
+R p.04 L22 |    4. In addition, Phase 3 accounts for 52.4% of observations, while Phase 5 accounts for only
+R p.04 L23 |       0.3%. Under such imbalance, high crisis recall can coexist with weak discrimination
+R p.04 L24 |       across rarer and more severe classes. The paper would be stronger if it reported confusion
+R p.04 L25 |       matrices, class specific precision and recall, macro averaged scores, and calibration
+R p.04 L26 |       results. Also, the model should be compared against simple baselines, such as persistence
+R p.04 L27 |       from the previous IPC round or a simpler regression or classification model. At present, it
+R p.04 L28 |       is difficult to judge how much value the complex ensemble adds beyond temporal
+R p.04 L29 |       persistence.
+R p.04 L30 | Thank you for these important comments. As you anticipated, the model performs substantially
+R p.04 L31 | better in identifying whether an area is in crisis (Phase 3 or above) than in distinguishing among
+R p.04 L32 | the individual IPC phases, particularly the rarer and more severe categories. Following your
+R p.04 L33 | suggestion, we now provide a more complete evaluation of performance under class imbalance.
+R p.04 L34 | The left panels of SI Fig. 4 report confusion matrices for the forecasting, nowcasting, and
+R p.04 L35 | contemporaneous analyses. The confusion matrices show that the current models have limited
+R p.04 L36 | ability to identify Phases 1, 4, and 5 as distinct classes, which have few observations in the
+R p.04 L37 |                                                 4
+===== R PAGE 5 =====
+R p.05 L01 | evaluation samples. Nevertheless, the predictions preserve a meaningful ordering in severity:
+R p.05 L02 | observations actually classified in Phases 4 and 5 are more likely to be predicted as being in crisis
+R p.05 L03 | (Phase 3 or above) than observations actually in Phase 3, while Phase 3 observations are in turn
+R p.05 L04 | more likely to be classified as being in crisis than observations in Phases 1 and 2. Thus, although
+R p.05 L05 | the models are substantially more useful for crisis-versus-non-crisis screening than for exact five-
+R p.05 L06 | phase classification, the predictions retain information about the underlying severity of acute food
+R p.05 L07 | insecurity. We now report macro-averaged precision, recall, and F1 scores across all five IPC
+R p.05 L08 | phases in Table R1.
+R p.05 L09 |                       Table R1. Macro-averaged precision, recall and F1
+R p.05 L10 |               Model                                  Precision      Recall       F1
+R p.05 L11 |               Forecasting                              0.425         0.223      0.210
+R p.05 L12 |               Nowcasting                               0.431         0.226      0.214
+R p.05 L13 |               Contemporaneous                          0.637         0.328      0.334
+R p.05 L14 | Notes: Metrics use the same frozen, pre-rescue predictions and reconstructed actual phase labels
+R p.05 L15 | as SI Fig. 4, panels a, c and e. For contemporaneous evaluation, actual phases are reconstructed
+R p.05 L16 | from observed cumulative population shares using the 20% rule; Fig. 4 instead describes source-
+R p.05 L17 | table phase labels. All five IPC phases are included (labels = [1, 2, 3, 4, 5]; average = macro;
+R p.05 L18 | zero_division = 0), assigning zero when a metric denominator is zero. Forecasting and
+R p.05 L19 | nowcasting pool all 1,170 observations in the 2022 temporal holdout; contemporaneous pools all
+R p.05 L20 | 5,575 out-of-fold predictions from seed-0 random five-fold row-level cross-validation, rather
+R p.05 L21 | than averaging fold-level metrics. Each contemporaneous fold uses 4,460 training and 1,115 test
+R p.05 L22 | observations, without a separate validation split or hyperparameter search. Evaluation
+R p.05 L23 | populations and protocols differ across models. Each temporal model predicts Phase 4 only once,
+R p.05 L24 | correctly; the resulting Phase 4 precision of 1 contributes to macro precision but does not
+R p.05 L25 | indicate reliable rare-class detection.
+R p.05 L26 | SI Fig. 5 assesses calibration of predicted cumulative IPC population shares against observed
+R p.05 L27 | shares. These shares are not probabilities that an area experiences a food crisis; the analysis
+R p.05 L28 | therefore does not assess area-level crisis-probability calibration. For Phase 2+, Phase 3+ and
+R p.05 L29 | Phase 4+, we regress observed shares on predicted shares and report the intercept and slope.
+R p.05 L30 | Intercept 0 and slope 1 provide the linear-calibration reference for these continuous outcomes.
+R p.05 L31 | Across IPC severity thresholds, predicted shares are positively associated with observed outcomes,
+R p.05 L32 | but the models tend to compress predictions toward the center of the observed distribution. For
+R p.05 L33 | Phase 3+ and especially Phase 4+, calibration slopes greater than one indicate that predictions are
+R p.05 L34 | compressed relative to the observed distribution, with substantial underprediction of the largest
+R p.05 L35 |                                                  5
+===== R PAGE 6 =====
+R p.06 L01 | observed Phase 4+ population shares. This pattern is consistent with the small number of Phase
+R p.06 L02 | 4/5 observations available for training (see Fig. 4).
+R p.06 L03 | Although identifying food-crisis cases and estimating the share of the population in food crisis are
+R p.06 L04 | arguably the most important tasks for humanitarian agencies and policymakers, identifying the
+R p.06 L05 | more severe Phase 4 and Phase 5 cases is also highly desirable. Fortunately, Phase 5 is extremely
+R p.06 L06 | rare and appears only twice in the 2022 holdout sample, making separate evaluation of a Phase 5
+R p.06 L07 | model unreliable. We therefore combine Phases 4 and 5 into a single severe-crisis category and
+R p.06 L08 | apply a separate modeling strategy to improve identification of these more severe cases.
+R p.06 L09 | This analysis is designed to “rescue” observations that are classified as Phase 3 by the baseline
+R p.06 L10 | model but may in fact belong to Phase 4 or 5. We train an XGBoost classifier on observations with
+R p.06 L11 | actual IPC phases of 3, 4, or 5, treating Phases 4/5 as the positive class and Phase 3 as the negative
+R p.06 L12 | class. The forecasting specification uses a single-stage classifier, whereas the nowcasting
+R p.06 L13 | specification incorporates an additional residual-regression layer to refine the predicted scores. To
+R p.06 L14 | address class imbalance, we compare three positive-class weighting schemes: unweighted, square-
+R p.06 L15 | root balanced, and fully balanced.
+R p.06 L16 | For forecasting and nowcasting, the classification threshold is selected using expanding-window
+R p.06 L17 | time-series cross-validation over 2017–2021, and final performance is evaluated on the 1,170-
+R p.06 L18 | observation 2022 temporal holdout sample. The primary selection criterion is the F2 score for
+R p.06 L19 | identifying Phase 4/5 observations, which places greater weight on recall than on precision; recall,
+R p.06 L20 | precision, and the number of erroneous promotions are used sequentially as secondary criteria. For
+R p.06 L21 | the contemporaneous model, performance is evaluated using five-fold out-of-fold predictions,
+R p.06 L22 | consistent with the validation design of the main contemporaneous analysis, and the threshold is
+R p.06 L23 | selected from the corresponding out-of-fold predictions.
+R p.06 L24 | In application, we impose a strict gating rule: only observations classified as Phase 3 by the
+R p.06 L25 | baseline model and with a predicted Phase 4/5 score above the selected threshold are promoted to
+R p.06 L26 | the combined Phase 4/5 category, while all other baseline predictions remain unchanged. The
+R p.06 L27 | procedure should therefore be interpreted as a Phase 3-to-Phase 4/5 risk-promotion mechanism
+R p.06 L28 | rather than as a model that distinguishes Phase 4 from Phase 5. We have revised SI Fig. 4 to retain
+R p.06 L29 | five actual classes on both sides while distinguishing the prediction categories. The left panels
+R p.06 L30 | show the original five-class predictions. The right panels show four predicted categories (P1, P2,
+R p.06 L31 | P3 and Combined P4/5), with no separate predicted P5 column. The rescue results therefore
+R p.06 L32 | concern detection of the combined severe category, not improved full five-class classification.
+R p.06 L33 | Based on the F2 criterion, we select the square-root balanced specification for forecasting and
+R p.06 L34 | nowcasting and the fully balanced specification for the contemporaneous model. Their
+R p.06 L35 | performance is summarized in SI Fig. 6. Under the selected specifications, the forecasting,
+R p.06 L36 | nowcasting, and contemporaneous models correctly identify approximately 75%, 84%, and 78%
+R p.06 L37 |                                                   6
+===== R PAGE 7 =====
+R p.07 L01 | of true severe (Phase 4+) cases, respectively, while approximately 31%, 50%, and 14% of non-
+R p.07 L02 | severe cases are incorrectly classified as severe. The forecasting model achieves a sensitivity of
+R p.07 L03 | 74.8% and a precision of 20.7%, the nowcasting model a sensitivity of 83.5% and a precision of
+R p.07 L04 | 15.5%, and the contemporaneous model approximately 78% sensitivity and 35.9% precision. Thus,
+R p.07 L05 | the rescue analysis substantially improves sensitivity to severe cases, but at the cost of additional
+R p.07 L06 | false alarms.
+R p.07 L07 | The improved detection of Phase 4/5 cases reflects the more targeted nature of the rescue model.
+R p.07 L08 | Whereas the baseline model must distinguish across the full IPC severity distribution and is
+R p.07 L09 | therefore dominated by the much more common Phase 2 and Phase 3 observations, the rescue
+R p.07 L10 | model focuses specifically on distinguishing Phase 4/5 from Phase 3 among observations already
+R p.07 L11 | classified as Phase 3 by the baseline. Combining Phases 4 and 5, upweighting the rare severe class,
+R p.07 L12 | and selecting the classification threshold using an F2 criterion further orient the model toward
+R p.07 L13 | detecting severe cases. The improvement should therefore be interpreted as a gain from tailoring
+R p.07 L14 | the learning objective and decision rule to severe-case detection, rather than as evidence of
+R p.07 L15 | improved full five-class classification or uniformly superior performance.
+R p.07 L16 | The relatively low precision reflects both the substantial class imbalance between the large number
+R p.07 L17 | of Phase 3 observations and the much smaller number of Phase 4/5 observations and the F2-based
+R p.07 L18 | selection criterion, which deliberately places greater weight on recall. Even a relatively small false-
+R p.07 L19 | positive rate among Phase 3 observations can therefore generate a sizable number of erroneous
+R p.07 L20 | promotions. The rescue model is consequently best interpreted as a high-sensitivity screening
+R p.07 L21 | mechanism for severe cases rather than as a precise classifier.
+R p.07 L22 | The limited precision may also reflect the inherent difficulty of distinguishing between adjacent
+R p.07 L23 | IPC phases, even when richer primary data are available. Maxwell et al. (2023), for example,
+R p.07 L24 | document substantial ambiguity in classifying households near adjacent IPC severity thresholds
+R p.07 L25 | even when detailed household-level information is available. More generally, IPC classifications
+R p.07 L26 | rely on a convergence-of-evidence approach that combines quantitative indicators with contextual
+R p.07 L27 | information and expert judgment (IPC Global Partners 2021). Some of the information used to
+R p.07 L28 | distinguish adjacent phases is therefore highly context-specific and may not be fully captured by
+R p.07 L29 | the passively collected quantitative predictors available to our model (Anderson et al. 2026). This
+R p.07 L30 | limitation is likely to be particularly important for distinguishing higher-severity phases, where
+R p.07 L31 | relatively small differences in observed conditions can affect the final classification.
+R p.07 L32 | We have added a subsection, “Detecting More Severe Food Insecurity Phases,” to the Results
+R p.07 L33 | section to describe the rescue model and present these findings. We have also added SI Figs. 4–6
+R p.07 L34 | to compare five-class base predictions with combined-P4/5 rescue outputs, report population-share
+R p.07 L35 | calibration diagnostics, and compare rescue-model weighting schemes.
+R p.07 L36 |                                                   7
+===== R PAGE 8 =====
+R p.08 L01 | Regarding the reviewer’s question about how much predictive value the model adds beyond
+R p.08 L02 | temporal persistence, we would first like to clarify that the models in the previous manuscript did
+R p.08 L03 | not include previous IPC assessment rounds as predictors. This choice reflects the highly uneven
+R p.08 L04 | temporal coverage of the IPC data: 510 of the 1,198 analysis areas (42.6%) were assessed at most
+R p.08 L05 | twice during the study period. We have added SI Fig. 1 and additional discussion of the IPC
+R p.08 L06 | assessment structure in the Introduction section:
+R p.08 L07 |        At the same time, IPC assessments are conducted irregularly, and about 43% of areas are
+R p.08 L08 |        observed only once or twice during the 6-year study period (see SI Fig. 1). This uneven
+R p.08 L09 |        longitudinal structure creates additional challenges for predictor construction, model
+R p.08 L10 |        training, and prediction.
+R p.08 L11 | In the previous version, we attempted to assess the role of temporal persistence indirectly by
+R p.08 L12 | reporting performance after excluding holdout observations whose IPC phase was unchanged from
+R p.08 L13 | their most recent prior assessment. As shown in Table 1, model performance for this subset is
+R p.08 L14 | broadly similar to that for the full holdout sample, suggesting that the reported predictive
+R p.08 L15 | performance is not driven solely by cases in which IPC phases remain unchanged over time.
+R p.08 L16 | Following your suggestion, we have now added three explicit baseline comparisons:
+R p.08 L17 | Persistence baseline. For the forecasting and nowcasting analyses, 67 of 1,170 observations in
+R p.08 L18 | the holdout sample have no prior IPC assessment and therefore cannot receive a persistence-based
+R p.08 L19 | prediction. For observations with at least one prior assessment, we use the most recent observed
+R p.08 L20 | IPC phase as the predicted phase. We evaluate the persistence benchmark and the ML model on
+R p.08 L21 | the same subset of observations to ensure comparability.
+R p.08 L22 | Simpler classification model. We estimate an ordered probit model in which the outcome is the
+R p.08 L23 | IPC phase and the explanatory variables are the same predictors used in the machine-learning
+R p.08 L24 | model. The model is trained and evaluated using the same temporal split as the corresponding ML
+R p.08 L25 | specification. This provides a conventional parametric benchmark for the IPC phase-classification
+R p.08 L26 | task.
+R p.08 L27 | Simpler regression model. We estimate separate ordinary least squares (OLS) models for the
+R p.08 L28 | shares of the population in Phase 5, Phase 4 or above, Phase 3 or above, and Phase 2 or above,
+R p.08 L29 | using the same predictors as in the machine-learning model. We then apply the same IPC
+R p.08 L30 | classification rule used in our main analysis, assigning the overall IPC phase based on the 20%
+R p.08 L31 | population-share threshold. This provides a simpler parametric benchmark for both the continuous
+R p.08 L32 | population-share predictions and the resulting IPC phase classifications.
+R p.08 L33 | The performance metrics for the three baseline models are reported in Panels A–C of SI Table 1,
+R p.08 L34 | while Panels J and K report the corresponding metrics for the machine-learning models evaluated
+R p.08 L35 | on comparable samples. The simpler models have lower overall phase-classification accuracy than
+R p.08 L36 |                                                 8
+===== R PAGE 9 =====
+R p.09 L01 | the corresponding ML models. In general, the baselines achieve modestly higher precision, but at
+R p.09 L02 | the cost of substantially lower sensitivity, particularly for forecasting and nowcasting. The OLS
+R p.09 L03 | benchmark also performs worse than the corresponding ML models in predicting continuous
+R p.09 L04 | population shares across all three settings. This is especially pronounced for forecasting and
+R p.09 L05 | nowcasting, where the OLS models yield negative OOS R2 values and therefore perform worse
+R p.09 L06 | than a naive mean-prediction benchmark.
+R p.09 L07 | We have also conducted additional robustness checks examining how alternative treatments of
+R p.09 L08 | missing predictor values affect these comparisons. We discuss these analyses in our response to
+R p.09 L09 | Comment 6.
+R p.09 L10 | We have added a new subsection, “Model Performance Relative to Simple Baselines,” to the
+R p.09 L11 | Results section and included SI Table 1 to report these comparisons.
+R p.09 L12 | References:
+R p.09 L13 | Anderson, W., Becker-Reshef, I., Bodanac, N. et al. Responsible use of artificial intelligence and
+R p.09 L14 | machine learning for food security early warning systems. Nat Food 7, 736–739 (2026).
+R p.09 L15 | https://doi.org/10.1038/s43016-026-01400-6
+R p.09 L16 | IPC Global Partners. (2021). Integrated Food Security Phase Classification Technical Manual
+R p.09 L17 | Version 3.1: Evidence and Standards for Better Food Security and Nutrition Decisions. Rome.
+R p.09 L18 | Maxwell, D., Adan, G., Hailey, P., Day, M., Odhiambo, S. B. J., Kaindi, L., Njiru, J., Venkat, A.,
+R p.09 L19 | & Marshak, A. (2023). “Using the household hunger scale to improve analysis and classification
+R p.09 L20 | of severe food insecurity in famine-risk conditions: Evidence from three countries.” Food Policy,
+R p.09 L21 | 118, 102449. https://doi.org/10.1016/j.foodpol.2023.102449
+R p.09 L22 |    5. Another major method concern the treatment of space/geospatial data itself. Using
+R p.09 L23 |       latitude and longitude as separate covariates is not an appropriate geospatial modeling
+R p.09 L24 |       strategy. It treats space as two ordinary numbers rather than as a structured relational
+R p.09 L25 |       context. For areal units such as IPC polygons, this is particularly problematic because
+R p.09 L26 |       centroid coordinates ignore shape, size, adjacency, and within unit heterogeneity. As a
+R p.09 L27 |       result, the model may perform reasonably well within known settings, but show weaker
+R p.09 L28 |       transferability to new places or to changing crisis patterns. I encourage the authors to
+R p.09 L29 |       consider more appropriate modeling strategies for geospatial data, such as methods that
+R p.09 L30 |       better account for spatial dependence, neighborhood structure, and the characteristics of
+R p.09 L31 |       areal units.
+R p.09 L32 | Thank you for this comment. We agree that including latitude and longitude as separate covariates
+R p.09 L33 | may raise concerns about the extent to which the model relies on fixed geographic location,
+R p.09 L34 | particularly when applied to new places or under changing spatial patterns of food insecurity. As
+R p.09 L35 | we have now clarified in the manuscript, however, the primary objective of our forecasting and
+R p.09 L36 |                                                 9
+===== R PAGE 10 =====
+R p.10 L01 | nowcasting analyses is to generalize to current and future periods for locations represented in the
+R p.10 L02 | IPC data, rather than to entirely new geographic areas. Similarly, the contemporaneous analysis is
+R p.10 L03 | intended to fill gaps in historical IPC assessments for areas that have been assessed by IPC at other
+R p.10 L04 | points in time. For most predictors, we aggregate the underlying data over each IPC polygon, as
+R p.10 L05 | described in the Data section. We also include polygon area and population as predictors, which
+R p.10 L06 | provide additional area-specific information beyond geographic coordinates.
+R p.10 L07 | Nevertheless, to assess the extent to which our results depend on the direct use of latitude and
+R p.10 L08 | longitude and whether simple neighborhood summaries provide useful spatial information, we
+R p.10 L09 | conduct three additional robustness checks:
+R p.10 L10 |    1. Exclude latitude and longitude from the predictor set.
+R p.10 L11 |    2. Remove latitude and longitude and add 5-nearest-neighbor spatial averages, calculated as
+R p.10 L12 |       the mean value of each non-coordinate predictor across the five nearest IPC areas.
+R p.10 L13 |    3. Remove latitude and longitude and add 200-km spatial averages, calculated as the mean
+R p.10 L14 |       value of each non-coordinate predictor across IPC areas located within a 200-km radius.
+R p.10 L15 | These alternative specifications allow us to assess whether predictive performance depends on the
+R p.10 L16 | direct inclusion of geographic coordinates and whether simple neighborhood-based summaries add
+R p.10 L17 | useful spatial information beyond the characteristics of each IPC area itself.
+R p.10 L18 | The results are summarized in SI Table 2. Interestingly, excluding latitude and longitude produces
+R p.10 L19 | little change in predictive performance. Although geographic coordinates rank relatively highly in
+R p.10 L20 | the feature-importance analysis, this result suggests that they contribute little unique predictive
+R p.10 L21 | information once the other covariates are included. Many predictors in our model—including
+R p.10 L22 | weather, agroecological characteristics, elevation, vegetation, market access, infrastructure, and
+R p.10 L23 | conflict—are themselves spatially structured and may capture much of the geographic
+R p.10 L24 | heterogeneity represented by latitude and longitude. In tree-based models, correlated predictors
+R p.10 L25 | can also substitute for one another, so a variable may receive high feature importance without
+R p.10 L26 | being essential for maintaining out-of-sample predictive performance. Overall, these results
+R p.10 L27 | suggest that the model’s performance is not driven primarily by the direct use of geographic
+R p.10 L28 | coordinates.
+R p.10 L29 | All specifications in SI Table 2 use the same 1,170 observations in the 2022 temporal holdout,
+R p.10 L30 | including 879 crisis observations (75.1%). Metrics are pooled over observations, not averaged
+R p.10 L31 | across countries or folds. Relative to excluding latitude and longitude alone, adding neighborhood
+R p.10 L32 | averages yields slightly lower five-class accuracy and crisis sensitivity, but higher crisis precision.
+R p.10 L33 | Both spatial-average specifications yield lower out-of-sample R² for the population share in food
+R p.10 L34 | crisis. These specifications retain the original non-coordinate predictors, so their results do not
+R p.10 L35 | establish that local information was removed through averaging. Overall, the neighborhood
+R p.10 L36 | summaries do not provide consistent improvements across metrics. These results do not imply that
+R p.10 L37 | spatial dependence is unimportant.
+R p.10 L38 |                                                   10
+===== R PAGE 11 =====
+R p.11 L01 | We have added a subsection, “Alternative Geospatial Modeling Strategies,” to the Results section
+R p.11 L02 | and included SI Table 2. In this subsection, we also clarify the limitations of these robustness
+R p.11 L03 | checks:
+R p.11 L04 |        We note that these robustness checks do not constitute a comprehensive spatial modeling
+R p.11 L05 |        framework. Developing approaches that more explicitly capture adjacency, spatial
+R p.11 L06 |        dependence, and polygon characteristics remains an important direction for future research.
+R p.11 L07 |    6. Finally, reproducibility is another concern. The manuscript states that hyperparameters
+R p.11 L08 |       were tuned and lists the parameter types, but it does not report the final chosen values, the
+R p.11 L09 |       search ranges, or the number of sampled configurations. The handling of missing
+R p.11 L10 |       predictors is also not clear. The paper explains how raster no data values were excluded
+R p.11 L11 |       during aggregation, but it does not explain how missingness in the final predictor table
+R p.11 L12 |       was handled before model fitting. This is a concern because missingness itself may vary by
+R p.11 L13 |       country, source, and conflict context.
+R p.11 L14 | Thank you for identifying these omissions. We agree that the original manuscript did not provide
+R p.11 L15 | sufficient information to reproduce either the hyperparameter-selection procedure or the treatment
+R p.11 L16 | of missing values in the final model-ready predictor tables. We have therefore reported the
+R p.11 L17 | hyperparameter search space, temporal validation procedure, model-selection criterion, and final
+R p.11 L18 | effective parameter values in the newly added Supplementary Notes. We also clarify the treatment
+R p.11 L19 | of missing predictor values below.
+R p.11 L20 | Hyperparameter tuning
+R p.11 L21 | Hyperparameter tuning was performed for forecasting. Nowcasting and contemporaneous models
+R p.11 L22 | were subsequently evaluated with fixed hyperparameters, without separate hyperparameter
+R p.11 L23 | searches. The forecasting search used an exhaustive grid search implemented by explicitly
+R p.11 L24 | enumerating the Cartesian product of the eight hyperparameter grids shown below; it was not
+R p.11 L25 | based on random sampling. Tuning was conducted in two stages. We first selected the parameters
+R p.11 L26 | for the Phase 3+ cumulative target. In the second stage, the Phase 3+ component was held fixed
+R p.11 L27 | while parameter settings were selected for the Phase 2+, Phase 4+, and Phase 5 cumulative targets.
+R p.11 L28 | All 11,664 candidate configurations were evaluated in each stage, corresponding to 23,328
+R p.11 L29 | candidate-configuration evaluations across the two searches.
+R p.11 L30 | Temporal validation and selection criterion
+R p.11 L31 | Each candidate configuration was evaluated using four expanding-window temporal validation
+R p.11 L32 | folds: 2017 was used to train the first fold and 2018 for validation; 2017–2018 were used for
+R p.11 L33 | training and 2019 for validation; 2017–2019 were used for training and 2020 for validation; and
+R p.11 L34 | 2017–2020 were used for training and 2021 for validation. The 2022 data were reserved for final
+R p.11 L35 |                                                11
+===== R PAGE 12 =====
+R p.12 L01 | forecasting and nowcasting holdout evaluation, not forecasting hyperparameter selection.
+R p.12 L02 | Candidate configurations were ranked by their mean validation score across the four folds:
+R p.12 L03 | selection score = accuracy + precision + 5 × sensitivity + R² Phase 3+
+R p.12 L04 | Table R2. Hyperparameter search space
+R p.12 L05 |                    Hyperparameters                            Search Space
+R p.12 L06 |                    max_depth                                  3, 7, 9, 11
+R p.12 L07 |                    n_estimators                               200, 500, 800
+R p.12 L08 |                                                               0.01,0.05, 0.08,
+R p.12 L09 |                    learning_rate
+R p.12 L10 |                                                               0.10
+R p.12 L11 |                    subsample                                  0.5, 0.7, 1.0
+R p.12 L12 |                    colsample_bytree                           0.5, 0.7, 1.0
+R p.12 L13 |                    gamma                                      0, 0.1, 0.2
+R p.12 L14 |                    min_child_weight                           0, 1, 2
+R p.12 L15 |                    scale_pos_weight                           1, 2, 3
+R p.12 L16 | Final effective parameter values
+R p.12 L17 | Table R2 reports the hyperparameter search space. The final effective parameter values used to
+R p.12 L18 | produce the reported predictions are listed below and in the manuscript’s Supplementary Notes.
+R p.12 L19 | The two layers of the nowcasting model used the same parameter settings. The contemporaneous
+R p.12 L20 | model used a common parameter set for all four cumulative targets. For the final forecasting and
+R p.12 L21 | nowcasting models, the Phase 2+ cumulative target used max_depth = 11, n_estimators = 200,
+R p.12 L22 | learning_rate = 0.10, subsample = 1.0, colsample_bytree = 0.5, gamma = 0, min_child_weight =
+R p.12 L23 | 0, and scale_pos_weight = 1. The Phase 3+, Phase 4+, and Phase 5 cumulative targets used the
+R p.12 L24 | same parameter set: max_depth = 9, n_estimators = 200, learning_rate = 0.10, subsample = 0.5,
+R p.12 L25 | colsample_bytree = 0.7, gamma = 0.1, min_child_weight = 0, and scale_pos_weight = 1. For the
+R p.12 L26 | contemporaneous benchmark, all four cumulative targets (Phase 2+, Phase 3+, Phase 4+, and Phase
+R p.12 L27 | 5) used max_depth = 3, n_estimators = 200, learning_rate = 0.10, subsample = 1.0,
+R p.12 L28 | colsample_bytree = 0.7, gamma = 0.1, min_child_weight = 0, and scale_pos_weight = 1.
+R p.12 L29 | All other parameters were left at the corresponding XGBoost defaults.
+R p.12 L30 | The released reproducible implementation fixes the estimator random state at 0.
+R p.12 L31 | Treatment of missing values
+R p.12 L32 |                                                12
+===== R PAGE 13 =====
+R p.13 L01 | We thank you for highlighting that the treatment of missing predictors was not sufficiently clear
+R p.13 L02 | in the original manuscript. Our models include 172 predictors, many of which contain missing
+R p.13 L03 | values. Chi-square tests of independence indicate that missingness is systematically associated
+R p.13 L04 | with country and data source. Using all 5,575 observations with inference clustered at the area
+R p.13 L05 | level, we find that observations in conflict-affected settings have, on average, 2.92 fewer missing
+R p.13 L06 | forecasting predictors and 2.11 fewer missing nowcasting predictors than non-conflict
+R p.13 L07 | observations; these differences are statistically significant, although the magnitudes are small.
+R p.13 L08 | For the main XGBoost models, we did not apply zero-filling, mean or median imputation,
+R p.13 L09 | missingness-indicator engineering, or complete-case deletion. Instead, XGBoost handled missing
+R p.13 L10 | predictor values natively by learning a default direction for missing observations at each tree split.
+R p.13 L11 | In contrast, OLS and ordered probit require finite design matrices, so their performance may
+R p.13 L12 | depend on the chosen missing-data treatment. For the main baseline specifications, we use feature-
+R p.13 L13 | wise median imputation estimated from the training data only, followed by standardization using
+R p.13 L14 | the corresponding training-sample moments. These preprocessing parameters are then applied
+R p.13 L15 | unchanged to the test data. No observations are dropped. Forecasting and nowcasting, together
+R p.13 L16 | with their corresponding baselines, use the same 4,405/1,170 temporal training/test cohorts.
+R p.13 L17 | Contemporaneous models and their baselines retain all 5,575 observations under the fixed five-
+R p.13 L18 | fold assignments. Panels A–C of SI Table 1 report the baseline results, while Panels J and K report
+R p.13 L19 | the corresponding ML results on comparable samples.
+R p.13 L20 | We conduct two additional missing-data robustness checks. First, we re-estimate the OLS and
+R p.13 L21 | ordered probit benchmarks after adding a binary missingness indicator for each predictor; these
+R p.13 L22 | results are reported in Panels D and E. Second, we repeat the model comparisons after excluding
+R p.13 L23 | the 10% most-missing predictors and, separately, the three countries with the highest missingness
+R p.13 L24 | rates. These results are reported in Panels F–I, with the corresponding ML results shown in Panels
+R p.13 L25 | L and M of SI Table 1. The comparative ranking of the models remains unchanged across the
+R p.13 L26 | alternative missing-data treatments.
+R p.13 L27 | We have included the discussion of missing values and the additional missing-data robustness
+R p.13 L28 | checks in the newly added subsection, ‘Model Performance Relative to Simple Baselines,’ in the
+R p.13 L29 | Results section.
+R p.13 L30 | We again thank the reviewer for the constructive feedback. These comments, together with those
+R p.13 L31 | from the other referee, have significantly strengthened both the analysis and its interpretation. We
+R p.13 L32 | have worked hard to address each concern and hope that the revisions satisfactorily resolve the
+R p.13 L33 | issues raised.
+R p.13 L34 | Yours sincerely,
+R p.13 L35 | Weilun Shi, Rob Vos, Miguel Almanzar, Yiqun Xie, Soonho Kim, and Yanyan Liu
+R p.13 L36 |                                                  13

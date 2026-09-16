@@ -97,8 +97,8 @@ def check_readiness() -> list[str]:
             errors.append(f"missing required file: {_display(path)}")
 
     notebooks = sorted(SOURCE_CODE.glob("*.ipynb"))
-    if len(notebooks) != 12:
-        errors.append(f"expected 12 analysis notebooks, found {len(notebooks)}")
+    if len(notebooks) != 11:
+        errors.append(f"expected 11 analysis notebooks, found {len(notebooks)}")
 
     for path in notebooks:
         try:

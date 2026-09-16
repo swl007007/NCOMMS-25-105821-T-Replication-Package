@@ -457,14 +457,27 @@ def render_figure(
                 if len(matrix) != 25:
                     raise ValueError(f"{task}/{method} matrix is incomplete.")
 
+                predicted_groups = (
+                    [(phase,) for phase in PHASES]
+                    if method == BASE_METHOD
+                    else [(1,), (2,), (3,), (4, 5)]
+                )
+                predicted_labels = (
+                    [f"P{phase}" for phase in PHASES]
+                    if method == BASE_METHOD
+                    else ["P1", "P2", "P3", "Combined\nP4/5"]
+                )
                 for actual_phase in PHASES:
-                    for predicted_phase in PHASES:
-                        cell = matrix.loc[(actual_phase, predicted_phase)]
-                        share = float(cell["actual_row_share"])
+                    for display_column, predicted_phases in enumerate(predicted_groups):
+                        cells = matrix.loc[
+                            [(actual_phase, phase) for phase in predicted_phases]
+                        ]
+                        count = int(cells["count"].sum())
+                        share = float(cells["actual_row_share"].sum())
                         facecolor = colormap(normalization(share))
                         axis.add_patch(
                             mpl_patches.Rectangle(
-                                (predicted_phase - 1, actual_phase - 1),
+                                (display_column, actual_phase - 1),
                                 1,
                                 1,
                                 facecolor=facecolor,
@@ -473,21 +486,21 @@ def render_figure(
                             )
                         )
                         axis.text(
-                            predicted_phase - 0.5,
+                            display_column + 0.5,
                             actual_phase - 0.5,
-                            f"{int(cell['count'])}\n{share:.1%}",
+                            f"{count}\n{share:.1%}",
                             ha="center",
                             va="center",
                             fontsize=5.0,
                             color=_text_color(facecolor),
                         )
 
-                axis.set_xlim(0, 5)
+                axis.set_xlim(0, len(predicted_groups))
                 axis.set_ylim(5, 0)
                 axis.set_aspect("equal")
                 axis.set_xticks(
-                    np.arange(0.5, 5.0, 1.0),
-                    [f"P{phase}" for phase in PHASES],
+                    np.arange(0.5, len(predicted_groups), 1.0),
+                    predicted_labels,
                 )
                 axis.set_yticks(
                     np.arange(0.5, 5.0, 1.0),
@@ -512,8 +525,6 @@ def render_figure(
                     fontweight="bold",
                 )
                 panel_title = METHOD_DISPLAY_NAMES[method]
-                if method != BASE_METHOD:
-                    panel_title = f"{panel_title} (primary)"
                 axis.set_title(
                     panel_title,
                     fontsize=7.2,
@@ -523,7 +534,7 @@ def render_figure(
                 )
 
         for column_index, column_title in enumerate(
-            ("Before rescue\n(frozen base)", "After rescue\n(selected policy)")
+            ("Before rescue\n(five-class predictions)", "After rescue\n(combined P4/5 output)")
         ):
             bounds = axes[(0, column_index)].get_position()
             figure.text(
@@ -570,7 +581,7 @@ def render_figure(
                 linespacing=1.15,
             )
 
-        figure.supxlabel("Predicted IPC phase", x=0.54, y=0.145, fontsize=8)
+        figure.supxlabel("Predicted IPC phase / combined severe category", x=0.54, y=0.145, fontsize=8)
         figure.supylabel("Actual IPC phase", x=0.145, y=0.53, fontsize=8)
 
         colorbar = figure.colorbar(
@@ -585,8 +596,8 @@ def render_figure(
             0.17,
             0.055,
             (
-                "Within each row, both panels use the same evaluation rows and actual "
-                "labels; only the permitted Phase 3 to Phase 4 rescue changes.\n"
+                "Same observations and five actual phases before/after rescue. Right panels combine predicted P4 and P5;\n"
+                "rescue promotes eligible P3 predictions to P4/5 and does not distinguish P4 from P5.\n"
                 "Cells show count and percentage within each actual phase. Forecasting "
                 "and Nowcasting use the fixed 2022 temporal holdout (n = 1,170 each).\n"
                 "Contemporaneous uses seed-0 random row-level five-fold full OOF "
@@ -600,7 +611,7 @@ def render_figure(
             color="#444444",
         )
         figure.suptitle(
-            "Five-class confusion matrices before and after Phase-4/5 rescue",
+            "IPC predictions before and after combined Phase-4/5 rescue",
             fontsize=11,
             fontweight="bold",
             y=0.975,
@@ -610,7 +621,7 @@ def render_figure(
 
 def save_figure(figure: mpl.figure.Figure, output_dir: Path) -> None:
     pdf_metadata = {
-        "Title": "Five-class confusion matrices before and after Phase-4/5 rescue",
+        "Title": "IPC predictions before and after combined Phase-4/5 rescue",
         "Author": "",
         "Subject": (
             "Paired frozen-base and task-specific primary-rescue confusion matrices "
@@ -774,7 +785,7 @@ def run_generation(
 def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
-            "Render paired before/after five-class confusion matrices for the "
+            "Render five-class base and combined-P4/5 rescue confusion matrices for the "
             "isolated Direct Phase-3 versus Phase-4/5 rescue experiment."
         )
     )

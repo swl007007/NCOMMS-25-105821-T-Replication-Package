@@ -1,0 +1,136 @@
+A1. 同一个 contemporaneous model 出现了多套结果，而且真实标签的类别计数也不一致
+
+位置：M p.07 L02–11；p.25 Fig. 1；p.28 Fig. 4；p.29 L11–12；p.34 Supplementary Fig. 4；p.35 Supplementary Fig. 5；p.37 L42–45。
+处理类型：核对已有输出，不是新增实验。
+
+A2. Response 的 macro 指标无法从所附混淆矩阵复算出来
+
+位置：R p.05 L09–14，Table R1；对应 M p.34 Supplementary Fig. 4，panels a、c。
+处理类型：核对已有预测及指标定义。
+
+A3. Supplementary Tables 2–3 的部分数字需要检查列映射和计算口径
+
+位置：M p.38 L10–12；p.39 L07–10；关联 M p.09 L24–35、p.10 L21–29；R p.04 L12–20、p.10 L01–19。
+处理类型：核对表格生成与统计口径。
+
+
+A4. 冲突变量增加10%的 perturbation analysis，转移数量与基准预测不相容
+
+位置：M p.04 L34–40及p.05 L01–02；对应 M p.34 Supplementary Fig. 4，panel a。
+处理类型：核对已有分析；该分析本身可考虑不保留。
+
+A6. Contemporaneous 的训练、验证和测试划分有三种互不清楚的描述
+
+位置：M p.07 L02–05；p.14 L01–26；p.29 L13–15。
+处理类型：查现有划分记录并统一方法说明。
+
+B3 · P1
+R p.05 L15–23；M p.08 L29–34；p.35 SI Fig. 5
+明确 calibration 的对象。 目前做的是“预测累计人口占比与实际人口占比”的校准，不是“区域发生crisis的概率”校准。这个分析可以保留，但 response 应明确它回答的是哪一种校准问题，不能把人口占比直接当成区域危机概率。
+
+B5 · P1	M p.34 SI Fig. 4，右侧 panels；R p.06 L13–17	合并的P4/5输出被画进“P4”列，却仍称 five-class confusion matrices。 图注虽然解释了合并，但坐标标签仍可能让人误读为模型识别了真实Phase 4，并完全漏掉Phase 5。应明确显示 combined P4/5，并避免将 rescue 后结果解释为改进了完整五分类。
+
+B6 · P1	M p.10 L21–29；R p.04 L12–20；M p.39 L04–10	“area-level substantially better”过于笼统。 按当前表格，forecasting/nowcasting 的 area-level accuracy和R²较高，但 recall、precision反而较低。核实 A3 后应分指标解释；同时直接说明 LOCO 的 continuous-share R²为负，而不只说“more challenging”。
+
+B8 · P1
+M p.07 L17–22；R p.08 L01–05；M p.37 L04–06
+Persistence 的时间截止点不清楚。 Forecasting与nowcasting都写“most recent observed IPC phase”，结果却不同。需要明确 forecasting 是否只能用issue date之前的IPC，nowcasting是否可用更近期轮次，以及两个可比子样本是否一致。已有结果可能完全合理，但现在无法复现其区别。
+
+D1 · P0
+M p.18 L19–31；p.26 Fig. 2；p.40 L44–46
+夜光数据身份不一致。 Methods和SI表写DMSP-OLS，但SHAP图中多处明确写VIIRS Nightlight。这是两个不同名称的产品，必须核对实际使用的数据，再统一Methods、图名、表格和引用。不能只改图的标签了事。
+
+D2 · P1
+M p.15 L40–42；p.17 L03–05、L16–19；p.40 L04–07
+Elevation来源及ERA5产品需统一。 正文写elevation来自ERA5，表中写ESA。气象部分的0.10°/9km规格又对应需要核实的ERA5-Land产品身份；官方ERA5-Land文档确实列0.1°网格、9km原生分辨率。请给实际产品名及变量名，而不是笼统写ERA5/ESA
+
+D3 · P1
+M p.16 L22–25
+ALPS不等于简单的相邻月份价格变化。 正文把ALPS解释为比较current与preceding month；WFP方法以季节性价格趋势及偏离程度为基础。应核实你们的变量究竟是monthly percentage change还是ALPS，避免把两个指标混为一谈；这对高重要性price feature尤其重要。
+
+D4 · P1
+M p.16 L30–36；p.23 Reference [23]
+FPMA市场价格与FAO Food Price Index引用不对应。 Methods描述市场—商品级FPMA数据，而[23]指向FAO Food Price Index。另外，除以reference price得到dimensionless index，并不自动表示已做通胀调整；“real-price index”需要说明deflator/基期处理，否则应准确区分indexed与real。
+
+D5 · P1	M p.18 L01–07；p.24 References [27]–[28]	CPI水平与年通胀变化率混用。 所引FP.CPI.TOTL是以2010=100的价格指数，不是annual percentage change。Infrastructure Index也建议给确切数据产品、指标代码与构造方式；目前“WBG annual composite index”不足以定位。
+D6 · P1	M p.15 L23–32；p.09 L20–23	EPSG:4326不是projected CRS。 它是地理坐标系。还应说明200km邻域、距离与面积采用geodesic计算还是适当的投影坐标系。另一个独立问题：正文的“像元超过50%面积位于polygon内”不等于ArcGIS Zonal Statistics默认的cell-center规则；若你们自定义了面积交叠筛选，写明即可。
+
+D7 · P1
+M p.19 L34–41；p.24 Reference [34]
+ASAP与FAO ASIS混淆。 正文说ASAP由FAO提供，[34]却指向ASIS页面。ASAP官方说明其由European Commission JRC开发维护。请根据实际mask来源确定是哪一个系统，统一产品名、提供方和引用。
+
+D9 · P1
+M p.17 L06–15、L33–38；p.20 L16–39
+特征构造描述存在枚举与时间窗歧义。 温度先列rolling mean、SD、z-score，随后“these three metrics”却变成monthly average、rolling mean、z-score。气候基准期只写20年或“e.g.,20-year”，没有具体年份；conflict则混用12-month cumulative与rolling average。
+
+P1
+  R p.05 L01–02
+  完整句子后又出现 “small sample size in these three Phases as shown Fig. 4.”，是明显残留的重复片段，应清理。 
+
+P1
+  R p.12 L18–23
+  同一段有数处未完成式语法：**“chi-square tesst”拼写错误且句首未大写；“missingness systematically related”缺is；“observations … on average, 2.92 fewer…”缺have；“statistically significantly”**此处需形容词significant。 
+
+ P1
+  R p.12 L01
+  **“Table R2 reports the effective parameter values”**不符：Table R2列的是search space，不是最终参数值。调整交叉引用，
+
+P2
+  R p.12 L02及L09
+  **“The two layers of the nowcasting model used the same parameter settings.”**重复。保留一次即可。 
+
+
+P1
+M p.41 L18、L21
+PDF中实际留有 [YL2.1]，公式实际显示 5 × textSensitivity。分别是批注/编辑残留与公式排版问题，提交前清除。
+P1
+M p.41 L23–24；p.42 L01–11
+与Response相同：Supplementary Table 5是search space，不是正文所称的effective parameter values。
+P1
+M p.27 Fig. 3图注
+**“FAO IPC Manual [23]”**引用编号错位：[23]当前是FAO Food Price Index(已修改），IPC manual是[3]。
+P1
+M p.05 L09–10；p.26 Fig. 2 Panel A上图
+正文称WFP价格变化为third most important，图中在dispersion、infrastructure、latitude、longitude之后，是第五。若意指“排除坐标后的第三”，需要明确，否则同步当前图的排序 （优先修改正文）
+
+
+
+P1
+M p.33 Supplementary Fig. 3图注
+图示为2017–2021调参、2022最终holdout，但注释先写dataset 2017–2022 参与每次split，且把expanding-window称为rolling-window。应与图和Methods使用一致的边界及术语。（hyperparameter tuning是expanding window，2022holdout；主模型是2022 test set，2022-pre2022做test-train split）
+P1
+M p.12 L20–23
+五分类accuracy的解释中使用 “accounting for both true positives and true negatives”，容易混入二分类概念。此处直接定义为“正确phase预测数/总数”即可，并与后面的crisis二分类指标分开。
+P1
+M p.14 L33–38
+Phase 2描述为难以满足minimum food needs，容易与Phase 3混淆。IPC官方Phase 2强调食物消费最低限度足够，但难以承担部分必要非食物支出；Phase 3还包含通过危机应对策略勉强满足食物需求的情况。建议按照所引manual准确缩写。
+P2
+M p.01 L06、L09、L12
+Affiliation逗号后缺空格：Institute,Eye、Fund,3、Maryland,College；IFPRI地址中Eye Street与1201 I St的表达也应统一。
+
+P2
+M p.02 L40；p.05 L41；p.06 L03
+分别是 **“geospatial and socioeconomic and environmental”重复并列；“the coordinate”应与latitude/longitude复数一致；“see e.g., 14”**引用格式不完整。
+P1
+M p.13 L03–09
+**“evaluated exhaustively. and the tuning process…”**有句号后残留片段；epoch、tuning rounds与folds混用，建议按真实过程统一术语。
+P2
+M p.17 L36–38；p.18 L30；p.20 L38–39
+“analysis.Finally”**缺空格；12 months lagged、these variable等一致性问题。distribution effect也不明确，应说明是temporal dynamics、lagged association还是其他意思。
+P2
+M p.30 L01；p.31 L01
+**“Supplementary Figures)”**多一个右括号；第31页只有“Supplementary Tables”标题，后面却继续放Supplementary Figs. 2–6，章节顺序和分页需要整理。
+P1
+M p.40 Supplementary Table 4，尤其L57附近
+表格向页面底部延伸，页码40与表内内容相交。建议拆页或调整版式，避免最后几行被误读。该问题在PDF画面上真实存在，不只是文本提取问题。
+
+
+
+
+
+P1
+M p.02 L24–25；p.22 Reference [6]
+Sudan危机处引用[6]，但[6]是 African domestic supply booms… 的文章。至少从当前参考文献条目看不对应，应检查引用键。
+
+
+Elevation

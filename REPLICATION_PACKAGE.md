@@ -2,7 +2,17 @@
 
 **Prepared for Nature Communications Submission**
 **Initial release**: January 2026
-**Last updated**: August 2026
+**Last updated**: September 2026
+
+**Current presentation archive (8 September 2026):** Unselected and obsolete
+figures/tables, and the withdrawn conflict-simulation notebook, were moved to
+`0.Archived/2026-09-08_obsolete_presentation/`. Its `README.md` and
+`inventory.csv` identify current writing sources, retained dependencies,
+original paths, hashes and recovery instructions. Historical output lists
+and run records below may refer to archived paths; they are provenance, not
+the current manuscript's selected results. Legacy generators can recreate
+these alternatives. There are now 11 active notebooks; the corrected
+exploratory conflict-perturbation script/results remain outside the manuscript.
 
 ---
 
@@ -32,7 +42,7 @@ This package provides reproducible controlled workflows, source data, configurat
 
 ### 3. Source Code (`2.Source Code/`)
 
-All 12 Jupyter notebooks have been prepared for distribution with:
+All 11 active notebooks have been prepared for distribution with:
 - **Markdown header cells** explaining purpose and methodology
 - **Step-by-step workflow documentation** (2-3 high-level steps per notebook)
 - **Portable relative input and output paths** anchored to `2.Source Code/`
@@ -54,7 +64,6 @@ All 12 Jupyter notebooks have been prepared for distribution with:
 - `Figure2_Nowcasting_two_layer_feature_importance.ipynb` - SHAP analysis for two-layer nowcasting
 - `Figure3_Flowchart.ipynb` - IPC classification flowchart (requires Graphviz)
 - `Figure4_Descriptives.ipynb` - Descriptive statistics and data summaries
-- `Conflit_Simulation.ipynb` - Conflict sensitivity analysis
 - `figuresS1_hyperparameter.ipynb` - Supplementary hyperparameter tuning results
 
 **Auxiliary Analysis Notebooks**:
@@ -76,7 +85,11 @@ All 12 Jupyter notebooks have been prepared for distribution with:
 - `Nowcasting_Analysis_010825.csv` - Pre-processed nowcasting dataset with concurrent features
 - `area_country_lookup.csv` - Unique `area_id` to ISO3 country mapping used for country and stratified area holdouts; deterministically derived from `0.Archived/new_merge_0108_with_country_code.csv` using only `area_id` and `country_code_3`
 
-**Optional Files** (for custom cross-validation analysis):
+**Archived historical CV files** (author-confirmed obsolete, 15 September 2026):
+The following files have no active script input dependency and now reside under
+`0.Archived/2026-09-15_obsolete_historical_results/1.Source Data/`.
+See `RESULT_SCRIPT_AUDIT.md` and the archive inventory for provenance and recovery.
+
 - `forecasting_df_with_folds.csv` - 10-fold CV assignments for forecasting
 - `forecasting_df_with_folds_5.csv` - 5-fold CV assignments for forecasting
 - `nowcasting_df_with_folds.csv` - 10-fold CV assignments for nowcasting
@@ -220,7 +233,6 @@ python run_replication.py --check-only
    Figure1_multiple_figures.ipynb (uses source data, standalone)
    Figure3_Flowchart.ipynb (standalone, requires Graphviz)
    Figure4_Descriptives.ipynb (uses source data, standalone)
-   Conflit_Simulation.ipynb (requires trained models)
    figuresS1_hyperparameter.ipynb (standalone, hyperparameter analysis)
    ```
 
@@ -235,7 +247,6 @@ python run_replication.py --check-only
 | Main models (Table1_*.ipynb) | 2-5 minutes | Depends on CPU cores |
 | Feature importance (Figure2_*.ipynb) | 10-30 minutes | SHAP is CPU-intensive |
 | Visualizations (Figure1, 3, 4) | 1-5 minutes | Fast execution |
-| Conflict simulation (Conflit_Simulation.ipynb) | 5-15 minutes | Multiple model runs |
 | Phase change analysis | 2-5 minutes | Similar to main models |
 | Leave-one-country-out robustness | Hardware-dependent; approximately 348 XGBoost fits | Uses bounded country-level processes, `n_jobs=1` per XGBoost model, and restart checkpoints |
 | 10% leave-area-out robustness | Hardware-dependent; 12 XGBoost fits | At most two model-level processes; each XGBoost uses `n_jobs=1` |
@@ -769,7 +780,7 @@ must require `run_status=complete` and verify every listed payload hash.
 - [ ] Virtual environment created and activated
 - [ ] All packages installed without errors
 - [ ] Graphviz system dependency installed and verified (`dot -V`)
-- [x] All 12 notebooks use portable executable paths, contain no saved outputs, and have null execution counts
+- [x] All 11 active notebooks use portable executable paths, contain no saved outputs, and have null execution counts
 - [ ] Data files present in `1.Source Data/`
 - [ ] Main notebooks execute without errors
 - [ ] Performance metrics within expected range

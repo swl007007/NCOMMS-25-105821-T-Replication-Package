@@ -1,0 +1,1380 @@
+===== M PAGE 1 =====
+M p.01 L01 |  Predicting Acute Food Insecurity with Machine
+M p.01 L02 |                    Learning
+M p.01 L03 | Weilun Shia , Rob Vosa , Miguel Almanzarb , Yiqun Xiec , Soonho
+M p.01 L04 |                     Kima , Yanyan Liua, d, *
+M p.01 L05 |   a
+M p.01 L06 |      International Food Policy Research Institute, 1201 I Street NW,
+M p.01 L07 |                           Washington, DC 20005.
+M p.01 L08 |  b
+M p.01 L09 |    United Nations International Children’s Emergency Fund, 3 United
+M p.01 L10 |                    Nations Plaza, New York, NY 10017.
+M p.01 L11 |            c
+M p.01 L12 |              University of Maryland, College Park, MD 20742.
+M p.01 L13 |    d
+M p.01 L14 |      The Freeman Spogli Institute for International Studies, Stanford
+M p.01 L15 |                      University, Stanford, CA 94305.
+M p.01 L16 |                  *
+M p.01 L17 |                    Corresponding author: y.liu@cgiar.org.
+M p.01 L18 |                                       Abstract
+M p.01 L19 |  Food crises arise from interacting drivers—conflict, poverty, climate variability
+M p.01 L20 |  and economic shocks—producing acute food insecurity (AFI) among vulnerable
+M p.01 L21 |  populations. Early warning systems (EWS) depend heavily on the Integrated
+M p.01 L22 |  Food Security Phase Classification (IPC), the gold standard for assessing AFI
+M p.01 L23 |  severity and widely used across the humanitarian system. Yet IPC assessments
+M p.01 L24 |  are resource-intensive, infrequent and especially difficult in conflict-affected set-
+M p.01 L25 |  tings, constraining timely decisions. We develop a machine-learning model that
+M p.01 L26 |  leverages passively collected data to predict IPC phases and estimate popula-
+M p.01 L27 |  tions facing high AFI (IPC Phase 3+). Trained on multi-source indicators (e.g.,
+M p.01 L28 |  prices, infrastructure, conflict intensity, vegetation, night lights and weather), the
+M p.01 L29 |  model correctly identifies 94.1% of food crises and attains a 77.5% success rate for
+M p.01 L30 |  crises predicted 12 months ahead. We generate contemporaneous estimates, now-
+M p.01 L31 |  casts and forecasts, providing a scalable complement to IPC with the potential
+M p.01 L32 |  to strengthen EWS and support more timely, data-driven humanitarian action.
+M p.01 L33 |  Keywords: Food security, Food crisis, IPC, Predict IPC
+M p.01 L34 |                                            1
+===== M PAGE 2 =====
+M p.02 L01 | Main
+M p.02 L02 | Food crises result from the complex interplay of conflict, poverty, climate variability,
+M p.02 L03 | extreme weather events, and economic shocks. They are marked by high and rapidly
+M p.02 L04 | increasing levels of acute food insecurity (AFI) among vulnerable populations [1].
+M p.02 L05 | Early warning systems (EWS) capable of anticipating food crises in a timely manner
+M p.02 L06 | are essential to guide humanitarian assistance and mitigate the worst impacts of major
+M p.02 L07 | disruptions in food access.
+M p.02 L08 |     The Integrated Food Security Phase Classification (IPC) system is a multi-partner
+M p.02 L09 | initiative designed to enhance food security and nutrition analysis and serves as a key
+M p.02 L10 | resource for early warning and early action mechanisms to anticipate food crises [2].
+M p.02 L11 | The IPC scale classifies vulnerable populations into five phases based on the severity
+M p.02 L12 | of AFI in a geographic area: 1) Minimal, 2) Stressed, 3) Crisis, 4) Emergency, and
+M p.02 L13 | 5) Catastrophe [3]. A food crisis is defined as a situation in which at least 20% of
+M p.02 L14 | the population is classified in Phase 3 or above and requires urgent humanitarian
+M p.02 L15 | assistance.
+M p.02 L16 |     Donors consider the IPC as the gold standard for assessing the severity and scope
+M p.02 L17 | of AFI within countries and for guiding the development of targeted response plans
+M p.02 L18 | [2]. However, IPC operations for data collection and analysis are costly, as they rely
+M p.02 L19 | on both qualitative and quantitative data, including on-the-ground assessments con-
+M p.02 L20 | ducted by multiple agencies. These efforts are often hindered by challenging conditions
+M p.02 L21 | for collecting high-quality data, especially in conflict-affected areas. Due to high costs
+M p.02 L22 | and limited budgets, IPC assessments are not always timely or frequent and may lack
+M p.02 L23 | coverage in many countries identified as at risk of food crises [4].
+M p.02 L24 |     Moreover, food insecurity in fragile contexts can deteriorate rapidly—sometimes
+M p.02 L25 | within weeks—as illustrated by recent crises in the Gaza Strip and Sudan [5, 6]. These
+M p.02 L26 | cases highlight the urgent need for timely evidence to inform decision-making, as well
+M p.02 L27 | as the importance of more frequent, ideally real-time, monitoring of food insecurity.
+M p.02 L28 | While direct, real-time measurement of food security remains difficult, growing avail-
+M p.02 L29 | ability of passively collected data enables monitoring of key risk factors. Leveraging
+M p.02 L30 | such data can enhance the predictive capacity of EWS, facilitating earlier and more
+M p.02 L31 | effective responses to emerging crises.
+M p.02 L32 |     Recent studies have demonstrated the potential of machine learning (ML) models
+M p.02 L33 | using passively collected data to predict poverty, malnutrition, and food insecurity
+M p.02 L34 | at relatively low cost [7–10]. Building on this literature, we develop an ML model
+M p.02 L35 | that integrates passively collected indicators to predict IPC phases and estimate the
+M p.02 L36 | proportion of the population facing food crisis.
+M p.02 L37 |     Our model forecasts AFI severity up to 12 months in advance, while also supporting
+M p.02 L38 | nowcasting and contemporaneous estimation. We construct a dataset comprising 5,575
+M p.02 L39 | IPC observations across 1,198 subnational areas in 29 countries from 2017 to 2022,
+M p.02 L40 | enriched with geospatial, socioeconomic, and environmental covariates such as food
+M p.02 L41 | prices, weather conditions, conflict events, vegetation indices, nightlight intensity, and
+M p.02 L42 | market access.
+M p.02 L43 |     When tested against published IPC assessments, our forecasting model correctly
+M p.02 L44 | identifies 94.1% of food crisis cases, while 77.5% of cases predicted to be in crisis are
+M p.02 L45 | confirmed as such 12 months later. The nowcasting and contemporaneous models show
+M p.02 L46 |                                             2
+===== M PAGE 3 =====
+M p.03 L01 | similar or stronger predictive performance. Across all models, key predictors include
+M p.03 L02 | food price indicators, the infrastructure index, conflict-related variables, vegetation
+M p.03 L03 | indices, nightlight intensity, and weather conditions—underscoring the complex and
+M p.03 L04 | multidimensional nature of food crisis risk. These results emphasize the value of inte-
+M p.03 L05 | grating diverse data sources to strengthen early warning and support more timely,
+M p.03 L06 | evidence-informed responses.
+M p.03 L07 |      Our paper makes two key contributions. First, our model estimates both the overall
+M p.03 L08 | IPC phase and the population share in each phase.1 While most existing studies focus
+M p.03 L09 | on related well-being indicators—such as asset ownership, child malnutrition, or food
+M p.03 L10 | consumption scores [9–12]—only a few, including [7] and [9], attempt to predict IPC-
+M p.03 L11 | like outcomes. Unlike these studies, which rely on the classifications derived from
+M p.03 L12 | the Famine Early Warning Systems Network (FEWS NET) and focus on a binary
+M p.03 L13 | transition into crisis (Phases 3-5) from Phases 1-2, we use the IPC assessment outcomes
+M p.03 L14 | themselves—the consensus estimates produced by IPC’s analytical process and partner
+M p.03 L15 | agencies. This choice makes our approach both methodologically distinct and directly
+M p.03 L16 | relevant to early-warning and early-action systems that rely on IPC assessments.
+M p.03 L17 |      An additional advantage of the IPC data for our purposes is that the assessments
+M p.03 L18 | provide not only an overall phase classification for each area but also estimates of
+M p.03 L19 | the population in each phase. This allows us to predict the share of the population
+M p.03 L20 | experiencing food crisis, an outcome that is highly relevant for assessing the potential
+M p.03 L21 | scale of humanitarian need. At the same time, IPC assessments are conducted irregu-
+M p.03 L22 | larly, and about 43% of areas are observed only once or twice during the 6-year study
+M p.03 L23 | period (see Supplementary Fig. 1). This uneven longitudinal structure creates addi-
+M p.03 L24 | tional challenges for predictor construction, model training, and prediction. It also
+M p.03 L25 | makes transition-based modeling difficult in our setting, because many areas lack suf-
+M p.03 L26 | ficient consecutive assessments to construct transition outcomes consistently across
+M p.03 L27 | locations.
+M p.03 L28 |      Second, we provide estimates across three temporal horizons: contemporaneous,
+M p.03 L29 | nowcasting, and forecasting. Contemporaneous estimates can help fill gaps in historical
+M p.03 L30 | IPC assessments for areas covered by IPC at other points in time. Nowcasting provides
+M p.03 L31 | updated assessments using the most current available data, while forecasting offers lead
+M p.03 L32 | time for early action. By evaluating food crisis risks across all three timeframes—past,
+M p.03 L33 | present, and future—our model can help humanitarian and development actors better
+M p.03 L34 | prioritize and time their interventions.
+M p.03 L35 | Results
+M p.03 L36 | In this section, we begin by presenting the results of our main model—the forecasting
+M p.03 L37 | model—followed by the nowcasting and contemporaneous results. We then compare
+M p.03 L38 | model performance with simple baselines and explore the identification of more severe
+M p.03 L39 | Phase 4+ cases, alternative geospatial modeling strategies, and the model’s ability to
+M p.03 L40 | generalize to new geographic areas.
+M p.03 L41 |   1
+M p.03 L42 |     The IPC classifies populations within a given area by severity of AFI using Phases 1 through 5. It also
+M p.03 L43 | assigns an “overall IPC Phase” to the area based on the average condition of the population, applying a
+M p.03 L44 | 20% threshold criterion. See the “Data” section for further details.
+M p.03 L45 |                                                     3
+===== M PAGE 4 =====
+M p.04 L01 | Forecasting
+M p.04 L02 | In this model, the training period spans January 2017 to December 2021, with fore-
+M p.04 L03 | casts generated for January to December 2022. For each IPC assessment conducted
+M p.04 L04 | in 2022, we use predictors available 12 months earlier to forecast the overall IPC
+M p.04 L05 | phase and the percentage of the population in each phase one year in advance (see
+M p.04 L06 | the Methods section for details on IPC phase classification).
+M p.04 L07 | Prediction Performance. The model’s performance is summarized in Panel A of
+M p.04 L08 | Table 1 and illustrated in Fig. 1. When the outcome variable is the percentage of
+M p.04 L09 | the population experiencing food crisis, the model achieves a moderate out-of-sample
+M p.04 L10 | (OOS) R2 of 0.249. While this indicates limited ability to explain variation in the
+M p.04 L11 | continuous outcome, 12-month-ahead prediction of noisy socioeconomic outcomes is
+M p.04 L12 | inherently challenging.2 To illustrate how these predictions could nevertheless be useful
+M p.04 L13 | for prioritization, we use the predicted share of the population in food crisis to identify
+M p.04 L14 | higher-risk locations. Supplementary Fig. 2 highlights areas in the top 30% of the
+M p.04 L15 | predicted population share in food crisis in 2022 and compares them with areas in the
+M p.04 L16 | top 30% based on the observed population share. The two maps show broadly similar
+M p.04 L17 | geographic patterns. This exercise illustrates how the model could potentially serve as
+M p.04 L18 | a screening and prioritization tool to identify locations warranting further monitoring
+M p.04 L19 | and assessment, rather than as a precise estimator of the affected population.
+M p.04 L20 |     For IPC phase classification, the overall accuracy is 65.0%, indicating that the
+M p.04 L21 | model correctly forecasts IPC phases in 65.0% of test cases. Focusing specifically on
+M p.04 L22 | food crisis conditions, the model achieves a sensitivity (recall) of 94.1%, meaning it
+M p.04 L23 | correctly identifies 94.1% of all food crisis cases. The precision is 77.5%, indicating
+M p.04 L24 | that 77.5% of predicted food crisis cases actually materialized after one year.
+M p.04 L25 |     Although food crises often exhibit a protracted nature [14], we aim to ensure that
+M p.04 L26 | the model’s classification performance for food crisis is not simply driven by this
+M p.04 L27 | temporal stability or by reliance on static predictors. If performance were primarily
+M p.04 L28 | due to the persistence of food crises, we would expect the model to perform poorly
+M p.04 L29 | on instances where the IPC phase changes over time. To test this, we excluded from
+M p.04 L30 | the test set all observations in which the IPC phase matched that of the most recent
+M p.04 L31 | training round. The model’s performance remained strong—with an accuracy of 0.593,
+M p.04 L32 | sensitivity of 0.990, and precision of 0.702 (Panel A of Table 1)—indicating that it
+M p.04 L33 | captures meaningful dynamic signals rather than merely reflecting temporal inertia.
+M p.04 L34 | Feature Importance. To further analyze our model and better understand the role
+M p.04 L35 | of individual predictors in forecasting food crises—thereby enhancing its policy rel-
+M p.04 L36 | evance—we apply SHAP (Shapley Additive Explanations) values to assess feature
+M p.04 L37 | importance, following [15]. SHAP values quantify each feature’s contribution to the
+M p.04 L38 | prediction by averaging its marginal effect across all possible feature combinations.
+M p.04 L39 | Panel A of Fig. 2 displays the feature importance rankings for forecasting IPC phases.
+M p.04 L40 |   2
+M p.04 L41 |     Similarly moderate OOS R2 values have been reported in related applications. For example, Constenla-
+M p.04 L42 | Villoslada et al. [13] report an average OOS R2 of 0.12 for 12-month-ahead forecasts of global acute
+M p.04 L43 | malnutrition prevalence at the ward level using machine-learning models based only on secondary data and
+M p.04 L44 | without lagged outcomes, as in our setting.
+M p.04 L45 |                                                    4
+===== M PAGE 5 =====
+M p.05 L01 |     For predictions of IPC Phase 3 or above, WFP food price spatial dispersion ranks
+M p.05 L02 | first and month-on-month price change ranks fifth in SHAP importance (Fig. 2, Panel
+M p.05 L03 | A, top). The infrastructure index is also highly influential, emphasizing the role of local
+M p.05 L04 | infrastructure in shaping food security outcomes. Environmental and economic proxies
+M p.05 L05 | such as vegetation indices, soil moisture, and nightlight intensity further contribute
+M p.05 L06 | meaningfully to model performance, underscoring the value of dynamic features in
+M p.05 L07 | anticipating food insecurity. The importance of these dynamic predictors reinforces
+M p.05 L08 | our earlier finding that the model is indeed learning from evolving, rather than static,
+M p.05 L09 | inputs.
+M p.05 L10 |     Geographic coordinates rank relatively highly in the feature-importance analysis,
+M p.05 L11 | which is expected given that certain areas are persistently vulnerable to food crises
+M p.05 L12 | due to conflict, climate shocks, or other structural factors.3 This result, consistent with
+M p.05 L13 | the protracted nature of food crises documented in [14], further supports the need for
+M p.05 L14 | geographically targeted and context-specific interventions.
+M p.05 L15 |     When predicting IPC Phase 4 and above levels of food crises, the previously dis-
+M p.05 L16 | cussed factors remain relevant; however, variables such as temperature, shortwave
+M p.05 L17 | radiation, and soil pH gain influence. This shift suggests that weather shocks and
+M p.05 L18 | underlying environmental conditions are strongly associated with severe food crises,
+M p.05 L19 | although given the deployed methodology we cannot affirm causality.
+M p.05 L20 |     Fig. 2 Panel C presents the feature importance of grouped variables across IPC
+M p.05 L21 | phases, with predictors categorized into six domains: physical geography, weather,
+M p.05 L22 | conflict, agricultural and land productivity, food prices, and other economic condi-
+M p.05 L23 | tions. The figure reveals distinct patterns in the relative importance of these groups
+M p.05 L24 | as food crises intensify. For predictions of Phase 3 or above, food price indicators
+M p.05 L25 | are particularly influential, with other economic variables also playing an important
+M p.05 L26 | role.4 When forecasting Phase 4 or above, food price factors remain significant, but
+M p.05 L27 | the contributions of conflict and weather-related variables become more pronounced.
+M p.05 L28 | These findings are consistent with IPC assessments identifying conflict, extreme
+M p.05 L29 | weather events, and economic shocks as important drivers of acute food insecurity and
+M p.05 L30 | underscore the value of monitoring areas affected by violence, climatic shocks, and
+M p.05 L31 | food-market volatility (see, e.g., [14]).
+M p.05 L32 | Nowcasting
+M p.05 L33 | As with the forecasting model, we train the nowcasting model using IPC data from
+M p.05 L34 | 2017 to 2021 and reserve 2022 data for testing. However, the nowcasting approach
+M p.05 L35 | differs by incorporating updated predictors—specifically, those available at the time
+M p.05 L36 | of the 2022 IPC assessments. This allows the model to leverage contemporaneous
+M p.05 L37 | information to more accurately estimate current food insecurity outcomes.
+M p.05 L38 |   3
+M p.05 L39 |     Our robustness checks show that excluding latitude and longitude produces little change in predictive
+M p.05 L40 | performance. This suggests that other spatially structured covariates capture much of the geographic infor-
+M p.05 L41 | mation represented by the coordinates (see the “Alternative Geospatial Modeling Strategies” subsection in
+M p.05 L42 | the Results section).
+M p.05 L43 |   4
+M p.05 L44 |     Food-price spikes and spatial price dispersion should be interpreted as potential signals of underlying
+M p.05 L45 | disruptions, which may be caused by factors such as conflict, weather and production shocks, weak infras-
+M p.05 L46 | tructure, poor market connectivity, and broader macroeconomic instability. They should not be taken as
+M p.05 L47 | evidence that food inflation as such is the main cause. Greater attention should therefore be devoted to
+M p.05 L48 | identifying the context-specific forces that generate damaging price instability and to assessing policies that
+M p.05 L49 | address those underlying causes, rather than focusing solely on direct price stabilization.
+M p.05 L50 |                                                       5
+===== M PAGE 6 =====
+M p.06 L01 |    The nowcasting framework adopts a cascading two-layer structure. The first layer
+M p.06 L02 | uses all forecasting features from secondary data observed 12 months prior to each
+M p.06 L03 | IPC assessment in the test set. The second layer enhances these predictions by incor-
+M p.06 L04 | porating additional features from data observed during the 12 months leading up to
+M p.06 L05 | the assessment, thereby capturing residual variation not explained by the initial layer.
+M p.06 L06 | Prediction Performance. The prediction performance of the nowcasting model is
+M p.06 L07 | summarized in Panel B of Table 1 and illustrated in Fig. 1. The model achieved an
+M p.06 L08 | accuracy of 0.654, a sensitivity of 0.942, a precision of 0.777, and an out-of-sample
+M p.06 L09 | R2 of 0.253. Even after excluding test observations that fall within the same IPC
+M p.06 L10 | phase as the final round of the training set, the model maintains similar performance
+M p.06 L11 | (accuracy: 0.571; sensitivity: 0.964; precision: 0.733), consistent with the results from
+M p.06 L12 | the forecasting model.
+M p.06 L13 |    A comparison between nowcasting and forecasting models yields a key insight: the
+M p.06 L14 | performance gains from incorporating contemporaneous predictors in the nowcasting
+M p.06 L15 | model are modest. This is likely because many of the risk factors that contribute to
+M p.06 L16 | food crises emerge well in advance of the actual transition into severe phases. As a
+M p.06 L17 | result, lagged predictors remain highly predictive and effective for forecasting IPC
+M p.06 L18 | phases 12 months ahead—underscoring their practical value for early warning and
+M p.06 L19 | proactive response systems.
+M p.06 L20 | Feature Importance. As shown in Panel B of Fig. 2, the feature importance results
+M p.06 L21 | from the second-layer nowcasting model closely mirror those of the forecasting model
+M p.06 L22 | (top figure of Panel A), with WFP food price spatial dispersion and temporal changes
+M p.06 L23 | emerging as the most influential predictors. Nightlight intensity also plays a key role
+M p.06 L24 | in predicting IPC Phase 3 or higher.
+M p.06 L25 |     Furthermore, SHAP values of predictor categories from the second layer of the now-
+M p.06 L26 | casting model, shown in Panel D of Fig. 2, confirm that food price shocks remain the
+M p.06 L27 | dominant predictor for Phase 4 or higher classifications, while other economic condi-
+M p.06 L28 | tions gain increasing importance for predicting Phase 3 and above. Taken together with
+M p.06 L29 | the feature importance results from the forecasting model, these findings underscore
+M p.06 L30 | the critical need for real-time monitoring of local market food prices and nightlight
+M p.06 L31 | intensity to enable timely detection of emerging food crises and inform effective early
+M p.06 L32 | responses.
+M p.06 L33 | Contemporaneous Prediction
+M p.06 L34 | In the contemporaneous model, we perform a cross-sectional analysis using random
+M p.06 L35 | five-fold, row-level cross-validation, following the method of [11]. The 5,575 observa-
+M p.06 L36 | tions are assigned to five equal folds with a fixed random seed of 0. Each iteration
+M p.06 L37 | uses 4,460 observations for training and 1,115 for testing; performance metrics are
+M p.06 L38 | computed from the pooled out-of-fold predictions covering all 5,575 observations. The
+M p.06 L39 | contemporaneous model achieves an accuracy of 0.693, sensitivity of 0.904, precision
+M p.06 L40 | of 0.797, and R2 of 0.642.
+M p.06 L41 |                                            6
+===== M PAGE 7 =====
+M p.07 L01 |    As expected, the contemporaneous model exhibits a substantially higher R2 than
+M p.07 L02 | the nowcasting and forecasting models, reflecting its use of outcome-period data. How-
+M p.07 L03 | ever, classification performance remains similar across all three models, suggesting
+M p.07 L04 | that it is possible to identify food-crisis areas with nearly the same accuracy even
+M p.07 L05 | when predicting 12 months in advance.
+M p.07 L06 | Model Performance Relative to Simple Baselines
+M p.07 L07 | To assess the incremental predictive value of the ML models, we compare their per-
+M p.07 L08 | formance with three simpler benchmarks. Wherever possible, the baseline models use
+M p.07 L09 | the same predictor information, training period, evaluation sample, and performance
+M p.07 L10 | metrics as the corresponding ML models.
+M p.07 L11 |     Persistence baseline. For the forecasting and nowcasting analyses, 67 of 1,170 obser-
+M p.07 L12 | vations in the holdout sample have no prior IPC assessment and therefore cannot
+M p.07 L13 | receive a persistence-based prediction. For observations with at least one prior assess-
+M p.07 L14 | ment, we use the most recent observed IPC phase as the predicted phase. We evaluate
+M p.07 L15 | the persistence benchmark and the ML model on the same subset of observations to
+M p.07 L16 | ensure comparability.
+M p.07 L17 |     Simpler classification model. We estimate an ordered probit model in which the
+M p.07 L18 | outcome is the IPC phase and the explanatory variables are the same predictors used
+M p.07 L19 | in the ML model. The model is trained and evaluated using the same temporal split
+M p.07 L20 | as the corresponding ML specification.
+M p.07 L21 |     Simpler regression model. We estimate separate ordinary least squares (OLS) mod-
+M p.07 L22 | els for the population shares in Phase 5, Phase 4 or above, Phase 3 or above, and Phase
+M p.07 L23 | 2 or above, using the same predictors as in the ML model. We then apply the same
+M p.07 L24 | IPC 20% population-share rule used in the main analysis to derive the overall IPC
+M p.07 L25 | phase. This provides a parametric benchmark for both the continuous population-share
+M p.07 L26 | predictions and the resulting IPC phase classifications.
+M p.07 L27 |     Our models include 172 predictors, many of which contain missing values. Patterns
+M p.07 L28 | of missingness may vary systematically across countries, data sources, and conflict
+M p.07 L29 | contexts.5 XGBoost handles missing predictor values natively by learning a default
+M p.07 L30 | direction for missing observations at each tree split. In contrast, OLS and ordered
+M p.07 L31 | probit require finite design matrices, so their performance may depend on the chosen
+M p.07 L32 | missing-data treatment.
+M p.07 L33 |     For the main baseline specifications, we use feature-wise median imputation esti-
+M p.07 L34 | mated from the training data only, followed by standardization using the corresponding
+M p.07 L35 | training-sample moments. These preprocessing parameters are then applied unchanged
+M p.07 L36 | to the test data. No observations are dropped, so all models are evaluated on the same
+M p.07 L37 | 4,405/1,170 temporal training/test cohorts and prespecified splits. The contempora-
+M p.07 L38 | neous analysis likewise retains all 5,575 observations under fixed five-fold assignments.
+M p.07 L39 | Panels A–C of Supplementary Table 1 report the baseline results, while Panels J and
+M p.07 L40 | K report the corresponding ML results on comparable samples.
+M p.07 L41 |   5
+M p.07 L42 |     Using all 5,575 observations, we find that conflict-affected observations have, on average, 2.92 fewer
+M p.07 L43 | missing forecasting predictors and 2.11 fewer missing nowcasting predictors than non-conflict observations.
+M p.07 L44 | Inference clustered at the area level indicates that these differences are statistically significant, although
+M p.07 L45 | modest in magnitude.
+M p.07 L46 |                                                       7
+===== M PAGE 8 =====
+M p.08 L01 |     We conduct two additional missing-data robustness checks. First, we re-estimate
+M p.08 L02 | the OLS and ordered probit benchmarks after adding a binary missingness indica-
+M p.08 L03 | tor for each predictor; these results are reported in Panels D and E. Second, we
+M p.08 L04 | repeat the model comparisons after excluding the 10% most-missing predictors and,
+M p.08 L05 | separately, the three countries with the highest missingness rates. These results are
+M p.08 L06 | reported in Panels F–I, with the corresponding ML results shown in Panels L and M
+M p.08 L07 | of Supplementary Table 1.
+M p.08 L08 |     Across these specifications, the simpler models have lower overall phase-
+M p.08 L09 | classification accuracy than the corresponding ML models. In general, the baselines
+M p.08 L10 | achieve modestly higher precision, but at the cost of substantially lower sensitiv-
+M p.08 L11 | ity, particularly for forecasting and nowcasting. The OLS benchmark also performs
+M p.08 L12 | worse than the corresponding ML models in predicting continuous population shares
+M p.08 L13 | across all three settings. This is especially pronounced for forecasting and nowcasting,
+M p.08 L14 | where the OLS models yield negative OOS R2 values and therefore perform worse
+M p.08 L15 | than a naive mean-prediction benchmark. The comparative ranking of the models
+M p.08 L16 | remains unchanged across the alternative missing-data treatments. Taken together,
+M p.08 L17 | these results suggest that the ML models provide meaningful incremental predictive
+M p.08 L18 | value for overall phase classification, crisis detection, and continuous population-share
+M p.08 L19 | prediction.
+M p.08 L20 | Detecting More Severe Food Insecurity Phases
+M p.08 L21 | The main models have limited ability to distinguish Phases 4 and 5 from Phase 3.
+M p.08 L22 | The confusion matrices in the left panels of Supplementary Fig. 4 show weak classifi-
+M p.08 L23 | cation of these severe phases. Supplementary Fig. 5 assesses calibration of predicted
+M p.08 L24 | cumulative IPC population shares against observed shares, not probabilities that an
+M p.08 L25 | area experiences a food crisis. Predicted shares are positively associated with observed
+M p.08 L26 | shares, but predictions for Phase 3+ and especially Phase 4+ are compressed rela-
+M p.08 L27 | tive to the observed distribution. In particular, the models substantially underpredict
+M p.08 L28 | the largest observed Phase 4+ population shares. This pattern is consistent with the
+M p.08 L29 | relatively small number of Phase 4/5 observations available for training (see Fig. 4).
+M p.08 L30 |     To improve detection of severe cases, we conduct an additional “rescue” analy-
+M p.08 L31 | sis targeting observations classified as Phase 3 by the baseline model but that may
+M p.08 L32 | in fact belong to Phase 4 or 5. We train an XGBoost classifier on observations in
+M p.08 L33 | Phases 3–5, treating Phases 4/5 as the positive class and Phase 3 as the negative
+M p.08 L34 | class. To address class imbalance, we compare unweighted, square-root balanced, and
+M p.08 L35 | fully balanced specifications. For forecasting and nowcasting, classification thresholds
+M p.08 L36 | are selected using pre-2022 temporal cross-validation and performance is evaluated on
+M p.08 L37 | the 1,170-observation 2022 temporal holdout sample. For the contemporaneous model,
+M p.08 L38 | performance is evaluated using five-fold out-of-fold predictions, consistent with the
+M p.08 L39 | validation design of the main contemporaneous analysis. Based on the F2 criterion,
+M p.08 L40 | which places greater weight on recall, we select the square-root balanced specification
+M p.08 L41 | for forecasting and nowcasting and the fully balanced specification for the contem-
+M p.08 L42 | poraneous model. Results across weighting schemes are reported in Supplementary
+M p.08 L43 | Fig. 6.
+M p.08 L44 |                                            8
+===== M PAGE 9 =====
+M p.09 L01 |     Under the selected specifications, the forecasting, nowcasting, and contempora-
+M p.09 L02 | neous models identify approximately 75%, 84%, and 78% of true severe (Phase 4+)
+M p.09 L03 | cases, respectively, while approximately 31%, 50%, and 14% of non-severe cases are
+M p.09 L04 | incorrectly classified as severe. Supplementary Fig. 4 compares the original five-class
+M p.09 L05 | predictions with rescue outputs that combine predicted Phases 4 and 5. Rescue
+M p.09 L06 | improves sensitivity to the combined severe category at the cost of additional false
+M p.09 L07 | alarms; it does not demonstrate improved full five-class classification. These results
+M p.09 L08 | underscore the continued importance of expert assessment, particularly for severe cases
+M p.09 L09 | that may depend on qualitative and context-specific information that is difficult to
+M p.09 L10 | capture with statistical models [16]. Predictive performance is further constrained by
+M p.09 L11 | the limited number of severe observations available for training.
+M p.09 L12 | Alternative Geospatial Modeling Strategies
+M p.09 L13 | In our main model, we include the latitude and longitude of each IPC area’s centroid
+M p.09 L14 | as predictors. To assess whether predictive performance depends on these coordinates,
+M p.09 L15 | we conduct three robustness checks:
+M p.09 L16 | 1. Exclude latitude and longitude.
+M p.09 L17 | 2. Replace them with k -nearest-neighbor spatial averages of each predictor across the
+M p.09 L18 |    five nearest IPC areas.
+M p.09 L19 | 3. Replace them with spatial averages of each predictor across IPC areas within 200
+M p.09 L20 |    km.
+M p.09 L21 |     Both neighborhood definitions use Haversine great-circle distances between the
+M p.09 L22 | stored area latitude–longitude coordinates, with an Earth radius of 6,371.0088 km.
+M p.09 L23 | Both exclude the focal area, and the radius-based neighborhood includes distances of
+M p.09 L24 | exactly 200 km.
+M p.09 L25 |     The results are summarized in Supplementary Table 2. Excluding latitude and lon-
+M p.09 L26 | gitude produces little change in predictive performance, suggesting that geographic
+M p.09 L27 | coordinates contribute little unique information once other covariates are included.
+M p.09 L28 | Many predictors, including weather, agroecological characteristics, vegetation, mar-
+M p.09 L29 | ket access, infrastructure, and conflict, are themselves spatially structured and may
+M p.09 L30 | capture similar geographic heterogeneity.
+M p.09 L31 |     Relative to excluding latitude and longitude alone, adding neighborhood averages
+M p.09 L32 | yields slightly lower five-class accuracy and crisis sensitivity, but higher crisis preci-
+M p.09 L33 | sion. Both spatial-average specifications yield lower OOS R2 for the population share
+M p.09 L34 | in food crisis. These specifications retain the original non-coordinate predictors, so
+M p.09 L35 | their results do not establish that local information was removed through averaging.
+M p.09 L36 | Overall, the neighborhood summaries do not provide consistent improvements across
+M p.09 L37 | metrics. These robustness checks do not constitute a comprehensive spatial model-
+M p.09 L38 | ing framework. Developing approaches that more explicitly capture adjacency, spatial
+M p.09 L39 | dependence, and polygon characteristics remains an important direction for future
+M p.09 L40 | research.
+M p.09 L41 |                                             9
+===== M PAGE 10 =====
+M p.10 L01 | Exploratory Analysis of Generalization to New Geographic
+M p.10 L02 | Areas
+M p.10 L03 | Our forecasting and nowcasting analyses are primarily designed to predict AFI in
+M p.10 L04 | current and future periods for locations represented in the IPC data, rather than to
+M p.10 L05 | extrapolate to entirely new geographic areas. Similarly, the contemporaneous analysis
+M p.10 L06 | is intended to fill gaps in historical IPC assessments for areas that have been assessed
+M p.10 L07 | by IPC at other points in time.
+M p.10 L08 |     We conduct two additional spatial validation exercises for forecasting and now-
+M p.10 L09 | casting. In leave-one-country-out validation, each country’s 2022 observations are
+M p.10 L10 | evaluated using models trained only on pre-2022 observations from other countries. In
+M p.10 L11 | five-fold area-level validation, the 646 areas represented in the 2022 test sample are ran-
+M p.10 L12 | domly partitioned into five folds (seed 0). Each fold is evaluated using models trained
+M p.10 L13 | only on pre-2022 observations from areas outside that fold. Both exercises exclude the
+M p.10 L14 | held-out geographic units from training and pool predictions over the same 1,170 test
+M p.10 L15 | observations. These exercises do not evaluate the contemporaneous main model.
+M p.10 L16 |     Supplementary Table 3 shows a trade-off across metrics between the two spatial
+M p.10 L17 | validation exercises. Relative to leave-one-country-out validation, area-level accuracy
+M p.10 L18 | is slightly lower for forecasting (0.649 versus 0.652) but slightly higher for nowcasting
+M p.10 L19 | (0.656 versus 0.653). Both area-level models have lower crisis sensitivity but higher
+M p.10 L20 | precision and Phase 3+ population-share R2 . Under leave-one-country-out valida-
+M p.10 L21 | tion, population-share R2 is negative for both forecasting (−0.014) and nowcasting
+M p.10 L22 | (−0.007). Their squared prediction errors exceed those of constant predictions at the
+M p.10 L23 | respective evaluation-sample mean population share. These results do not establish
+M p.10 L24 | uniformly better performance under area-level validation.
+M p.10 L25 | Discussion
+M p.10 L26 | In this paper, we predict food crises—as defined by IPC measures of AFI—using
+M p.10 L27 | passively collected big data. The IPC is widely regarded as the gold standard for
+M p.10 L28 | assessing AFI and is extensively used by humanitarian and development organizations.
+M p.10 L29 | However, collecting IPC data is often costly and logistically challenging, particularly in
+M p.10 L30 | fragile and conflict-affected settings. Recent advances in remote sensing have enabled
+M p.10 L31 | access to large-scale, passively collected datasets that correlate with AFI risk factors.
+M p.10 L32 | These developments make it possible to monitor relevant risk factors in near real-time
+M p.10 L33 | and predict food crises more efficiently, at lower cost, and in regions that are otherwise
+M p.10 L34 | hard to reach.
+M p.10 L35 |     Our forecasting model correctly identified 94.1% of food crisis areas in the test set
+M p.10 L36 | with a 12-month lead time. Among the areas flagged as at risk, 77.5% were confirmed as
+M p.10 L37 | true crisis areas. These results demonstrate the feasibility of using real-time monitoring
+M p.10 L38 | of risk factors to forecast food crises and highlight the potential of our predictive model
+M p.10 L39 | to support EWS and facilitate timely humanitarian responses.
+M p.10 L40 |     An important policy implication of this study is that earlier identification
+M p.10 L41 | of emerging food insecurity can create opportunities for anticipatory action that
+M p.10 L42 | may help prevent or attenuate deterioration into IPC Phase 3 or above. The 12-
+M p.10 L43 | month forecasting horizon provides time for governments, humanitarian organizations,
+M p.10 L44 |                                             10
+===== M PAGE 11 =====
+M p.11 L01 | and development partners to mobilize financing, pre-position food and therapeutic
+M p.11 L02 | nutrition supplies, and expand shock-responsive social protection before household
+M p.11 L03 | food-consumption gaps become severe. Because the model also predicts the propor-
+M p.11 L04 | tion of the population in food crisis, its results may provide an additional indication
+M p.11 L05 | of where needs are likely to be greatest and of their potential scale. Given the model’s
+M p.11 L06 | more limited performance in predicting population shares, however, these estimates
+M p.11 L07 | are better suited for screening and prioritization than for precisely estimating the
+M p.11 L08 | number of people in need of assistance.
+M p.11 L09 |     Several additional steps would be needed before the model could be used oper-
+M p.11 L10 | ationally. Although we employ forward-looking time-series validation during model
+M p.11 L11 | development, the final out-of-sample evaluation covers only one calendar year, 2022.
+M p.11 L12 | Evaluating the model over additional years and across a wider range of crisis conditions
+M p.11 L13 | would provide stronger evidence of temporal generalizability. Further improvements in
+M p.11 L14 | predictive performance, model updating, data timeliness, and integration with existing
+M p.11 L15 | early-warning workflows would also be necessary before operational deployment.
+M p.11 L16 |     Feature-importance measures should also be interpreted cautiously. They identify
+M p.11 L17 | variables that are predictive of food crises but do not establish that changing those
+M p.11 L18 | variables through a particular policy would causally prevent a crisis. The model should
+M p.11 L19 | therefore be viewed as an early-warning, screening, and resource-prioritization tool
+M p.11 L20 | that complements, rather than replaces, IPC assessments, local contextual analysis,
+M p.11 L21 | and expert judgment. Its predictions can indicate where and when further assessment
+M p.11 L22 | and anticipatory action may be warranted, while the choice of intervention should be
+M p.11 L23 | guided by contextual evidence on the underlying drivers of food insecurity.
+M p.11 L24 | Methods
+M p.11 L25 | The Gradient Boosting Method
+M p.11 L26 | We compile a dataset of 5,575 observations covering 1,198 subnational areas in 29
+M p.11 L27 | countries from 2017 to 2022. The unit of analysis is the subnational area and month for
+M p.11 L28 | which IPC AFI measures are available. The outcome variables include both the overall
+M p.11 L29 | IPC Phase and the population shares across each IPC Phase. Among the predictor
+M p.11 L30 | variables, we incorporate key drivers of contemporary food crises such as conflict,
+M p.11 L31 | weather shocks, and economic shocks.
+M p.11 L32 |     We employ a machine learning algorithm based on Gradient Boosting [17], a widely
+M p.11 L33 | used ensemble learning technique. Gradient Boosting builds a strong predictive model
+M p.11 L34 | by combining multiple weak learners, typically decision trees, through iterative train-
+M p.11 L35 | ing that corrects errors from previous rounds. We choose this method for its strong
+M p.11 L36 | performance in classification tasks, robustness to outliers, compatibility with diverse
+M p.11 L37 | data types, and built-in regularization features that help prevent overfitting. Specif-
+M p.11 L38 | ically, we use the XGBoost (eXtreme Gradient Boosting) implementation developed
+M p.11 L39 | by [18], which is well-regarded for its computational efficiency and high accuracy.
+M p.11 L40 |     We further implement an ensemble modeling approach that integrates four separate
+M p.11 L41 | predictive models, as illustrated in Fig. 3. This structure mirrors the classification logic
+M p.11 L42 | outlined in the FAO IPC manual [3]. Each model focuses on predicting the percentage
+M p.11 L43 | of the population in a specific IPC phase threshold: Phase 2 or higher, Phase 3 or
+M p.11 L44 |                                             11
+===== M PAGE 12 =====
+M p.12 L01 | higher, Phase 4 or higher, and Phase 5. These models collectively produce predicted
+M p.12 L02 | population shares falling into each severity category for every subnational area.
+M p.12 L03 |     The overall IPC phase classification is then determined using a threshold-based
+M p.12 L04 | rule: if at least 20% of the population is predicted to be in Phase 5, the area is
+M p.12 L05 | classified as IPC Phase 5. If fewer than 20% are predicted in Phase 5 but at least
+M p.12 L06 | 20% are predicted in Phase 4 or higher, the area is classified as Phase 4, and so
+M p.12 L07 | on, down to Phase 1. This procedure reflects the operational approach used in IPC
+M p.12 L08 | assessments. Finally, the model-generated IPC phase labels are compared to the actual
+M p.12 L09 | IPC classifications to evaluate predictive accuracy and performance.
+M p.12 L10 | Performance Evaluation
+M p.12 L11 | We assess model performance using out-of-sample R2 when the outcome variables
+M p.12 L12 | represent the percentage of the population in food crisis (Phase 3 or above). For five-
+M p.12 L13 | class IPC phase classification, accuracy is the number of correctly predicted phases
+M p.12 L14 | divided by the total number of evaluated observations. We separately evaluate binary
+M p.12 L15 | food-crisis classification, defining IPC Phase 3 or above as the positive class. Sensitivity
+M p.12 L16 | is the proportion of actual crisis observations correctly predicted as crises. Precision
+M p.12 L17 | is the proportion of predicted crisis observations that are actual crises.
+M p.12 L18 | Hyperparameter Selection
+M p.12 L19 | Forecasting and Nowcasting Models. Hyperparameter tuning was performed for
+M p.12 L20 | forecasting, following [8]. Nowcasting and contemporaneous models were subsequently
+M p.12 L21 | evaluated with fixed hyperparameters, without separate hyperparameter searches.
+M p.12 L22 | For forecasting and nowcasting, January 2017 to December 2021 data were used for
+M p.12 L23 | training, and January to December 2022 data were reserved for final testing.
+M p.12 L24 |     Forecasting hyperparameters were selected by grid search with four expanding-
+M p.12 L25 | window temporal validation folds, as illustrated in Supplementary Fig. 3. The first fold
+M p.12 L26 | used 2017 for training and 2018 for validation. The training window then expanded
+M p.12 L27 | annually, with validation in 2019, 2020 and 2021. The 2022 holdout was not used for
+M p.12 L28 | hyperparameter selection.
+M p.12 L29 |     Candidate configurations were ranked by their mean validation score across the
+M p.12 L30 | four folds, combining accuracy, precision, sensitivity and Phase 3+ R2 . Sensitivity
+M p.12 L31 | received a weight of five; each other metric received a weight of one. The search grid,
+M p.12 L32 | two-stage procedure and effective parameter values are reported in the Supplementary
+M p.12 L33 | Notes.
+M p.12 L34 |     In the first tuning stage, we selected hyperparameters for the Phase 3+ cumu-
+M p.12 L35 | lative target. In the second stage, we held this component fixed while selecting
+M p.12 L36 | hyperparameters for the Phase 2+, Phase 4+, and Phase 5 cumulative targets.
+M p.12 L37 |     The optimized hyperparameters include maximum tree depth, number of estima-
+M p.12 L38 | tors, learning rate, subsample ratio, column sample by tree, gamma, minimum child
+M p.12 L39 | weight, and scale-positive weight.
+M p.12 L40 |     Building on the hyperparameter tuning and holdout validation methods described
+M p.12 L41 | above, we simulate the forecasting scenario using predictors lagged by 12 months. In
+M p.12 L42 | contrast, since nowcasting incorporates both current and lagged predictors, we develop
+M p.12 L43 |                                             12
+===== M PAGE 13 =====
+M p.13 L01 | a cascading nowcasting model to complement our forecasting approach. This two-layer
+M p.13 L02 | framework operates as follows: the first layer generates forecasts using only 12-month
+M p.13 L03 | lagged predictors (e.g., conflict, weather, agricultural, and economic indicators); the
+M p.13 L04 | second layer refines these predictions by integrating current and recent (within 12
+M p.13 L05 | months) features. These features capture updated information and residual signals that
+M p.13 L06 | emerge after the initial forecast. This design allows us to exploit both the structural
+M p.13 L07 | robustness of the forecasting model and the immediacy of newly available data at the
+M p.13 L08 | time of prediction.
+M p.13 L09 |     Both layers of the nowcasting model use the forecasting-selected hyperparameters,
+M p.13 L10 | without additional tuning. The cascading design also offers practical advantages by
+M p.13 L11 | aligning closely with potential operational workflows. As emphasized in the IPC hand-
+M p.13 L12 | book [2], timely updates are essential. Our approach enables policymakers and analysts
+M p.13 L13 | to use an earlier forecast as a baseline. When new, contemporaneous data becomes
+M p.13 L14 | available, only the computationally lightweight second layer needs to be executed,
+M p.13 L15 | using updated features. This allows for a refined, near-real-time nowcast without re-
+M p.13 L16 | running the more resource-intensive full forecasting model—minimizing computational
+M p.13 L17 | cost while maximizing responsiveness.
+M p.13 L18 |     Together, the integrated forecasting and two-layer nowcasting framework fulfill
+M p.13 L19 | a dual role critical to effective food security monitoring and response. The forecast-
+M p.13 L20 | ing component facilitates EWS activation by projecting emerging risks, while the
+M p.13 L21 | nowcasting component provides timely updates that help identify geographic areas
+M p.13 L22 | requiring immediate, targeted intervention based on the latest observed conditions.
+M p.13 L23 | Contemporaneous Prediction Model. Contemporaneous performance was evalu-
+M p.13 L24 | ated using random five-fold, row-level cross-validation over all 5,575 observations from
+M p.13 L25 | January 2017 to December 2022 [11]. Observations were assigned to five equal folds
+M p.13 L26 | using a fixed random seed of 0. Each iteration trained on four folds (80%; 4,460 obser-
+M p.13 L27 | vations) and predicted the remaining fold (20%; 1,115 observations). Hyperparameters
+M p.13 L28 | remained fixed throughout, with no separate validation split or hyperparameter search.
+M p.13 L29 | Each observation received one out-of-fold prediction, and reported metrics were calcu-
+M p.13 L30 | lated from the pooled predictions rather than averaged across folds. This random-fold
+M p.13 L31 | evaluation differs from the 2022 temporal holdout used for forecasting and nowcasting.
+M p.13 L32 | Data
+M p.13 L33 | Outcome Variables
+M p.13 L34 | Our outcome variables are based on historical IPC reports released by IPC Global
+M p.13 L35 | Partnership, covering the period from January 2017 to December 2022. The IPC
+M p.13 L36 | framework categorizes the severity of AFI into five phases [3]:
+M p.13 L37 | • Phase 1: Minimal — Food security conditions are stable, and basic food needs are
+M p.13 L38 |   met.
+M p.13 L39 | • Phase 2: Stressed — Households have minimally adequate food consumption but
+M p.13 L40 |   cannot afford some essential non-food expenditures without engaging in stress-
+M p.13 L41 |   coping strategies.
+M p.13 L42 |                                           13
+===== M PAGE 14 =====
+M p.14 L01 | • Phase 3: Crisis — Households have food-consumption gaps reflected in high or
+M p.14 L02 |   above-usual acute malnutrition, or barely meet minimum food needs by depleting
+M p.14 L03 |   essential livelihood assets or adopting crisis-coping strategies.
+M p.14 L04 | • Phase 4: Emergency — Households face large gaps in food consumption, very high
+M p.14 L05 |   acute malnutrition, or excess mortality.
+M p.14 L06 | • Phase 5: Catastrophe/Famine — Households experience an extreme lack of food
+M p.14 L07 |   and other basic needs where starvation, death, destitution, and extremely critical
+M p.14 L08 |   acute malnutrition levels are evident.
+M p.14 L09 |      In addition to phase-specific classifications, the IPC provides estimates of the pop-
+M p.14 L10 | ulation falling into each phase within a given geographic area. According to IPC
+M p.14 L11 | Global Partners, an area is classified as being in a food crisis when at least 20% of
+M p.14 L12 | its population is in IPC Phase 3 or above. This threshold serves as a key operational
+M p.14 L13 | indicator for assessing the severity of food insecurity and guiding the prioritization of
+M p.14 L14 | humanitarian responses.
+M p.14 L15 |      To ensure data quality, we exclude all observations without valid IPC phase iden-
+M p.14 L16 | tification and cross-reference the IPC database to confirm these are not attributable
+M p.14 L17 | to data entry errors. The resulting dataset includes 5,575 observations across 1,198
+M p.14 L18 | subnational areas in 29 countries from 2017 to 2022. Fig. 4 Panel A shows the distri-
+M p.14 L19 | bution of IPC phases: Phase 3 accounts for 52.4% of observations, followed by Phase
+M p.14 L20 | 2 (35.3%), Phase 4 (8.7%), Phase 1 (3.4%), and Phase 5 (0.3%). Panel B of Fig. 4
+M p.14 L21 | displays the distribution over time, which mirrors the overall pattern—Phases 1 and
+M p.14 L22 | 5 occur infrequently, while the majority of observations fall into Phase 3.
+M p.14 L23 | Predictor Variables
+M p.14 L24 | Our selection of predictor variables is guided by potential risk factors and key drivers
+M p.14 L25 | of food insecurity identified in the literature (e.g., [12]), and includes several variables
+M p.14 L26 | currently used by the IPC system for monitoring food crises. All variables are publicly
+M p.14 L27 | available, and their sources are listed in Supplementary Table 4.
+M p.14 L28 |     To integrate secondary geospatial raster data with our analytical units, we apply
+M p.14 L29 | a systematic geoprocessing workflow. We begin by defining and validating the IPC
+M p.14 L30 | polygonal boundaries for our areas of interest to ensure geometric integrity. All spa-
+M p.14 L31 | tial datasets are standardized to the WGS 84 geographic coordinate reference system
+M p.14 L32 | (EPSG:4326), with longitude and latitude expressed in degrees. Vector polygons or
+M p.14 L33 | time-series raster imagery are transformed as needed for spatial overlays. Each dated
+M p.14 L34 | raster file—representing specific environmental or climatic variables—undergoes a
+M p.14 L35 | quality assessment to identify no-data values and to confirm suitability for analysis.
+M p.14 L36 | We use geodesic area calculations for the raster–polygon overlap assessment. Given
+M p.14 L37 | the variable spatial resolutions of the raster datasets, we include a pixel in a polygon’s
+M p.14 L38 | aggregation if more than 50% of its area falls within that polygon.
+M p.14 L39 |     We extract the data using ArcPy, the ArcGIS Python environment. For each IPC
+M p.14 L40 | polygon and raster date, we isolate pixel values within the polygon boundaries and
+M p.14 L41 | compute the spatial average for each variable, excluding no-data values to avoid bias.
+M p.14 L42 | We apply this process across all variables and time periods, compiling the results into
+M p.14 L43 |                                             14
+===== M PAGE 15 =====
+M p.15 L01 | a structured spatio-temporal dataset indexed by polygon and month. We then perform
+M p.15 L02 | final checks to ensure the completeness and validity of the data.
+M p.15 L03 |     The resulting predictor dataset includes 172 variables spanning physical geogra-
+M p.15 L04 | phy, food prices, weather conditions, other economic indicators, agricultural and land
+M p.15 L05 | productivity, and conflict data.
+M p.15 L06 | Physical Geography. Elevation is a critical factor in climate modeling, affecting
+M p.15 L07 | temperature, precipitation patterns, and ecosystem distribution. We use elevation data
+M p.15 L08 | from the ECMWF ERA5-Land reanalysis [19], recorded as elevation in the predictor
+M p.15 L09 | table.
+M p.15 L10 |     Ruggedness, defined as the degree of elevation variability within a given area,
+M p.15 L11 | captures terrain complexity and unevenness. It plays an important role in shaping
+M p.15 L12 | economic geography, particularly by affecting the feasibility and cost of transporta-
+M p.15 L13 | tion, trade, and productive activities. Although its impact can vary with technological
+M p.15 L14 | development and economic structure, high ruggedness is frequently associated with
+M p.15 L15 | limited accessibility and economic underdevelopment. We extract ruggedness values
+M p.15 L16 | at the pixel level from the dataset developed by [20].
+M p.15 L17 |     Distance to rivers measures the proximity of a given area to the nearest major
+M p.15 L18 | river system, a factor that significantly affects transportation, agricultural productiv-
+M p.15 L19 | ity, and economic development. River access facilitates irrigation, logistics, and trade,
+M p.15 L20 | and has long played a strategic role in shaping settlement patterns and economic
+M p.15 L21 | outcomes. We calculate this variable using ArcGIS by sourcing river shapefiles from
+M p.15 L22 | the World Bank and the global hydrography dataset by [21]. For each IPC area, we
+M p.15 L23 | compute the centroid distance to the nearest river, ensuring accurate spatial repre-
+M p.15 L24 | sentation for subsequent analysis.
+M p.15 L25 | Food Prices. Food price data are obtained from two primary sources: the World
+M p.15 L26 | Food Programme (WFP) and the Food and Agriculture Organization (FAO). From
+M p.15 L27 | WFP, we utilize two monthly country-level indicators—Percentage of Price Change
+M p.15 L28 | and Spatial Price Dispersion—to capture market shocks and assess the extent of mar-
+M p.15 L29 | ket fragmentation. Both indicators are based on the prices of a food basket comprising
+M p.15 L30 | four staple commodities: rice, wheat, maize, and vegetable oil [22].
+M p.15 L31 |     The Percentage of Price Change measures the month-on-month change in food
+M p.15 L32 | prices relative to the preceding month, expressed as a percentage. Spatial Price Dis-
+M p.15 L33 | persion, on the other hand, is measured as the standard deviation of local market
+M p.15 L34 | prices within a country, capturing geographic variability in food access. To capture
+M p.15 L35 | temporal dynamics, we construct four time-series features from each of these two indi-
+M p.15 L36 | cators: the 12-month lag, 12-month moving average, 12-month lagged moving average,
+M p.15 L37 | and the 12-month temporal standard deviation.
+M p.15 L38 |     To further quantify interannual trends and volatility in staple food prices, we use
+M p.15 L39 | the FAO-GIEWS Food Price Monitoring and Analysis (FPMA) database [23]. This
+M p.15 L40 | source provides monthly wholesale and retail price data for individual commodities
+M p.15 L41 | across markets within a country or territory. Each recorded price is divided by its
+M p.15 L42 | commodity-specific reference price to form a dimensionless price index. We do not
+M p.15 L43 |                                            15
+===== M PAGE 16 =====
+M p.16 L01 | apply a price deflator or any other inflation adjustment. These indexed prices are aver-
+M p.16 L02 | aged at the market-month level across all commodities available in that market-month,
+M p.16 L03 | giving equal weight to each commodity. The data retain the market’s geographic
+M p.16 L04 | coordinates and name. Markets are matched to the nearest administrative unit using
+M p.16 L05 | great-circle distance, and any market located more than 100 km away from the nearest
+M p.16 L06 | admin unit centroid is excluded. For the remaining markets in the dataset, we com-
+M p.16 L07 | pute the 12-month lag, 12-month moving average, 12-month lagged moving average,
+M p.16 L08 | and the 12-month temporal standard deviation.
+M p.16 L09 |     We also construct the variable Distance to the Nearest Market using FAO FPMA
+M p.16 L10 | price records [23] to provide additional insights into market accessibility for both
+M p.16 L11 | agricultural producers and consumers. Using the detailed geographic coordinates
+M p.16 L12 | provided in the FPMA dataset, we calculate the distance from each polygon centroid
+M p.16 L13 | to the nearest market using the Haversine formula [24].
+M p.16 L14 | Weather Conditions. We use the “2m temperature” variable from ERA5-Land
+M p.16 L15 | monthly averaged data [25], representing air temperature at 2 meters above the sur-
+M p.16 L16 | face. ERA5-Land has an approximately 9 km native resolution; the Climate Data
+M p.16 L17 | Store distributes these data on a regular 0.1◦ × 0.1◦ latitude–longitude grid. We
+M p.16 L18 | compute the spatial mean for each polygon and month. The model inputs distin-
+M p.16 L19 | guish monthly updated 12-month rolling means (temperature 2m mean m12) from
+M p.16 L20 | 12-month-lagged values (temperature 2m mean l12). The suffix m12 denotes a 12-
+M p.16 L21 | month averaging window, whereas l12 denotes a 12-month lag; these specify different
+M p.16 L22 | temporal operations.
+M p.16 L23 |     We also use the ERA5-Land “Surface solar radiation downwards” (SSRD)
+M p.16 L24 | variable [19] to characterize solar energy availability. For each polygon, we
+M p.16 L25 | compute the spatial mean of daily total SSRD and then average these
+M p.16 L26 | daily totals by month. The model inputs include monthly updated 12-
+M p.16 L27 | month rolling means (shortwave radiation sum m12) and 12-month-lagged values
+M p.16 L28 | (shortwave radiation sum l12).
+M p.16 L29 |     Precipitation data include the Climate Hazards Group InfraRed Precipitation with
+M p.16 L30 | Station data (CHIRPS) [26], which provides daily and monthly estimates over land
+M p.16 L31 | between 50°S and 50°N at 0.05° (approximately 5 km) spatial resolution. We spa-
+M p.16 L32 | tially average monthly-aggregated CHIRPS rainfall within each polygon. The resulting
+M p.16 L33 | inputs include monthly updated 12-month rolling means (rainfall chirps m12) and
+M p.16 L34 | 12-month-lagged values (rainfall chirps l12). ERA5-Land precipitation is included
+M p.16 L35 | separately as precipitation sum m12 and precipitation sum l12, using the same
+M p.16 L36 | rolling-mean and lag notation [19].
+M p.16 L37 |     Temperature and CHIRPS rainfall z-scores use a fixed 2000–2020 reference
+M p.16 L38 | period within each polygon. The contemporaneous fields temperature z score and
+M p.16 L39 | chirps z score are annual values, repeated across observations within the same
+M p.16 L40 | polygon and calendar year. The forecasting inputs instead contain the separate lagged
+M p.16 L41 | z-score fields temperature 2m mean z l12 and rainfall chirps z l12, which vary
+M p.16 L42 | within calendar years. These lagged series are distinguished from the annual z-score
+M p.16 L43 | fields rather than treating all z-score predictors as having the same update frequency.
+M p.16 L44 | The second layer of nowcasting uses the current rolling-mean and annual z-score
+M p.16 L45 |                                           16
+===== M PAGE 17 =====
+M p.17 L01 | fields; its first layer uses the forecasting inputs. Contemporaneous models use both
+M p.17 L02 | current and lagged inputs.
+M p.17 L03 | Other Economic Conditions. To contextualize the socioeconomic environment rel-
+M p.17 L04 | evant to food security, we incorporate five country-level indicators sourced from the
+M p.17 L05 | World Bank Group (WBG). These are the Consumer Price Index (CPI), GDP per
+M p.17 L06 | capita (constant 2010 US$), the rescaled Logistics Performance Index (LPI) infras-
+M p.17 L07 | tructure score, the Gini Index, and the Control of Corruption indicator from the
+M p.17 L08 | Worldwide Governance Indicators (WGI) [27, 28].
+M p.17 L09 | • CPI: We use the consumer price index level (2010 = 100; indicator code
+M p.17 L10 |   FP.CPI.TOTL), which measures consumer prices relative to the reference year. We
+M p.17 L11 |   retain the index level without converting it to an annual percentage change.
+M p.17 L12 | • GDP per capita: Represents the average economic output per person, offering insight
+M p.17 L13 |   into national wealth and economic productivity.
+M p.17 L14 | • Infrastructure Index: We use the LPI component “Quality of trade and transport-
+M p.17 L15 |   related infrastructure” (indicator code LP.LPI.INFR.XQ). This survey-based score
+M p.17 L16 |   averages respondents’ ratings of infrastructure quality, including ports, railroads,
+M p.17 L17 |   roads, and information technology, on a scale from 1 (low) to 5 (high). Our predictor
+M p.17 L18 |   is the published infrastructure score divided by 5, giving a theoretical range of 0.2–
+M p.17 L19 |   1, with higher values indicating better infrastructure. LPI observations are available
+M p.17 L20 |   for survey years rather than every calendar year.
+M p.17 L21 | • Gini Index: Quantifies income or consumption expenditure inequality, ranging from
+M p.17 L22 |   0 (perfect equality) to 100 (perfect inequality), reflecting disparities within the
+M p.17 L23 |   population.
+M p.17 L24 | • Control of Corruption Indicator: Assesses perceptions of public power misuse for
+M p.17 L25 |   private gain, covering both minor and large-scale corruption as well as state capture
+M p.17 L26 |   by elites. It is expressed as a percentile rank (0–100), with higher values indicating
+M p.17 L27 |   stronger control over corruption.
+M p.17 L28 |     These country-level indicators enter our country-year dataset to characterize eco-
+M p.17 L29 | nomic conditions, consumer-price levels, infrastructural capacity, income distribution,
+M p.17 L30 | and governance quality. We also include their 12-month lagged values as additional
+M p.17 L31 | predictors in the analysis.
+M p.17 L32 |     Night-time light intensity provides a proxy for economic activity, urbanization, and
+M p.17 L33 | human presence. We use monthly night-time light composites from the Visible Infrared
+M p.17 L34 | Imaging Radiometer Suite (VIIRS) Day/Night Band [29]. These satellite observations
+M p.17 L35 | provide information on economic activity where reliable monthly economic indicators
+M p.17 L36 | are scarce.
+M p.17 L37 |     We calculate the 12-month rolling mean and standard deviation of monthly VIIRS
+M p.17 L38 | night-time light intensity as measures of development and temporal variability. We
+M p.17 L39 | also include the 12-month lag of the rolling mean as a lagged predictor.
+M p.17 L40 |     Travel time to cities is a key indicator of access to economic resources and urban
+M p.17 L41 | centers. Sourced from Weiss (2018) [30], it maps global travel times to cities in 2015
+M p.17 L42 | at a one-square-kilometer resolution. We compute travel time by extracting and
+M p.17 L43 | averaging values from geographic polygons. This metric captures access to urban
+M p.17 L44 |                                           17
+===== M PAGE 18 =====
+M p.18 L01 | opportunities and services, accounting for distance, transport infrastructure, and city
+M p.18 L02 | distribution. Limited connectivity can hinder livelihoods and development, under-
+M p.18 L03 | scoring the importance of infrastructure for economic growth.
+M p.18 L04 | Agriculture and Land Productivity. We use the Global OCO-2 SIF (Solar-
+M p.18 L05 | Induced Fluorescence) based Gross Primary Production (GOSIF-GPP) and the
+M p.18 L06 | Enhanced Vegetation Index (EVI) to monitor land productivity dynamics. GOSIF-
+M p.18 L07 | GPP estimates the total carbon dioxide converted to organic carbon via photosynthesis
+M p.18 L08 | and serves as a high-resolution proxy for terrestrial productivity. It integrates data
+M p.18 L09 | from: (1) OCO-2 SIF, a direct indicator of photosynthetic activity, (2) MODIS
+M p.18 L10 | EVI, which reflects vegetation health, and (3) MERRA-2 meteorological data, which
+M p.18 L11 | accounts for climatic influences.
+M p.18 L12 |     The GOSIF-GPP dataset offers monthly estimates at a 0.05° spatial resolution
+M p.18 L13 | and is highly correlated with ground-based GPP measurements, providing insights
+M p.18 L14 | into ecosystem productivity and health [31]. For each geographic unit, we calculate
+M p.18 L15 | the spatial mean and construct: (1) a 12-month rolling average to capture long-term
+M p.18 L16 | trends, (2) the 12-month standard deviation to assess seasonal variability and crop
+M p.18 L17 | stress, and (3) a 12-month lag of the rolling average to serve as a predictive indicator
+M p.18 L18 | of delayed productivity responses.
+M p.18 L19 |     EVI is a satellite-derived vegetation index designed to quantify greenness and plant
+M p.18 L20 | health with improved sensitivity over traditional indices, particularly in densely veg-
+M p.18 L21 | etated regions [32]. Derived from MODIS sensors at a 250m resolution, it enables
+M p.18 L22 | detailed analysis of vegetation dynamics and responses to environmental changes.
+M p.18 L23 |     For our analysis, we extract 16-day EVI raster files based on predefined geographic
+M p.18 L24 | shapes and integrate them into our dataset. From these, we compute: (1) a 12-month
+M p.18 L25 | moving average to identify long-term vegetation trends, (2) the 12-month standard
+M p.18 L26 | deviation to capture seasonal fluctuations, and (3) a 12-month lag of the rolling average
+M p.18 L27 | to reflect lagged vegetation conditions.
+M p.18 L28 |     Soil moisture is a key indicator of drought conditions and plays a critical role
+M p.18 L29 | in agricultural planning and ecosystem health. We incorporate monthly average soil
+M p.18 L30 | moisture data from ERA5-Land [19], represented by soil moisture mean and its
+M p.18 L31 | derived predictors. We compute a 12-month rolling mean and standard deviation to
+M p.18 L32 | capture long-term trends and periods of high variability that may affect plant growth
+M p.18 L33 | and water availability. In addition, we include a 12-month lag of the rolling average
+M p.18 L34 | to serve as a lagged predictive indicator of soil conditions.
+M p.18 L35 |     We also integrate soil property data from the International Soil Reference and
+M p.18 L36 | Information Centre (ISRIC) SoilGrids, a global digital soil mapping platform that
+M p.18 L37 | employs advanced machine learning techniques [33]. SoilGrids provides global esti-
+M p.18 L38 | mates of soil properties at six standard depth intervals with 250-meter spatial
+M p.18 L39 | resolution. Available attributes include pH, soil organic carbon content, bulk density,
+M p.18 L40 | coarse fragment content, sand, silt, and clay composition, cation exchange capacity
+M p.18 L41 | (CEC), total nitrogen, soil organic carbon density, and carbon stock. For our analy-
+M p.18 L42 | sis, we extract the spatial mean of each property at the near-surface depth (0–5 cm)
+M p.18 L43 | using raster data.
+M p.18 L44 |                                            18
+===== M PAGE 19 =====
+M p.19 L01 |     To characterize agricultural land cover, we use cropland and rangeland masks from
+M p.19 L02 | the Anomaly Hotspots of Agricultural Production (ASAP) system [34]. ASAP is devel-
+M p.19 L03 | oped and maintained by the European Commission’s Joint Research Centre (JRC).
+M p.19 L04 | These masks provide a foundational layer for agricultural and food security analyses.
+M p.19 L05 | We extract the data using predefined geographic polygons and integrate it into our
+M p.19 L06 | dataset as two separate variables: the percentage of land area classified as cropland
+M p.19 L07 | and the percentage classified as rangeland.
+M p.19 L08 |     Furthermore, we incorporate Agro-Ecological Zones (AEZ) from [35], which clas-
+M p.19 L09 | sify geographic regions based on ecological, agricultural, and soil characteristics, as
+M p.19 L10 | well as maize and cereal cultivation patterns. AEZs are critical for capturing regional
+M p.19 L11 | heterogeneity that influences agricultural production and food security outcomes. We
+M p.19 L12 | extract AEZ data using predefined geographic polygons and generate dummy variables
+M p.19 L13 | to represent the specific zones.
+M p.19 L14 |     In the countries included in our study, the major AEZs—ranked by land area—are
+M p.19 L15 | as follows: Tropical Maize Mixed (TMS), prevalent in Zambia, Angola, and parts
+M p.19 L16 | of Tanzania; Tropical Monsoon Bimodal (TMB), covering Kenya, coastal Tanzania,
+M p.19 L17 | and Haiti; Tropical Monsoon Rice/Irrigated (TMR/TMI), found in Bangladesh;
+M p.19 L18 | Tropical Highland Mixed (THR), present in Ethiopia and Guatemala; Hot Arid Irri-
+M p.19 L19 | gated (HAI), spanning parts of Sudan and Pakistan; Hot Semi-Arid Winter-Cereal
+M p.19 L20 | (HSW), covering Afghanistan and western Pakistan; Tropical Rainforest Bimodal
+M p.19 L21 | (TRB), occurring in the Democratic Republic of Congo and eastern Andean Ecuador;
+M p.19 L22 | Mediterranean Winter Cereal (MED), located around Lebanon and Palestine; and
+M p.19 L23 | Temperate Southern Hemisphere (TSH), found in South Africa and Lesotho.
+M p.19 L24 | Conflict. Conflict is a major driver of instability and insecurity. To measure its
+M p.19 L25 | impact, we use two key metrics:
+M p.19 L26 | • Conflict Incidence: Monthly counts of violent events, recorded separately for each
+M p.19 L27 |   event type.
+M p.19 L28 | • Conflict Severity: Monthly fatality counts, recorded separately for the same event
+M p.19 L29 |   types.
+M p.19 L30 | These metrics are derived from the Armed Conflict Location and Event Data (ACLED)
+M p.19 L31 | dataset [36], which provides precise geographic coordinates for conflict events. Using
+M p.19 L32 | these coordinates, we calculate distances from conflict points to the polygon centroids
+M p.19 L33 | of sampled areas.
+M p.19 L34 |     To generate the inverse distance-weighted frequencies, we multiply the total num-
+M p.19 L35 | ber of conflicts or fatalities at each location by the inverse of its distance to the
+M p.19 L36 | centroid. This produces the monthly conflict and fatality frequencies, weighted by
+M p.19 L37 | proximity. We apply this calculation using the 5 and 10 nearest conflict locations,
+M p.19 L38 | representing different spatial scales of influence. Smaller numbers indicate a stronger
+M p.19 L39 | weighting on nearby events.
+M p.19 L40 |     We analyze various types of conflict events, including:
+M p.19 L41 | • Battles: Counts and fatalities from direct combat, providing insights into the
+M p.19 L42 |   intensity of armed engagements.
+M p.19 L43 |                                           19
+===== M PAGE 20 =====
+M p.20 L01 | • Explosions: Counts and deaths caused by explosive devices, reflecting the human
+M p.20 L02 |   cost of such tactics.
+M p.20 L03 | • Violence Against Civilians: Counts and fatalities from targeted attacks on non-
+M p.20 L04 |   combatant populations, highlighting the toll on civilians.
+M p.20 L05 |    For each event type, the inputs retain monthly counts and the corre-
+M p.20 L06 | sponding distance-weighted variants, identified by the suffixes w5 and w10.
+M p.20 L07 | The nowcasting inputs additionally include monthly updated 12-month rolling
+M p.20 L08 | means, denoted by m12; forecasting uses 12-month-lagged fields, denoted by
+M p.20 L09 |  l12. For example, event count battles w5 m12 is a rolling-mean input, whereas
+M p.20 L10 | event count battles w5 l12 is a lagged input. The contemporaneous models retain
+M p.20 L11 | both current and lagged conflict predictors.
+M p.20 L12 | Acknowledgements
+M p.20 L13 | The authors gratefully acknowledge financial support from Google.org. This research
+M p.20 L14 | was also conducted as part of the Food Security Portal project, led by the International
+M p.20 L15 | Food Policy Research Institute (IFPRI), with funding from the European Commission
+M p.20 L16 | (EC). Google.org and the EC had no role in the study design, data collection and
+M p.20 L17 | analysis, decision to publish, or preparation of the manuscript.
+M p.20 L18 | Competing interests
+M p.20 L19 | The authors have no competing interests to declare.
+M p.20 L20 | Data availability statement
+M p.20 L21 | All data necessary for replication of the results presented in this paper will be available
+M p.20 L22 | in a public GitHub repository upon publication.
+M p.20 L23 | Code availability statement
+M p.20 L24 | The code necessary for replication of the results presented in this paper will be available
+M p.20 L25 | in a public GitHub repository upon publication.
+M p.20 L26 |                                             20
+===== M PAGE 21 =====
+M p.21 L01 | References
+M p.21 L02 |  [1] Timmer, C.P.: Preventing food crises using a food policy approach. The Journal
+M p.21 L03 |      of nutrition 140(1), 224–228 (2010)
+M p.21 L04 |  [2] Integrated Phase Classification (IPC) Global Partnership: What the IPC Is.
+M p.21 L05 |      Brochure. n.d. (2021). https://www.ipcinfo.org/fileadmin/user upload/ipcinfo/
+M p.21 L06 |      docs/communication tools/brochures/IPC Brochure What the IPC is.pdf
+M p.21 L07 |  [3] Integrated Phase Classification (IPC) Global Partnership: Technical manual ver-
+M p.21 L08 |      sion 3.1: Evidence and standards for better food security and nutrition decisions.
+M p.21 L09 |      Technical report, Integrated Phase Classification (IPC) Global Partnership, Rome
+M p.21 L10 |      (2021). https://www.ipcinfo.org/ipcinfo-website/resources/ipc-manual/en/
+M p.21 L11 |  [4] FSIN: 2024 global report on food crises. Technical report, Food Security Informa-
+M p.21 L12 |      tion Network for the Global Network Against Food Crises, Rome (2024). https:
+M p.21 L13 |      //www.fsinplatform.org/sites/default/files/resources/files/GRFC2024-full.pdf
+M p.21 L14 |  [5] Vos, R., Elouafi, I., Swinnen, J.: Famine in Gaza, questions for research and
+M p.21 L15 |      preventive action. Nature Food 5(5), 346–348 (2024)
+M p.21 L16 |  [6] Reardon, T., Liverpool-Tasie, L.S.O., Belton, B., Dolislager, M., Minten, B.,
+M p.21 L17 |      Popkin, B., Vos, R.: African domestic supply booms in value chains of fruits,
+M p.21 L18 |      vegetables, and animal products fueled by spontaneous clusters of smes. Applied
+M p.21 L19 |      Economic Perspectives and Policy 46(2), 390–413 (2024)
+M p.21 L20 |  [7] Andree, B., Chamorro, A., Kraay, A., Spencer, P., Wang, D.: Predicting
+M p.21 L21 |      food crises. World Bank Working Paper 9412 (2020) https://doi.org/10.1596/
+M p.21 L22 |      1813-9450-9412
+M p.21 L23 |  [8] Westerveld, J.J., Homberg, M.J., Nobre, G.G., Berg, D.L., Teklesadik, A.D.,
+M p.21 L24 |      Stuit, S.M.: Forecasting transitions in the state of food security with machine
+M p.21 L25 |      learning using transferable features. Science of the Total Environment 786,
+M p.21 L26 |      147366 (2021)
+M p.21 L27 |  [9] Balashankar, A., Subramanian, L., Fraiberger, S.P.: Predicting food crises using
+M p.21 L28 |      news streams. Science Advances 9(9), 3449 (2023)
+M p.21 L29 | [10] Martini, G., Bracci, A., Riches, L., Jaiswal, S., Corea, M., Rivers, J., Husain, A.,
+M p.21 L30 |      Omodei, E.: Machine learning can guide food security efforts when primary data
+M p.21 L31 |      are not available. Nature Food 3(9), 716–728 (2022)
+M p.21 L32 | [11] Yeh, C., Perez, A., Driscoll, A., Azzari, G., Tang, Z., Lobell, D., Ermon, S., Burke,
+M p.21 L33 |      M.: Using publicly available satellite imagery and deep learning to understand
+M p.21 L34 |      economic well-being in africa. Nature Communications 11(1), 2583 (2020)
+M p.21 L35 | [12] Browne, C., Matteson, D.S., McBride, L., Hu, L., Liu, Y., Sun, Y., Wen, J.,
+M p.21 L36 |      Barrett, C.B.: Multivariate random forest prediction of poverty and malnutrition
+M p.21 L37 |                                            21
+===== M PAGE 22 =====
+M p.22 L01 |     prevalence. PloS One 16(9), 0255519 (2021)
+M p.22 L02 | [13] Constenla-Villoslada, S., Liu, Y., McBride, L., Ouma, C., Mutanda, N., Bar-
+M p.22 L03 |      rett, C.B.: High-frequency monitoring enables machine learning–based forecasting
+M p.22 L04 |      of acute child malnutrition for early warning. Proceedings of the National
+M p.22 L05 |      Academy of Sciences 122(23), 2416161122 (2025) https://doi.org/10.1073/pnas.
+M p.22 L06 |      2416161122
+M p.22 L07 | [14] FSIN: 2025 global report on food crises. Technical report, Food Security Infor-
+M p.22 L08 |      mation Network and Global Network Against Food Crises, Rome (2025). https:
+M p.22 L09 |      //www.fsinplatform.org/report/global-report-food-crises-2025/
+M p.22 L10 | [15] Marcilio, W.E., Eler, D.M.: From explanations to feature selection: assessing shap
+M p.22 L11 |      values as feature selection mechanism. In: 2020 33rd SIBGRAPI Conference on
+M p.22 L12 |      Graphics, Patterns and Images (SIBGRAPI), pp. 340–347 (2020). Ieee
+M p.22 L13 | [16] Anderson, W., Becker-Reshef, I., Bodanac, N., et al.: Responsible use of artificial
+M p.22 L14 |      intelligence and machine learning for food security early warning systems. Nature
+M p.22 L15 |      Food 7, 736–739 (2026) https://doi.org/10.1038/s43016-026-01400-6
+M p.22 L16 | [17] Friedman, J.H.: Greedy function approximation: a gradient boosting machine.
+M p.22 L17 |      Annals of Statistics, 1189–1232 (2001)
+M p.22 L18 | [18] Chen, T., Guestrin, C.: Xgboost: A scalable tree boosting system. In: Proceedings
+M p.22 L19 |      of the 22nd Acm Sigkdd International Conference on Knowledge Discovery and
+M p.22 L20 |      Data Mining, pp. 785–794 (2016)
+M p.22 L21 | [19] European Centre for Medium-Range Weather Forecasts: ERA5-Land. https://
+M p.22 L22 |      www.ecmwf.int/en/era5-land
+M p.22 L23 | [20] Nunn, N., Puga, D.: Ruggedness: The blessing of bad geography in africa. Review
+M p.22 L24 |      of Economics and Statistics 94(1), 20–36 (2012)
+M p.22 L25 | [21] Andreadis, K.M., Schumann, G.J.-P., Pavelsky, T.: A simple global river bankfull
+M p.22 L26 |      width and depth database. Water Resources Research 49(10), 7164–7168 (2013)
+M p.22 L27 | [22] World Food Programme: HungerMap LIVE. Retrieved from https://dataviz.vam.
+M p.22 L28 |      wfp.org/ (2024)
+M p.22 L29 | [23] Food and Agriculture Organization of the United Nations: Food Price Monitor-
+M p.22 L30 |      ing and Analysis (FPMA) database. Retrieved from https://www.fao.org/giews/
+M p.22 L31 |      food-prices/home/en/ (2024)
+M p.22 L32 | [24] Sinnott, R.W.: Virtues of the haversine. Sky and Telescope 68(2), 158 (1984)
+M p.22 L33 | [25] Copernicus Climate Change Service (C3S): ERA5-Land monthly averaged data
+M p.22 L34 |      from 1950 to present. Copernicus Climate Change Service Climate Data Store
+M p.22 L35 |      (CDS). https://doi.org/10.24381/cds.68d2bb30 . https://cds.climate.copernicus.
+M p.22 L36 |                                           22
+===== M PAGE 23 =====
+M p.23 L01 |     eu/datasets/reanalysis-era5-land-monthly-means
+M p.23 L02 | [26] Funk, C., Peterson, P., Landsfeld, M., Pedreros, D., Verdin, J., Shukla, S., Husak,
+M p.23 L03 |      G., Rowland, J., Harrison, L., Hoell, A., Michaelsen, J.: The climate hazards
+M p.23 L04 |      infrared precipitation with stations-a new environmental record for monitoring
+M p.23 L05 |      extremes. Scientific Data 2 (2015) https://doi.org/10.1038/sdata.2015.66
+M p.23 L06 | [27] World Bank: Consumer price index (2010 = 100), FP.CPI.TOTL [Data set].
+M p.23 L07 |      Retrieved from https://data.worldbank.org/indicator/FP.CPI.TOTL (2024)
+M p.23 L08 | [28] World Bank: Logistics performance index: Quality of trade and transport-related
+M p.23 L09 |      infrastructure (1=low to 5=high), LP.LPI.INFR.XQ [Data set]. Retrieved from
+M p.23 L10 |      https://data.worldbank.org/indicator/LP.LPI.INFR.XQ (2024)
+M p.23 L11 | [29] Earth Observation Group: VIIRS nighttime lights: Monthly cloud-free DNB
+M p.23 L12 |      composites [Data set]. https://eogdata.mines.edu/products/vnl/
+M p.23 L13 | [30] Weiss, D.J., Nelson, A., Gibson, H., Temperley, W., Peedell, S., Lieber, A.,
+M p.23 L14 |      Hancher, M., Poyart, E., Belchior, S., Fullman, N., et al.: A global map of travel
+M p.23 L15 |      time to cities to assess inequalities in accessibility in 2015. Nature 553(7688),
+M p.23 L16 |      333–336 (2018)
+M p.23 L17 | [31] Li, X., Xiao, J., He, M.: GOSIF-GPP: A global dataset of gross primary pro-
+M p.23 L18 |      duction derived from OCO-2 solar-induced fluorescence. Retrieved from https:
+M p.23 L19 |      //doi.org/10.3334/ORNLDAAC/1735 (2020)
+M p.23 L20 | [32] Ramachandran, B., Justice, C.O., Abrams, M.J.: Land remote sensing and global
+M p.23 L21 |      environmental change: NASA’s earth observing system and the science of ASTER
+M p.23 L22 |      and MODIS. Springer (2010)
+M p.23 L23 | [33] International Soil Reference and Information Centre: SoilGrids: Global gridded
+M p.23 L24 |      soil information. Retrieved from https://www.isric.org/explore/soilgrids (2024)
+M p.23 L25 | [34] European Commission, Joint Research Centre: Anomaly Hotspots of Agricultural
+M p.23 L26 |      Production (ASAP): Cropland and rangeland masks [Data set]. Retrieved from
+M p.23 L27 |      https://agricultural-production-hotspots.ec.europa.eu/download.php (2024)
+M p.23 L28 | [35] Van Tricht, K., Degerickx, J., Gilliams, S., Zanaga, D., Battude, M., Grosu, A.,
+M p.23 L29 |      Brombacher, J., Lesiv, M., Bayas, J.C.L., Karanam, S., et al.: Worldcereal: a
+M p.23 L30 |      dynamic open-source system for global-scale, seasonal, and reproducible crop and
+M p.23 L31 |      irrigation mapping. Earth System Science Data 15(12), 5491–5515 (2023)
+M p.23 L32 | [36] Raleigh, C., Linke, R., Hegre, H., Karlsen, J.: Introducing acled: An armed conflict
+M p.23 L33 |      location and event dataset. Journal of Peace Research 47(5), 651–660 (2010)
+M p.23 L34 |                                            23
+===== M PAGE 24 =====
+M p.24 L01 | Fig. 1 Performance Metrics Across Forecasting, Nowcasting, and Contemporaneous Models
+M p.24 L02 | Notes: Panel A illustrates the model’s accuracy in predicting the overall IPC (Integrated Food Security
+M p.24 L03 | Phase Classification) phase, measured as the proportion of correctly predicted phases relative to the
+M p.24 L04 | total number of actual cases. Panel B presents the sensitivity and precision of the model’s alert
+M p.24 L05 | classifications. An “alert” is defined as cases where the overall IPC phase is 3 or higher, signaling the
+M p.24 L06 | need for urgent action. Sensitivity is the proportion of correctly identified alert cases out of all actual
+M p.24 L07 | alert cases, while precision is the proportion of true alerts among all predicted alerts. Panel C displays
+M p.24 L08 | the out-of-sample R² for the percentage of the population classified in Phase 3 or worse. It plots the
+M p.24 L09 | predicted values against the actual observed values. In all three panels, forecasting and nowcasting
+M p.24 L10 | use the 2022 temporal holdout (n = 1,170 each), while contemporaneous results use pooled random
+M p.24 L11 | five-fold, row-level out-of-fold predictions (n = 5,575; seed 0). Evaluation populations and validation
+M p.24 L12 | protocols therefore differ across models.
+M p.24 L13 |                                                    24
+===== M PAGE 25 =====
+M p.25 L01 | Fig. 2 Bar Chart of SHAP Value of Forecasting and Nowcasting Features
+M p.25 L02 | Notes: These four panels display SHAP values, which quantify the contribution of individual vari-
+M p.25 L03 | ables or variable groups to food insecurity predictions. Panel A presents the SHAP values of the top
+M p.25 L04 | individual variables in the forecasting model for Phase 3+ (top figure) and Phase 4+ (bottom figure).
+M p.25 L05 | Panel B shows the SHAP values of the top variables in Layer 2 of the nowcasting model, again for
+M p.25 L06 | Phase 3+ (top) and Phase 4+ (bottom). Panel C displays SHAP values aggregated by variable group
+M p.25 L07 | in the forecasting model, with Phase 3+ results shown in green and Phase 4+ in blue. Variables are
+M p.25 L08 | grouped into: food prices, physical geography (Geo), agriculture and land productivity (Agri), con-
+M p.25 L09 | flict, economic conditions (Econ), and weather conditions. Panel D presents the SHAP values of the
+M p.25 L10 | same variable groups, but for Layer 2 of the nowcasting model. In the graph, a variable name ending
+M p.25 L11 | with “+” indicates it is lagged by 12 months, while a name ending with “” denotes a 12-month mov-
+M p.25 L12 | ing average.
+M p.25 L13 |                                                  25
+===== M PAGE 26 =====
+M p.26 L01 | Fig. 3 Ensemble Model Procedure Overview
+M p.26 L02 | Notes: This flowchart illustrates the estimation process for IPC outcome variables, namely the overall IPC
+M p.26 L03 | phase and the percentage of the population falling into each phase. The structure follows the classification
+M p.26 L04 | logic outlined in the FAO IPC Manual [3]. We employ four separate XGBoost regression models to estimate
+M p.26 L05 | the share of the population falling into: (i) Phase 2 or higher, (ii) Phase 3 or higher, (iii) Phase 4 or higher,
+M p.26 L06 | and (iv) Phase 5. These outputs are combined to generate predicted population distributions across IPC
+M p.26 L07 | phases. The overall IPC phase classification is then assigned based on a threshold rule: if at least 20% of
+M p.26 L08 | the population is predicted to be in Phase 5, the area is classified as IPC Phase 5; if less than 20% is in
+M p.26 L09 | Phase 5 but at least 20% is in Phase 4 or higher, it is classified as Phase 4, and so on, down to Phase 1.
+M p.26 L10 |                                                       26
+===== M PAGE 27 =====
+M p.27 L01 | Fig. 4 Distribution of Overall Phase
+M p.27 L02 | Notes: Panel A displays the number of instances in each IPC AFI phase from 2017 to 2022. Phase 1:
+M p.27 L03 | Minimal, Phase 2: Stressed, Phase 3: Crisis, Phase 4: Emergency, Phase 5: Famine. Panel B presents the
+M p.27 L04 | percentage distribution of cases across IPC AFI phases for each year from 2017 to 2022. These descriptive
+M p.27 L05 | distributions use the overall phase labels recorded in the source data. Contemporaneous model evaluations
+M p.27 L06 | instead use phase labels reconstructed from the observed cumulative population shares using the 20%
+M p.27 L07 | threshold rule; class counts can therefore differ even when the same observations are included.
+M p.27 L08 |                                                    27
+===== M PAGE 28 =====
+M p.28 L01 | Table 1 Performance of Forecasting, Nowcasting, and Contemporaneous Models
+M p.28 L02 |                                                      Performance Metrics
+M p.28 L03 |                                           (1)             (2)             (3)         (4)
+M p.28 L04 |                                         Accuracy       Sensitivity     Precision      R2
+M p.28 L05 |  Panel A: Forecasting
+M p.28 L06 |  All Observations                          0.650          0.941           0.775      0.249
+M p.28 L07 |  Observations with Changed Phase           0.593          0.990           0.702        –
+M p.28 L08 |  Panel B: Nowcasting
+M p.28 L09 |  All Observations                          0.654          0.942           0.777      0.253
+M p.28 L10 |  Observations with Changed Phase           0.571          0.964           0.733        –
+M p.28 L11 |  Panel C: Contemporaneous
+M p.28 L12 |  All Observations                          0.693          0.904           0.797      0.642
+M p.28 L13 |   Notes: This table summarizes performance metrics for the forecasting, nowcasting, and contempora-
+M p.28 L14 |   neous models. Forecasting and nowcasting are trained on IPC data from 2017 to 2021 (n = 4,405)
+M p.28 L15 |   and evaluated on the 2022 temporal holdout (n = 1,170). Contemporaneous performance is computed
+M p.28 L16 |   from pooled random five-fold, row-level out-of-fold predictions for all 5,575 observations from 2017 to
+M p.28 L17 |   2022 (seed 0; 4,460 training and 1,115 test observations per fold). Accuracy is defined as the propor-
+M p.28 L18 |   tion of correctly identified IPC phases relative to the total number of actual cases. Sensitivity and
+M p.28 L19 |   precision assess the models’ ability to predict alerts, where an alert is defined as an overall IPC phase
+M p.28 L20 |   of 3 or higher, signaling the need for immediate action. Sensitivity is the proportion of true alert cases
+M p.28 L21 |   correctly identified, while precision is the proportion of true alerts among all predicted alerts. The
+M p.28 L22 |   out-of-sample R2 value reflects the model’s performance in predicting the percentage of the popula-
+M p.28 L23 |   tion classified as Phase 3 or worse.
+M p.28 L24 |   For forecasting and nowcasting, performance is reported for two subsets of the test data: “All Obser-
+M p.28 L25 |   vations,” which includes all records in the test set, and “Observations with Changed Phases,” which
+M p.28 L26 |   includes only those test set observations where the overall IPC phase differs from that in the most
+M p.28 L27 |   recent training set assessment. This distinction helps isolate performance in dynamically changing
+M p.28 L28 |   conditions.
+M p.28 L29 |                                                      28
+===== M PAGE 29 =====
+M p.29 L01 | Supplementary Figures
+M p.29 L02 | Supplementary Fig. 1 Uneven Observation Frequency Across Analysis Areas
+M p.29 L03 | Notes: The histogram shows the number of observations available for each analysis area in the
+M p.29 L04 | contemporaneous modeling sample. The horizontal axis gives the number of observations associated with
+M p.29 L05 | an individual area id, and the vertical axis gives the number of unique analysis areas with that
+M p.29 L06 | observation frequency. The sample contains 5,575 observations from 1,198 unique analysis areas.
+M p.29 L07 | Observation frequency is strongly unbalanced: 510 areas (42.6%) appear no more than twice, the median
+M p.29 L08 | area appears three times, and the maximum number of observations for a single area is 20. This imbalance
+M p.29 L09 | motivates reporting row-level cross-validation results separately from validation designs that explicitly
+M p.29 L10 | account for repeated observations or geographic grouping.
+M p.29 L11 |                                                    29
+===== M PAGE 30 =====
+M p.30 L01 | Supplementary Fig. 2 Top 30% Predicted and Observed Food-Insecure Areas by Population Share
+M p.30 L02 | in Food Crisis
+M p.30 L03 | Notes: The maps compare the spatial distribution of analysis areas in the highest 30% of the population
+M p.30 L04 | share experiencing food crisis. Red areas in the upper panel indicate locations predicted, 12 months in
+M p.30 L05 | advance, to fall within the top 30%, while red areas in the lower panel indicate locations in the top 30%
+M p.30 L06 | based on observed outcomes. The remaining evaluated areas are shown in green. Using the same threshold
+M p.30 L07 | facilitates comparison of the geographic concentration and correspondence between predicted and
+M p.30 L08 | observed high-risk areas. Gray background regions and place labels are provided only for geographic
+M p.30 L09 | reference and do not indicate the availability of evaluation observations.
+M p.30 L10 |                                                    30
+===== M PAGE 31 =====
+M p.31 L01 | Supplementary Fig. 3 Temporal Validation for Forecasting Hyperparameter Selection
+M p.31 L02 | Notes: Forecasting hyperparameters were selected using four expanding-window temporal validation folds
+M p.31 L03 | restricted to 2017–2021, adapted from [8]. Training began with 2017, followed by validation in 2018;
+M p.31 L04 | subsequent folds expanded training annually and validated in 2019, 2020 and 2021. The 2022 observations
+M p.31 L05 | were excluded from every tuning fold. For final forecasting and nowcasting evaluation, observations from
+M p.31 L06 | 2017–2021 formed the training set and 2022 observations formed the fixed held-out test set. Nowcasting
+M p.31 L07 | and contemporaneous models were evaluated with fixed hyperparameters, without separate
+M p.31 L08 | hyperparameter searches.
+M p.31 L09 |                                                   31
+===== M PAGE 32 =====
+M p.32 L01 | Supplementary Fig. 4 IPC Predictions Before and After Combined Phase 4/5 Rescue
+M p.32 L02 | Notes: For the contemporaneous panels, actual phases are reconstructed from the observed cumulative
+M p.32 L03 | population shares using the model’s 20% threshold rule, rather than taken from the source-table phase
+M p.32 L04 | labels used in Fig. 4. Rows show forecasting (a–b), nowcasting (c–d), and contemporaneous modeling
+M p.32 L05 | (e–f). Left panels retain five predicted IPC classes. Right panels display four predicted categories (P1, P2,
+M p.32 L06 | P3, combined P4/5), summing the stored P4 and P5 columns. Both sides retain all five actual classes and
+M p.32 L07 | identical observations. Rescue promotes eligible baseline P3 predictions to combined P4/5; it does not
+M p.32 L08 | distinguish P4 from P5 or establish improved full five-class classification. Cells report counts and
+M p.32 L09 | percentages within each actual phase; shading represents the same within-class share. Forecasting and
+M p.32 L10 | nowcasting use the square-root-balance policy on the 2022 temporal holdout (n = 1,170 each).
+M p.32 L11 | Contemporaneous uses the full-balance policy and seed-0 random five-fold row-level OOF predictions
+M p.32 L12 | (n = 5,575), with its threshold selected from pooled OOF results. Protocols and populations differ across
+M p.32 L13 | rows, so cross-row performance is not directly comparable.
+M p.32 L14 |                                                      32
+===== M PAGE 33 =====
+M p.33 L01 | Supplementary Fig. 5 Actual and Predicted Cumulative IPC Population Shares
+M p.33 L02 | Notes: These diagnostics assess cumulative population-share predictions, not probabilities that an area
+M p.33 L03 | experiences a food crisis. Columns show forecasting, nowcasting, and contemporaneous estimates. Rows
+M p.33 L04 | show IPC Phase 2+ (panels a–c), Phase 3+ (panels d–f), and Phase 4+ (panels g–i). Each point
+M p.33 L05 | represents one observation, with predicted share on the horizontal axis and observed share on the vertical
+M p.33 L06 | axis. Orange lines regress observed shares on predicted shares; dashed gray lines show equality (y = x).
+M p.33 L07 | Intercept 0 and slope 1 are the linear-calibration reference. Reported R2 compares the original share
+M p.33 L08 | predictions with observations, rather than measuring the orange line’s fit. Forecasting and nowcasting use
+M p.33 L09 | the 2022 temporal holdout (n = 1,170 per panel); contemporaneous estimates use random five-fold OOF
+M p.33 L10 | predictions (n = 5,575 per panel). Statistics are descriptive and not directly comparable across columns
+M p.33 L11 | because evaluation protocols and populations differ.
+M p.33 L12 |                                                    33
+===== M PAGE 34 =====
+M p.34 L01 | Supplementary Fig. 6 Binary Confusion Matrices for the Phase 4/5 Rescue Models
+M p.34 L02 | Notes: The matrices summarize binary classification performance for identifying observations in IPC
+M p.34 L03 | Phase 4 or 5 under three class-weighting policies: unweighted, square-root balance, and full balance. Rows
+M p.34 L04 | correspond to forecasting, nowcasting, and contemporaneous models, while columns correspond to the
+M p.34 L05 | three weighting policies. “Actual 0” denotes observations below Phase 4, and “Actual P4/5” denotes
+M p.34 L06 | observations in Phase 4 or 5. Each cell reports the observation count and the percentage within the
+M p.34 L07 | corresponding actual-class row. Black borders identify the primary policy selected separately for each
+M p.34 L08 | modeling task using out-of-fold (OOF) results. Forecasting and nowcasting are evaluated on the fixed 2022
+M p.34 L09 | temporal holdout (n = 1,170 each), whereas the contemporaneous model uses seeded random five-fold,
+M p.34 L10 | row-level OOF predictions (n = 5,575), with its threshold selected from the pooled OOF predictions.
+M p.34 L11 | Because the validation protocols and evaluation populations differ, performance should not be compared
+M p.34 L12 | directly across modeling tasks.
+M p.34 L13 |                                                    34
+===== M PAGE 35 =====
+M p.35 L01 | Supplementary Tables
+M p.35 L02 |       Supplementary Table 1: Model Performance Relative to Simpler
+M p.35 L03 |       Benchmark Models
+M p.35 L04 |   Model             Accuracy    Sensitivity   Precision          R2
+M p.35 L05 |   Panel A: Persistence baseline
+M p.35 L06 |   Forecasting         0.510         0.612      0.853            –
+M p.35 L07 |   Nowcasting          0.588         0.745      0.745            –
+M p.35 L08 |   Panel B: Simpler classification
+M p.35 L09 |   Forecasting         0.491         0.613      0.793            –
+M p.35 L10 |   Nowcasting          0.490         0.564      0.825            –
+M p.35 L11 |   Contemporaneous     0.654         0.792      0.840            –
+M p.35 L12 |   Panel C: Simpler regression
+M p.35 L13 |   Forecasting         0.533         0.689      0.784         -0.796
+M p.35 L14 |   Nowcasting          0.545         0.694      0.794         -0.930
+M p.35 L15 |   Contemporaneous     0.639         0.742      0.888          0.443
+M p.35 L16 |   Panel D: Simpler classification (+ missingness indicators)
+M p.35 L17 |   Forecasting         0.519         0.642      0.798            –
+M p.35 L18 |   Nowcasting          0.551         0.753      0.795            –
+M p.35 L19 |   Contemporaneous     0.663         0.805      0.845            –
+M p.35 L20 |   Panel E: Simpler regression (+ missingness indicators)
+M p.35 L21 |   Forecasting         0.544         0.712      0.792         -0.571
+M p.35 L22 |   Nowcasting          0.603         0.877      0.760         -0.496
+M p.35 L23 |   Contemporaneous     0.646         0.887      0.752          0.466
+M p.35 L24 |   Panel F: Simpler classification (drop 10% most-missing predictors)
+M p.35 L25 |   Forecasting         0.498         0.610      0.801
+M p.35 L26 |   Nowcasting          0.507         0.613      0.804
+M p.35 L27 |   Contemporaneous     0.647         0.785      0.836
+M p.35 L28 |   Panel G: Simpler regression (drop 10% most-missing predictors)
+M p.35 L29 |   Forecasting         0.534         0.689      0.788         -0.743
+M p.35 L30 |   Nowcasting          0.546         0.699      0.801         -0.756
+M p.35 L31 |   Contemporaneous     0.642         0.888      0.748          0.439
+M p.35 L32 |   Panel H: Simpler classification (drop 3 most-missing countries)
+M p.35 L33 |   Forecasting         0.489         0.608      0.794
+M p.35 L34 |   Nowcasting          0.488         0.544      0.843
+M p.35 L35 |   Contemporaneous     0.655         0.843      0.792
+M p.35 L36 |   Panel I: Simpler regression (drop 3 most-missing countries)
+M p.35 L37 |   Forecasting         0.531         0.686      0.783         -0.792
+M p.35 L38 |   Nowcasting          0.543         0.689      0.796         -0.931
+M p.35 L39 |   Contemporaneous     0.642         0.890      0.744          0.443
+M p.35 L40 |                                                       Continued on next page
+M p.35 L41 |                                    35
+===== M PAGE 36 =====
+M p.36 L01 |    Supplementary Table 1 (continued)
+M p.36 L02 |    Model                Accuracy      Sensitivity    Precision          R2
+M p.36 L03 |    Panel J: ML comparable to Panel A: persistence baseline
+M p.36 L04 |    Forecasting       0.672       0.918        0.804        0.243
+M p.36 L05 |    Nowcasting        0.675       0.914        0.811        0.254
+M p.36 L06 |    Panel K: ML comparable to Panel B, C, D & E
+M p.36 L07 |    Forecasting       0.650       0.941        0.775        0.249
+M p.36 L08 |    Nowcasting        0.654       0.942        0.777        0.253
+M p.36 L09 |    Contemporaneous   0.693       0.904        0.797        0.642
+M p.36 L10 |    Panel L: ML comparable to Panel F & G
+M p.36 L11 |    Forecasting       0.676       0.950        0.794        0.294
+M p.36 L12 |    Nowcasting        0.679       0.942        0.803        0.303
+M p.36 L13 |    Contemporaneous   0.690       0.905        0.794        0.637
+M p.36 L14 |    Panel M: ML comparable to Panel H & I
+M p.36 L15 |    Forecasting       0.672       0.931        0.797        0.291
+M p.36 L16 |    Nowcasting        0.686       0.938        0.810        0.250
+M p.36 L17 |    Contemporaneous   0.694       0.905        0.798        0.639
+M p.36 L18 |    Notes: This table compares the machine-learning models with persistence, ordered
+M p.36 L19 | probit, and OLS benchmarks. Accuracy evaluates overall IPC phase classification;
+M p.36 L20 | sensitivity and precision evaluate food-crisis classification; while out-of-sample R2
+M p.36 L21 | evaluates prediction of the population share in food crisis (Phase 3 or above).
+M p.36 L22 |                                          36
+===== M PAGE 37 =====
+M p.37 L01 | Supplementary Table 2 Model Performance for Alternative
+M p.37 L02 | Spatial Strategies
+M p.37 L03 |  Model          Accuracy       Sensitivity     Precision      R2
+M p.37 L04 |  Panel A: Exclusion of latitude and longitude
+M p.37 L05 |  Forecasting   0.674         0.954       0.789               0.217
+M p.37 L06 |  Nowcasting    0.676         0.954       0.794               0.223
+M p.37 L07 |  Panel B: k-nearest-neighbor spatial averages
+M p.37 L08 |  Forecasting   0.671         0.945       0.796               0.134
+M p.37 L09 |  Nowcasting    0.674         0.944       0.803               0.141
+M p.37 L10 |  Panel C: 200-km spatial averages
+M p.37 L11 |  Forecasting   0.666         0.935       0.802               0.131
+M p.37 L12 |  Nowcasting    0.673         0.936       0.804               0.136
+M p.37 L13 | Notes: All panels use the same 1,170 observations in the 2022
+M p.37 L14 | temporal holdout (646 areas, 27 countries), including 879 crisis
+M p.37 L15 | observations (75.1%). Models are trained on pre-2022 observations.
+M p.37 L16 | Panels B and C remove coordinates and add neighborhood averages
+M p.37 L17 | while retaining the original non-coordinate predictors. All metrics
+M p.37 L18 | are pooled over observations, not averaged across countries or folds.
+M p.37 L19 | Accuracy is five-class exact-match accuracy. Sensitivity and preci-
+M p.37 L20 | sion use IPC Phase 3 or above as the positive class. R2 evaluates the
+M p.37 L21 | observed Phase 3+ population share against predictions rounded
+M p.37 L22 | to two decimal places.
+M p.37 L23 |                                  37
+===== M PAGE 38 =====
+M p.38 L01 | Supplementary Table 3 Generalization to New Geographic
+M p.38 L02 | Areas
+M p.38 L03 |  Model         Accuracy     Sensitivity    Precision           R2
+M p.38 L04 |  Panel A: Leave-One-Country-Out
+M p.38 L05 |  Forecasting      0.652         0.949         0.774           -0.014
+M p.38 L06 |  Nowcasting       0.653         0.950         0.777           -0.007
+M p.38 L07 |  Panel B: Five-Fold Area-Level Cross-Validation
+M p.38 L08 |  Forecasting      0.649         0.908         0.798           0.165
+M p.38 L09 |  Nowcasting       0.656         0.914         0.802           0.170
+M p.38 L10 | Notes: Both panels pool predictions over the same 1,170 observa-
+M p.38 L11 | tions in the 2022 temporal holdout (646 areas, 27 countries), includ-
+M p.38 L12 | ing 879 crisis observations (75.1%). Training uses only pre-2022
+M p.38 L13 | observations outside the held-out country (Panel A; 27 evaluable
+M p.38 L14 | country folds) or area group (Panel B; five folds, seed 0). Each test
+M p.38 L15 | observation is evaluated once. Metrics are calculated after pooling
+M p.38 L16 | all held-out predictions, not by averaging country-level or fold-level
+M p.38 L17 | metrics. Accuracy is five-class exact-match accuracy; sensitivity and
+M p.38 L18 | precision use IPC Phase 3 or above as the positive class. R2 measures
+M p.38 L19 | prediction of the Phase 3+ population share. Negative R2 indicates
+M p.38 L20 | greater squared prediction error than the corresponding evaluation-
+M p.38 L21 | sample mean benchmark. Following the saved evaluation outputs,
+M p.38 L22 | Panel A rounds both actual and predicted shares to two decimals;
+M p.38 L23 | Panel B retains unrounded actual shares and rounds predictions to
+M p.38 L24 | two decimals. The table reports forecasting and nowcasting only,
+M p.38 L25 | not the contemporaneous main model.
+M p.38 L26 |                                  38
+===== M PAGE 39 =====
+M p.39 L01 |     Supplementary Table 4: Base Variables and Data Sources by Variable
+M p.39 L02 |     Group
+M p.39 L03 | Variable Name                                Dataset Source
+M p.39 L04 | Panel A: Physical Geography
+M p.39 L05 | Elevation                                    ERA5-Land
+M p.39 L06 | Ruggedness                                   Nunn, Nathan, and Diego Puga
+M p.39 L07 |                                              (2012)
+M p.39 L08 | Slope                                        ESA
+M p.39 L09 | Distance to rivers                           World Bank and Andreadis et al.
+M p.39 L10 |                                              (2013)
+M p.39 L11 | Panel B: Conflict
+M p.39 L12 | Event count of battles                       ACLED
+M p.39 L13 | Event count of explosions                    ACLED
+M p.39 L14 | Event count of violence against civilians    ACLED
+M p.39 L15 | Fatalities of battles                        ACLED
+M p.39 L16 | Fatalities of explosions                     ACLED
+M p.39 L17 | Fatalities of violence against civilians     ACLED
+M p.39 L18 | Reverse distance weight of fatalities in     ACLED
+M p.39 L19 | neighboring 5 stations
+M p.39 L20 | Reverse distance weight of fatalities in     ACLED
+M p.39 L21 | neighboring 10 stations
+M p.39 L22 | Reverse distance weight of event counts in   ACLED
+M p.39 L23 | neighboring 5 stations
+M p.39 L24 | Reverse distance weight of event counts in   ACLED
+M p.39 L25 | neighboring 10 stations
+M p.39 L26 | Panel C: Weather Conditions
+M p.39 L27 | Rainfall                                     CHIRPS
+M p.39 L28 | 2m temperature                               ERA5-Land
+M p.39 L29 | Standard deviation of 2m temperature         ERA5-Land
+M p.39 L30 | Surface solar radiation downwards            ERA5-Land
+M p.39 L31 | Standard deviation of surface solar radia-   ERA5-Land
+M p.39 L32 | tion downwards
+M p.39 L33 | Panel D: Food Prices
+M p.39 L34 | Distance to nearest food market              FAO FPMA
+M p.39 L35 | Food price index (reference-price normal-    FAO FPMA
+M p.39 L36 | ized)
+M p.39 L37 | WFP price change percentage (monthly)        WFP
+M p.39 L38 | WFP     spatial    food   price    disper-   WFP
+M p.39 L39 | sion(monthly)
+M p.39 L40 |                                                       Continued on next page
+M p.39 L41 |                                       39
+===== M PAGE 40 =====
+M p.40 L01 | Supplementary Table 4 (continued)
+M p.40 L02 | Variable Name                                 Dataset Source
+M p.40 L03 | Panel E: Economic
+M p.40 L04 | Estimated population                          IPC
+M p.40 L05 | CPI (2010 = 100)                              WBG (FP.CPI.TOTL)
+M p.40 L06 | GDP per capita                                WBG
+M p.40 L07 | Gini coefficient                              WBG
+M p.40 L08 | Control of corruption: percentile rank        WBG
+M p.40 L09 | LPI infrastructure score divided by 5         WBG (LP.LPI.INFR.XQ)
+M p.40 L10 | VIIRS nightlight mean                         VIIRS
+M p.40 L11 | Standard deviation of VIIRS nightlight        VIIRS
+M p.40 L12 | Market access                                 Market Access (Weiss, 2015)
+M p.40 L13 | Panel F: Agriculture and Land Productivity
+M p.40 L14 | Agricultural ecological zone                  Tricht et al. (2023)
+M p.40 L15 | GOSIF GPP                                     GOSIF-GPP
+M p.40 L16 | Standard deviation of GOSIF GPP               GOSIF-GPP
+M p.40 L17 | Soil volumetric water                         ERA5-Land
+M p.40 L18 | Standard deviation of soil volumetric water   ERA5-Land
+M p.40 L19 | Enhanced vegetation index                     NASA
+M p.40 L20 | Cropland mask                                 ASAP (European         Commission
+M p.40 L21 |                                               JRC)
+M p.40 L22 | Rangeland mask                                ASAP (European         Commission
+M p.40 L23 |                                               JRC)
+M p.40 L24 | Volumetric fraction of coarse fragments       ISRIC
+M p.40 L25 | Total nitrogen                                ISRIC
+M p.40 L26 | Soil pH value                                 ISRIC
+M p.40 L27 | Soil organic carbon content in the fine       ISRIC
+M p.40 L28 | earth fraction
+M p.40 L29 | Cation exchange capacity of the soil          ISRIC
+M p.40 L30 |                                        40
+===== M PAGE 41 =====
+M p.41 L01 | Supplementary Notes
+M p.41 L02 | We report the hyperparameter search space, temporal validation procedure, model-
+M p.41 L03 | selection criterion, and final effective parameter values here.
+M p.41 L04 | Hyperparameter tuning
+M p.41 L05 | Hyperparameter tuning was performed for forecasting. Nowcasting and contemporane-
+M p.41 L06 | ous models were subsequently evaluated with fixed hyperparameters, without separate
+M p.41 L07 | hyperparameter searches. The forecasting search exhaustively enumerated the Carte-
+M p.41 L08 | sian product of the eight hyperparameter grids shown below; it was not based on
+M p.41 L09 | random sampling. Tuning was conducted in two stages. We first selected the parame-
+M p.41 L10 | ters for the Phase 3+ cumulative target. In the second stage, the Phase 3+ component
+M p.41 L11 | was held fixed while parameter settings were selected for the Phase 2+, Phase 4+,
+M p.41 L12 | and Phase 5 cumulative targets. All 11,664 candidate configurations were evaluated
+M p.41 L13 | in each stage, corresponding to 23,328 candidate-configuration evaluations across the
+M p.41 L14 | two searches.
+M p.41 L15 | Temporal validation and selection criterion
+M p.41 L16 | Each candidate configuration was evaluated using four expanding-window temporal
+M p.41 L17 | validation folds: 2017 was used to train the first fold and 2018 for validation; 2017–2018
+M p.41 L18 | were used for training and 2019 for validation; 2017–2019 were used for training
+M p.41 L19 | and 2020 for validation; and 2017–2020 were used for training and 2021 for valida-
+M p.41 L20 | tion. The 2022 data were reserved exclusively for final holdout evaluation. Candidate
+M p.41 L21 | configurations were ranked by their mean validation score across the four folds:
+M p.41 L22 |                                                                     2
+M p.41 L23 |         Selection score = Accuracy + Precision + 5 × Sensitivity + RPhase 3+
+M p.41 L24 | Final Effective Parameter Values
+M p.41 L25 | Supplementary Table 5 reports the hyperparameter search space. The final effective
+M p.41 L26 | parameter values used to produce the reported predictions are listed below. The two
+M p.41 L27 | layers of the nowcasting model used the same parameter settings. The contemporane-
+M p.41 L28 | ous model used a common parameter set for all four cumulative targets. For the final
+M p.41 L29 | forecasting and nowcasting models, the Phase 2+ cumulative target used max depth =
+M p.41 L30 | 11, n estimators = 200, learning rate = 0.10, subsample = 1.0, colsample bytree
+M p.41 L31 | = 0.5, gamma = 0, min child weight = 0, and scale pos weight = 1. The Phase 3+,
+M p.41 L32 | Phase 4+, and Phase 5 cumulative targets used the same parameter set: max depth =
+M p.41 L33 | 9, n estimators = 200, learning rate = 0.10, subsample = 0.5, colsample bytree
+M p.41 L34 | = 0.7, gamma = 0.1, min child weight = 0, and scale pos weight = 1. For the con-
+M p.41 L35 | temporaneous benchmark, all four cumulative targets (Phase 2+, Phase 3+, Phase
+M p.41 L36 | 4+, and Phase 5) used max depth = 3, n estimators = 200, learning rate = 0.10,
+M p.41 L37 | subsample = 1.0, colsample bytree = 0.7, gamma = 0.1, min child weight = 0, and
+M p.41 L38 | scale pos weight = 1. All other parameters were left at the corresponding XGBoost
+M p.41 L39 | defaults. The released reproducible implementation fixes the estimator random state
+M p.41 L40 | at 0.
+M p.41 L41 |                                            41
+===== M PAGE 42 =====
+M p.42 L01 | Supplementary Table 5
+M p.42 L02 | Hyperparameter Search Space
+M p.42 L03 |  Hyperparameters    Search Space
+M p.42 L04 |  max depth          3, 7, 9, 11
+M p.42 L05 |  n estimators       200, 500, 800
+M p.42 L06 |  learning rate      0.01, 0.05, 0.08, 0.10
+M p.42 L07 |  subsample          0.5, 0.7, 1.0
+M p.42 L08 |  colsample bytree   0.5, 0.7, 1.0
+M p.42 L09 |  gamma              0, 0.1, 0.2
+M p.42 L10 |  min child weight   0, 1, 2
+M p.42 L11 |  scale pos weight   1, 2, 3
+M p.42 L12 |                     42
