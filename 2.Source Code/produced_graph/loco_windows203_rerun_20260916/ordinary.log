@@ -1,0 +1,37 @@
+[1/29] AFG: both models complete
+[2/29] BDI: both models complete
+[3/29] COD: both models complete
+[4/29] CAF: both models complete
+[5/29] DJI: both models complete
+[6/29] DOM: both models complete
+[7/29] ETH: both models complete
+[8/29] GTM: both models complete
+[9/29] HND: both models complete
+[10/29] HTI: both models complete
+[11/29] KEN: both models complete
+[12/29] LBN: both models complete
+[13/29] LSO: both models complete
+[14/29] MOZ: both models complete
+[15/29] MDG: both models complete
+[16/29] MWI: both models complete
+[17/29] PAK: both models complete
+[18/29] SOM: both models complete
+[19/29] SDN: both models complete
+[20/29] SLV: both models complete
+[21/29] SSD: both models complete
+[22/29] SWZ: both models complete
+[23/29] TJK: both models complete
+[24/29] TZA: both models complete
+[25/29] UGA: both models complete
+[26/29] YEM: both models complete
+[27/29] ZAF: both models complete
+[28/29] ZMB: both models complete
+[29/29] ZWE: both models complete
+metrics: 2.Source Code\produced_graph\loco_windows203_rerun_20260916\ordinary\leave_one_country_out_country_metrics.csv
+micro_metrics: 2.Source Code\produced_graph\loco_windows203_rerun_20260916\ordinary\leave_one_country_out_micro_metrics.csv
+forecasting_predictions: 2.Source Code\produced_graph\loco_windows203_rerun_20260916\ordinary\leave_one_country_out_forecasting_predictions.csv
+nowcasting_predictions: 2.Source Code\produced_graph\loco_windows203_rerun_20260916\ordinary\leave_one_country_out_nowcasting_predictions.csv
+source_audit: 2.Source Code\produced_graph\loco_windows203_rerun_20260916\ordinary\leave_one_country_out_source_audit.csv
+jpg: 2.Source Code\produced_graph\loco_windows203_rerun_20260916\ordinary\precision_recall_scatter_leave_one_country_out.jpg
+png: 2.Source Code\produced_graph\loco_windows203_rerun_20260916\ordinary\precision_recall_scatter_leave_one_country_out.png
+pdf: 2.Source Code\produced_graph\loco_windows203_rerun_20260916\ordinary\precision_recall_scatter_leave_one_country_out.pdf

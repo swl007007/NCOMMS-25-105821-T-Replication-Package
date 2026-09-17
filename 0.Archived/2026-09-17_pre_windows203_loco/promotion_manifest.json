@@ -1,0 +1,1850 @@
+{
+  "date": "2026-09-17",
+  "decision": "Select Windows Python 3.11.3 / XGBoost 2.0.3 reruns for both LOCO protocols.",
+  "archived": [
+    {
+      "original_path": "2.Source Code/produced_graph/strict_temporal_loco_area_macro_denominators.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/strict_temporal_loco_area_macro_denominators.csv",
+      "sha256": "8b30c5eb0934beac9d9aab28dd200df30f055d1065b21f4c8ec4e6b9b9b8a768"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/strict_temporal_loco_area_metrics.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/strict_temporal_loco_area_metrics.csv",
+      "sha256": "4e426579b27af597174000d849716e9339c8ecea9364d162277582da781fe8c4"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/strict_temporal_loco_fold_audit.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/strict_temporal_loco_fold_audit.csv",
+      "sha256": "f577ed40cf6da84ebba53a24f15a7c0ac104e70ccd153c92f099f9bf51a4cd94"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/strict_temporal_loco_forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/strict_temporal_loco_forecasting_predictions.csv",
+      "sha256": "2a87389954a4306011afee00f64467bdd088956fee1cff61f0e7daa993b17978"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/strict_temporal_loco_micro_metrics.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/strict_temporal_loco_micro_metrics.csv",
+      "sha256": "5729dcefc77970b1e4e957b80e3949fd90239c2435386dd57764e837927f2ac0"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/strict_temporal_loco_nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/strict_temporal_loco_nowcasting_predictions.csv",
+      "sha256": "d28dcbf4f5909fb70d69467b76b32aec0f2c2df71408a175b656392d9c561747"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/strict_temporal_loco_skipped_folds.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/strict_temporal_loco_skipped_folds.csv",
+      "sha256": "0a2f84f78abf00163347f6588b37e5579b621c2998cc2b003d5236c3b3649407"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/strict_temporal_loco_source_audit.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/strict_temporal_loco_source_audit.csv",
+      "sha256": "e310729cb7ea95c9eb1cc71299c3791cd88cba687cad68ccde49ac326e5ce396"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/AFG/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/AFG/forecasting_predictions.csv",
+      "sha256": "376a4ad586fddc6d65dde5144e812932574745256ceef4a0bd61ce5f1a4890cf"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/AFG/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/AFG/manifest.json",
+      "sha256": "55c7861c4faf6085649e1a3602b6b88c552b3836d04a5f82685597a1012b825b"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/AFG/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/AFG/nowcasting_predictions.csv",
+      "sha256": "0a90d7f7ecb9fd06d90b9755371bd7373bed08f85962947ea3ed9777cac7301b"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/BDI/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/BDI/forecasting_predictions.csv",
+      "sha256": "e262cbdec9ccc3570f14a2a4bde36a4f714d549160c72d3102e798ace5c2a3b9"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/BDI/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/BDI/manifest.json",
+      "sha256": "7de9b157180240e98afaf0fcd0a3c34b8ef94420e1174603e9fbc4b412172768"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/BDI/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/BDI/nowcasting_predictions.csv",
+      "sha256": "be3daa409d5b3882bdc93995b44aaaa4ca170746b3c0d6d6882305052a6f81f3"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/CAF/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/CAF/forecasting_predictions.csv",
+      "sha256": "7291d9eafe830779308bbee6c06a034a645310165c6255f45061cfec58dd5b33"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/CAF/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/CAF/manifest.json",
+      "sha256": "6a7a3d6a06b009b17d3358487c530a265b866a24cbdeaa476aa5007eb08530c3"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/CAF/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/CAF/nowcasting_predictions.csv",
+      "sha256": "529eca39eae1c02c21ff3cee35e71e6558b7a49cbe34575407eb1587205cd4bc"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/COD/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/COD/forecasting_predictions.csv",
+      "sha256": "5c4e2c179c5db66e77c3d55ad6501b32c019e562aac8271f00a780c50bcab5a9"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/COD/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/COD/manifest.json",
+      "sha256": "42bc6f4a0579daad0cb5a38d7ce788548800decd2c192c6e367269342069d5b5"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/COD/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/COD/nowcasting_predictions.csv",
+      "sha256": "0dddd449951d08ab2ae840bfc3558f21c4a1c4c9ee360aac28f95438edcb01b4"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/DJI/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/DJI/forecasting_predictions.csv",
+      "sha256": "92687faa89efe72fb5a698069cb976731db3db7dbafffa5be5a822de356d2e5e"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/DJI/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/DJI/manifest.json",
+      "sha256": "557e6dba54e1e57601d56a3197478daa5d288c8edbd06f484bad121b5345061b"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/DJI/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/DJI/nowcasting_predictions.csv",
+      "sha256": "e06dc77c3cd32fccebe090b3b4688d3b54a0d92c6f9600554b24f71df79054b0"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/DOM/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/DOM/forecasting_predictions.csv",
+      "sha256": "5c9e69b3c5c2100b74c87b7e09160ad8983f2a7f36a4a6f8b6ddc7cd28ec6f34"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/DOM/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/DOM/manifest.json",
+      "sha256": "4d6de399a122de1b9245c81aef23f2a5f4e7546be5ef507f9dcbdf9a0452f7af"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/DOM/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/DOM/nowcasting_predictions.csv",
+      "sha256": "b6d82da3c55f7b2cdd08dcd61b2ab3cfd3cfa66a91d385cde5cf6e9aa45a783a"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/ETH/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/ETH/forecasting_predictions.csv",
+      "sha256": "0de232bf010cbc031bf443bc07bd47592757666b44f643cd7cf7941e5675fd6e"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/ETH/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/ETH/manifest.json",
+      "sha256": "c71caac5a9636ce55612b05a5aa6a00eddf9e44383c2ecd3a5619a99c1f6da3c"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/ETH/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/ETH/nowcasting_predictions.csv",
+      "sha256": "2eebd6fcac4a675b187b0b4c6975a3ecdbd3a92daa2718dce852ade6e8b89ae4"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/GTM/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/GTM/forecasting_predictions.csv",
+      "sha256": "36c12bcbda5178cb6e9e409e764d4ac679f58f8819e0091cd50b02e112451d97"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/GTM/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/GTM/manifest.json",
+      "sha256": "e58242e406d9666348b09967d9a3be8c8bf122ec6514c229fcbb44d1dcfd81aa"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/GTM/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/GTM/nowcasting_predictions.csv",
+      "sha256": "81ec87cc122e7f9138ff9c504cd8d99e78e7450216d03bb7f2a66948aebaf379"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/HND/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/HND/forecasting_predictions.csv",
+      "sha256": "c89503156ecf470dc891c8633c020648ce4ae4e38182da09c353c5395da33a64"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/HND/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/HND/manifest.json",
+      "sha256": "f9c87a915d9b8d7deb60178afb281bf0ba795657bc64ecf3bc7c62f5de346d82"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/HND/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/HND/nowcasting_predictions.csv",
+      "sha256": "606549f3a1354204156251b316f9bd0cf73e5570acff842a308905589fc1a905"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/HTI/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/HTI/forecasting_predictions.csv",
+      "sha256": "ba6c317b2464f12635abe1160af67ed8ac1e1e3bd5a38ce7a538a1ac0c66d29a"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/HTI/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/HTI/manifest.json",
+      "sha256": "e47d579243419fc97aa56a27b1ff512977a7c0e1b300d906dcf6e7fbbc2deefc"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/HTI/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/HTI/nowcasting_predictions.csv",
+      "sha256": "af32af8c0b75ecd0d7ab38212df4ac8d0ce7fdfef915140b51cfbe94ff62023c"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/KEN/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/KEN/forecasting_predictions.csv",
+      "sha256": "13d4476ede03e11514ae010097446d1b066a36514c47282b6e2ecab4c67927f9"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/KEN/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/KEN/manifest.json",
+      "sha256": "6e062a7ac0e0d7089366b4d255eaa4922f3a1a4aebdf289cd069f9cc17912bcb"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/KEN/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/KEN/nowcasting_predictions.csv",
+      "sha256": "bf488f6a894b6e6c4d2aaef8aa116089034259b66e8f835c0f682df900ba75f7"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/LBN/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/LBN/forecasting_predictions.csv",
+      "sha256": "51367f5fa8096faaa5ae3f8f4edc4878b83cc7a59d9b97ca787c000a9b96e44f"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/LBN/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/LBN/manifest.json",
+      "sha256": "fe212b5a0b133b140a54470be4a41d966d67bd0c1345385fe133ecf0d3477bd6"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/LBN/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/LBN/nowcasting_predictions.csv",
+      "sha256": "79c75038a9dab377c98b15979d672710bb226c369be7b08b0a08a4db036f5777"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/MDG/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/MDG/forecasting_predictions.csv",
+      "sha256": "9f7df0a7711de00fbd3860ed8b0afb35622870b0384c734b08d48cfecb74737e"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/MDG/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/MDG/manifest.json",
+      "sha256": "c1a4cfae043c844173b74ba6fd918f2cf17265a574e02fd8546e356de94ab0d7"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/MDG/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/MDG/nowcasting_predictions.csv",
+      "sha256": "87a60e4789e8f76ca2f062b8d77b9e1ee5dc0e1a3b3ffedb398c237121842fdb"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/MOZ/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/MOZ/forecasting_predictions.csv",
+      "sha256": "57454834cc259016e5fc3015d9dcd58f4735880da471e4135339eeeaf89427ed"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/MOZ/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/MOZ/manifest.json",
+      "sha256": "7dec65a3a10abb0a8f293f015153379d757570b184dc8b785d701aa6c8344514"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/MOZ/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/MOZ/nowcasting_predictions.csv",
+      "sha256": "84847c3bc24b6d1eb76cd076ccfe30238f3e6ebc8033c47a6d5db2bf4e112ae1"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/MWI/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/MWI/forecasting_predictions.csv",
+      "sha256": "416fb53bc5f2b7f9e252fc2d4735a3ae3f3d19628e50abe37b50821a68316aba"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/MWI/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/MWI/manifest.json",
+      "sha256": "6ef1db3241d27027acfc8e541bb8442157d1d4a198bbed05a7e442d38603864c"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/MWI/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/MWI/nowcasting_predictions.csv",
+      "sha256": "21d9d495a92978b25378130f3582a9032a9900f09fe75eeac86a36c725f106ab"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/PAK/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/PAK/forecasting_predictions.csv",
+      "sha256": "1f6fe8fc1c1201ca7697617f7911329538bd7feb76b0e3152885a9412ce7ded1"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/PAK/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/PAK/manifest.json",
+      "sha256": "d95e973f7a1e8775107d88724fdad48b4f5fb430c8e129ff3df7489237694069"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/PAK/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/PAK/nowcasting_predictions.csv",
+      "sha256": "6c5751ae9daadc0a8500eb3e928a9004e3d73010a62afba77064d33d252e01f8"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SDN/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SDN/forecasting_predictions.csv",
+      "sha256": "d6b2d97bc43c2272d3525acf45e47ad9246f679aad4497451b45cb395f22b2fb"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SDN/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SDN/manifest.json",
+      "sha256": "c5948e5caaa4bde5e1da35692b00eba9026374b91d9ab20d0694a62dd411e1d6"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SDN/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SDN/nowcasting_predictions.csv",
+      "sha256": "8e952ad35e65fe01da4a62bd4f2c5ac274d5c0f89de20e17bfa0b442c8484d30"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SLV/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SLV/forecasting_predictions.csv",
+      "sha256": "9b479040f787de45ebc789d314c7dc9f757fb04b5e2e2aeb748ade44db6fd161"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SLV/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SLV/manifest.json",
+      "sha256": "2b39e4bf38760aa2613793b6e3f554af8c1ae707f44ea3297806d227168df581"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SLV/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SLV/nowcasting_predictions.csv",
+      "sha256": "edac9e561018bb0d50243021851b33da6aa0161ebd64a60ebcbf24e03ffdccd3"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SOM/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SOM/forecasting_predictions.csv",
+      "sha256": "cd2b3caae4b81f102c88c08581c3ecc508382e6f670fe8057ca67691258e52cb"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SOM/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SOM/manifest.json",
+      "sha256": "bb9944db1cd2755f249a1805b75089e7bb1f296fb43f5931c4b5de0765794369"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SOM/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SOM/nowcasting_predictions.csv",
+      "sha256": "7b7a97bae20a6bd44c857833e9ecf75b5d66816efaf64eb7eeec48d05eb6a4a4"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SSD/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SSD/forecasting_predictions.csv",
+      "sha256": "09a5c9190f5a93ba2b31c9322d6a0cab491533e92f2e1a7b8762558c6ea821cd"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SSD/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SSD/manifest.json",
+      "sha256": "49277999d5bec018bf3fa560a7ffa08ac1173c5e70bc9ec9362e9d089fcfa6a6"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SSD/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SSD/nowcasting_predictions.csv",
+      "sha256": "8ffd3ed84d6c35972ed73015797d4f54454bfd6b2f3b7b6058a15cec9f197fb4"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SWZ/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SWZ/forecasting_predictions.csv",
+      "sha256": "f2b6671e6f3a7c9b4b9a5ab5e26c330e4a0c13bd86e0f16228b0835222837df4"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SWZ/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SWZ/manifest.json",
+      "sha256": "6bdf2e544a5cfd016a59b4fca13f7188ab5342bc9c923b5308e8257f552124c1"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SWZ/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SWZ/nowcasting_predictions.csv",
+      "sha256": "6021b7194d407f1b8e455e76796064c68ff97747c7b8c874168c33bca1e968a2"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/TJK/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/TJK/forecasting_predictions.csv",
+      "sha256": "020e8dcf698fb3b8223ebd1f2e78af5c0e0b20dc18c6587b18c8d5fddbb56ee8"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/TJK/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/TJK/manifest.json",
+      "sha256": "93aa73c0334f9bea37380f8790b3092dd368296a22ccc56b2873693f8176c64f"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/TJK/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/TJK/nowcasting_predictions.csv",
+      "sha256": "beb8fe583ac16ed39dc41006cb31e198e1bd0100dcaa8b9b83d6a2bd482122c7"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/TZA/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/TZA/forecasting_predictions.csv",
+      "sha256": "745c4f4eaf20e20492478033548569045889ad440ee2425fb5a1cbb999fa50ac"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/TZA/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/TZA/manifest.json",
+      "sha256": "5e25186bc707202c37b690ba9e946fd8116e6ee5349bc5264369fce0a77783af"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/TZA/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/TZA/nowcasting_predictions.csv",
+      "sha256": "70c0aa77f751d445106fd0c95985971d08e26e0835e4ac6a2de569c7c30bd427"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/UGA/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/UGA/forecasting_predictions.csv",
+      "sha256": "2e0ae49dd28dcb4f99fe6e7d2fa56910b92c251d85684f30f443ad4711ac21c8"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/UGA/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/UGA/manifest.json",
+      "sha256": "0510b3691eb223f79173a42083e3b67810de63e9edb9c0bde4e376993816efea"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/UGA/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/UGA/nowcasting_predictions.csv",
+      "sha256": "a081e760b920f7a45c4c5e49445af1e4650f17d51b53c60cc2f550b50d75f7a0"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/YEM/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/YEM/forecasting_predictions.csv",
+      "sha256": "c33f714b7ac8bee2bf7697e483c72aa27db5ec00512a6892313416ca26691d4a"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/YEM/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/YEM/manifest.json",
+      "sha256": "582ca7ec1e1fb11dd507b7567a6be9b9a6ac6dbb89af5022ed7325999de94ca3"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/YEM/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/YEM/nowcasting_predictions.csv",
+      "sha256": "e4ed2f71a61eb7cc14fa8a90767eb3b0acdc996bd3808807adba2bcfd20fff8f"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/ZAF/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/ZAF/forecasting_predictions.csv",
+      "sha256": "1e2a2ad94ae4f13905e8fc26a7d975822ce56be5074d071e619a6880f9bbd490"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/ZAF/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/ZAF/manifest.json",
+      "sha256": "1577c3da007805f1846616ca76936be6d87ae6f4f1fc2f96ce19a31a12059e12"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/ZAF/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/ZAF/nowcasting_predictions.csv",
+      "sha256": "71783bb2d2157437e35fd82784e0a886856d441ce51f6061c7b7caa8db4ff0ca"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/ZMB/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/ZMB/forecasting_predictions.csv",
+      "sha256": "a68ff9db23d2cac736531004430f817895d3aa0b3adbec8d9fb96fcf4f29bef7"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/ZMB/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/ZMB/manifest.json",
+      "sha256": "f41ffbca41d3ab7a3c9dd64c4a01e87a049141d5548ddfac3fb013b20eb36927"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/ZMB/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/ZMB/nowcasting_predictions.csv",
+      "sha256": "cb9e1f608431fe45545ee5d6755cebb5ed5702a6d3c67ec2554856cf0c3af927"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/AFG/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/AFG/forecasting_predictions.csv",
+      "sha256": "24c70c4833b22e38768623d2820dcb5bd2afde8b5b1c7d1eaddc23cefaed93bb"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/AFG/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/AFG/manifest.json",
+      "sha256": "67633703ff6db48f887b8124859a643e62fdc8f5dac48d3018e475c686e24bec"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/AFG/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/AFG/nowcasting_predictions.csv",
+      "sha256": "ffbb131fa076a09cb8a7d0109fe77f279813d6fbeb5025d3624db340760942fd"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/BDI/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/BDI/forecasting_predictions.csv",
+      "sha256": "7464c10814e0102a64924a3ad768fd98f083b5ef018ea0298ccba4f01b581224"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/BDI/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/BDI/manifest.json",
+      "sha256": "409c0af50037e35828e1270eec7de76745a68520ae6245ea6ff98c461a7112f1"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/BDI/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/BDI/nowcasting_predictions.csv",
+      "sha256": "56508b21d315d96c50b4c42c8d386cbe9d7997a15e4cf74e00af5cfe8a18a0a5"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/CAF/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/CAF/forecasting_predictions.csv",
+      "sha256": "05a702a07d7c9e314de21ce88ff32b584d35ad535fa09cfe8b6c32a6c2039e76"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/CAF/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/CAF/manifest.json",
+      "sha256": "2f6a7beda5327e6c3a37bda7f785e5169745d770f8e1f3829a07f03817b47e2b"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/CAF/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/CAF/nowcasting_predictions.csv",
+      "sha256": "6a0e550c543a674d15c2687cd69698272c53d2fe0bfec7335d63dc75fef1b2c2"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/COD/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/COD/forecasting_predictions.csv",
+      "sha256": "28da8084aebb9269d4aba69132a897f94b03ef532195d68a085c0c26714956fd"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/COD/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/COD/manifest.json",
+      "sha256": "450ffeacdaac6d7091450702457f7dec2a3f3b1584c2115496e328e14e631052"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/COD/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/COD/nowcasting_predictions.csv",
+      "sha256": "b8eb1d0a4a99969016567bb42a4009e93e8e1bc74f1a395275dd05fc00a49f08"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/DJI/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/DJI/forecasting_predictions.csv",
+      "sha256": "3dd37a1588e2ddfcb61da827fe7c87f55d82452f9f8fb4f002472b1108c9cea8"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/DJI/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/DJI/manifest.json",
+      "sha256": "e16f1322072dc4f52d4c676901925d2ee5d40155ab370bbcdd8f4db666150dfd"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/DJI/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/DJI/nowcasting_predictions.csv",
+      "sha256": "098cc1c37b6c17ba2b7609c0769f4cee62a4e414aa2875df479d089c43cbdf2c"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/DOM/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/DOM/forecasting_predictions.csv",
+      "sha256": "f6b44cd8b4e53e981819c9a49004c04155d4ff19e40463c801e75fbae5f3a898"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/DOM/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/DOM/manifest.json",
+      "sha256": "e131bacd6d81c055bb2fde20fafde147d8981aadab6c34a38a462b9a69483d78"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/DOM/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/DOM/nowcasting_predictions.csv",
+      "sha256": "5c87da18d8b39d4afa87fd2ccc60d6e7390b780c4647dd3e61a8b6edb671307e"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/ETH/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/ETH/forecasting_predictions.csv",
+      "sha256": "8fe89f9f06e35d93d46e1a31ef49e930de05d2d0e832e399d5dc2f2d8cbce23a"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/ETH/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/ETH/manifest.json",
+      "sha256": "9b46e6d69dc041b782679b501432657859e6ec10007931248ef7ab6f1fabf285"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/ETH/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/ETH/nowcasting_predictions.csv",
+      "sha256": "c3f92e8d1b134f8bb814a8f9f37ae3b0944c69d2755e063d944f00823a05d27e"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/GTM/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/GTM/forecasting_predictions.csv",
+      "sha256": "3ce80e83da02a14f37f3978ac6b3c6a3141678461626ab13da223d8ac72054ef"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/GTM/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/GTM/manifest.json",
+      "sha256": "03e02b1966f0543af24834fc2ab938326e92311d7bca76fa7ca2718584d665af"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/GTM/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/GTM/nowcasting_predictions.csv",
+      "sha256": "e17974ca72618e0a6cc80fb40aabad005d1fa79889b23f6cada604e40275460a"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/HND/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/HND/forecasting_predictions.csv",
+      "sha256": "3d02e163c9ec08d543fe30479c0408f6622a644bf40fa346e4ac91e4288b960b"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/HND/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/HND/manifest.json",
+      "sha256": "33924c4730653a2384d5bef3a2178150e1e1d1248cecc637a6027e7e4acd7c30"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/HND/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/HND/nowcasting_predictions.csv",
+      "sha256": "e8182c882d504e3ea48bee56e05103ce9f4e5ec53875caeaf4825da8af8e5fe7"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/HTI/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/HTI/forecasting_predictions.csv",
+      "sha256": "086cba5ced26b9f66dead7c45f69679ec2dbe1f81c74fb3d75632a3d43eb4081"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/HTI/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/HTI/manifest.json",
+      "sha256": "f832177c5cc83f16b8b995a12f57eb1d6c55f29fd8ae6309d19618329cd71000"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/HTI/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/HTI/nowcasting_predictions.csv",
+      "sha256": "9e50f6fd9a74576fdd2483386b27ee821cd57e6e889f7c826ccce6248e8c3c51"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/KEN/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/KEN/forecasting_predictions.csv",
+      "sha256": "21f683282bacc2b71bd84c7333d631cd93ed232cf8d296e3c1e0dc2dfc5059de"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/KEN/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/KEN/manifest.json",
+      "sha256": "4754cf2712f86a0f2b70537201fc8db1e9a94c419d18a13993867a17b666e182"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/KEN/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/KEN/nowcasting_predictions.csv",
+      "sha256": "c1aba2ed87d6ad3a2cfcc724a2cee6a83d284566208a17bb1437e765beec928e"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/LBN/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/LBN/forecasting_predictions.csv",
+      "sha256": "c5f190b840ebe3cf5ebe40778419c3ac44b0037e0c276f55ab0140b41f992aba"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/LBN/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/LBN/manifest.json",
+      "sha256": "c442f46f6bb38667b54480aed2eee93de8a97881db4504317a7794b55a6f6143"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/LBN/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/LBN/nowcasting_predictions.csv",
+      "sha256": "48b200eefd07c6129242da5c68aab2ef30ed3b00beff5e1f5915a8496ab81ad9"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/LSO/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/LSO/forecasting_predictions.csv",
+      "sha256": "c6df91f469a0d7f88614cd39c579558d3233ec2f6a50f8c034d8a767ea1fd911"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/LSO/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/LSO/manifest.json",
+      "sha256": "48e0a54fc8389de6c68964892e80ac7b2145c8ce34b84af2a5f3912f3db46ebd"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/LSO/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/LSO/nowcasting_predictions.csv",
+      "sha256": "899f8f874de44dee3b6e85f7bab766d3942fcd2ebf1e34f8dde52cfbd80ee764"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/MDG/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/MDG/forecasting_predictions.csv",
+      "sha256": "eb905a84289829957b04210d14733c39fc5d7e77dc4303bc031087fc670217f3"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/MDG/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/MDG/manifest.json",
+      "sha256": "7fecb1ee9a2104d42bf7241e487c1894b0df41e618014b937b5933e439e78a89"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/MDG/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/MDG/nowcasting_predictions.csv",
+      "sha256": "f496a25c8131a1c3d7703ae6702ad30d73517bbe236846f3b2b051b63f6f9fa8"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/MOZ/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/MOZ/forecasting_predictions.csv",
+      "sha256": "40e83fcefd04b9bdc5b7a8c2fc092586fd32c54920bb7fca32d98ec36b81bfb0"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/MOZ/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/MOZ/manifest.json",
+      "sha256": "8ebd9bc19020e101e05d24f4baa1f26910d2c6d10e7ba833feb57ff38a91ef09"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/MOZ/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/MOZ/nowcasting_predictions.csv",
+      "sha256": "7ca206247ad99d575681a9ec5f45c6c13b2a8c866b470a4e631f088d3af8c974"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/MWI/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/MWI/forecasting_predictions.csv",
+      "sha256": "6dc5ce980aba8048cc54a79281dcbcfa5a6d1d56dd8675ce417d09d5077b3966"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/MWI/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/MWI/manifest.json",
+      "sha256": "7a774ae2a31a6f4c9c18cf6817399d58d66317410bed6b7b93bc161d0fcab4b5"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/MWI/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/MWI/nowcasting_predictions.csv",
+      "sha256": "01ebf32c992e823e17a0a355a5d27067c9924d69df30dd98bc9a8a6c75c9a835"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/PAK/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/PAK/forecasting_predictions.csv",
+      "sha256": "d1563c398fd6a0b91fbf11f982a192a15d1d69545702e062932cdc139e1a9fac"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/PAK/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/PAK/manifest.json",
+      "sha256": "2c5a2def50314c74533379750002bb0647f9dabe721c8920d74100c27d221e7c"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/PAK/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/PAK/nowcasting_predictions.csv",
+      "sha256": "fda518286fec12ce4e58fa39e941f8ccc315ba6bcec794b5dbcadfc670e9e338"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SDN/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SDN/forecasting_predictions.csv",
+      "sha256": "274de0e072b6ba832448c326d9d7e7494f3a913b3f99aa3d6fe1b31b6a1800b6"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SDN/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SDN/manifest.json",
+      "sha256": "f2f3a665f9f08a344d122dfae94083bd4de28e2a58860bd9930b517361eb689c"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SDN/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SDN/nowcasting_predictions.csv",
+      "sha256": "931dce60dc122584eb671dd7f9535167d7d5c81f3dc9cfefd3776637f8a5e8bc"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SLV/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SLV/forecasting_predictions.csv",
+      "sha256": "74266b66be80014acf57dd4de28c626c232e70fe19c198ca86b7908688e136fa"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SLV/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SLV/manifest.json",
+      "sha256": "0579b5fd3aba123f52502fc218458f3d12771d784511bfd61422046d6e770d50"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SLV/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SLV/nowcasting_predictions.csv",
+      "sha256": "cbcf71a9b9a5c5747d5b53514a4671e9b9b134513151982381d8afa716f709f2"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SOM/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SOM/forecasting_predictions.csv",
+      "sha256": "64dbea643e00e4da981083c53cb2ea587b74d89b024e7d33f363b6c63ec90afd"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SOM/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SOM/manifest.json",
+      "sha256": "ed76abf58927b6f15a7168ef3df220aa2bb8f3270ab9f3dd31c21a028ebf6dfd"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SOM/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SOM/nowcasting_predictions.csv",
+      "sha256": "545e84276796500addbeb3fe103d4dc990827a8325bc54e23159e3c4e4544eba"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SSD/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SSD/forecasting_predictions.csv",
+      "sha256": "fe76f3044919d3b9f740bb9f0d9ec40204b3cae78756717bc958acd4630ca514"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SSD/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SSD/manifest.json",
+      "sha256": "b8b5f55c938fde7fca9cded4ee87ebe2b27f9ebfeb44552ce59dfdd74f24aebf"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SSD/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SSD/nowcasting_predictions.csv",
+      "sha256": "f257645e2a0427328e4b09f5224b73b95c5510fa655e54a07e85c075bcf69edc"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SWZ/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SWZ/forecasting_predictions.csv",
+      "sha256": "e9b5bd58c8c2c416118cc0620f04699e2d3520a7ca64e95aae0e4a824927dda2"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SWZ/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SWZ/manifest.json",
+      "sha256": "f3376d050d82ecf2cc4fd1ef477a1b879a14521cf6ed35617c11c726c8db744d"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SWZ/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SWZ/nowcasting_predictions.csv",
+      "sha256": "c8240c711b1f57d5d29468617ce5042af17ed38a2acc679a010ed9eb22c4c6fd"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/TJK/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/TJK/forecasting_predictions.csv",
+      "sha256": "2677a9285cf2a01c983840704bac10abcbb2c6c724232701a4bc2e1a3a75b38c"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/TJK/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/TJK/manifest.json",
+      "sha256": "db25679caade7551142f9a082d077020633a024a399ca52ad6365186f4c91088"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/TJK/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/TJK/nowcasting_predictions.csv",
+      "sha256": "207caff099011bb7b1d79dc713e840e8be9aaf36955d5933fd756dd736b6caf3"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/TZA/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/TZA/forecasting_predictions.csv",
+      "sha256": "4daa5905d1ff283cada7999479e1dba46433db4416d11f9aabd0bbe535d7196f"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/TZA/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/TZA/manifest.json",
+      "sha256": "a316c039a615615a420f099f91bc9ed49e475e751e1eeb2623beb99b7b4242cc"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/TZA/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/TZA/nowcasting_predictions.csv",
+      "sha256": "bd16fa8390ef910a69a4671cb13721ad8c753fbe18e3e58be03557d3b2b2400c"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/UGA/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/UGA/forecasting_predictions.csv",
+      "sha256": "aa81579cbdba15833e4805a1d9072d79747d1ec1ee9816846478b8a8e028902a"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/UGA/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/UGA/manifest.json",
+      "sha256": "8987362f2bcdda21d3230f671074bddb8f7f5ec8957afd103e6dcf564297536c"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/UGA/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/UGA/nowcasting_predictions.csv",
+      "sha256": "287d44e38634835cc28964b31be343fb7ce29ee2d6d44289477ccfe29134987e"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/YEM/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/YEM/forecasting_predictions.csv",
+      "sha256": "f51c89da5c0d7cced0dd31a823eb15edbb1e36ab72e47b6c940729cfb9283cb6"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/YEM/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/YEM/manifest.json",
+      "sha256": "995bbfa0da88e82dcb32ca49b07562f97f19013f61021e3135c53d932a3931bb"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/YEM/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/YEM/nowcasting_predictions.csv",
+      "sha256": "2cd219f951cc970b2b83b8cbcc97503c65ebcb16c1441c8ed92ea27652dbb27e"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/ZAF/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/ZAF/forecasting_predictions.csv",
+      "sha256": "3a76e442a485794b1255cb0a6848db024fc9692d6c4ad9efe781195ff505cfaf"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/ZAF/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/ZAF/manifest.json",
+      "sha256": "e47cad2ad1adf275495e86bf40aaa21b481197176fc5d8a07bea5f95a5331672"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/ZAF/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/ZAF/nowcasting_predictions.csv",
+      "sha256": "9f9b16b28fce658e27e66e25d4a82733b845bfe10df85dc44c19f8c3795a4a4f"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/ZMB/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/ZMB/forecasting_predictions.csv",
+      "sha256": "c64af8b95b9815a8282e1fd9ad16d442db86af4e28e3e4c69c0382300a6f7f51"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/ZMB/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/ZMB/manifest.json",
+      "sha256": "f1adb5b19bb6a5d3ce9fae40d8a8b2adb648f583af4ebdcbffc6fe5c9bf29b06"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/ZMB/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/ZMB/nowcasting_predictions.csv",
+      "sha256": "6392ea678d36c717d2e1c23efe3d16d401a350d8a0205859ef85669611d393f6"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/ZWE/forecasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/ZWE/forecasting_predictions.csv",
+      "sha256": "80b00101457cde0d13a6087b55ff5f954211572feb99fef1c4eecc3fe0e57f56"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/ZWE/manifest.json",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/ZWE/manifest.json",
+      "sha256": "ffb19c055f2c21727e5b2ff8f2036efed9f0e02ad379516215b7c2c85f2927b9"
+    },
+    {
+      "original_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/ZWE/nowcasting_predictions.csv",
+      "archived_path": "0.Archived/2026-09-17_pre_windows203_loco/2.Source Code/produced_graph/.leave_one_country_out_checkpoints/ZWE/nowcasting_predictions.csv",
+      "sha256": "3bf49489549ddc0d099130b990cda8af6a1c1348b565d5332ba366af9c329e9e"
+    }
+  ],
+  "promoted": [
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/strict_temporal_loco_area_macro_denominators.csv",
+      "active_path": "2.Source Code/produced_graph/strict_temporal_loco_area_macro_denominators.csv",
+      "sha256": "c67356c302e1b5320087f52f291da35b23496aa838d0e27432ed9a50514af38b"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/strict_temporal_loco_area_metrics.csv",
+      "active_path": "2.Source Code/produced_graph/strict_temporal_loco_area_metrics.csv",
+      "sha256": "06a7553f7473e8328c490e9ea33c614cdfbdf550f5feda917bd5cb5b31b49a5e"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/strict_temporal_loco_fold_audit.csv",
+      "active_path": "2.Source Code/produced_graph/strict_temporal_loco_fold_audit.csv",
+      "sha256": "af41b391ef23b40c89ebd670a1432871601752004c96372ed70e26b0c5dbd962"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/strict_temporal_loco_forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/strict_temporal_loco_forecasting_predictions.csv",
+      "sha256": "171625ec6f162b9d5fd66bb73756094b94ca27ad57389f15562d6707df285557"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/strict_temporal_loco_micro_metrics.csv",
+      "active_path": "2.Source Code/produced_graph/strict_temporal_loco_micro_metrics.csv",
+      "sha256": "387c0ce70c9ead32556fd26f36b04e23dfe18dfda2b9239e811dec3a7aca912e"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/strict_temporal_loco_nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/strict_temporal_loco_nowcasting_predictions.csv",
+      "sha256": "7327c8cbeb5e48fff3c0c3356354a9a9f0a29dd70b6b3e2296f99cb0069be7ea"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/strict_temporal_loco_skipped_folds.csv",
+      "active_path": "2.Source Code/produced_graph/strict_temporal_loco_skipped_folds.csv",
+      "sha256": "3124bd6fd63997a830f5834a8e4ad2b4051f859fb01e5a252ab3483b087b7f5d"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/strict_temporal_loco_source_audit.csv",
+      "active_path": "2.Source Code/produced_graph/strict_temporal_loco_source_audit.csv",
+      "sha256": "0ba96b0ee7a09e7b4d0ce2d64aa65f28df90218b9df94eb37586716fb38c7a34"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/AFG/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/AFG/forecasting_predictions.csv",
+      "sha256": "40be8fa9a2337be5474b77b491e38ba2d698cebf2b97f589d245f752bacb144a"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/AFG/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/AFG/manifest.json",
+      "sha256": "47ea2a1a90a9aa221a38c09fe26f95ac0e201f9df17d7347f570ae4ab22ede70"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/AFG/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/AFG/nowcasting_predictions.csv",
+      "sha256": "6d92b2c329b54bbb43a0d2b9fe768bbb820bdf694e1754e3d6fdaabac60b927a"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/BDI/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/BDI/forecasting_predictions.csv",
+      "sha256": "4c22bd620bfc12c52b6335c5270b0f6db51a403f6c051f3a12b7931a5209e7e4"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/BDI/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/BDI/manifest.json",
+      "sha256": "ff9a03c7689677a7d29352f05e866c5d26152d46ec6a4c1053fa3860a0e0b3a0"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/BDI/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/BDI/nowcasting_predictions.csv",
+      "sha256": "eb868cf9844f33a1a53d8dcda76b835025f1df949ea4235b83d115fa4493733f"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/CAF/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/CAF/forecasting_predictions.csv",
+      "sha256": "7d402bbc420856a896fec9bfb653100bef371cc9a2d35aa6d318dd7f5d75bdfa"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/CAF/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/CAF/manifest.json",
+      "sha256": "cee9a80370673ba7048a66b909888008e76a81019a1162ab01dbeefe30e185be"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/CAF/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/CAF/nowcasting_predictions.csv",
+      "sha256": "dffc5c31bd8b7f3703d4e6a4e6b8e606313555c0c9f197b4e4bb16a7f04979f1"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/COD/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/COD/forecasting_predictions.csv",
+      "sha256": "3324042f0e92db4e8930015b9c27f75557fc9772baa4ffda33dd15cbf2b693a9"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/COD/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/COD/manifest.json",
+      "sha256": "2984d7123e2613242648884e6e32f2f65b5bccc4aa911e0867247a93174abdbf"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/COD/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/COD/nowcasting_predictions.csv",
+      "sha256": "04ea65c84c761da4a3dac55e1e2c1fbbb5c0d992e4245f9354d8c310039f3108"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/DJI/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/DJI/forecasting_predictions.csv",
+      "sha256": "923dd0c208f780bd5576310601a92b7e7bbc2bba07fd5805cc32c359723e4c0b"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/DJI/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/DJI/manifest.json",
+      "sha256": "624dd2050aac8cb8a7d5fdb8436e711e91181ee7dd43bddc24b5142d4c159e4b"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/DJI/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/DJI/nowcasting_predictions.csv",
+      "sha256": "51c39e2505588cde4a6c4d6931532943608f5d96612b498a6cdfbd0aea4e4d89"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/DOM/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/DOM/forecasting_predictions.csv",
+      "sha256": "783a2b30a71e723257baa580e6f0b552edfb3a0cee4f9f02cffc7e49081bbf4c"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/DOM/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/DOM/manifest.json",
+      "sha256": "b46def93b471895cb8be653d5a5a6113ce06682cc846e7601b194133b604ee9c"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/DOM/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/DOM/nowcasting_predictions.csv",
+      "sha256": "b673bc75cfcabefc74469d5f429501ad82ce1190f82f27c34b9566ca84633804"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/ETH/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/ETH/forecasting_predictions.csv",
+      "sha256": "89252d20683587d827d3b9107d069db648d1658692e6100eb02f1ed1c6e1d95a"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/ETH/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/ETH/manifest.json",
+      "sha256": "457068fa7c45364d8e4a372b5bae2330d42345e1bfb14f5085032342b9830236"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/ETH/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/ETH/nowcasting_predictions.csv",
+      "sha256": "a9603d6038d07fb2300e9faf64e53a2ca6c58ac10e0f55208d8d91e973305091"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/GTM/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/GTM/forecasting_predictions.csv",
+      "sha256": "a16e663a8fba2ead127e7e39de911f3ac401365ff96d2a7709e296c488604a12"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/GTM/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/GTM/manifest.json",
+      "sha256": "8ac31414a156cc025042eb975917678ad8afef574ea76b66290b468ea6cba493"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/GTM/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/GTM/nowcasting_predictions.csv",
+      "sha256": "709c18ba011ea75fb6e7dd5dac129f6a93051784941c76672bb5332beaf39e33"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/HND/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/HND/forecasting_predictions.csv",
+      "sha256": "66b2c5cb5e39baccd6867f09c9bc3d3f5f226af40ecc5b18ca1ed57e535f9aa3"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/HND/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/HND/manifest.json",
+      "sha256": "661ed06ba43631240cafc2a23bdf975f1f40276d2ebe043a822d553a1e9d5e0b"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/HND/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/HND/nowcasting_predictions.csv",
+      "sha256": "12f5a6fe9958e844894bc44a1375d6e101c06674c149fc81837b1de032a63cbc"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/HTI/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/HTI/forecasting_predictions.csv",
+      "sha256": "8496085e7367aac5c5ee38e1ecf66cf6067a5785850ff3ccccb237917811daa0"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/HTI/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/HTI/manifest.json",
+      "sha256": "74a707a65766699b02127453e4b4211f4d142c63d84df6a78ff3fc01e634404e"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/HTI/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/HTI/nowcasting_predictions.csv",
+      "sha256": "8003ec09953a43e4e5a508cd60ec8bcdcf4e5b0d76674724fd58e09ce79c8ef3"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/KEN/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/KEN/forecasting_predictions.csv",
+      "sha256": "12ce05440a6c656ef2a3c466fe0b2d1bb5284a8f1deb92ba24737faf99ed2699"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/KEN/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/KEN/manifest.json",
+      "sha256": "a17970c5e3ec5de5f581d4cc588d88112516d05db9def927bde00e8870568d7b"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/KEN/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/KEN/nowcasting_predictions.csv",
+      "sha256": "233ec1341185e1dcfba0240a819ed4d1afed2046e0476a342662e4fd79756e76"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/LBN/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/LBN/forecasting_predictions.csv",
+      "sha256": "5f48af9eb2a31d08987b15c8676eddd01107426bd095552f5086036a8a60fd2b"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/LBN/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/LBN/manifest.json",
+      "sha256": "bea0fb916bab880a95ee6ed412563fce2507a98778a23cb40df4df2283e02e78"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/LBN/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/LBN/nowcasting_predictions.csv",
+      "sha256": "2327b9ea37d71f606a2f13929b52383fb32f77b1729f521d51ec8fd2f44d2212"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/MDG/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/MDG/forecasting_predictions.csv",
+      "sha256": "75286b2d95bde8ad924912f53131da2b24dca8cb45709ece954384b6d98c1c6c"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/MDG/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/MDG/manifest.json",
+      "sha256": "0f20c25de0cbd4db301fe7195c6663cb147aa25c8ab0885ad5944d8506d929d1"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/MDG/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/MDG/nowcasting_predictions.csv",
+      "sha256": "e55810d79cca721a3d6948a676bd91cc48bc10a0295db8f66151e1e65d0fda74"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/MOZ/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/MOZ/forecasting_predictions.csv",
+      "sha256": "27d84a56fbb9c63055da936f608e97f7b732fd2949363231e0dd26a0cde82343"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/MOZ/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/MOZ/manifest.json",
+      "sha256": "7a2e64ee64684393663fee42dedd226820d7402eadde291ce993672332ae1ad6"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/MOZ/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/MOZ/nowcasting_predictions.csv",
+      "sha256": "b7fb3631a26759583289697d86d5537d9c9b5e720857b43803b4ab3ce92e4bae"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/MWI/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/MWI/forecasting_predictions.csv",
+      "sha256": "d3410b617eb0013ead3e53523e5c162d72b9274303d7fcf92df84a279c38bdac"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/MWI/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/MWI/manifest.json",
+      "sha256": "704b44d0392019ddd4b4f92ed5f7e345eb55fda671e95706274b7642dc220a49"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/MWI/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/MWI/nowcasting_predictions.csv",
+      "sha256": "75c914068b7faba05d3acdfb264daf369831a0dc6c0a8495c814a57b1708c938"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/PAK/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/PAK/forecasting_predictions.csv",
+      "sha256": "b476d7342370243568072dd97bd694d594bc4750e4086d4f8d69ca2297cca20a"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/PAK/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/PAK/manifest.json",
+      "sha256": "d983f41e41f8c008427a2a5d532c13a658e0f333c907ab42309d4e80c9eee2e7"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/PAK/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/PAK/nowcasting_predictions.csv",
+      "sha256": "4299a6b3ede4692866da1cf2736d3d695f1e261418df7aeb8442e83090cf1063"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/SDN/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SDN/forecasting_predictions.csv",
+      "sha256": "179cae95f662511ae8f37578de543e6b61311f55e6d151f4bdae26883b15e06c"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/SDN/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SDN/manifest.json",
+      "sha256": "c044b0efac465e5e460986d31f2314f68c4762e361fcd21bbccbb649517c850c"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/SDN/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SDN/nowcasting_predictions.csv",
+      "sha256": "37a37da5ab9ceb73b0377adf47710eb409fc1e98184d87f074600e28b23f9a07"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/SLV/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SLV/forecasting_predictions.csv",
+      "sha256": "16b8f310750ac33d42152dbb8b93177a9f5342a9b1587ec4c0252433aa9c8ca9"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/SLV/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SLV/manifest.json",
+      "sha256": "44e58af08da46a3a6f0617dd5a86c623171ae1c3c9b6e309ff09a9b1631d9d63"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/SLV/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SLV/nowcasting_predictions.csv",
+      "sha256": "423fc1306593de8e3a5db7f9f5768b520220896b1482db9dc5acd0f6c95ed037"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/SOM/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SOM/forecasting_predictions.csv",
+      "sha256": "4411e5fc7d0d8ea005ac31e1bbc57b95822f1f9b04ae2b79684ff93e90f9e757"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/SOM/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SOM/manifest.json",
+      "sha256": "867b886cffde379a361fca0dcc4958747f8ee81078cdccaaead62711823a37a9"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/SOM/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SOM/nowcasting_predictions.csv",
+      "sha256": "95aca18dcc0cd8a71cdd700450ad0df6c4f1be50fd8101f6a53ec01b36de9d0a"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/SSD/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SSD/forecasting_predictions.csv",
+      "sha256": "dc297f759ee83d2beeb6428dc3c4633d6a72444bddf6a5c0d251833f95a15a24"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/SSD/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SSD/manifest.json",
+      "sha256": "8049325bddbdc232fc5c9e52c2fe1a7d4e9eb7eeae4bc24f6c89fe0caf91b248"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/SSD/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SSD/nowcasting_predictions.csv",
+      "sha256": "71c79a1dde72b30672a89b049d907d97f37136e4eca3fd459f5e83df90de5e40"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/SWZ/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SWZ/forecasting_predictions.csv",
+      "sha256": "1811af08537d3a5043c8934ade3b145c15f4008642736648778eec023362ec11"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/SWZ/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SWZ/manifest.json",
+      "sha256": "d0b5649932bd06ba5c57ca13ce12750b6f8a5598c725f02264e2b95856ed1732"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/SWZ/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/SWZ/nowcasting_predictions.csv",
+      "sha256": "3e235c0a5fdd587e76165fa71d35f819270be2e39c861cf7f2acfc6c21484e61"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/TJK/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/TJK/forecasting_predictions.csv",
+      "sha256": "45bc47dc7acfadadac5702dc6f1da77f0f8af56730ecb5d8fe40a2ab2fdc3fd4"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/TJK/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/TJK/manifest.json",
+      "sha256": "6c1b1f74d08849c3be178fe3d55a4da6a79ecd11e48acb1e8ca73eaa96ef7e83"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/TJK/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/TJK/nowcasting_predictions.csv",
+      "sha256": "a1f4bf31211fe77b6202279d41040b734c2c40702fb080d8e550d39c7bb62a58"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/TZA/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/TZA/forecasting_predictions.csv",
+      "sha256": "8ac2c1f3911c6f05cbe732dcaf5e1e40505439a0ec2e93ad2ab218bcea681293"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/TZA/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/TZA/manifest.json",
+      "sha256": "4f56b30ca9456bca9fd684450168e218f5935a937e17136386be7b61c81e3ee2"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/TZA/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/TZA/nowcasting_predictions.csv",
+      "sha256": "51732011eee5954c2f5a2aaff9cae2cce253e5b1dd07893db4f9e9483fcab9c8"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/UGA/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/UGA/forecasting_predictions.csv",
+      "sha256": "4d5a41314d5c919228353a5348a10ba16c6dc9aeed808de720c02b09da2cf995"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/UGA/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/UGA/manifest.json",
+      "sha256": "90dca6e6e5ce69355c7a11ab2c82bf47bfa169a920ed38bf736a5ffdceb005d8"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/UGA/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/UGA/nowcasting_predictions.csv",
+      "sha256": "c083921500bd891480962d8f8cfa4eed843bf2f3dbf7d92bb45a0213c6b10b6c"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/YEM/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/YEM/forecasting_predictions.csv",
+      "sha256": "198980e84fb073136e897bd937fd3034902c1a433899018d38bc2558cbbeccbd"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/YEM/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/YEM/manifest.json",
+      "sha256": "5f3785f2ebe1133a4ac94d54c4f846d917abe3090e1f93126159d524dce3afe0"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/YEM/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/YEM/nowcasting_predictions.csv",
+      "sha256": "ff88787804e8a2f95c361be1860793c4df5242587b061d041dc1b32925db6372"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/ZAF/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/ZAF/forecasting_predictions.csv",
+      "sha256": "02ff7b77d3421f0c49bd6fae1ee7158ca018a4470a8ca74573f96719cf24cebf"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/ZAF/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/ZAF/manifest.json",
+      "sha256": "66094c62ba28444fcebd5bd2b8c0520a62975ae14cbb276e46b5cd523d7c9f6d"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/ZAF/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/ZAF/nowcasting_predictions.csv",
+      "sha256": "693c7703276ee7b18a0ec6f55e1d674e0d3e1e88c4150f646a0022d4a2be67d5"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/ZMB/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/ZMB/forecasting_predictions.csv",
+      "sha256": "10e2881eac6791a0e28a7b567342e110bf1803b77b22480fa6e9cc5c0e408731"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/ZMB/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/ZMB/manifest.json",
+      "sha256": "4dbf970ff4872094282b8b19e9fb84e51d9652edb6116f4c03a3c3e0bf8f0b18"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/strict_temporal/.strict_temporal_loco_checkpoints/ZMB/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.strict_temporal_loco_checkpoints/ZMB/nowcasting_predictions.csv",
+      "sha256": "218012b0450576cbcf69d2be99424893c18a6e4f0f1261da91852b9817ede95b"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/leave_one_country_out_country_metrics.csv",
+      "active_path": "2.Source Code/produced_graph/leave_one_country_out_country_metrics.csv",
+      "sha256": "664e21dd545432c7224cd72a27c6bf97ee241b1304854b7bf1bf4c48646aa2e9"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/leave_one_country_out_forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/leave_one_country_out_forecasting_predictions.csv",
+      "sha256": "019d19b4c9e0e9b06a7f4739bd067135721e30d7123b6f49933429122bfb5897"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/leave_one_country_out_micro_metrics.csv",
+      "active_path": "2.Source Code/produced_graph/leave_one_country_out_micro_metrics.csv",
+      "sha256": "cad5432d4cff5605ccdd05a9e059243f93c80f112c5d30d28b4b79e9d80660c9"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/leave_one_country_out_nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/leave_one_country_out_nowcasting_predictions.csv",
+      "sha256": "ecf58d15e5c365a0e83d36c2b36e28b3936f3019aa8e7292c2652028f39ad44b"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/leave_one_country_out_source_audit.csv",
+      "active_path": "2.Source Code/produced_graph/leave_one_country_out_source_audit.csv",
+      "sha256": "ce73d82197bdcf0955a65523c6261807b784f438cfee0314fcf1de1ea51e9d59"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/precision_recall_scatter_leave_one_country_out.jpg",
+      "active_path": "2.Source Code/produced_graph/precision_recall_scatter_leave_one_country_out.jpg",
+      "sha256": "b2ac9231411860b127b57d642325ed306dc5ac484fece8e0676f80e82da80243"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/precision_recall_scatter_leave_one_country_out.pdf",
+      "active_path": "2.Source Code/produced_graph/precision_recall_scatter_leave_one_country_out.pdf",
+      "sha256": "6578a2eaa173dd5ea2859d822dcbb5ab92072a0ec9fdfffdf42a2b8a47dd2c1a"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/precision_recall_scatter_leave_one_country_out.png",
+      "active_path": "2.Source Code/produced_graph/precision_recall_scatter_leave_one_country_out.png",
+      "sha256": "cabac0e3bf416b8407efbeca8d56dd61b9d1e2d05b8c2bece2f68cd1abea4704"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/AFG/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/AFG/forecasting_predictions.csv",
+      "sha256": "80172383546804951e50139ba434e83eda34ee8aa564c4fd05138b712de972e1"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/AFG/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/AFG/manifest.json",
+      "sha256": "333558dde89cdebbbe36d9e1de14967d419a798751f06a4a3c0023f2cc915318"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/AFG/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/AFG/nowcasting_predictions.csv",
+      "sha256": "64b13115df2d8db019e3238e6dbdcf1b50f8109510d3bc883a1833d9ca71fc89"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/BDI/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/BDI/forecasting_predictions.csv",
+      "sha256": "8b0415921cd61f703b0725d647cc80133c75f1f0ebafaae0461c60fa1a874112"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/BDI/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/BDI/manifest.json",
+      "sha256": "bda90fc615bc5d802530b337102a33de4ef6088b89904e418d309515f6ae3edc"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/BDI/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/BDI/nowcasting_predictions.csv",
+      "sha256": "74d3f711d7e3ac9d2197b0f322ea88ff0a385293582c7132831287007f9ef652"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/CAF/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/CAF/forecasting_predictions.csv",
+      "sha256": "b18e514354df211fff9f331a9f030fa4c2561fe361b19a5ea8362ae03670ff6e"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/CAF/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/CAF/manifest.json",
+      "sha256": "e1cb77ca410d27486118e72dec97de7a41b0ae3f6ebb7d77def827c723db71fd"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/CAF/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/CAF/nowcasting_predictions.csv",
+      "sha256": "d72fbe2b8bbdb25db19499deb1a50d08188ac1f881409b25a186d738547e6410"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/COD/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/COD/forecasting_predictions.csv",
+      "sha256": "55808dfa19f0a0e64bd3a1945306827f67de4a130134097a0fa94460ff01c261"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/COD/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/COD/manifest.json",
+      "sha256": "140dc4676aa53dfe066154e26e005eeaaebe30b56f7459e009fb12c4644a9c6f"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/COD/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/COD/nowcasting_predictions.csv",
+      "sha256": "565818bd5de104f1de3f0b4d65ccb2966b0d6e7e30f78278dc1a5e3f1d3d8cb9"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/DJI/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/DJI/forecasting_predictions.csv",
+      "sha256": "fe45f2cf64434b369518bd77d89bd9b924ddde5c49bbd5b9005a9f10cacbcf1c"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/DJI/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/DJI/manifest.json",
+      "sha256": "601002efeb78c15f1dcfc01ae61c46e3994d3ca30d2fd3cdf558262a91d21724"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/DJI/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/DJI/nowcasting_predictions.csv",
+      "sha256": "5dd7eb6f32fbe9dbb5caa8ae10919d4ea3720f618a49004c89c6974866e659d4"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/DOM/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/DOM/forecasting_predictions.csv",
+      "sha256": "4af24b4339a2e8eee1f296c2528af24c9cb19eeabac39a256cdc80ed502f784a"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/DOM/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/DOM/manifest.json",
+      "sha256": "99c259228cf7abb025ceb81d825bc6502dbe65d5a831a1ed1e52175cbb474d45"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/DOM/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/DOM/nowcasting_predictions.csv",
+      "sha256": "e8a98a1b8c0a91d8c10890bd49a3a54a97c25cd7416adf6de0bca32964a8ff5f"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/ETH/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/ETH/forecasting_predictions.csv",
+      "sha256": "55f0862535ba517aa7c6bba00fafb41ee0f1066a556320d3eb8fd6cca57dacda"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/ETH/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/ETH/manifest.json",
+      "sha256": "5c706dd5afe3ebb74467a880fc2b9d25d94c83fa61914f2308f8842ff35586d5"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/ETH/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/ETH/nowcasting_predictions.csv",
+      "sha256": "50ebd2139e3d8b5175d33cccdbd8cc31f0a46d598d9823200343312ea215c11a"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/GTM/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/GTM/forecasting_predictions.csv",
+      "sha256": "dc21c5156763830103c0c91673cd3abc939e3e3f733af0e2f40806de3203705d"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/GTM/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/GTM/manifest.json",
+      "sha256": "2c8660cff02a12111544eb021ca7d8faf6e0c518a45b47c906d49602cefdb386"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/GTM/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/GTM/nowcasting_predictions.csv",
+      "sha256": "63597943592fe799c32bc4bf9464a861824f8cac68c5571559e20ae751bbe170"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/HND/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/HND/forecasting_predictions.csv",
+      "sha256": "6c44b16719415245c2c57a2fa5a25637ab2ffca4a811f7ed6aff1b69c27e7029"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/HND/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/HND/manifest.json",
+      "sha256": "c76add20e1a80768949a0aa53435d1c2718b16464e8e20be04f937d37083537f"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/HND/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/HND/nowcasting_predictions.csv",
+      "sha256": "238d001fe2ff65b03f4375d4a3625314564448de68886dadccdd2618b7f9f9d1"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/HTI/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/HTI/forecasting_predictions.csv",
+      "sha256": "727da2e5998ff262f4fff2af0ab6cc6660a8cb4b1e9e60cc8d680594730ca954"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/HTI/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/HTI/manifest.json",
+      "sha256": "50913fe158c8e8b7e850bbca45d4e25f6f57acc4cff7aeafd0f7ab4eb93a6a69"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/HTI/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/HTI/nowcasting_predictions.csv",
+      "sha256": "2490cf5d8b570665eef74bf3118942c03768aff3e699ef44b44bd1e247d59d6e"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/KEN/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/KEN/forecasting_predictions.csv",
+      "sha256": "bc954a2017e008a73e9993b38eef1d868dc1c4d45c56d4963e36075dfa2daac3"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/KEN/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/KEN/manifest.json",
+      "sha256": "563adeaa4b242bc1e46059ece206dcfbf4f01f72a97d1a089af708480e98c094"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/KEN/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/KEN/nowcasting_predictions.csv",
+      "sha256": "e4987f15d7c0a56973e9082b0ba2f5df4522095b6ded0543c8ebdd7baf77ea2f"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/LBN/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/LBN/forecasting_predictions.csv",
+      "sha256": "115957c4695cffddd0c59a58f007f6ffa5c1be2f30ebe9ffa27e9d3b89c2da99"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/LBN/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/LBN/manifest.json",
+      "sha256": "6b4f5cf06205c7bbabc547f189075883daa3ce0d334105d2b6b107c75f9295b7"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/LBN/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/LBN/nowcasting_predictions.csv",
+      "sha256": "46922b24a550ac38c7c92cf9994fa4bef414108f41111007b24efadf1be6a54e"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/LSO/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/LSO/forecasting_predictions.csv",
+      "sha256": "62201b211f6863661512421fdca94012c38f31f6f6338dc556bbcbabb7c12473"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/LSO/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/LSO/manifest.json",
+      "sha256": "f45f636c6c7a52494e216bbda7994f2813ccac7070b5bb05cf5fd1532dd6c0fb"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/LSO/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/LSO/nowcasting_predictions.csv",
+      "sha256": "fb1d367fc6dd2cf85da3f846cec0e49160c94e9d4fb1890cc88aaf44b69d8e63"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/MDG/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/MDG/forecasting_predictions.csv",
+      "sha256": "37264c31eb03871e6ae518a177d3822a2b2d0102ae7d9d6b03032d86335715d9"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/MDG/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/MDG/manifest.json",
+      "sha256": "11ce781c1c9c4f601ab5d6a23acfe0dd9ff56e35dfeb1d99c558612d4d53dffc"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/MDG/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/MDG/nowcasting_predictions.csv",
+      "sha256": "efdfd746a92e1e8fbd4f830481ee225cb02442522e7cf0bad473914d9fd97309"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/MOZ/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/MOZ/forecasting_predictions.csv",
+      "sha256": "ecbc4398f1f9af7c8ab05a1efdb87fd0d2119ba03a4e5d91f8b541a35850d455"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/MOZ/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/MOZ/manifest.json",
+      "sha256": "7cf3e240007bb34a6c2a0ac78f8cdae9004b60a1e774c4e624f12f04a7fa13ca"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/MOZ/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/MOZ/nowcasting_predictions.csv",
+      "sha256": "7a2a9e407e0c852fa870184cdad5bb3b6b3294f38b00454dc941f2519d5ab0df"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/MWI/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/MWI/forecasting_predictions.csv",
+      "sha256": "15f875ecc1ac7f3cf2089058ba06402d23f2a815e51cd10b6b29439e65175083"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/MWI/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/MWI/manifest.json",
+      "sha256": "e846acdf12b2b70ce1d619ad21b5332f514d65758b080dac1f13b6a03f8439e3"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/MWI/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/MWI/nowcasting_predictions.csv",
+      "sha256": "a739a1592d50a952f37d662f7e0dd497796f381f858d390e4611ec73c6f8dab7"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/PAK/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/PAK/forecasting_predictions.csv",
+      "sha256": "b42f508dddff78eb49d6de55fcc54884da4b0c832c772607e7afee47f99674d9"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/PAK/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/PAK/manifest.json",
+      "sha256": "71336bc4b6ed08c3a2502ac9b197164ba1df7486e242fc064ecd2b889b288c9a"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/PAK/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/PAK/nowcasting_predictions.csv",
+      "sha256": "23e2993ea674a2673291761aba9d0e15c44b1607287e5a827e259241b1069c05"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/SDN/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SDN/forecasting_predictions.csv",
+      "sha256": "5ec126da3ed8394e1a21b396c90108b1f84192d53b96004ce9de4a3c559c99f0"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/SDN/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SDN/manifest.json",
+      "sha256": "625659ef4729b40ce0f54ddbc7e710455a99561afd039847c31f454e27d8aa1c"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/SDN/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SDN/nowcasting_predictions.csv",
+      "sha256": "a12e0bea62481b2f736e710c620773af73a5de21bd62dc106f6cccf0cff08d95"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/SLV/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SLV/forecasting_predictions.csv",
+      "sha256": "024b5012991379c7909fdf3e47aa9c18f5a4396b9b988753421eb174a6a4bb1c"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/SLV/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SLV/manifest.json",
+      "sha256": "3aa8abf0df7e44bdb6a24b07503bec576d75a895e9297023ff26b8191dfc691e"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/SLV/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SLV/nowcasting_predictions.csv",
+      "sha256": "1acbcd646e46ef8cc5518affb87efd2044a42671d9aec8eff76f0d2a2ff52273"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/SOM/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SOM/forecasting_predictions.csv",
+      "sha256": "2f038f42c46996fe797906cda0e68ddb4995ab3620e1ea212235c39d3cb888c1"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/SOM/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SOM/manifest.json",
+      "sha256": "b1532ea8846e869620b20b0329f20196bbde29fdd0017ebb32db8837b7d220ba"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/SOM/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SOM/nowcasting_predictions.csv",
+      "sha256": "69cae37579156c188497fafa47417ac6a014e0bbf2643c9492c667460ea0eacf"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/SSD/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SSD/forecasting_predictions.csv",
+      "sha256": "feeb2cbad08ad2caac2c85a45892d887d1011f440756090ec9436a666a42218d"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/SSD/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SSD/manifest.json",
+      "sha256": "92c43ba86baa8a1a4284c933faa24955430ca44cf3f3a1c869c291b26165a616"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/SSD/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SSD/nowcasting_predictions.csv",
+      "sha256": "8a92438fd0696e7e42b55ae3b1f7d7b84604a9092f9e2791f3ff42c514c7d2b8"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/SWZ/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SWZ/forecasting_predictions.csv",
+      "sha256": "a47d9334817dbe44d55583594de77d44348c8b0337044d138c517b84f6580fa4"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/SWZ/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SWZ/manifest.json",
+      "sha256": "f4a8efe0e70c85087746102861d688df85e76495ae6e237ba49600e0aeb34c9c"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/SWZ/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/SWZ/nowcasting_predictions.csv",
+      "sha256": "0baf5ad447e28d8e439fd25b3d80e629b7b7ae664d9e0c947642c2330121cc2a"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/TJK/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/TJK/forecasting_predictions.csv",
+      "sha256": "47070897f4e6a0c1fa8dc081f7b05db4b5c9ddeb3c051f0d2b32d787fc426b63"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/TJK/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/TJK/manifest.json",
+      "sha256": "1a8c1aef50aba977ccfa9742aca0c2f7c61306006e4d1aa070380d54d44eb886"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/TJK/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/TJK/nowcasting_predictions.csv",
+      "sha256": "a74c468a55460848b027d03ea8de2bb94ffe73bc5c1759a0107f0940a31ab6a2"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/TZA/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/TZA/forecasting_predictions.csv",
+      "sha256": "63416b74a281e50196a107fbbea23d1885e80d3f09da8fe903f2c3dcfaaa90ab"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/TZA/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/TZA/manifest.json",
+      "sha256": "21edb082aff1644f74c04f595c6b4df21166740ccb977f4d76645a2662f2f0e5"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/TZA/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/TZA/nowcasting_predictions.csv",
+      "sha256": "b5364f92d1cb6d07b157dc178515750b7e33fa326a59a4353fb054999bea53e3"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/UGA/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/UGA/forecasting_predictions.csv",
+      "sha256": "21f19f19d8398216c9caaacd59633748a6eb495876df20cf5369ecc8908e200d"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/UGA/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/UGA/manifest.json",
+      "sha256": "9f71be4b36cffaeeb169e90a7cc0e816aea9d52f81db01f4ea16ee9ff0370a43"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/UGA/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/UGA/nowcasting_predictions.csv",
+      "sha256": "ec80734a9c9de1e99b6bd2afed48f8706f0c9217bf53ea7d9736a13bf8f1ae6e"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/YEM/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/YEM/forecasting_predictions.csv",
+      "sha256": "c3369389b402f96e3c7cbe92298a50deaa2fac8a707540dd47637352b39ccabc"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/YEM/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/YEM/manifest.json",
+      "sha256": "81f0523c53fae95244ca900cd0970c67163a21a6c0b95a455543121dda51f067"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/YEM/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/YEM/nowcasting_predictions.csv",
+      "sha256": "4079175f12cac73cc31cb11a1624452e8993884bc72f77e3d1f6dae6f0e38ec5"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/ZAF/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/ZAF/forecasting_predictions.csv",
+      "sha256": "d39aef7b0e8370d9ed76fcaf20ad4c2f5acef90d332b9a961f4ed63f8ea86bac"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/ZAF/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/ZAF/manifest.json",
+      "sha256": "cd6d01c05bd1f97d752b92b326c3dc2279b4c57fc5369cde75881e7a58c0c343"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/ZAF/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/ZAF/nowcasting_predictions.csv",
+      "sha256": "c93a02d400e7f5b065272ed6cd7b2cfd04d408c72f50c08820fcad2a9b6c9b49"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/ZMB/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/ZMB/forecasting_predictions.csv",
+      "sha256": "84338e4d82ceeded46802689ef00053dd1b32aff763090945eb6ea9636c96d7b"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/ZMB/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/ZMB/manifest.json",
+      "sha256": "c28f71e1b6f699db54131b35b6b6d8269300a9e4a5a1c6266d1dddfbd9642725"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/ZMB/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/ZMB/nowcasting_predictions.csv",
+      "sha256": "34bead08b304a64cec1aa29fb2484e62ff9f80cc17ca69ea7f347ed5765abc30"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/ZWE/forecasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/ZWE/forecasting_predictions.csv",
+      "sha256": "f90de3c7eee7d61a9eb85dd6c604b1b954415bbbdc43f0cecee655304bba757f"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/ZWE/manifest.json",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/ZWE/manifest.json",
+      "sha256": "27ac2f25cf8832e5378bcce58a51ca309bea431261406822762aa0837e4ada0c"
+    },
+    {
+      "source_path": "2.Source Code/produced_graph/loco_windows203_rerun_20260916/ordinary/.leave_one_country_out_checkpoints/ZWE/nowcasting_predictions.csv",
+      "active_path": "2.Source Code/produced_graph/.leave_one_country_out_checkpoints/ZWE/nowcasting_predictions.csv",
+      "sha256": "b10051eb5cbbf8d1c804e73ac179fbf8927c6bc2be02357edf95fe76e22db85a"
+    }
+  ],
+  "ordinary_historical_directory": "0.Archived/2026-09-08_obsolete_presentation/2.Source Code/produced_graph",
+  "writing_sha256": {
+    "writing/2022_alert_map_panel_2x3.png": "d0819b9b967d23a80955d6b97f9425be4a5e28ced08d17a7a9efed36db452935",
+    "writing/accuracy.jpg": "56f8d6f3c1a352e481c295fc70ab0270b510514c312c17987190c879487d2bd0",
+    "writing/direct_phase3_vs_phase45_rescue_binary_confusion_atlas.png": "e209d6f273ca98a0cf2ee1302edd3afb31251af65ef30a5493f5d4989ecb3067",
+    "writing/direct_phase3_vs_phase45_rescue_five_class_confusion_atlas.png": "a4bf3eb2c40fc2a7561a6e6e1281c0b1c3bc6b85cc0acfcc26faf5bcf41a8daa",
+    "writing/manuscript_numbered.txt": "616e8bce07658735aa4f64a896c2d0fe1b3f01eed7a708e2e7f19a292c9e1bef",
+    "writing/manuscript_response_change_log_20260916.md": "dde361383d243cbdccebf30e83e03d9ff5bfa002f4d013f1b0e6c0da7c744770",
+    "writing/manuscript_response_change_log_20260916.xlsx": "79be72127a3933e74da5eea302b7b63a813759c3cb00615bcdc3920f0253108c",
+    "writing/phase_cumulative_actual_vs_predicted_forecasting_nowcasting_contemporaneous.png": "b995c3637e99b878a4212bce692ca4c070ae84ba12dad6a1c195a1997de5f5fb",
+    "writing/Picture1.jpg": "ca80f26f8849960b816223db790756c1385350ada504eb639f33393cd1fb0da8",
+    "writing/Picture2.jpg": "efc93b0184540ded697756e488db16df933ae0d99715b7cdb03895581c99c728",
+    "writing/Picture3.jpg": "b3599188d8d2770ccedf7f1492f8adee7cdd6e29f4c2b94b8298314394ef383b",
+    "writing/Picture4.jpg": "b619bbde94b7097c4df29700353423a8193e788b0d374aa8dff9f028e1de9a40",
+    "writing/Picture6.jpg": "a90c01601ee691afd760da4206ae44902c0281d099d82104055ae9f52937dd7e",
+    "writing/Picture7.jpg": "de06cda8ef23491e5adf36e3bbdbd5b52f99ceb504ca004c9a7c00ea51bb498d",
+    "writing/Picture8.jpg": "3884003e071f85860afb3b7403a9ccd7c8f208c849320004a8378406c71a55b2",
+    "writing/Picture9.jpg": "54ae5f42864aa69dc1ff50033510020d4ccaedd1a0576919a6bd49f7b93ce7fa",
+    "writing/precision_sensitivity.jpg": "2fe3dc7dac3ee5355aeebbbb1e7cf44040a03f9226fe80a8ceb104a0d207161b",
+    "writing/Predict_food_crisis_NC_RandR.pdf": "87546d477efb0448be26ccad0576246537a82821422065b759d917317a7205b1",
+    "writing/Predict_food_crisis_NC_RandR.tex": "342972e3dc8dc4a17863dccdabbabf347826b0150d5834ec1dd43bf92f7a304c",
+    "writing/R2.jpg": "02cf4187a6ce6c915e57a1095a3c21a294b8c2da6b9d05c56510d3e7a603c0ff",
+    "writing/reference.bib": "51bb26467f261691489d3f01eec4e8648b00c2201a993b09d16c6f4bfd70949a",
+    "writing/Response_2_v5_WS_tracked_0916.docx": "3509222eb0dc558ff29b88d666013eb9c66dfdb874e346895b46f17b548dfa37",
+    "writing/response_numbered.txt": "e7cf9291275f24129eeae667189e008951c7950fee4a34936ef7cd6f5b13e0bf",
+    "writing/sample_imbalance_area_frequency.png": "0acc460b75d4e619acfd656b1579c55c5db9bdcecf8533d5ec4d8f1887d13d07",
+    "writing/sn-article.pdf": "98f733c4946df6612fa8071dc864e3a43aa8be6dd7a4aacd1598cb6025216ac1",
+    "writing/sn-bibliography.bib": "839506841a86c41f831cd6046deaa8e30e06ada333636fe61166482465325753",
+    "writing/sn-jnl.cls": "afdd709e43a76c1452c8696429d428b1c35a9339de050c7ca8a9b6f32c180556",
+    "writing/sn-mathphys-num.bst": "fbe2ad5ada72b1080791fc2ecf64455d68d815c3c1e3f9b77bdb50658548d734",
+    "writing/user-manual.pdf": "4bb5d025c3ec64825cb3f4e1590d7ecc73b51c3c7c53e06711f59d2e840ed9e9",
+    "writing/bst/sn-apacite.bst": "1c931a116ba5759952308c8d939fd348827e99a5c7bbce783b0310ea3cbc7e4d",
+    "writing/bst/sn-aps.bst": "51464202b6682152fcd80583e0898c18b6abc5e8486ec98a9cbabea2004de15d",
+    "writing/bst/sn-basic.bst": "4b368414cc5593169907933b417aacfdb0ce905866a39bdf55d21aad65e9d46c",
+    "writing/bst/sn-chicago.bst": "079647ab15887274acccfc3bd15b3e9928dd16adde8cfc95cf5f1bc5c98b7ba3",
+    "writing/bst/sn-mathphys-ay.bst": "6a2306683997db76b5e58190acea4dac360c742044114f6a923a4380fbab9008",
+    "writing/bst/sn-nature.bst": "67052a89a0351d2b64b7f670a7ae95851880da68227fceb2069a4bd477e54d70",
+    "writing/bst/sn-vancouver-ay.bst": "8f4603d045e2e24c304acc9aa9f4389dc0877811c24ff74d62de1a7dad3ebb63",
+    "writing/bst/sn-vancouver-num.bst": "7fa6df12ec8e8945c86958a50fb703d181522745adcf72bf95a86f3633540e8a",
+    "writing/edits_history/edits_made.txt": "28635beb10584e25f14d2624d0cc15ee943e51565ed3ce7951fa10bcdbf3430b",
+    "writing/edits_history/Proofreading_Notes_Nature_Communications_Revision.docx": "5d21958ff5d194d691119ae72d27e3b398d7a817c3330cacd5317c6abacf833c"
+  }
+}

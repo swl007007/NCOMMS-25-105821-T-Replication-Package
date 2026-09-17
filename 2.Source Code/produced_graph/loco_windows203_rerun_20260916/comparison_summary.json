@@ -1,0 +1,192 @@
+{
+  "tolerance": "0.001",
+  "decision_rule": "unrounded absolute difference <= 0.001; display 3 decimals",
+  "summary": {
+    "strict_temporal": {
+      "primary": {
+        "cells": 8,
+        "failures": 8,
+        "both_undefined": 0,
+        "definition_changes": 0,
+        "max_absolute_difference": "0.014842",
+        "passed": false
+      },
+      "detail": {
+        "cells": 5168,
+        "failures": 1027,
+        "both_undefined": 948,
+        "definition_changes": 88,
+        "max_absolute_difference": "84.0000031",
+        "passed": false
+      }
+    },
+    "ordinary": {
+      "primary": {
+        "cells": 8,
+        "failures": 8,
+        "both_undefined": 0,
+        "definition_changes": 0,
+        "max_absolute_difference": "0.036668",
+        "passed": false
+      },
+      "detail": {
+        "cells": 232,
+        "failures": 156,
+        "both_undefined": 10,
+        "definition_changes": 2,
+        "max_absolute_difference": "4.575000",
+        "passed": false
+      }
+    }
+  },
+  "populations": [
+    {
+      "family": "strict_temporal",
+      "model": "forecasting",
+      "rows": 1170,
+      "areas": 646,
+      "countries": 27,
+      "full_keys_and_truth_unchanged": true
+    },
+    {
+      "family": "strict_temporal",
+      "model": "nowcasting",
+      "rows": 1170,
+      "areas": 646,
+      "countries": 27,
+      "full_keys_and_truth_unchanged": true
+    },
+    {
+      "family": "ordinary",
+      "model": "forecasting",
+      "rows": 5575,
+      "areas": 1198,
+      "countries": 29,
+      "full_keys_and_truth_unchanged": true
+    },
+    {
+      "family": "ordinary",
+      "model": "nowcasting",
+      "rows": 5575,
+      "areas": 1198,
+      "countries": 29,
+      "full_keys_and_truth_unchanged": true
+    }
+  ],
+  "independently_recomputed_primary": [
+    {
+      "family": "strict_temporal",
+      "model": "forecasting",
+      "metric": "accuracy",
+      "saved": 0.65812,
+      "recomputed": 0.6581196581196581
+    },
+    {
+      "family": "strict_temporal",
+      "model": "forecasting",
+      "metric": "precision",
+      "saved": 0.772894,
+      "recomputed": 0.7728937728937729
+    },
+    {
+      "family": "strict_temporal",
+      "model": "forecasting",
+      "metric": "recall",
+      "saved": 0.960182,
+      "recomputed": 0.9601820250284414
+    },
+    {
+      "family": "strict_temporal",
+      "model": "forecasting",
+      "metric": "R2(p3)",
+      "saved": -0.00438,
+      "recomputed": -0.004380330282031553
+    },
+    {
+      "family": "strict_temporal",
+      "model": "nowcasting",
+      "metric": "accuracy",
+      "saved": 0.664957,
+      "recomputed": 0.6649572649572649
+    },
+    {
+      "family": "strict_temporal",
+      "model": "nowcasting",
+      "metric": "precision",
+      "saved": 0.780645,
+      "recomputed": 0.7806451612903226
+    },
+    {
+      "family": "strict_temporal",
+      "model": "nowcasting",
+      "metric": "recall",
+      "saved": 0.963595,
+      "recomputed": 0.9635949943117179
+    },
+    {
+      "family": "strict_temporal",
+      "model": "nowcasting",
+      "metric": "R2(p3)",
+      "saved": 0.007698,
+      "recomputed": 0.007698191045615088
+    },
+    {
+      "family": "ordinary",
+      "model": "forecasting",
+      "metric": "accuracy",
+      "saved": 0.577758,
+      "recomputed": 0.5777578475336322
+    },
+    {
+      "family": "ordinary",
+      "model": "forecasting",
+      "metric": "precision",
+      "saved": 0.665837,
+      "recomputed": 0.6658374792703151
+    },
+    {
+      "family": "ordinary",
+      "model": "forecasting",
+      "metric": "recall",
+      "saved": 0.942212,
+      "recomputed": 0.9422117923144617
+    },
+    {
+      "family": "ordinary",
+      "model": "forecasting",
+      "metric": "R2(p3)",
+      "saved": 0.130512,
+      "recomputed": 0.13051199864745244
+    },
+    {
+      "family": "ordinary",
+      "model": "nowcasting",
+      "metric": "accuracy",
+      "saved": 0.583318,
+      "recomputed": 0.5833183856502242
+    },
+    {
+      "family": "ordinary",
+      "model": "nowcasting",
+      "metric": "precision",
+      "saved": 0.671482,
+      "recomputed": 0.6714824120603015
+    },
+    {
+      "family": "ordinary",
+      "model": "nowcasting",
+      "metric": "recall",
+      "saved": 0.940745,
+      "recomputed": 0.9407450865356409
+    },
+    {
+      "family": "ordinary",
+      "model": "nowcasting",
+      "metric": "R2(p3)",
+      "saved": 0.136446,
+      "recomputed": 0.13644564653912528
+    }
+  ],
+  "protected_hashes_unchanged": true,
+  "limitation": "Current shared LOCO script hash differs from historical audits; this is current-code reproduction, not an isolated environment ablation."
+}

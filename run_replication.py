@@ -35,6 +35,7 @@ REQUIRED_PATHS = (
     REPO_ROOT / "1.Source Data" / "r2_frame_nowcasting.csv",
     SOURCE_CODE / "forecasting_hyperparameters.json",
     SOURCE_CODE / "forecasting_hyperparameters_p3.json",
+    SOURCE_CODE / "generate_contemporaneous_main.py",
     SOURCE_CODE / "contemporaneous_hyperparameters.json",
     SOURCE_CODE / "contemporaneous_hyperparameters_p3.json",
 )
@@ -97,8 +98,8 @@ def check_readiness() -> list[str]:
             errors.append(f"missing required file: {_display(path)}")
 
     notebooks = sorted(SOURCE_CODE.glob("*.ipynb"))
-    if len(notebooks) != 11:
-        errors.append(f"expected 11 analysis notebooks, found {len(notebooks)}")
+    if len(notebooks) != 10:
+        errors.append(f"expected 10 analysis notebooks, found {len(notebooks)}")
 
     for path in notebooks:
         try:

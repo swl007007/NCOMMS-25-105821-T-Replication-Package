@@ -1,0 +1,2 @@
+model,evaluation_protocol,aggregation,n,accuracy,recall,precision,phase3plus_r2
+Contemporaneous,random_5fold_row_cv,pooled_oof,5575,0.69345291479820625,0.90437078322088593,0.79725885699508658,0.64161899861375482

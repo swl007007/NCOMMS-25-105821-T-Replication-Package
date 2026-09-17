@@ -120,7 +120,7 @@ From the repository root:
 python run_replication.py --check-only
 ```
 
-The check validates required inputs and generators, parses all 11 active notebooks,
+The check validates required inputs and generators, parses all 10 active notebooks,
 rejects executable absolute paths, confirms that notebook outputs are cleared,
 and verifies the release asset checksum when the asset is present.
 
@@ -172,7 +172,7 @@ Recommended order:
 
 1. Main results:
    - `Table1_Forecasting_main.ipynb`
-   - `Table1_Contemporaneous_main.ipynb`
+   - `generate_contemporaneous_main.py` (run from the repository root: `python "2.Source Code/generate_contemporaneous_main.py"`)
    - `Table1_Nowcasting_two_layer.ipynb`
 2. Phase-change analyses:
    - `Table1_Forecast_phasechange.ipynb`

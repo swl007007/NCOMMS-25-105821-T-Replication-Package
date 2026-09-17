@@ -1,0 +1,3 @@
+model,accuracy,precision,recall,R2(p3)
+Nowcasting,0.652991,0.777467,0.949943,-0.007144
+Forecasting,0.652137,0.774373,0.948805,-0.013764

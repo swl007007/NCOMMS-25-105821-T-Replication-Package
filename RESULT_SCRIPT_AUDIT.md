@@ -90,7 +90,7 @@ missingness 文件）。CSV 保留原始 `artifact`，以 `current_path` 和 `di
 - `1.Source Data/r2_frame_nowcasting.csv`：对应
   `Figure2_Nowcasting_two_layer_feature_importance.ipynb` cell 3 / 4。
 - `1.Source Data/r2_frame_cv.csv`：对应
-  `Table1_Contemporaneous_main.ipynb` cell 2 / 6。
+  `0.Archived/2026-09-16_legacy_contemporaneous_notebook/2.Source Code/Table1_Contemporaneous_main.ipynb` cell 2 / 6（历史出处；活动入口现为 `generate_contemporaneous_main.py`）。
 
 三处当前 `to_csv` 都写到 `produced_graph/`，不会直接覆盖 `1.Source Data/`
 中的旧文件。Forecasting 和 Nowcasting 两份旧表仍被

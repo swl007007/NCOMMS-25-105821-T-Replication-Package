@@ -11,7 +11,7 @@ figures/tables, and the withdrawn conflict-simulation notebook, were moved to
 original paths, hashes and recovery instructions. Historical output lists
 and run records below may refer to archived paths; they are provenance, not
 the current manuscript's selected results. Legacy generators can recreate
-these alternatives. There are now 11 active notebooks; the corrected
+these alternatives. There are now 10 active notebooks; the corrected
 exploratory conflict-perturbation script/results remain outside the manuscript.
 
 ---
@@ -42,7 +42,7 @@ This package provides reproducible controlled workflows, source data, configurat
 
 ### 3. Source Code (`2.Source Code/`)
 
-All 11 active notebooks have been prepared for distribution with:
+All 10 active notebooks have been prepared for distribution with:
 - **Markdown header cells** explaining purpose and methodology
 - **Step-by-step workflow documentation** (2-3 high-level steps per notebook)
 - **Portable relative input and output paths** anchored to `2.Source Code/`
@@ -53,9 +53,9 @@ All 11 active notebooks have been prepared for distribution with:
 
 #### Notebook Categories:
 
-**Main Analysis Notebooks** (Table 1):
+**Main Analysis Entry Points** (Table 1):
 - `Table1_Forecasting_main.ipynb` - 12-month ahead forecasting
-- `Table1_Contemporaneous_main.ipynb` - Current month nowcasting
+- `generate_contemporaneous_main.py` - Fixed-seed contemporaneous row-level five-fold CV; legacy notebook archived
 - `Table1_Nowcasting_two_layer.ipynb` - Two-layer ensemble approach
 
 **Visualization Notebooks**:
@@ -155,7 +155,7 @@ python run_replication.py --check-only
 1. **Main Models** (independent execution):
    ```
    Table1_Forecasting_main.ipynb
-   Table1_Contemporaneous_main.ipynb
+   python "2.Source Code/generate_contemporaneous_main.py"
    Table1_Nowcasting_two_layer.ipynb
    ```
 
@@ -292,7 +292,9 @@ python "2.Source Code/generate_all_prediction_temporal_test.py"
 
 The formal run executes Forecasting and Nowcasting sequentially and preserves the XGBoost estimator's default thread setting, matching the notebook execution contract. In the verified Windows Python 3.12.10 / XGBoost 3.0.0 environment, the regenerated Forecasting accuracy and Phase 3+ R-squared are `0.666667` and `0.267910`; the regenerated Nowcasting values are `0.666667` and `0.275545`. The Nowcasting metrics reproduce the stored Table 1 result, while Forecasting remains within the package's approximately 0.02 calibration tolerance.
 
-The macro evaluation leaves the frozen ten-column `All_prediction.csv` contract unchanged. Forecasting and Nowcasting continue to use its 1,170-row 2022 temporal holdout. Contemporaneous instead follows the effective implementation in `Table1_Contemporaneous_main.ipynb`: the 5,575 current-month rows are sorted, reproducibly shuffled with seed 0, split into five equal row-level folds, and assigned one out-of-fold prediction per row. The notebook's `kfolds` column remains an input predictor, and all four cumulative targets use `contemporaneous_hyperparameters.json`, matching the notebook's effective parameter overwrite. Predictions are rounded to two decimals before applying the 0.20 cumulative-share threshold. The sidecar and audit are `all_prediction_contemporaneous_random_cv_predictions.csv` and `all_prediction_contemporaneous_random_cv_source_audit.csv` under `2.Source Code/produced_graph/`.
+The macro evaluation leaves the frozen ten-column `All_prediction.csv` contract unchanged. Forecasting and Nowcasting continue to use its 1,170-row 2022 temporal holdout. Contemporaneous instead follows the effective implementation in the archived `0.Archived/2026-09-16_legacy_contemporaneous_notebook/2.Source Code/Table1_Contemporaneous_main.ipynb`: the 5,575 current-month rows are sorted, reproducibly shuffled with seed 0, split into five equal row-level folds, and assigned one out-of-fold prediction per row. The notebook's `kfolds` column remains an input predictor, and all four cumulative targets use `contemporaneous_hyperparameters.json`, matching the notebook's effective parameter overwrite. Predictions are rounded to two decimals before applying the 0.20 cumulative-share threshold. The sidecar and audit are `all_prediction_contemporaneous_random_cv_predictions.csv` and `all_prediction_contemporaneous_random_cv_source_audit.csv` under `2.Source Code/produced_graph/`.
+
+For Figure 1 contemporaneous results alone, run `python "2.Source Code/generate_contemporaneous_main.py"`. It writes the existing prediction/audit filenames plus `contemporaneous_main_metrics.csv`, using seed 0 and the frozen Windows environment.
 
 Regenerate the shared sidecar and both evaluation artifact families with:
 
@@ -304,6 +306,8 @@ python "2.Source Code/generate_all_prediction_temporal_test_evaluation.py"
 The reproducible Windows Python 3.11.3 / XGBoost 2.0.3 random-CV rerun has full-OOF macro precision `0.636860`, macro recall `0.328301`, and macro F1 `0.333608`; its Phase 3+ full-OOF R² is `0.641619`. The original notebook used an unrecorded shuffle seed and exported only its last 1,115-row fold, so this rerun is not claimed to reproduce the historical `0.602` last-fold value exactly. The `all_prediction_temporal_test_*` prefix is retained for artifact continuity, but every CSV and figure records task-specific protocol, population, and `n`; all three-model comparisons are explicitly descriptive and not directly comparable. The older `generate_all_prediction_1165_evaluation.py` filename remains only a compatibility entry point.
 
 ### Leave-One-Country-Out Robustness Contract
+
+Both active LOCO families use the Windows Python 3.11.3 / XGBoost 2.0.3 reruns selected on 17 September 2026. Historical outputs are archived; see `0.Archived/2026-09-17_pre_windows203_loco/promotion_manifest.json`. The ordinary LOCO `Nowcasting` row is the contemporaneous result using the Nowcasting dataset.
 
 The LOCO analysis addresses a different scenario from the Table 1 temporal holdout: a held-out country has no IPC labels available for model fitting, while its predictor variables remain available. For each fold, all dates from one country are held out and all dates from the other countries are used for training.
 
@@ -330,11 +334,11 @@ estimand.
 
 | model | accuracy | precision | recall | R2(p3) |
 |---|---:|---:|---:|---:|
-| Nowcasting | 0.565740 | 0.666312 | 0.917864 | 0.118206 |
-| Forecasting | 0.558386 | 0.661736 | 0.905544 | 0.102838 |
+| Nowcasting | 0.583318 | 0.671482 | 0.940745 | 0.136446 |
+| Forecasting | 0.577758 | 0.665837 | 0.942212 | 0.130512 |
 
 The canonical table SHA-256 is
-`64dbae3ae190b2ef9887614f763e585ef3cd226ac556daf4e590e26503849ff9`.
+`cad5432d4cff5605ccdd05a9e059243f93c80f112c5d30d28b4b79e9d80660c9`.
 
 Regenerate only this table from the saved full-LOCO predictions with:
 
@@ -384,11 +388,11 @@ metric-specific defined-area counts remain available only as diagnostics in
 
 | model | accuracy | precision | recall | R2(p3) |
 |---|---:|---:|---:|---:|
-| Nowcasting | 0.652991 | 0.777467 | 0.949943 | -0.007144 |
-| Forecasting | 0.652137 | 0.774373 | 0.948805 | -0.013764 |
+| Nowcasting | 0.664957 | 0.780645 | 0.963595 | 0.007698 |
+| Forecasting | 0.658120 | 0.772894 | 0.960182 | -0.004380 |
 
 The canonical table SHA-256 is
-`5729dcefc77970b1e4e957b80e3949fd90239c2435386dd57764e837927f2ac0`.
+`387c0ce70c9ead32556fd26f36b04e23dfe18dfda2b9239e811dec3a7aca912e`.
 
 For consistency with the reporting precision, both actual and predicted Phase
 3+ shares are rounded to two decimals before one pooled R-squared is computed
@@ -780,7 +784,7 @@ must require `run_status=complete` and verify every listed payload hash.
 - [ ] Virtual environment created and activated
 - [ ] All packages installed without errors
 - [ ] Graphviz system dependency installed and verified (`dot -V`)
-- [x] All 11 active notebooks use portable executable paths, contain no saved outputs, and have null execution counts
+- [x] All 10 active notebooks use portable executable paths, contain no saved outputs, and have null execution counts
 - [ ] Data files present in `1.Source Data/`
 - [ ] Main notebooks execute without errors
 - [ ] Performance metrics within expected range
