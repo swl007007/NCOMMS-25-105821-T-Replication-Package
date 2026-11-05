@@ -1,89 +1,34 @@
-# Food-Crisis Monitoring and Prediction Replication Package
+# Predicting Acute Food Insecurity with Machine Learning
 
-Source data, analysis notebooks, Python generators, and saved results for
-the food-crisis monitoring and prediction study.
+Standalone replication package for the accepted Nature Communications article.
+Includes four main and six supplementary figures, seven tables, their scripts,
+model-ready inputs and saved predictions. Historical archives and development
+files are excluded.
 
-For a compact download containing only the selected figures, tables, scripts,
-required inputs and reproduction instructions, use the
-[v1.4.0 replication release](https://github.com/swl007007/NCOMMS-25-105821-T-Replication-Package/releases/tag/v1.4.0).
-Its curated source snapshot is on `release/v1.4.0`; development history remains here.
+## Reproduce figures and tables
 
-- `1.Source Data/`: model-ready inputs.
-- `2.Source Code/`: notebooks, generators, and model parameters.
-- `2.Source Code/produced_graph/`: saved figures, tables, and predictions.
-- `0.Archived/`: historical outputs.
-
-## Source Data
-
-[Source Data.zip](<Source Data.zip>) contains one data file per main and
-supplementary figure/table for *Predicting Acute Food Insecurity with Machine
-Learning*. See [SOURCE_DATA.md](SOURCE_DATA.md) for contents and provenance.
-Rebuild with `python "2.Source Code/build_source_data.py"`.
-
-Final vector figures, Overleaf replacement captions and export instructions:
-[writing/final_artwork](writing/final_artwork/README.md).
-
-## Setup
-
-For the main analyses, use Windows Python 3.11.3 and the package versions in
-`2.Source Code/main_result_figure1_v1_environment_lock.txt`.
+Use Python 3.12 in a fresh environment. From this folder:
 
 ```bash
 python -m venv .venv
+# Activate .venv (Windows: .venv\Scripts\activate; Linux/macOS: source .venv/bin/activate)
+python -m pip install -r requirements-render.txt
+python "2.Source Code/export_final_artwork.py"
+python "2.Source Code/export_final_tables.py"
 ```
 
-Activate with `.venv\Scripts\activate` on Windows or
-`source .venv/bin/activate` on Linux/macOS, then install:
+- `writing/final_artwork/`: ten complete figures in PDF/SVG, 300-dpi PNG previews,
+  captions and figure-specific provenance. Use the PDFs for publication.
+- `tables/`: seven CSV tables; see its README for column definitions.
+- `Source Data.zip`: one data file for each of the 17 main/SI figures and tables.
+- `1.Source Data/`: required analysis inputs.
+- `2.Source Code/produced_graph/`: saved numeric results and dependencies.
 
-```bash
-python -m pip install -r requirements.txt -c "2.Source Code/main_result_figure1_v1_environment_lock.txt"
-python run_replication.py --check-only
-```
+These commands render saved results and rebuild Source Data without model fitting.
+The map geometry is bundled; no tile service or data download is needed.
+Install Poppler (`pdfinfo`, `pdffonts`, `pdfimages`) to additionally run
+`python "2.Source Code/verify_final_artwork.py"`.
 
-## Reproduce results
-
-Start `jupyter lab`, select the installed environment, and run notebooks
-from top to bottom with `2.Source Code/` as the working directory.
-The main Forecasting and two-layer Nowcasting sources are
-`Table1_Forecasting_main.ipynb` and
-`Figure2_Nowcasting_two_layer_feature_importance.ipynb`.
-
-For Figure 1 contemporaneous row-level CV, run from the repository root:
-
-```bash
-python "2.Source Code/generate_contemporaneous_main.py"
-```
-
-For the selected contemporaneous result (using the Nowcasting dataset,
-random area five-fold CV), run from the repository root:
-
-```bash
-python "2.Source Code/generate_leave_area_out_20pct_random_cv.py"
-```
-
-Use the `Nowcasting` row in
-`produced_graph/leave_area_out_20pct_random_cv_metrics.csv`.
-For LOCO, use the same environment and run:
-
-```bash
-python "2.Source Code/generate_strict_temporal_leave_one_country_out_robustness.py" --workers 4
-python "2.Source Code/generate_leave_one_country_out_robustness.py" --workers 4
-```
-
-The `Nowcasting` row in `leave_one_country_out_micro_metrics.csv` is the
-contemporaneous LOCO result using the Nowcasting dataset.
-
-Figure notebooks and additional result generators are in `2.Source Code/`;
-Graphviz (`dot -V`) is required for the flowchart notebook.
-
-See [INSTALL.md](INSTALL.md) for execution order and the core pipeline,
-and [REPLICATION_PACKAGE.md](REPLICATION_PACKAGE.md) for individual analyses.
-
-## Spatial audit asset
-
-If absent, restore the release asset before auditing spatial interpolation:
-
-```bash
-gh release download v1.2.0 --pattern spatial_feature_interpolation_audit.csv.gz --dir "2.Source Code/produced_graph"
-sha256sum --check RELEASE_ASSET_SHA256.txt
-```
+See [REPRODUCE.md](REPRODUCE.md) for the output-to-script map and optional model
+refitting in the frozen Windows environment. `release_manifest.json` records
+every packaged file's SHA-256. Preserve file bytes and relative paths.
