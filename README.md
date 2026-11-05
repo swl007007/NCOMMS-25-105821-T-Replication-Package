@@ -8,6 +8,13 @@ the food-crisis monitoring and prediction study.
 - `2.Source Code/produced_graph/`: saved figures, tables, and predictions.
 - `0.Archived/`: historical outputs.
 
+## Source Data
+
+[Source Data.zip](<Source Data.zip>) contains one data file per main and
+supplementary figure/table for *Predicting Acute Food Insecurity with Machine
+Learning*. See [SOURCE_DATA.md](SOURCE_DATA.md) for contents and provenance.
+Rebuild with `python "2.Source Code/build_source_data.py"`.
+
 ## Setup
 
 For the main analyses, use Windows Python 3.11.3 and the package versions in
