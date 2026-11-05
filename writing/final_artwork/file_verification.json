@@ -1,0 +1,102 @@
+{
+  "Figure_1": {
+    "size_mm": [
+      179.9999222222222,
+      136.9998388888889
+    ],
+    "embedded_fonts": 2,
+    "raster_images": 0,
+    "editable_svg_text_elements": 73,
+    "pdf_bytes": 54776
+  },
+  "Figure_2": {
+    "size_mm": [
+      179.9999222222222,
+      184.99984166666664
+    ],
+    "embedded_fonts": 2,
+    "raster_images": 0,
+    "editable_svg_text_elements": 114,
+    "pdf_bytes": 27718
+  },
+  "Figure_3": {
+    "size_mm": [
+      179.9999222222222,
+      100.00015277777776
+    ],
+    "embedded_fonts": 1,
+    "raster_images": 0,
+    "editable_svg_text_elements": 38,
+    "pdf_bytes": 15022
+  },
+  "Figure_4": {
+    "size_mm": [
+      179.9999222222222,
+      88.00006388888889
+    ],
+    "embedded_fonts": 2,
+    "raster_images": 0,
+    "editable_svg_text_elements": 42,
+    "pdf_bytes": 19834
+  },
+  "Supplementary_Figure_1": {
+    "size_mm": [
+      179.9999222222222,
+      89.9999611111111
+    ],
+    "embedded_fonts": 1,
+    "raster_images": 0,
+    "editable_svg_text_elements": 34,
+    "pdf_bytes": 14635
+  },
+  "Supplementary_Figure_2": {
+    "size_mm": [
+      179.9999222222222,
+      165.00016388888886
+    ],
+    "embedded_fonts": 1,
+    "raster_images": 0,
+    "editable_svg_text_elements": 8,
+    "pdf_bytes": 5416487
+  },
+  "Supplementary_Figure_3": {
+    "size_mm": [
+      179.9999222222222,
+      179.9999222222222
+    ],
+    "embedded_fonts": 2,
+    "raster_images": 0,
+    "editable_svg_text_elements": 352,
+    "pdf_bytes": 33719
+  },
+  "Supplementary_Figure_4": {
+    "size_mm": [
+      179.9999222222222,
+      179.9999222222222
+    ],
+    "embedded_fonts": 2,
+    "raster_images": 0,
+    "editable_svg_text_elements": 102,
+    "pdf_bytes": 104362
+  },
+  "Supplementary_Figure_5": {
+    "size_mm": [
+      179.9999222222222,
+      154.99997222222223
+    ],
+    "embedded_fonts": 1,
+    "raster_images": 0,
+    "editable_svg_text_elements": 131,
+    "pdf_bytes": 27439
+  },
+  "Supplementary_Figure_6": {
+    "size_mm": [
+      179.9999222222222,
+      92.99998333333333
+    ],
+    "embedded_fonts": 1,
+    "raster_images": 0,
+    "editable_svg_text_elements": 17,
+    "pdf_bytes": 12465
+  }
+}

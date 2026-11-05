@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="510.23622pt" height="283.464567pt" viewBox="0 0 510.23622 283.464567" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.9, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 283.464567 
+L 510.23622 283.464567 
+L 510.23622 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 20.00126 58.875591 
+L 103.271811 58.875591 
+L 103.271811 25.937008 
+L 20.00126 25.937008 
+z
+" clip-path="url(#p21ae32e148)" style="fill: #d6eaf8; stroke: #555555; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 61.636535 114.165354 
+C 72.67834 114.165354 83.269387 112.306095 91.077121 108.997057 
+C 98.884856 105.68802 103.271811 101.199371 103.271811 96.519685 
+C 103.271811 91.839999 98.884856 87.35135 91.077121 84.042313 
+C 83.269387 80.733275 72.67834 78.874016 61.636535 78.874016 
+C 50.594731 78.874016 40.003684 80.733275 32.19595 84.042313 
+C 24.388215 87.35135 20.00126 91.839999 20.00126 96.519685 
+C 20.00126 101.199371 24.388215 105.68802 32.19595 108.997057 
+C 40.003684 112.306095 50.594731 114.165354 61.636535 114.165354 
+z
+" clip-path="url(#p21ae32e148)" style="fill: #d5f5e3; stroke: #555555; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 29.797795 157.691339 
+L 61.636535 135.340157 
+L 93.475276 157.691339 
+L 61.636535 180.04252 
+z
+" clip-path="url(#p21ae32e148)" style="fill: #e0e0e0; stroke: #555555; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 20.00126 230.626772 
+L 103.271811 230.626772 
+L 103.271811 207.099213 
+L 20.00126 207.099213 
+z
+" clip-path="url(#p21ae32e148)" style="fill: #aed6f1; stroke: #555555; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 127.76315 58.875591 
+L 211.033701 58.875591 
+L 211.033701 25.937008 
+L 127.76315 25.937008 
+z
+" clip-path="url(#p21ae32e148)" style="fill: #d6eaf8; stroke: #555555; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 169.398425 114.165354 
+C 180.440229 114.165354 191.031276 112.306095 198.839011 108.997057 
+C 206.646745 105.68802 211.033701 101.199371 211.033701 96.519685 
+C 211.033701 91.839999 206.646745 87.35135 198.839011 84.042313 
+C 191.031276 80.733275 180.440229 78.874016 169.398425 78.874016 
+C 158.356621 78.874016 147.765574 80.733275 139.957839 84.042313 
+C 132.150105 87.35135 127.76315 91.839999 127.76315 96.519685 
+C 127.76315 101.199371 132.150105 105.68802 139.957839 108.997057 
+C 147.765574 112.306095 158.356621 114.165354 169.398425 114.165354 
+z
+" clip-path="url(#p21ae32e148)" style="fill: #d5f5e3; stroke: #555555; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 137.559685 157.691339 
+L 169.398425 135.340157 
+L 201.237165 157.691339 
+L 169.398425 180.04252 
+z
+" clip-path="url(#p21ae32e148)" style="fill: #e0e0e0; stroke: #555555; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 127.76315 230.626772 
+L 211.033701 230.626772 
+L 211.033701 207.099213 
+L 127.76315 207.099213 
+z
+" clip-path="url(#p21ae32e148)" style="fill: #aed6f1; stroke: #555555; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 235.525039 58.875591 
+L 318.795591 58.875591 
+L 318.795591 25.937008 
+L 235.525039 25.937008 
+z
+" clip-path="url(#p21ae32e148)" style="fill: #d6eaf8; stroke: #555555; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 277.160315 114.165354 
+C 288.202119 114.165354 298.793166 112.306095 306.600901 108.997057 
+C 314.408635 105.68802 318.795591 101.199371 318.795591 96.519685 
+C 318.795591 91.839999 314.408635 87.35135 306.600901 84.042313 
+C 298.793166 80.733275 288.202119 78.874016 277.160315 78.874016 
+C 266.118511 78.874016 255.527464 80.733275 247.719729 84.042313 
+C 239.911995 87.35135 235.525039 91.839999 235.525039 96.519685 
+C 235.525039 101.199371 239.911995 105.68802 247.719729 108.997057 
+C 255.527464 112.306095 266.118511 114.165354 277.160315 114.165354 
+z
+" clip-path="url(#p21ae32e148)" style="fill: #d5f5e3; stroke: #555555; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 245.321575 157.691339 
+L 277.160315 135.340157 
+L 308.999055 157.691339 
+L 277.160315 180.04252 
+z
+" clip-path="url(#p21ae32e148)" style="fill: #e0e0e0; stroke: #555555; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 235.525039 230.626772 
+L 318.795591 230.626772 
+L 318.795591 207.099213 
+L 235.525039 207.099213 
+z
+" clip-path="url(#p21ae32e148)" style="fill: #aed6f1; stroke: #555555; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 343.286929 58.875591 
+L 426.55748 58.875591 
+L 426.55748 25.937008 
+L 343.286929 25.937008 
+z
+" clip-path="url(#p21ae32e148)" style="fill: #d6eaf8; stroke: #555555; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 384.922205 114.165354 
+C 395.964009 114.165354 406.555056 112.306095 414.36279 108.997057 
+C 422.170525 105.68802 426.55748 101.199371 426.55748 96.519685 
+C 426.55748 91.839999 422.170525 87.35135 414.36279 84.042313 
+C 406.555056 80.733275 395.964009 78.874016 384.922205 78.874016 
+C 373.880401 78.874016 363.289354 80.733275 355.481619 84.042313 
+C 347.673884 87.35135 343.286929 91.839999 343.286929 96.519685 
+C 343.286929 101.199371 347.673884 105.68802 355.481619 108.997057 
+C 363.289354 112.306095 373.880401 114.165354 384.922205 114.165354 
+z
+" clip-path="url(#p21ae32e148)" style="fill: #d5f5e3; stroke: #555555; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 353.083465 157.691339 
+L 384.922205 135.340157 
+L 416.760945 157.691339 
+L 384.922205 180.04252 
+z
+" clip-path="url(#p21ae32e148)" style="fill: #e0e0e0; stroke: #555555; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 343.286929 230.626772 
+L 426.55748 230.626772 
+L 426.55748 207.099213 
+L 343.286929 207.099213 
+z
+" clip-path="url(#p21ae32e148)" style="fill: #aed6f1; stroke: #555555; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 448.599685 169.455118 
+L 497.582362 169.455118 
+L 497.582362 145.927559 
+L 448.599685 145.927559 
+z
+" clip-path="url(#p21ae32e148)" style="fill: #aed6f1; stroke: #555555; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 6px; font-family: 'DejaVu Sans'" transform="translate(33.712629 40.70258)">XGBoost regressor</text>
+    <text style="font-size: 6px; font-family: 'DejaVu Sans'" transform="translate(49.817004 47.421268)">Phase 5</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 6px; font-family: 'DejaVu Sans'" transform="translate(30.636692 94.815966)">Predicted population</text>
+    <text style="font-size: 6px; font-family: 'DejaVu Sans'" transform="translate(36.861223 101.534654)">share in Phase 5</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 6px; font-family: 'DejaVu Sans'; text-anchor: middle" x="61.636535" y="159.346964" transform="rotate(-0 61.636535 159.346964)">≥20%?</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 6px; font-family: 'DejaVu Sans'; text-anchor: middle" x="61.636535" y="220.518617" transform="rotate(-0 61.636535 220.518617)">Phase 5</text>
+   </g>
+   <g id="patch_19">
+    <path d="M 61.636535 60.874514 
+Q 61.636535 68.285971 61.636535 74.914804 
+" style="fill: none; stroke: #333333; stroke-width: 0.7; stroke-linecap: round"/>
+    <path d="M 62.836535 72.514804 
+L 61.636535 74.914804 
+L 60.436535 72.514804 
+z
+" style="fill: #333333; stroke: #333333; stroke-width: 0.7; stroke-linecap: round"/>
+   </g>
+   <g id="patch_20">
+    <path d="M 61.636535 116.162267 
+Q 61.636535 124.163184 61.636535 131.381476 
+" style="fill: none; stroke: #333333; stroke-width: 0.7; stroke-linecap: round"/>
+    <path d="M 62.836535 128.981476 
+L 61.636535 131.381476 
+L 60.436535 128.981476 
+z
+" style="fill: #333333; stroke: #333333; stroke-width: 0.7; stroke-linecap: round"/>
+   </g>
+   <g id="patch_21">
+    <path d="M 61.636535 182.040725 
+Q 61.636535 193.571239 61.636535 204.319129 
+" style="fill: none; stroke: #333333; stroke-width: 0.7; stroke-linecap: round"/>
+    <path d="M 62.836535 201.919129 
+L 61.636535 204.319129 
+L 60.436535 201.919129 
+z
+" style="fill: #333333; stroke: #333333; stroke-width: 0.7; stroke-linecap: round"/>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 5px; font-family: 'DejaVu Sans'; text-anchor: start" x="68.983937" y="189.335906" transform="rotate(-0 68.983937 189.335906)">Yes</text>
+   </g>
+   <g id="patch_22">
+    <path d="M 95.474465 157.691339 
+Q 115.516575 157.691339 134.776061 157.691339 
+" style="fill: none; stroke: #333333; stroke-width: 0.7; stroke-linecap: round"/>
+    <path d="M 132.376061 156.491339 
+L 134.776061 157.691339 
+L 132.376061 158.891339 
+z
+" style="fill: #333333; stroke: #333333; stroke-width: 0.7; stroke-linecap: round"/>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 5px; font-family: 'DejaVu Sans'; text-anchor: middle" x="115.51748" y="153.456378" transform="rotate(-0 115.51748 153.456378)">No</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 6px; font-family: 'DejaVu Sans'" transform="translate(141.474519 40.70258)">XGBoost regressor</text>
+    <text style="font-size: 6px; font-family: 'DejaVu Sans'" transform="translate(155.064988 47.421268)">Phase 4+</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 6px; font-family: 'DejaVu Sans'" transform="translate(138.398581 94.815966)">Predicted population</text>
+    <text style="font-size: 6px; font-family: 'DejaVu Sans'" transform="translate(142.109206 101.534654)">share in Phase 4+</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 6px; font-family: 'DejaVu Sans'; text-anchor: middle" x="169.398425" y="159.346964" transform="rotate(-0 169.398425 159.346964)">≥20%?</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 6px; font-family: 'DejaVu Sans'; text-anchor: middle" x="169.398425" y="220.518617" transform="rotate(-0 169.398425 220.518617)">Phase 4</text>
+   </g>
+   <g id="patch_23">
+    <path d="M 169.398425 60.874514 
+Q 169.398425 68.285971 169.398425 74.914804 
+" style="fill: none; stroke: #333333; stroke-width: 0.7; stroke-linecap: round"/>
+    <path d="M 170.598425 72.514804 
+L 169.398425 74.914804 
+L 168.198425 72.514804 
+z
+" style="fill: #333333; stroke: #333333; stroke-width: 0.7; stroke-linecap: round"/>
+   </g>
+   <g id="patch_24">
+    <path d="M 169.398425 116.162267 
+Q 169.398425 124.163184 169.398425 131.381476 
+" style="fill: none; stroke: #333333; stroke-width: 0.7; stroke-linecap: round"/>
+    <path d="M 170.598425 128.981476 
+L 169.398425 131.381476 
+L 168.198425 128.981476 
+z
+" style="fill: #333333; stroke: #333333; stroke-width: 0.7; stroke-linecap: round"/>
+   </g>
+   <g id="patch_25">
+    <path d="M 169.398425 182.040725 
+Q 169.398425 193.571239 169.398425 204.319129 
+" style="fill: none; stroke: #333333; stroke-width: 0.7; stroke-linecap: round"/>
+    <path d="M 170.598425 201.919129 
+L 169.398425 204.319129 
+L 168.198425 201.919129 
+z
+" style="fill: #333333; stroke: #333333; stroke-width: 0.7; stroke-linecap: round"/>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 5px; font-family: 'DejaVu Sans'; text-anchor: start" x="176.745827" y="189.335906" transform="rotate(-0 176.745827 189.335906)">Yes</text>
+   </g>
+   <g id="patch_26">
+    <path d="M 203.236355 157.691339 
+Q 223.278465 157.691339 242.537951 157.691339 
+" style="fill: none; stroke: #333333; stroke-width: 0.7; stroke-linecap: round"/>
+    <path d="M 240.137951 156.491339 
+L 242.537951 157.691339 
+L 240.137951 158.891339 
+z
+" style="fill: #333333; stroke: #333333; stroke-width: 0.7; stroke-linecap: round"/>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 5px; font-family: 'DejaVu Sans'; text-anchor: middle" x="223.27937" y="153.456378" transform="rotate(-0 223.27937 153.456378)">No</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 6px; font-family: 'DejaVu Sans'" transform="translate(249.236409 40.70258)">XGBoost regressor</text>
+    <text style="font-size: 6px; font-family: 'DejaVu Sans'" transform="translate(262.826877 47.421268)">Phase 3+</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 6px; font-family: 'DejaVu Sans'" transform="translate(246.160471 94.815966)">Predicted population</text>
+    <text style="font-size: 6px; font-family: 'DejaVu Sans'" transform="translate(249.871096 101.534654)">share in Phase 3+</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 6px; font-family: 'DejaVu Sans'; text-anchor: middle" x="277.160315" y="159.346964" transform="rotate(-0 277.160315 159.346964)">≥20%?</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 6px; font-family: 'DejaVu Sans'; text-anchor: middle" x="277.160315" y="220.518617" transform="rotate(-0 277.160315 220.518617)">Phase 3</text>
+   </g>
+   <g id="patch_27">
+    <path d="M 277.160315 60.874514 
+Q 277.160315 68.285971 277.160315 74.914804 
+" style="fill: none; stroke: #333333; stroke-width: 0.7; stroke-linecap: round"/>
+    <path d="M 278.360315 72.514804 
+L 277.160315 74.914804 
+L 275.960315 72.514804 
+z
+" style="fill: #333333; stroke: #333333; stroke-width: 0.7; stroke-linecap: round"/>
+   </g>
+   <g id="patch_28">
+    <path d="M 277.160315 116.162267 
+Q 277.160315 124.163184 277.160315 131.381476 
+" style="fill: none; stroke: #333333; stroke-width: 0.7; stroke-linecap: round"/>
+    <path d="M 278.360315 128.981476 
+L 277.160315 131.381476 
+L 275.960315 128.981476 
+z
+" style="fill: #333333; stroke: #333333; stroke-width: 0.7; stroke-linecap: round"/>
+   </g>
+   <g id="patch_29">
+    <path d="M 277.160315 182.040725 
+Q 277.160315 193.571239 277.160315 204.319129 
+" style="fill: none; stroke: #333333; stroke-width: 0.7; stroke-linecap: round"/>
+    <path d="M 278.360315 201.919129 
+L 277.160315 204.319129 
+L 275.960315 201.919129 
+z
+" style="fill: #333333; stroke: #333333; stroke-width: 0.7; stroke-linecap: round"/>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 5px; font-family: 'DejaVu Sans'; text-anchor: start" x="284.507717" y="189.335906" transform="rotate(-0 284.507717 189.335906)">Yes</text>
+   </g>
+   <g id="patch_30">
+    <path d="M 310.998244 157.691339 
+Q 331.040354 157.691339 350.299841 157.691339 
+" style="fill: none; stroke: #333333; stroke-width: 0.7; stroke-linecap: round"/>
+    <path d="M 347.899841 156.491339 
+L 350.299841 157.691339 
+L 347.899841 158.891339 
+z
+" style="fill: #333333; stroke: #333333; stroke-width: 0.7; stroke-linecap: round"/>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 5px; font-family: 'DejaVu Sans'; text-anchor: middle" x="331.04126" y="153.456378" transform="rotate(-0 331.04126 153.456378)">No</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 6px; font-family: 'DejaVu Sans'" transform="translate(356.998298 40.70258)">XGBoost regressor</text>
+    <text style="font-size: 6px; font-family: 'DejaVu Sans'" transform="translate(370.588767 47.421268)">Phase 2+</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 6px; font-family: 'DejaVu Sans'" transform="translate(353.922361 94.815966)">Predicted population</text>
+    <text style="font-size: 6px; font-family: 'DejaVu Sans'" transform="translate(357.632986 101.534654)">share in Phase 2+</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 6px; font-family: 'DejaVu Sans'; text-anchor: middle" x="384.922205" y="159.346964" transform="rotate(-0 384.922205 159.346964)">≥20%?</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 6px; font-family: 'DejaVu Sans'; text-anchor: middle" x="384.922205" y="220.518617" transform="rotate(-0 384.922205 220.518617)">Phase 2</text>
+   </g>
+   <g id="patch_31">
+    <path d="M 384.922205 60.874514 
+Q 384.922205 68.285971 384.922205 74.914804 
+" style="fill: none; stroke: #333333; stroke-width: 0.7; stroke-linecap: round"/>
+    <path d="M 386.122205 72.514804 
+L 384.922205 74.914804 
+L 383.722205 72.514804 
+z
+" style="fill: #333333; stroke: #333333; stroke-width: 0.7; stroke-linecap: round"/>
+   </g>
+   <g id="patch_32">
+    <path d="M 384.922205 116.162267 
+Q 384.922205 124.163184 384.922205 131.381476 
+" style="fill: none; stroke: #333333; stroke-width: 0.7; stroke-linecap: round"/>
+    <path d="M 386.122205 128.981476 
+L 384.922205 131.381476 
+L 383.722205 128.981476 
+z
+" style="fill: #333333; stroke: #333333; stroke-width: 0.7; stroke-linecap: round"/>
+   </g>
+   <g id="patch_33">
+    <path d="M 384.922205 182.040725 
+Q 384.922205 193.571239 384.922205 204.319129 
+" style="fill: none; stroke: #333333; stroke-width: 0.7; stroke-linecap: round"/>
+    <path d="M 386.122205 201.919129 
+L 384.922205 204.319129 
+L 383.722205 201.919129 
+z
+" style="fill: #333333; stroke: #333333; stroke-width: 0.7; stroke-linecap: round"/>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 5px; font-family: 'DejaVu Sans'; text-anchor: start" x="392.269606" y="189.335906" transform="rotate(-0 392.269606 189.335906)">Yes</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 6px; font-family: 'DejaVu Sans'; text-anchor: middle" x="473.091024" y="159.346964" transform="rotate(-0 473.091024 159.346964)">Phase 1</text>
+   </g>
+   <g id="patch_34">
+    <path d="M 418.762526 157.691339 
+Q 432.681313 157.691339 445.817476 157.691339 
+" style="fill: none; stroke: #333333; stroke-width: 0.7; stroke-linecap: round"/>
+    <path d="M 443.417476 156.491339 
+L 445.817476 157.691339 
+L 443.417476 158.891339 
+z
+" style="fill: #333333; stroke: #333333; stroke-width: 0.7; stroke-linecap: round"/>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 5px; font-family: 'DejaVu Sans'; text-anchor: middle" x="432.680315" y="153.456378" transform="rotate(-0 432.680315 153.456378)">No</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 6px; font-family: 'DejaVu Sans'; text-anchor: middle" x="220.830236" y="244.743307" transform="rotate(-0 220.830236 244.743307)">Sequential IPC classification: use the highest qualifying phase</text>
+   </g>
+  </g>
+  <g id="legend_1">
+   <g id="patch_35">
+    <path d="M 113.585141 271.147463 
+L 125.585141 271.147463 
+L 125.585141 266.947463 
+L 113.585141 266.947463 
+z
+" style="fill: #d6eaf8; stroke: #555555; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 6px; font-family: 'DejaVu Sans'; text-anchor: start" x="130.385141" y="271.147463" transform="rotate(-0 130.385141 271.147463)">Regressor</text>
+   </g>
+   <g id="patch_36">
+    <path d="M 172.197641 271.147463 
+L 184.197641 271.147463 
+L 184.197641 266.947463 
+L 172.197641 266.947463 
+z
+" style="fill: #d5f5e3; stroke: #555555; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_28">
+    <text style="font-size: 6px; font-family: 'DejaVu Sans'; text-anchor: start" x="188.997641" y="271.147463" transform="rotate(-0 188.997641 271.147463)">Predicted share</text>
+   </g>
+   <g id="patch_37">
+    <path d="M 247.697329 271.147463 
+L 259.697329 271.147463 
+L 259.697329 266.947463 
+L 247.697329 266.947463 
+z
+" style="fill: #e0e0e0; stroke: #555555; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_29">
+    <text style="font-size: 6px; font-family: 'DejaVu Sans'; text-anchor: start" x="264.497329" y="271.147463" transform="rotate(-0 264.497329 271.147463)">Threshold decision</text>
+   </g>
+   <g id="patch_38">
+    <path d="M 332.703266 271.147463 
+L 344.703266 271.147463 
+L 344.703266 266.947463 
+L 332.703266 266.947463 
+z
+" style="fill: #aed6f1; stroke: #555555; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_30">
+    <text style="font-size: 6px; font-family: 'DejaVu Sans'; text-anchor: start" x="349.503266" y="271.147463" transform="rotate(-0 349.503266 271.147463)">Assigned phase</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p21ae32e148">
+   <rect x="10.204724" y="14.173228" width="489.826772" height="235.275591"/>
+  </clipPath>
+ </defs>
+</svg>

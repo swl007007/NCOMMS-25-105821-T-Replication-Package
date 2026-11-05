@@ -12,7 +12,7 @@ Files are UTF-8; CSVs include a byte-order mark for Excel. No models are refitte
 | File | Contents |
 | --- | --- |
 | Figure 1.csv | Frozen summary metrics, 1,170 classification predictions and scatter pairs per temporal model, and 5,575 contemporaneous out-of-fold predictions. |
-| Figure 2.csv | The two original analysis datasets used for SHAP, labelled by model and training/test period; all original input columns are retained. |
+| Figure 2.csv | The two original analysis datasets, signed SHAP sums, plotted top-ten features and normalized group contributions for the final vector artwork. |
 | Figure 3.txt | Classification rules for the conceptual workflow; no empirical source measurements. |
 | Figure 4.csv | All 5,575 source IPC phase labels and dates; count by phase for panel A and by year/phase for panel B. |
 | Table 1.csv | Main-model data from Figure 1 and the separately labelled reported changed-phase summary values. |
@@ -48,11 +48,15 @@ The frozen main results are used for Figure 1/Table 1. The supplementary alert
 map instead follows its original `All_prediction.csv` input and maximum-per-area
 selection; ties at the 70th percentile are retained.
 
-Figure 2 contains the model inputs confirmed by the authors. The historical
-numerical SHAP arrays were not saved with the image exports. The notebooks
-`Figure2_Feature_Importance_Forecasting.ipynb` and
-`Figure2_Nowcasting_two_layer_feature_importance.ipynb` document their computation
-and figure export. Input values are not labelled as SHAP contributions.
+Figure 2 contains the model inputs confirmed by the authors and the numerical
+SHAP summaries exported by `2.Source Code/export_final_artwork_shap.py` from
+the original forecasting and nowcasting notebooks. The export uses the frozen
+Windows Python 3.11.3 / XGBoost 2.0.3 environment with SHAP 0.46.0. Individual
+importance is the absolute value of the signed sum over 4,405 training rows;
+group importance sums signed contributions over the original feature groups,
+takes absolute values and normalizes across the included groups. These are not
+mean absolute SHAP values. Nowcasting summaries describe layer 2. The original
+inputs and derived contributions are distinguished by `_record_type`.
 For Table 1, changed-phase values are transcribed reported summaries; historical
 per-observation predictions for that subset were not saved. The full input
 datasets are available in Figure 2.csv. Some benchmark/refit artifacts likewise

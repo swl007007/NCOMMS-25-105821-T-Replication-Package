@@ -1,0 +1,41 @@
+{
+  "python": "3.11.3",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "packages": {
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.5.2",
+    "xgboost": "2.0.3",
+    "shap": "0.46.0",
+    "scipy": "1.17.1",
+    "numba": "0.60.0",
+    "llvmlite": "0.43.0"
+  },
+  "aggregation": "absolute signed sum over training observations, not mean absolute SHAP",
+  "sources": {
+    "2.Source Code/Figure2_Feature_Importance_Forecasting.ipynb": "290dfd7e6038efe68b506b70917e4402c10347a0ff5f91811a2a86c4d7751581",
+    "2.Source Code/Figure2_Nowcasting_two_layer_feature_importance.ipynb": "25cebc6156c765164451c8d13eb91a841eb143c6d16d01d2eb53778d23c34cd7",
+    "2.Source Code/forecasting_hyperparameters.json": "3742300661466f22eba8198e5d4f9c2a277615ba59562fbf27f251ecc932dd76",
+    "2.Source Code/forecasting_hyperparameters_p3.json": "cdc0e55aa15bdda932465088568b9ee717d226208ffb32076f438fb274e6317b",
+    "1.Source Data/Forecasting_Analysis_010825.csv": "60f17f079ab569060a29fd8c7af0d3f6feaab558f7a29a104c9a0e702172dc0e",
+    "1.Source Data/Nowcasting_Analysis_010825.csv": "d541f7c0c21c1878fcf8a74c99c953ddda200d0dfeda7365e7ff5934af8f550f"
+  },
+  "notebooks": {
+    "forecasting": {
+      "path": "Figure2_Feature_Importance_Forecasting.ipynb",
+      "training_cell_zero_based": 1,
+      "aggregation_cell_zero_based": 4,
+      "training_rows_per_phase": 4405,
+      "features": 106,
+      "layer": 1
+    },
+    "nowcasting": {
+      "path": "Figure2_Nowcasting_two_layer_feature_importance.ipynb",
+      "training_cell_zero_based": 1,
+      "aggregation_cell_zero_based": 5,
+      "training_rows_per_phase": 4405,
+      "features": 69,
+      "layer": 2
+    }
+  }
+}

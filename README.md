@@ -15,6 +15,9 @@ supplementary figure/table for *Predicting Acute Food Insecurity with Machine
 Learning*. See [SOURCE_DATA.md](SOURCE_DATA.md) for contents and provenance.
 Rebuild with `python "2.Source Code/build_source_data.py"`.
 
+Final vector figures, Overleaf replacement captions and export instructions:
+[writing/final_artwork](writing/final_artwork/README.md).
+
 ## Setup
 
 For the main analyses, use Windows Python 3.11.3 and the package versions in

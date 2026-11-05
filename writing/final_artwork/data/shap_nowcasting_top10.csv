@@ -1,0 +1,21 @@
+phase,rank,feature,label,absolute_signed_sum
+3,1,WFP_Price_Volatility,WFP Spatial Price Dispersion,2.2322092056274414
+3,2,nightlight_mean_m12,VIIRS Nightlight *,1.0900362730026245
+3,3,nightlight_mean_s12,VIIRS Nightlight S.D. *,0.7393037676811218
+3,4,WFP_Price_Change_m12,WFP Price Change *,0.6868719458580017
+3,5,WFP_Price_Change_s12,WFP Price Change Percentage S.D. *,0.366281121969223
+3,6,soil_moisture_mean_m12,Soil Moisture *,0.31574681401252747
+3,7,fatalities_battles_w5,Fatalities in battles in 5 stations,0.2583003044128418
+3,8,NY.GDP.PCAP.KD,GDP per capita,0.20307394862174988
+3,9,event_count_battles_w10_m12,Event Count in battles in 10 stations *,0.18275783956050873
+3,10,shortwave_radiation_sum_m12,Shortwave Radiation *,0.17257514595985413
+4,1,WFP_Price_Volatility,WFP Spatial Price Dispersion,0.7332950830459595
+4,2,WFP_Price_Volatility_m12,WFP Spatial Price Dispersion *,0.4718039333820343
+4,3,WFP_Price_Change_m12,WFP Price Change *,0.3431844115257263
+4,4,shortwave_radiation_sum_s12,Shortwave Radiation S.D. *,0.11154340952634811
+4,5,WFP_Price_Change_s12,WFP Price Change Percentage S.D. *,0.07690221071243286
+4,6,temperature_2m_mean_s12,Surface Temperature S.D. *,0.04997533559799194
+4,7,fatalities_battles,Fatalities in battles,0.04847045987844467
+4,8,fatalities_battles_w5,Fatalities in battles in 5 stations,0.04217628762125969
+4,9,nightlight_mean_s12,VIIRS Nightlight S.D. *,0.03386668860912323
+4,10,EVI_m12,Enhanced Vegetation Index *,0.018918480724096298

@@ -1,0 +1,21 @@
+phase,rank,feature,label,absolute_signed_sum
+3,1,WFP_Price_Volatility_l12,WFP Spatial Price Dispersion +,17.216262817382812
+3,2,infra_index_m12_l12,infrastructure index * +,8.001497268676758
+3,3,lat,Latitude,7.794905662536621
+3,4,lon,Longitude,6.748678684234619
+3,5,WFP_Price_Change_l12,WFP Price change Percentage +,5.720636367797852
+3,6,estimated_population,Estimated Population,5.10780668258667
+3,7,EVI_l12,Enhanced Vegetation Index * +,4.682627201080322
+3,8,soil_moisture_mean_l12,Soil Moisture +,3.816779613494873
+3,9,infra_index_s12_l12,Infrastructure Index S.D. * +,3.597409248352051
+3,10,nightlight_mean_l12,VIIRS nightlight +,3.2682886123657227
+4,1,temperature_2m_mean_z_l12,Long term Surface Temperature +,2.7225711345672607
+4,2,lon,Longitude,2.1793453693389893
+4,3,shortwave_radiation_sum_l12,Shortwave Radiation +,2.0957231521606445
+4,4,temperature_2m_mean_l12,Surface Temperature +,2.036807060241699
+4,5,aez_groupid_32000,Agricultural Ecological Zone 2,1.97736656665802
+4,6,infra_index_s12_l12,Infrastructure Index S.D. * +,1.9239016771316528
+4,7,phh2o_5-15cm_mean,Soil P.H.,1.1690596342086792
+4,8,infra_index_m12_l12,infrastructure index * +,1.0655889511108398
+4,9,rainfall_chirps_z_l12,Long term Ground Gauge rainfall +,0.9542750120162964
+4,10,lat,Latitude,0.9166953563690186

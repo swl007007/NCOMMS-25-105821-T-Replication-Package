@@ -102,6 +102,12 @@ def build():
             row["_split"] = "training_2017_2021" if row["date"][:10] < "2022-01-01" else "test_2022"
         assert sum(r["_split"] == "training_2017_2021" for r in rows) == 4405
         inputs += rows
+    for task in ("forecasting", "nowcasting"):
+        for suffix, kind in (("signed_sums", "feature_signed_shap_sum"),
+                             ("top10", "plotted_top10_shap"), ("groups", "normalized_group_shap")):
+            inputs += block(f"writing/final_artwork/data/shap_{task}_{suffix}.csv", kind,
+                            _reported_model=task.capitalize())
+    record_source("writing/final_artwork/data/shap_provenance.json")
     save("Figure 2.csv", inputs)
     MEMBERS["Figure 3.txt"] = (
         "Figure 3: Ensemble Model Procedure Overview\n"

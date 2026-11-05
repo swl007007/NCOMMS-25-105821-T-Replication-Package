@@ -1,0 +1,19 @@
+{
+  "analysis_areas": {
+    "source": "../../0.Archived/New_analysis_dataset_for_vis/world_analysis.shp",
+    "source_sha256": "f47f8807c50e80cab652ab71025254a64145e88af550865a0a2ecfa7d22c6431",
+    "selection": "646 unique area_id values selected by original 2022 alert-map generator; full resolution, no simplification",
+    "crs": "EPSG:4326"
+  },
+  "basemap": {
+    "source": "Natural Earth low-resolution countries, GeoPandas/pyogrio fixture",
+    "original_shapefile_sha256": "08e341606e8391e458c3f08deb312de664b56bfae376064c5aa0aee6681a5f55",
+    "license": "Public domain",
+    "license_url": "https://www.naturalearthdata.com/about/terms-of-use/"
+  },
+  "thresholds": {
+    "forecasting": 0.35,
+    "nowcasting": 0.3549999999999994,
+    "actual": 0.5
+  }
+}
