@@ -1,0 +1,6 @@
+﻿panel,model,method,population,aggregation,accuracy,sensitivity,precision,r_squared_phase3plus,source_file,source_row
+,Forecasting,Main model,all evaluation observations,pooled,0.6495726495726496,0.9408418657565415,0.7750702905342081,0.2489985704986828,2.Source Code/produced_graph/main_result_figure1_v1.csv,2
+,Nowcasting,Main model,all evaluation observations,pooled,0.6538461538461539,0.9419795221843004,0.7774647887323943,0.252784701177865,2.Source Code/produced_graph/main_result_figure1_v1.csv,3
+,Contemporaneous,Main model,all evaluation observations,pooled,0.69345291479820625,0.90437078322088593,0.79725885699508658,0.64161899861528793,2.Source Code/produced_graph/spatial_feature_comparison_metrics.csv,4
+,Forecasting,Main model,changed-phase observations,reported historical summary,.593,.990,.702,,"accepted main manuscript, Table 1",
+,Nowcasting,Main model,changed-phase observations,reported historical summary,.571,.964,.733,,"accepted main manuscript, Table 1",

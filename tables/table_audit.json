@@ -1,0 +1,48 @@
+{
+  "source_archive_sha256": "c03b0af0813ecfa9f1c2b0dce01137a982b9d2214914f02bc4ee754b2c828d4d",
+  "generator_sha256": "8942d014f61498ddd139e272949c62934770bb3b3168dc52e4a23ca1b028e82b",
+  "tables": {
+    "Table_1.csv": {
+      "rows": 5,
+      "sha256": "fa666c6449bd49d391f10706a507799c6b1d3b8a2a01d31a2d411703d93d0e06",
+      "source_member": "Table 1.csv",
+      "source_sha256": "3cbac2ae4ac6920839e99fedfd9f8aeceacf896f65d312af38f3cddd10ff751c"
+    },
+    "Supplementary_Table_1.csv": {
+      "rows": 12,
+      "sha256": "5bd20e94bddbfd24e5938c719f57a2611b6ec0116e27191ce627598487d37a26",
+      "source_member": "Supplementary Table 1.csv",
+      "source_sha256": "95e227acf616e54a315933bdbe8e47f6b5e504c5da6ca43e5e38c0f15a13076d"
+    },
+    "Supplementary_Table_2.csv": {
+      "rows": 9,
+      "sha256": "6b2439b7f9ead610efe46a02140aff0ef7e6a2734796b3b8e887f29854722670",
+      "source_member": "Supplementary Table 2.csv",
+      "source_sha256": "5b8d32250df07ccc509650ed1ead3e23062836dab60b41c930bc8f576d84f1d1"
+    },
+    "Supplementary_Table_3.csv": {
+      "rows": 6,
+      "sha256": "dee89e8fe666fc33e5d8ea1551bc8757e27e5cd56228d533e1a0a3977a8152ec",
+      "source_member": "Supplementary Table 3.csv",
+      "source_sha256": "3b6dab20c9a1c91e10144eea7b2903e59d112c38f64e2070e34dfbc990e95ef7"
+    },
+    "Supplementary_Table_4.csv": {
+      "rows": 76,
+      "sha256": "a72bd137c14fd701437fd1e63818bf8711ee8bcc93862279caecb22a9430c5ad",
+      "source_member": "Supplementary Table 4.csv",
+      "source_sha256": "861effe881083c58db380ed72d931ff49834c71dc7221f53707179fdccd0a5cf"
+    },
+    "Supplementary_Table_5.csv": {
+      "rows": 8,
+      "sha256": "f13965fbab35bcea4b21caa546266b4b7d1ce880badb6f021976e22ec7562040",
+      "source_member": "Supplementary Table 5.csv",
+      "source_sha256": "9cd24512fe734ab6c13429f729fdda47807cc5c8548963a8161badc4ea749e9e"
+    },
+    "Supplementary_Table_6.csv": {
+      "rows": 24,
+      "sha256": "76e91c6ac9decbb5bb5d2f840eb822aa065ca1ede1ebee2773ba1402b44801b1",
+      "source_member": "Supplementary Table 6.csv",
+      "source_sha256": "17bdd5c8a2906f81b39abab5e4ef08070fb7f51171102b7069c01c6cc76f75ff"
+    }
+  }
+}

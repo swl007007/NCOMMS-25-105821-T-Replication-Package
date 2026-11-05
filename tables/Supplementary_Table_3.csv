@@ -1,0 +1,7 @@
+﻿panel,model,method,population,aggregation,accuracy,sensitivity,precision,r_squared_phase3plus,source_file,source_row
+A,Forecasting,Main model,all evaluation observations,pooled,0.658120,0.960182,0.772894,-0.004380,2.Source Code/produced_graph/strict_temporal_loco_micro_metrics.csv,3
+A,Nowcasting,Main model,all evaluation observations,pooled,0.664957,0.963595,0.780645,0.007698,2.Source Code/produced_graph/strict_temporal_loco_micro_metrics.csv,2
+A,Contemporaneous,Main model,all evaluation observations,pooled,0.583318,0.940745,0.671482,0.136446,2.Source Code/produced_graph/leave_one_country_out_micro_metrics.csv,2
+B,Forecasting,Main model,all evaluation observations,pooled,0.64871794871794874,0.9078498293515358,0.79800000000000004,0.16458803538925915,2.Source Code/produced_graph/leave_area_out_20pct_fivefold_metrics.csv,2
+B,Nowcasting,Main model,all evaluation observations,pooled,0.65555555555555556,0.91353811149032993,0.80219780219780223,0.1696289339689897,2.Source Code/produced_graph/leave_area_out_20pct_fivefold_metrics.csv,3
+B,Contemporaneous,Main model,all evaluation observations,mean of five folds,0.7448125424933193,0.92344073421387018,0.82977381417388385,0.71832637868508564,2.Source Code/produced_graph/leave_area_out_20pct_random_cv_metrics.csv,3

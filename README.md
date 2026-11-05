@@ -3,6 +3,11 @@
 Source data, analysis notebooks, Python generators, and saved results for
 the food-crisis monitoring and prediction study.
 
+For a compact download containing only the selected figures, tables, scripts,
+required inputs and reproduction instructions, use the
+[v1.4.0 replication release](https://github.com/swl007007/NCOMMS-25-105821-T-Replication-Package/releases/tag/v1.4.0).
+Its curated source snapshot is on `release/v1.4.0`; development history remains here.
+
 - `1.Source Data/`: model-ready inputs.
 - `2.Source Code/`: notebooks, generators, and model parameters.
 - `2.Source Code/produced_graph/`: saved figures, tables, and predictions.

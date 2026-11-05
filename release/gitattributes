@@ -1,0 +1,2 @@
+# Preserve frozen input and script hashes on every platform.
+* -text

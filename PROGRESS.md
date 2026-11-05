@@ -62,3 +62,45 @@ Reproduction: `export_final_artwork_shap.py` runs only in the frozen model
 environment; `export_final_artwork.py` renders the saved numbers in the recorded
 plotting environment; `verify_final_artwork.py` validates the delivered files.
 Unrelated pre-existing CSV/log changes are excluded from this delivery.
+
+## 2026-11-05 — Curated replication release v1.4.0
+
+Scope: a standalone release containing selected manuscript figures/tables,
+corresponding source code, concise instructions and the necessary input data
+(explicitly confirmed by the author). Preserve v1.3.0 and the development tree.
+
+- [x] Add seven compact CSV table exports using the existing Source Data
+  selections, source line references and original numerical precision.
+  Preserve reported-only changed-phase rows, the continuous R-squared for the
+  repeated-area refit, and pooled versus fold-mean spatial validation metrics.
+  The SI Table 4 export is the full 76-row dictionary underlying the grouped
+  manuscript catalogue. No manuscript text or scientific result was changed.
+- [x] Review the explicit release inventory and Python import closure. Include
+  the complete frozen rescue prerequisite bundles required by their hash gates;
+  exclude historical archives, logs, checkpoints and unrelated experiments.
+- [x] Add separate rendering/model requirements and a concise output-to-script
+  map. Correct the documented persistence command to use the bundled lookup.
+- [x] Independently check seven tables: 5/12/9/6/76/8/24 rows, sensitivity=recall,
+  and exact source-file/row correspondence. Correct the exporter to retain all
+  21 available `phase3plus_population_share_r2` values in SI Tables 1 and 6.
+- [x] Rebuild all ten figures in a separately extracted Windows temporary
+  directory using the recorded Linux rendering environment. All ten PDFs and
+  ten PNGs reproduce byte-for-byte. SVGs retain editable text and pass structural
+  checks; regenerated SVG identifiers/audit hashes need not be byte-identical.
+  Poppler checks pass for vector content, embedded fonts, dimensions and captions.
+- [x] Rebuild Source Data with the same SHA-256 and verify table export assertions.
+- [x] Diagnose the rescue hash failure: later spatial files contain additional
+  Contemporaneous rows. Their 9,360 temporal prediction rows plus header exactly
+  reproduce the originally pinned SHA-256
+  `bdef15d0b1facf892dcbfdb019e119463cb93ee79bd384915ff6c45fa9f1a7a7`.
+  Add `refit_rescue_from_release.py`, which validates the published file hashes
+  and this byte-identity proof before rebinding only those three runtime hash
+  expectations. Keep the original scientific scripts and results unchanged.
+- [x] Check the rescue entry point in frozen Windows Python 3.11.3/XGBoost 2.0.3,
+  including full predecessor manifests and frozen main prediction checks.
+
+Release construction: `python build_release.py` uses `release/files.tsv` to
+create the curated folder, SHA-256 manifest, ZIP and checksum under
+`release_build/`. A dedicated release branch/tag will give GitHub's automatic
+source downloads the same curated contents. Model training and the full
+robustness experiments are outside this packaging rerun.
