@@ -49,7 +49,14 @@ and push the changes. Latest editable manuscript source remains with the authors
 - [x] Independently inspect all ten previews/captions and recompute Figure 1,
   map, SHAP aggregation and supplementary matrix/scatter checks. No numerical
   or population error found; add the requested map boundary/water key.
-- [ ] Commit and verify remote push.
+- [x] Commit and verify remote push: artwork commit
+  `0fff10172ffe99047cd38456d81415438a8f390f` was pushed to `origin/main`;
+  `git ls-remote origin refs/heads/main` returned the same SHA.
+
+Final verification: all ten caption snippets compiled successfully with
+pdfLaTeX; all PNG previews are RGB/RGBA at 300 dpi; PDF/SVG/source hash checks
+passed after the map-key correction. Code/document whitespace checks passed;
+SVGs retain Matplotlib's generated path formatting.
 
 Reproduction: `export_final_artwork_shap.py` runs only in the frozen model
 environment; `export_final_artwork.py` renders the saved numbers in the recorded
