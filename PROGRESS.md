@@ -101,6 +101,20 @@ corresponding source code, concise instructions and the necessary input data
 
 Release construction: `python build_release.py` uses `release/files.tsv` to
 create the curated folder, SHA-256 manifest, ZIP and checksum under
-`release_build/`. A dedicated release branch/tag will give GitHub's automatic
+`release_build/`. The dedicated release branch/tag gives GitHub's automatic
 source downloads the same curated contents. Model training and the full
 robustness experiments are outside this packaging rerun.
+
+- [x] Publish and verify `v1.4.0` on `release/v1.4.0` at
+  `3c33499195c131bec23831cc95dc8c06ebf8a77b`, based on implementation commit
+  `be84cd140d8e167eea2234e79106a0667eddae7a`. Preserve the existing v1.3.0 release.
+- [x] Download the published attachment and GitHub's automatic source archive.
+  All 181 files match byte-for-byte, with no archive/checkpoint/log payload.
+  ZIP size: 35,760,292 bytes; SHA-256:
+  `424897b3f1e8b92372f4ad5460663f139b8951eb4b20b1b991a140acdb0c3e43`.
+- [x] Rebuild all seven corrected tables and Source Data byte-for-byte in the
+  isolated copy. Check the selected-main inputs/environment and the complete
+  contemporaneous rescue bundle; both deliberate hash-mismatch probes are
+  rejected by the new rescue compatibility entry point.
+
+Release: https://github.com/swl007007/NCOMMS-25-105821-T-Replication-Package/releases/tag/v1.4.0
